@@ -182,6 +182,12 @@ public interface MemberDao {
 
 
 
+
+
+
+
+
+
 #### controller
 
 ```java
@@ -233,34 +239,34 @@ public class RestApiController {
 ``` javascript
 //수정버튼 클릭시 실행(수정할 멤버의 정보 가져오기)
 function edit(id) {
-		if(confirm('정말 수정할거야?????리얼리????')){
-			$.ajax({
-				url:'http://localhost:8080/mc/rest-api/members/'+id,
-				type: 'GET',
-				error: function() {
-					alert('error.....');
-					list();
-				},
-				success: function(data) {
-					//alert(data.idx);
-					
-					$('#join').css('display','none');  //가입폼 안보이게 하고
-					$('#edit').css('display','block'); //수정폼 보이게
-					
-					var output = '';
-					output += '아이디는안바꿔줘'
-					output += '<input type="text" value="'+data.id +'" disabled><br>\n';
-					output += '패스워드는?????? '
-                    output += '<input type="password" id="pw2" name="pw"> <br>\n';
-					output += '이름 좀 알려줄래?'
-                    output += '<input type="text" id="name2" name="name"> <br>\n';
-					output += '<span class="submit" onclick="getEdit('+data.idx+')">'
-                    output += '수정할래요오오오옹!</span>';
-					$('#editForm').html(output);
-				}
-			});
-		}
-	}
+    if(confirm('정말 수정할거야?????리얼리????')){
+        $.ajax({
+            url:'http://localhost:8080/mc/rest-api/members/'+id,
+            type: 'GET',
+            error: function() {
+                alert('error.....');
+                list();
+            },
+            success: function(data) {
+                //alert(data.idx);
+
+                $('#join').css('display','none');  //가입폼 안보이게 하고
+                $('#edit').css('display','block'); //수정폼 보이게
+
+                var output = '';
+                output += '아이디는안바꿔줘'
+                output += '<input type="text" value="'+data.id +'" disabled><br>\n';
+                output += '패스워드는?????? ';
+                output += '<input type="password" id="pw2" name="pw"> <br>\n';
+                output += '이름 좀 알려줄래?';
+                output += '<input type="text" id="name2" name="name"> <br>\n';
+                output += '<span class="submit" onclick="getEdit('+data.idx+')">';
+                output += '수정할래요오오오옹!</span>';
+                $('#editForm').html(output);
+            }
+        });
+    }
+}
 ```
 
 
@@ -268,35 +274,35 @@ function edit(id) {
 ```javascript
 //수정할래요오오오옹! 이라는 버튼을 클릭 할 때 (== 수정 update 전송 버튼)
 function getEdit(idx) {
-		
-		$.ajax({
-            url:'http://localhost:8080/mc/rest-api/members',
-            type: 'PUT',
-            data: JSON.stringify({
-            	idx: idx,
-            	pw : $('#pw2').val(),
-                name : $('#name2').val()
-            }),
-            contentType: 'application/json;charset=utf-8',
-            dataType: 'json',
-            success: function(data) {
 
-                if(data > 0 ){
-                    alert('수정되었습니다');
-                } else {
-                    alert('실-패');
-                }
-            },
-            error: function(){
-                alert('error ㅠㅠㅠㅠ');
-            },
-            complete: function() {
-				list();
-				$('#edit').css('display','none');
-				$('#join').css('display','block');
-			}
-        });
-	}
+    $.ajax({
+        url:'http://localhost:8080/mc/rest-api/members',
+        type: 'PUT',
+        data: JSON.stringify({
+            idx: idx,
+            pw : $('#pw2').val(),
+            name : $('#name2').val()
+        }),
+        contentType: 'application/json;charset=utf-8',
+        dataType: 'json',
+        success: function(data) {
+
+            if(data > 0 ){
+                alert('수정되었습니다');
+            } else {
+                alert('실-패');
+            }
+        },
+        error: function(){
+            alert('error ㅠㅠㅠㅠ');
+        },
+        complete: function() {
+            list();
+            $('#edit').css('display','none');
+            $('#join').css('display','block');
+        }
+    });
+}
 ```
 
 
