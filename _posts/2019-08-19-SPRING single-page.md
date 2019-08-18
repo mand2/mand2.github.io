@@ -39,13 +39,13 @@ categories: spring
 
 ##### 회원가입화면
 
-![결과화면1](/assets/images/2019-08-19-SPRING single-page/결과화면1.jpg)
+![결과화면1](https://mand2.github.io/assets/images/2019-08-19-SPRING-single-page/결과화면1.jpg)
 
 
 
 ##### 회원수정화면
 
-![결과화면2](/assets/images/2019-08-19-SPRING single-page/결과화면2.jpg)
+![결과화면2](https://mand2.github.io/assets/images/2019-08-19-SPRING-single-page/결과화면2.jpg)
 
 
 
