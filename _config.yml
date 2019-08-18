@@ -108,7 +108,7 @@ analytics:
 # Site Author
 author:
   name             : "mand2"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/assets/images/bio-photo.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "초보 개발자"
   location         : "Seoul"
   email            : 
