@@ -1,6 +1,6 @@
 ---
 title: "SPRING single-page 회원관리 폼 만들기"
-date: 2019-08-19 01:35:28 -0400
+date: 2019-08-19 01:35:28 -0000
 categories: spring
 ---
 
@@ -39,13 +39,13 @@ categories: spring
 
 ##### 회원가입화면
 
-![결과화면1](https://github.com/mand2/Moonchild/blob/master/%EA%B2%B0%EA%B3%BC%ED%99%94%EB%A9%B4/%EA%B2%B0%EA%B3%BC%ED%99%94%EB%A9%B41.jpg)
+![결과화면1](assets/images/2019-08-19-SPRING single-page/결과화면1.jpg)
 
 
 
 ##### 회원수정화면
 
-![결과화면2](https://github.com/mand2/Moonchild/blob/master/%EA%B2%B0%EA%B3%BC%ED%99%94%EB%A9%B4/%EA%B2%B0%EA%B3%BC%ED%99%94%EB%A9%B42.jpg)
+![결과화면2](assets/images/2019-08-19-SPRING single-page/결과화면2.jpg)
 
 
 
