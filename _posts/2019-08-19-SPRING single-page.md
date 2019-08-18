@@ -4,8 +4,6 @@ date: 2019-08-19 01:35:28 -0400
 categories: spring
 ---
 
-# SPRING single-page 회원관리 폼 만들기
-
 > - single page : CRUD(가입+수정+삭제+리스트 보여주기)를 Single page 처리
 > - [```REST API```](https://meetup.toast.com/posts/92) 이용
 
