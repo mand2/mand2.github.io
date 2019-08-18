@@ -11,9 +11,9 @@ categories: spring
 
 **개발순서** (MVC 2 패턴으로 함) 
 
-> DAO설정
-> Controller
-> Service
+> DAO설정  
+> Controller  
+> Service  
 > View 
 
 
@@ -39,13 +39,13 @@ categories: spring
 
 ##### 회원가입화면
 
-![결과화면1](D:\Git\Moonchild\결과화면\결과화면1.jpg)
+![결과화면1](https://github.com/mand2/Moonchild/blob/master/%EA%B2%B0%EA%B3%BC%ED%99%94%EB%A9%B4/%EA%B2%B0%EA%B3%BC%ED%99%94%EB%A9%B41.jpg)
 
 
 
 ##### 회원수정화면
 
-![결과화면2](D:\Git\Moonchild\결과화면\결과화면2.jpg)
+![결과화면2](https://github.com/mand2/Moonchild/blob/master/%EA%B2%B0%EA%B3%BC%ED%99%94%EB%A9%B4/%EA%B2%B0%EA%B3%BC%ED%99%94%EB%A9%B42.jpg)
 
 
 
