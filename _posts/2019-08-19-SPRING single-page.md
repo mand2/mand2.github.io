@@ -41,7 +41,7 @@ categories: spring
 
 ##### 회원가입화면
 
-![](D:\Git\Moonchild\결과화면\결과화면1.jpg)
+![결과화면1](D:\Git\Moonchild\결과화면\결과화면1.jpg)
 
 
 
