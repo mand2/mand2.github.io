@@ -29,7 +29,7 @@ categories: spring
 
 
 
-
+<br><br><br><br><br>
 
 
 
@@ -129,6 +129,8 @@ public interface MemberDao {
 
 
 
+<br><br><br><br><br>
+
 ## Controller 설정
 
 1. pw는 JsonIgnore로 설정되어 있음.
@@ -148,6 +150,8 @@ public interface MemberDao {
 
 
 
+<br><br><br><br><br>
+
 ## 회원수정(service, controller, DTO 등)
 
 **설명**
@@ -162,6 +166,8 @@ public interface MemberDao {
 
 
 
+
+<br><br><br><br><br>
 
 # service
 
@@ -195,6 +201,8 @@ public interface MemberDao {
 
 
 
+
+<br><br><br><br><br>
 
 # controller
 
@@ -249,6 +257,8 @@ public class RestApiController {
 
 
 
+
+<br><br><br><br><br>
 
 # view
 
@@ -331,7 +341,7 @@ function getEdit(idx) {
 
 
 
-
+<br><br><br><br><br>
 
 # TIL
 
@@ -348,6 +358,8 @@ function getEdit(idx) {
 
 
 
+
+<br><br><br><br><br>
 
 
 
