@@ -22,4 +22,5 @@ layout: single
 ### TIL  
 
 - [RESTFUL API : @GetMapping, @PostMapping, DeleteMapping, @PutMapping](https://mand2.github.io/til/2/)
+- [RESTFUL API : @PutMapping 사용 시 415 오류 해결방법](https://mand2.github.io/til/3)
 
