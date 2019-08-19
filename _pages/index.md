@@ -4,11 +4,10 @@ permalink: /index/
 layout: single
 ---
 
-<br>
-> **목차**
->
-> 1. Spring
-> 2. TIL
+**목차**
+
+1. Spring
+2. TIL
 
 <br><br>
 
@@ -20,4 +19,5 @@ layout: single
 
 - TIL
 
-  
+  [RESTFUL API : @GetMapping, @PostMapping, DeleteMapping, @PutMapping](https://mand2.github.io/til/2/)
+
