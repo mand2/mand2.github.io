@@ -155,7 +155,15 @@ public interface MemberDao {
 
 
 
-#### service
+
+
+
+
+
+
+
+
+# service
 
 ```java
 	@Autowired
@@ -188,7 +196,7 @@ public interface MemberDao {
 
 
 
-#### controller
+# controller
 
 ```java
 @Controller
@@ -234,7 +242,15 @@ public class RestApiController {
 
 
 
-#### view
+
+
+
+
+
+
+
+
+# view
 
 ``` javascript
 //수정버튼 클릭시 실행(수정할 멤버의 정보 가져오기)
@@ -307,8 +323,19 @@ function getEdit(idx) {
 
 
 
-#### TIL
-******
+
+
+
+
+
+
+
+
+
+
+# TIL
+
+
 - ```complete ``` 를 쓰면 **성공/에러에 상관없이** 실행함.  
   가독성이 좋아짐!  
   순서는 `success - complete` 혹은 `error - complete` 순.
