@@ -9,6 +9,7 @@ layout: single
 ```
 1. Spring
 2. TIL
+3. Jekyll
 ```
 
 <br><br>
@@ -26,3 +27,8 @@ layout: single
 - [RESTFUL API : @GetMapping, @PostMapping, DeleteMapping, @PutMapping](https://mand2.github.io/til/2/)
 - [RESTFUL API : @PutMapping 사용 시 415 오류 해결방법](https://mand2.github.io/til/3)
 
+<br><br>
+
+### Jekyll  
+
+- [검색엔진에 깃허브 블로그 등록하기](https://mand2.github.io/jekyll/1)
