@@ -19,6 +19,7 @@ layout: single
 - [single-page 회원관리 폼 만들기](https://mand2.github.io/spring/SPRING-single-page/)
 - [Spring handler 인터셉터](https://mand2.github.io/spring/2)
 - [웹상에서 메일 보내보기](https://mand2.github.io/spring/3)
+- [회원가입 시 이메일 인증처리](https://mand2.github.io/spring/4)
 
 <br><br>
 
