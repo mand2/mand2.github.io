@@ -41,4 +41,7 @@ layout: single
 ### AWS
 
 - [amazon linux 및 puTTY, tomcat & mySQL 설치하기](https://mand2.github.io/aws/1)
+- [RDS 생성 및 배포](https://mand2.github.io/aws/2)
+- [puTTY 컬러 schema 변경](https://mand2.github.io/aws/3)
 
+<br><br><br>
