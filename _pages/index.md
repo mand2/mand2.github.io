@@ -29,6 +29,7 @@ layout: single
 
 - [RESTFUL API : @GetMapping, @PostMapping, DeleteMapping, @PutMapping](https://mand2.github.io/til/2/)
 - [RESTFUL API : @PutMapping 사용 시 415 오류 해결방법](https://mand2.github.io/til/3)
+- [statustext parsererror 해결방법](https://mand2.github.io/til/4)
 
 <br><br>
 
