@@ -11,6 +11,8 @@ layout: single
 2. TIL
 3. Jekyll
 4. AWS
+5. Node.js
+6. Spring-Boot
 ```
 
 <br><br>
@@ -53,4 +55,12 @@ layout: single
 
 
 
-<br><br><br>
+<br><br>
+
+### Spring-boot
+
+- [spring.jpa.open-in-view 로그 오류 해결하기](https://mand2.github.io/Spring-Boot/1)
+
+<br>
+
+<br><br><br><br>
