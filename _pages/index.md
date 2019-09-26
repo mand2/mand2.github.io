@@ -60,7 +60,8 @@ layout: single
 ### Spring-boot
 
 - [spring.jpa.open-in-view 로그 오류 해결하기](https://mand2.github.io/Spring-Boot/1)
+- [querydsl 설정하기](https://mand2.github.io/Spring-Boot/2)
 
 <br>
 
-<br><br><br><br>
+<br><br><br><br>		
