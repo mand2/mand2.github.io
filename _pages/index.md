@@ -52,6 +52,7 @@ layout: single
 ### Node.js
 - [package-lock.json 이란](https://mand2.github.io/Node.js/1)
 - [npm에 formidable 설치 오류 해결](https://mand2.github.io/Node.js/2)
+- [aws EC2로 node.js 배포하기](https://mand2.github.io/Node.js/3)
 
 
 
