@@ -4,6 +4,10 @@ permalink: /index/
 layout: single
 ---
 
+
+
+
+
 # **목차**  
 
 ```
@@ -16,6 +20,10 @@ layout: single
 ```
 
 <br><br>
+
+[TOC]
+
+
 
 ### Spring  
 
@@ -62,6 +70,7 @@ layout: single
 
 - [spring.jpa.open-in-view 로그 오류 해결하기](https://mand2.github.io/Spring-Boot/1)
 - [querydsl 설정하기](https://mand2.github.io/Spring-Boot/2)
+- [스프링부트 어노테이션: @SpringBootApplication](https://mand2.github.io/Spring-Boot/3)
 
 <br>
 
