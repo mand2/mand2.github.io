@@ -58,19 +58,18 @@ layout: single
 <br><br>
 
 ### Node.js
-- [package-lock.json 이란](https://mand2.github.io/Node.js/1)
-- [npm에 formidable 설치 오류 해결](https://mand2.github.io/Node.js/2)
-- [aws EC2로 node.js 배포하기](https://mand2.github.io/Node.js/3)
+- [package-lock.json 이란](https://mand2.github.io/node.js/1)
+- [npm에 formidable 설치 오류 해결](https://mand2.github.io/node.js/2)
+- [aws EC2로 node.js 배포하기](https://mand2.github.io/node.js/3)
 
 
 
 <br><br>
 
 ### Spring-boot
-
-- [spring.jpa.open-in-view 로그 오류 해결하기](https://mand2.github.io/Spring-Boot/1)
-- [querydsl 설정하기](https://mand2.github.io/Spring-Boot/2)
-- [스프링부트 어노테이션: @SpringBootApplication](https://mand2.github.io/Spring-Boot/3)
+- [spring.jpa.open-in-view 로그 오류 해결하기](https://mand2.github.io/spring-boot/1)
+- [querydsl 설정하기](https://mand2.github.io/spring-boot/2)
+- [maven 빌드 오류와 @SpringBootApplication](https://mand2.github.io/spring-boot/3)
 
 <br>
 
