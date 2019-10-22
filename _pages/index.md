@@ -2,6 +2,9 @@
 title: "블로그 글 모음"
 permalink: /index/
 layout: single
+author_profile: true
+sidebar : 
+    nav : "side"
 ---
 
 
