@@ -3,8 +3,10 @@ main:
 #  - title: "posts"
 #    url: /categories/
 
-  - title: "index"
+  - title: "archive"
     url: /index/
+  - title: "portfolio"
+    url: /portfolio/
 
 side:
   - title: "Spring"
