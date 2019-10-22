@@ -68,9 +68,9 @@ layout: single
 
 ### Spring-boot
 
-- [spring.jpa.open-in-view 로그 오류 해결하기](https://mand2.github.io/Spring-Boot/1)
-- [querydsl 설정하기](https://mand2.github.io/Spring-Boot/2)
-- [maven 빌드 오류와 @SpringBootApplication](https://mand2.github.io/Spring-Boot/3)
+- [spring.jpa.open-in-view 로그 오류 해결하기](https://mand2.github.io/spring-boot/1)
+- [querydsl 설정하기](https://mand2.github.io/spring-boot/2)
+- [maven 빌드 오류와 @SpringBootApplication](https://mand2.github.io/spring-boot/3)
 
 <br>
 
