@@ -6,6 +6,20 @@ main:
   - title: "index"
     url: /index/
 
+side:
+  - title: "Spring"
+    url: /categories/#spring
+  - title: "Spring-Boot"
+    url: /categories/#spring-boot
+  - title: "TIL"
+    url: /categories/#til
+  - title: "Node.js"
+    url: /categories/#node.js
+  - title: "AWS"
+    url: /categories/#aws
+  - title: "Jekyll"
+    url: /categories/#jekyll
+
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
   # - title: "Sample Posts"
