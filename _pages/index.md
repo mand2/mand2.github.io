@@ -15,16 +15,18 @@ sidebar :
 
 ```
 1. Spring
-2. TIL
-3. Jekyll
-4. AWS
-5. Node.js
-6. Spring-Boot
+2. Spring-Boot
+3. TIL
+4. Node.js
+5. AWS
+6. Jekyll
+7. others..blahblah
 ```
 
 <br><br>
 
 [TOC]
+
 
 
 
@@ -38,6 +40,14 @@ sidebar :
 
 <br><br>
 
+### Spring-boot
+
+- [spring.jpa.open-in-view 로그 오류 해결하기](https://mand2.github.io/spring-boot/1)
+- [querydsl 설정하기](https://mand2.github.io/spring-boot/2)
+- [maven 빌드 오류와 @SpringBootApplication](https://mand2.github.io/spring-boot/3)
+
+<br><br>
+
 ### TIL  
 
 - [RESTFUL API : @GetMapping, @PostMapping, DeleteMapping, @PutMapping](https://mand2.github.io/til/2/)
@@ -46,9 +56,13 @@ sidebar :
 
 <br><br>
 
-### Jekyll  
+### Node.js
 
-- [검색엔진에 깃허브 블로그 등록하기](https://mand2.github.io/jekyll/1)
+- [package-lock.json 이란](https://mand2.github.io/node.js/1)
+- [npm에 formidable 설치 오류 해결](https://mand2.github.io/node.js/2)
+- [aws EC2로 node.js 배포하기](https://mand2.github.io/node.js/3)
+
+
 
 <br><br>
 
@@ -58,22 +72,18 @@ sidebar :
 - [RDS 생성 및 배포](https://mand2.github.io/aws/2)
 - [puTTY 컬러 schema 변경](https://mand2.github.io/aws/3)
 
-<br><br>
-
-### Node.js
-- [package-lock.json 이란](https://mand2.github.io/node.js/1)
-- [npm에 formidable 설치 오류 해결](https://mand2.github.io/node.js/2)
-- [aws EC2로 node.js 배포하기](https://mand2.github.io/node.js/3)
-
 
 
 <br><br>
 
-### Spring-boot
-- [spring.jpa.open-in-view 로그 오류 해결하기](https://mand2.github.io/spring-boot/1)
-- [querydsl 설정하기](https://mand2.github.io/spring-boot/2)
-- [maven 빌드 오류와 @SpringBootApplication](https://mand2.github.io/spring-boot/3)
+### Jekyll  
 
-<br>
+- [검색엔진에 깃허브 블로그 등록하기](https://mand2.github.io/jekyll/1)
 
-<br><br><br><br>		
+<br><br>
+
+### others..blahblah
+
+* [독서:  오브젝트 정리 (1)](https://mand2.github.io/others/1)
+
+<br><br>		
