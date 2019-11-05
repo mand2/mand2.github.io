@@ -83,6 +83,7 @@ sidebar :
 
 ### others..blahblah
 
-* [독서:  오브젝트 정리 (1)](https://mand2.github.io/others/1)
+* [[독서] 오브젝트 정리 (1)](https://mand2.github.io/others/1)
+* [[취업준비] 면접질문 정리](https://mand2.github.io/others/)
 
 <br><br>		
