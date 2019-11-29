@@ -20,7 +20,8 @@ sidebar :
 4. Node.js
 5. AWS
 6. Jekyll
-7. others..blahblah
+7. React
+8. Others..blahblah
 ```
 
 <br><br>
@@ -81,7 +82,13 @@ sidebar :
 
 <br><br>
 
-### others..blahblah
+### React
+
+- [react table 사용하기](https://mand2.github.io/react/1)
+
+<br><br>
+
+### Others..blahblah
 
 * [[독서] 오브젝트 정리 (1)](https://mand2.github.io/others/1)
 * [[취업준비] 면접질문 정리](https://mand2.github.io/others/)
