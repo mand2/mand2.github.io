@@ -86,6 +86,7 @@ sidebar :
 
 - [react table 사용하기](https://mand2.github.io/react/1)
 - [테이블을 엑셀로 만들고 다운로드 해보자](https://mand2.github.io/react/2)
+- [javascript의 innerHTML과 같은 기능은?](https://mand2.github.io/react/3)
 
 <br><br>
 
