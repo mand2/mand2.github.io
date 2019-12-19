@@ -53,6 +53,7 @@ sidebar :
 - [RESTFUL API : @PutMapping 사용 시 415 오류 해결방법](https://mand2.github.io/til/3)
 - [statustext parsererror 해결방법](https://mand2.github.io/til/4)
 - [컬렉션 프레임워크의 정의와 stream 사용법 간단 정리](https://mand2.github.io/til/5)
+- [DB index의 정의](https://mand2.github.io/til/6)
 
 <br><br>
 
