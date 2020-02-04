@@ -58,6 +58,10 @@ sidebar :
 
 <br><br>
 
+### Python
+
+- [클래스 getter setter 설정하기](https://mand2.github.io/python/1)
+
 ### Node.js
 
 - [package-lock.json 이란](https://mand2.github.io/node.js/1)
