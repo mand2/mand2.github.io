@@ -17,11 +17,12 @@ sidebar :
 1. Spring
 2. Spring-Boot
 3. TIL
-4. Node.js
-5. AWS
-6. Jekyll
-7. React
-8. Others..blahblah
+4. Python
+5. Node.js
+6. AWS
+7. Jekyll
+8. React
+9. Others..blahblah
 ```
 
 <br><br>
@@ -61,6 +62,8 @@ sidebar :
 ### Python
 
 - [클래스 getter setter 설정하기](https://mand2.github.io/python/1)
+
+<br><br>
 
 ### Node.js
 
