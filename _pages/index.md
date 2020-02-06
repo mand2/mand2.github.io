@@ -62,6 +62,7 @@ sidebar :
 ### Python
 
 - [클래스 getter setter 설정하기](https://mand2.github.io/python/1)
+- [윈도우에서 Ubuntu로 pycharm 설치할 수 있을까](https://mand2.github.io/python/2)
 
 <br><br>
 
