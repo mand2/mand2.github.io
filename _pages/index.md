@@ -56,7 +56,7 @@ sidebar :
 - [컬렉션 프레임워크의 정의와 stream 사용법 간단 정리](https://mand2.github.io/til/5)
 - [DB index의 정의](https://mand2.github.io/til/6)
 - [pom.xml 설정으로  라이브러리 파일 만들기](https://mand2.github.io/til/7)
-
+- [REST API Client에서 호출가능한 Library](https://mand2.github.io/til/8)
 <br><br>
 
 ### Python
