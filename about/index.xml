@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>About on GoRaNee&#39;s dev-log</title>
+    <link>https://github.com/mand2/mand2.github.io/about/</link>
+    <description>Recent content in About on GoRaNee&#39;s dev-log</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us,ko-kr</language>
+    <lastBuildDate>Mon, 24 Aug 2020 23:23:15 +0900</lastBuildDate>
+    
+	<atom:link href="https://github.com/mand2/mand2.github.io/about/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Portfolio</title>
+      <link>https://github.com/mand2/mand2.github.io/about/portfolio/</link>
+      <pubDate>Mon, 24 Aug 2020 23:34:04 +0900</pubDate>
+      
+      <guid>https://github.com/mand2/mand2.github.io/about/portfolio/</guid>
+      <description>portfolio created in Oct, 2019.</description>
+    </item>
+    
+  </channel>
+</rss>
