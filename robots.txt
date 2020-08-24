@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: http://mand2.github.io/sitemap.xml
