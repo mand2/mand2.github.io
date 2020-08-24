@@ -1,34 +1,34 @@
 [
 {
-	"uri": "https://github.com/mand2/mand2.github.io/about/",
+	"uri": "/about/",
 	"title": "About",
 	"tags": [],
 	"description": "",
 	"content": "Chapter 0 About Backend 서버 개발자 고라니입니다.\n 1년차 신입 개발자 JAVA 70% Javascript 20% Python 10% 여러가지 기술에 관심이 많습니다.  "
 },
 {
-	"uri": "https://github.com/mand2/mand2.github.io/about/portfolio/",
+	"uri": "/about/portfolio/",
 	"title": "Portfolio",
 	"tags": [],
 	"description": "",
 	"content": "portfolio created in Oct, 2019.\n"
 },
 {
-	"uri": "https://github.com/mand2/mand2.github.io/",
+	"uri": "/",
 	"title": "GoRaNee&#39;s dev-log",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "https://github.com/mand2/mand2.github.io/categories/",
+	"uri": "/categories/",
 	"title": "Categories",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "https://github.com/mand2/mand2.github.io/tags/",
+	"uri": "/tags/",
 	"title": "Tags",
 	"tags": [],
 	"description": "",
