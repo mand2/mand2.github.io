@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>GoRaNee&#39;s dev-log</title>
-    <link>/</link>
-    <description>Recent content on GoRaNee&#39;s dev-log</description>
+    <title>회원가입 on GoRaNee&#39;s dev-log</title>
+    <link>/spring/user_register/</link>
+    <description>Recent content in 회원가입 on GoRaNee&#39;s dev-log</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Tue, 25 Aug 2020 23:00:53 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 25 Aug 2020 22:59:04 +0900</lastBuildDate>
     
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/spring/user_register/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -30,15 +30,6 @@ Map으로 설정해야 하나,
 회원가입화면
 회원수정화면
  DAO 설정 //인터페이스 작성 public interface MemberDao { public Member selectById(String id) ; //회원한명의 정보가져오기(login + update ) 	public int deleteMember(int idx) ; //삭제 	/* Rest Api를 위한 메서드 */ public List&amp;lt;Member&amp;gt; selectAllList(); public int insertMem(Member member); public int updateMem(Member member); //업데이트 수정 } &amp;lt;!</description>
-    </item>
-    
-    <item>
-      <title>Portfolio</title>
-      <link>/about/portfolio/</link>
-      <pubDate>Mon, 24 Aug 2020 23:34:04 +0900</pubDate>
-      
-      <guid>/about/portfolio/</guid>
-      <description>portfolio created in Oct, 2019.</description>
     </item>
     
     <item>

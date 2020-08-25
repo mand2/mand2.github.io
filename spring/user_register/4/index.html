@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.74.3" />
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>회원가입 시 이메일 인증처리 :: GoRaNee&#39;s dev-log</title>
+
+    
+    <link href="/css/nucleus.css?1598367248" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1598367248" rel="stylesheet">
+    <link href="/css/hybrid.css?1598367248" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1598367248" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1598367248" rel="stylesheet">
+    <link href="/css/auto-complete.css?1598367248" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1598367248" rel="stylesheet">
+    <link href="/css/theme.css?1598367248" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1598367248" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1598367248"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/spring/user_register/4/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/">
+GoRaNee&#39;s dev-log
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1598367248"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1598367248"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1598367248"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/about/" title="About" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/about/">
+          <b>0. </b>About
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/about/portfolio/" title="Portfolio" class="dd-item ">
+        <a href="/about/portfolio/">
+        Portfolio
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/spring/" title="Spring" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/spring/">
+          <b>1. </b>Spring
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/spring/user_register/" title="회원가입" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/spring/user_register/">
+          회원가입
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/spring/user_register/1/" title="single-page 회원관리 폼 만들기" class="dd-item ">
+        <a href="/spring/user_register/1/">
+        single-page 회원관리 폼 만들기
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/spring/user_register/2/" title="Spring handler 인터셉터" class="dd-item ">
+        <a href="/spring/user_register/2/">
+        Spring handler 인터셉터
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/spring/user_register/3/" title="Spring 웹상에서 메일 보내보기" class="dd-item ">
+        <a href="/spring/user_register/3/">
+        Spring 웹상에서 메일 보내보기
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/spring/user_register/4/" title="회원가입 시 이메일 인증처리" class="dd-item active">
+        <a href="/spring/user_register/4/">
+        회원가입 시 이메일 인증처리
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/spring/user_register/5/" title="메이븐 빌드 및 배포란?" class="dd-item ">
+        <a href="/spring/user_register/5/">
+        메이븐 빌드 및 배포란?
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>GoRaNee's dev-log</a> > <a href='/spring/'>Spring</a> > <a href='/spring/user_register/'>회원가입</a> > 회원가입 시 이메일 인증처리
+          
+        
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#memberjava">Member.java</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#mailsenderservicejava-생성">MailSenderService.java 생성</a></li>
+        <li><a href="#-joinservice-변경">### JoinService 변경</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#결과화면-인증완료">결과화면: 인증완료</a></li>
+        <li><a href="#결과화면-인증미완료">결과화면: 인증미완료</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              회원가입 시 이메일 인증처리
+            </h1>
+          
+
+        
+
+
+<pre><code>회원 가입 시 email을 받고
+인증 코드를 생성, 
+해당 email 계정으로 인증 처리 메일을 보내보자!
+관리자가 보낸 인증코드가 맞다면 인증 완료처리까지-
+</code></pre><h1 id="먼저-mysql에서-컬럼-추가해준다">먼저 mySQL에서 컬럼 추가해준다.</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-mysql" data-lang="mysql"><span style="color:#75715e">-- 인증코드와 verify 확인 코드 
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#f92672">`</span>project_01<span style="color:#f92672">`</span>.<span style="color:#f92672">`</span>memberinfo<span style="color:#f92672">`</span> 
+<span style="color:#66d9ef">ADD</span> <span style="color:#66d9ef">COLUMN</span> <span style="color:#f92672">`</span>code<span style="color:#f92672">`</span> <span style="color:#66d9ef">VARCHAR</span>(<span style="color:#ae81ff">25</span>) <span style="color:#66d9ef">NULL</span> AFTER <span style="color:#f92672">`</span>REGDATE<span style="color:#f92672">`</span>,
+<span style="color:#66d9ef">ADD</span> <span style="color:#66d9ef">COLUMN</span> <span style="color:#f92672">`</span>verify<span style="color:#f92672">`</span> <span style="color:#66d9ef">CHAR</span>(<span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">DEFAULT</span> <span style="color:#e6db74">&#39;N&#39;</span> AFTER <span style="color:#f92672">`</span>code<span style="color:#f92672">`</span>,
+<span style="color:#66d9ef">ADD</span> <span style="color:#66d9ef">COLUMN</span> <span style="color:#f92672">`</span>email<span style="color:#f92672">`</span> <span style="color:#66d9ef">VARCHAR</span>(<span style="color:#ae81ff">45</span>) <span style="color:#66d9ef">NULL</span> AFTER <span style="color:#f92672">`</span>verify<span style="color:#f92672">`</span>;
+</code></pre></div><p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h1 id="dao-변경">DAO 변경</h1>
+<p>DAO 변경</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">//verify
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">updateVerify</span><span style="color:#f92672">(</span>String id<span style="color:#f92672">,</span> String code<span style="color:#f92672">);</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">updateEmail</span><span style="color:#f92672">(</span>Member member<span style="color:#f92672">);</span>
+</code></pre></div><!-- raw HTML omitted -->
+<p><code>Mapper. xml</code> 변경</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;!-- result map 설정 추가 --&gt;</span>
+<span style="color:#f92672">&lt;resultMap</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;com.ny.mm.model.Member&#34;</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;MemberVO&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;result</span> <span style="color:#a6e22e">property=</span><span style="color:#e6db74">&#34;idx&#34;</span> <span style="color:#a6e22e">column=</span><span style="color:#e6db74">&#34;idx&#34;</span><span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;result</span> <span style="color:#a6e22e">property=</span><span style="color:#e6db74">&#34;id&#34;</span> <span style="color:#a6e22e">column=</span><span style="color:#e6db74">&#34;id&#34;</span><span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;result</span> <span style="color:#a6e22e">property=</span><span style="color:#e6db74">&#34;pw&#34;</span> <span style="color:#a6e22e">column=</span><span style="color:#e6db74">&#34;pw&#34;</span><span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;result</span> <span style="color:#a6e22e">property=</span><span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#a6e22e">column=</span><span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;result</span> <span style="color:#a6e22e">property=</span><span style="color:#e6db74">&#34;photo&#34;</span> <span style="color:#a6e22e">column=</span><span style="color:#e6db74">&#34;photo&#34;</span><span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;result</span> <span style="color:#a6e22e">property=</span><span style="color:#e6db74">&#34;regDate&#34;</span> <span style="color:#a6e22e">column=</span><span style="color:#e6db74">&#34;regdate&#34;</span><span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;result</span> <span style="color:#a6e22e">property=</span><span style="color:#e6db74">&#34;code&#34;</span> <span style="color:#a6e22e">column=</span><span style="color:#e6db74">&#34;code&#34;</span><span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;result</span> <span style="color:#a6e22e">property=</span><span style="color:#e6db74">&#34;verify&#34;</span> <span style="color:#a6e22e">column=</span><span style="color:#e6db74">&#34;verify&#34;</span><span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;result</span> <span style="color:#a6e22e">property=</span><span style="color:#e6db74">&#34;email&#34;</span> <span style="color:#a6e22e">column=</span><span style="color:#e6db74">&#34;email&#34;</span><span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;/resultMap&gt;</span>
+
+<span style="color:#75715e">&lt;!-- 회원가입시 code, email도 DB에 연결해주기 --&gt;</span>
+<span style="color:#f92672">&lt;insert</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;insertMember&#34;</span> <span style="color:#a6e22e">parameterType=</span><span style="color:#e6db74">&#34;com.ny.mm.model.Member&#34;</span><span style="color:#f92672">&gt;</span>
+    insert into project_01.memberinfo (ID, PW, NAME, PHOTO, CODE, EMAIL) 
+    values (#{id}, #{pw}, #{name}, #{photo}, #{code}, #{email})
+<span style="color:#f92672">&lt;/insert&gt;</span>
+	
+<span style="color:#75715e">&lt;!-- 인증 확인 처리 --&gt;</span>
+<span style="color:#f92672">&lt;update</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;updateVerify&#34;</span><span style="color:#f92672">&gt;</span>
+    update project_01.memberinfo 
+    set verify = &#39;Y&#39;
+    where id = #{param1} 
+    and code = #{param2}
+<span style="color:#f92672">&lt;/update&gt;</span>						
+</code></pre></div><p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h1 id="model에-변수-추가">model에 변수 추가</h1>
+<blockquote>
+<p>변경해야 할 java 파일 :</p>
+<p>-Member.java</p>
+<p>-JoinRestApiRequest.java //회원 가입 시 받는 객체</p>
+<p>-LoginInfo.java //로그인 할 때 생성하는 객체</p>
+<p>-VerifyMember.java : <strong>새로 생성</strong>하는 파일</p>
+</blockquote>
+<!-- raw HTML omitted -->
+<h3 id="memberjava">Member.java</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@JsonIgnore</span>
+<span style="color:#66d9ef">private</span> String code<span style="color:#f92672">;</span>
+<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">char</span> verify<span style="color:#f92672">;</span>
+<span style="color:#66d9ef">private</span> String email<span style="color:#f92672">;</span>
+
+<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Member</span><span style="color:#f92672">(</span>String id<span style="color:#f92672">,</span> String email<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">id</span> <span style="color:#f92672">=</span> id<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">email</span> <span style="color:#f92672">=</span> email<span style="color:#f92672">;</span>
+    randomCode<span style="color:#f92672">();</span>
+<span style="color:#f92672">}</span>
+
+	<span style="color:#75715e">//영대소문자+숫자 난수
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">randomCode</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+
+    StringBuffer temp <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> StringBuffer<span style="color:#f92672">();</span>
+
+    Random rnd <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Random<span style="color:#f92672">();</span>
+    String str <span style="color:#f92672">=</span> String<span style="color:#f92672">.</span><span style="color:#a6e22e">valueOf</span><span style="color:#f92672">(</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">char</span><span style="color:#f92672">)</span> <span style="color:#f92672">(</span>rnd<span style="color:#f92672">.</span><span style="color:#a6e22e">nextInt</span><span style="color:#f92672">(</span>26<span style="color:#f92672">)</span> <span style="color:#f92672">+</span> 97<span style="color:#f92672">)</span> <span style="color:#f92672">);</span>
+
+    <span style="color:#66d9ef">for</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> 10<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span> <span style="color:#75715e">//10자리 난수발생
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">int</span> index <span style="color:#f92672">=</span> rnd<span style="color:#f92672">.</span><span style="color:#a6e22e">nextInt</span><span style="color:#f92672">(</span>3<span style="color:#f92672">);</span> <span style="color:#75715e">//숫자 012 중에서 난수 발생시킴
+</span><span style="color:#75715e"></span>
+        <span style="color:#66d9ef">switch</span> <span style="color:#f92672">(</span>index<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">case</span> 0<span style="color:#f92672">:</span>
+            <span style="color:#75715e">//97~122 a-z의 아스키코드
+</span><span style="color:#75715e"></span>            temp<span style="color:#f92672">.</span><span style="color:#a6e22e">append</span><span style="color:#f92672">((</span><span style="color:#66d9ef">char</span><span style="color:#f92672">)(</span>rnd<span style="color:#f92672">.</span><span style="color:#a6e22e">nextInt</span><span style="color:#f92672">(</span>26<span style="color:#f92672">)</span> <span style="color:#f92672">+</span> 97<span style="color:#f92672">));</span> 
+            <span style="color:#66d9ef">break</span><span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">case</span> 1<span style="color:#f92672">:</span>
+
+            temp<span style="color:#f92672">.</span><span style="color:#a6e22e">append</span><span style="color:#f92672">((</span><span style="color:#66d9ef">char</span><span style="color:#f92672">)(</span>rnd<span style="color:#f92672">.</span><span style="color:#a6e22e">nextInt</span><span style="color:#f92672">(</span>26<span style="color:#f92672">)</span> <span style="color:#f92672">+</span> 65<span style="color:#f92672">));</span> 
+            <span style="color:#66d9ef">break</span><span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">case</span> 2<span style="color:#f92672">:</span>
+            temp<span style="color:#f92672">.</span><span style="color:#a6e22e">append</span><span style="color:#f92672">(</span>rnd<span style="color:#f92672">.</span><span style="color:#a6e22e">nextInt</span><span style="color:#f92672">(</span>10<span style="color:#f92672">));</span>
+            <span style="color:#66d9ef">break</span><span style="color:#f92672">;</span>
+
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+
+    System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;난수코드생성: &#34;</span> <span style="color:#f92672">+</span> temp<span style="color:#f92672">);</span>
+    setCode<span style="color:#f92672">(</span>temp<span style="color:#f92672">.</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">());</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>다른 파일들은 변수 추가하고 getter, setter 설정과 toString 오버라이딩 정도로 하면 됨.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h1 id="service-단">Service 단:</h1>
+<p>MailSenderService.java 파일 생성</p>
+<p>JoinService 파일 변경 <!-- raw HTML omitted --></p>
+<h3 id="mailsenderservicejava-생성">MailSenderService.java 생성</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Service</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;mailSenderService&#34;</span><span style="color:#f92672">)</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MailSenderService</span> <span style="color:#f92672">{</span>
+
+	<span style="color:#a6e22e">@Autowired</span>
+	<span style="color:#66d9ef">private</span> JavaMailSender sender<span style="color:#f92672">;</span>
+	
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">send</span><span style="color:#f92672">(</span>Member member<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		
+		<span style="color:#66d9ef">int</span> result <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+		MimeMessage message <span style="color:#f92672">=</span> sender<span style="color:#f92672">.</span><span style="color:#a6e22e">createMimeMessage</span><span style="color:#f92672">();</span>
+		
+		String name <span style="color:#f92672">=</span> member<span style="color:#f92672">.</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">()</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; 님&#34;</span><span style="color:#f92672">;</span>
+		String email <span style="color:#f92672">=</span> member<span style="color:#f92672">.</span><span style="color:#a6e22e">getEmail</span><span style="color:#f92672">();</span>
+		String id <span style="color:#f92672">=</span> member<span style="color:#f92672">.</span><span style="color:#a6e22e">getId</span><span style="color:#f92672">();</span>
+		String code <span style="color:#f92672">=</span> member<span style="color:#f92672">.</span><span style="color:#a6e22e">getCode</span><span style="color:#f92672">();</span>
+		
+		<span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+			message<span style="color:#f92672">.</span><span style="color:#a6e22e">setSubject</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;[info] Welcome TO Our WEBSITE&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;utf-8&#34;</span><span style="color:#f92672">);</span>
+			
+			String htmlMsg <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&lt;h1&gt;회원가입을 축하합니다~&lt;/h1&gt;&#34;</span><span style="color:#f92672">;</span>
+			htmlMsg <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;&lt;h1&gt;사랑합니다 &#34;</span><span style="color:#f92672">+</span>name<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;!&lt;/h1&gt;&#34;</span><span style="color:#f92672">;</span>
+			htmlMsg <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;&lt;a href = \&#34;http://localhost:8080/mm/join/verify?id=&#34;</span><span style="color:#f92672">+</span>id<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;&amp;code=&#34;</span><span style="color:#f92672">+</span>code<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;\&#34;&gt;인증하기 클릭&lt;/a&gt;&#34;</span><span style="color:#f92672">;</span>
+			
+			message<span style="color:#f92672">.</span><span style="color:#a6e22e">setText</span><span style="color:#f92672">(</span>htmlMsg<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;utf-8&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;html&#34;</span><span style="color:#f92672">);</span>
+			message<span style="color:#f92672">.</span><span style="color:#a6e22e">addRecipient</span><span style="color:#f92672">(</span>RecipientType<span style="color:#f92672">.</span><span style="color:#a6e22e">TO</span><span style="color:#f92672">,</span> 
+                                 <span style="color:#66d9ef">new</span> InternetAddress<span style="color:#f92672">(</span>email<span style="color:#f92672">,</span> name<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;utf-8&#34;</span><span style="color:#f92672">));</span>
+
+			sender<span style="color:#f92672">.</span><span style="color:#a6e22e">send</span><span style="color:#f92672">(</span>message<span style="color:#f92672">);</span>
+		
+		<span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>MessagingException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+			e<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
+		<span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>UnsupportedEncodingException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+			e<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
+		<span style="color:#f92672">}</span>
+		<span style="color:#66d9ef">return</span> 1<span style="color:#f92672">;</span>
+	<span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+
+</code></pre></div><p>id를 이메일 계정으로 받지 않고 이메일 계정을 따로 만들었으므로,  보낼 때 <code>id, name, email</code> 등등 여러가지를 <code>parameter</code>로 넘기는게 번거로워서 <code>Member</code>객체로 바로 넘겨버림. 인증을 할 때 <code>&lt;a&gt;</code>태그에 가입한 사람의 아이디와 코드를 보내준다.</p>
+<p>mail 보내는 설정을 자세하게 알고싶다면 <a href="https://mand2.github.io/spring/3">여기</a>로</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h3 id="-joinservice-변경">### JoinService 변경</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Autowired</span>
+<span style="color:#66d9ef">private</span> MailSenderService mailService<span style="color:#f92672">;</span>
+
+<span style="color:#75715e">//가입 서비스 rest + email 사용
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">joinMember</span><span style="color:#f92672">(</span> HttpServletRequest request<span style="color:#f92672">,</span>
+                        JoinRestApiRequest joinMember
+        <span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+
+<span style="color:#75715e">/*생략*/</span>
+		<span style="color:#75715e">//파일 올렸을 때
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>joinMember<span style="color:#f92672">.</span><span style="color:#a6e22e">getPhoto</span><span style="color:#f92672">()</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#75715e">//file을 서버의 지정 경로에 저장.
+</span><span style="color:#75715e"></span>            newFileName <span style="color:#f92672">=</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">nanoTime</span><span style="color:#f92672">()</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;_&#34;</span> <span style="color:#f92672">+</span> joinMember<span style="color:#f92672">.</span><span style="color:#a6e22e">getId</span><span style="color:#f92672">();</span>
+            joinMember<span style="color:#f92672">.</span><span style="color:#a6e22e">getPhoto</span><span style="color:#f92672">().</span><span style="color:#a6e22e">transferTo</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> File<span style="color:#f92672">(</span>dir<span style="color:#f92672">,</span> newFileName<span style="color:#f92672">));</span>
+
+            <span style="color:#75715e">//데이터베이스 저장을 하기위한 파일이름 세팅
+</span><span style="color:#75715e"></span>            memberinfo<span style="color:#f92672">.</span><span style="color:#a6e22e">setPhoto</span><span style="color:#f92672">(</span>newFileName<span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+        result <span style="color:#f92672">=</span> dao<span style="color:#f92672">.</span><span style="color:#a6e22e">insertMember</span><span style="color:#f92672">(</span>memberinfo<span style="color:#f92672">);</span>
+        mailService<span style="color:#f92672">.</span><span style="color:#a6e22e">send</span><span style="color:#f92672">(</span>memberinfo<span style="color:#f92672">);</span>
+<span style="color:#75715e">/*생략*/</span>
+
+    <span style="color:#66d9ef">return</span> result<span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>join을 하면서 바로 같이 <code>mailService</code>의 <code>send</code>메서드를 통해 인증메일 보냄.</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h1 id="controller-이메일-인증-처리해주기">Controller: 이메일 인증 처리해주기</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Controller</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">VerifyController</span> <span style="color:#f92672">{</span>
+	
+	<span style="color:#a6e22e">@Autowired</span>
+	<span style="color:#66d9ef">private</span> VerifyService verifyService<span style="color:#f92672">;</span>
+	
+	<span style="color:#a6e22e">@RequestMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/join/verify&#34;</span><span style="color:#f92672">)</span>
+	<span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">verify</span><span style="color:#f92672">(</span><span style="color:#a6e22e">@RequestParam</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;id&#34;</span><span style="color:#f92672">)</span>String id<span style="color:#f92672">,</span> 
+                         <span style="color:#a6e22e">@RequestParam</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;code&#34;</span><span style="color:#f92672">)</span>String code<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		<span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;join/verify_&#34;</span> <span style="color:#f92672">+</span> verifyService<span style="color:#f92672">.</span><span style="color:#a6e22e">verify</span><span style="color:#f92672">(</span>id<span style="color:#f92672">,</span> code<span style="color:#f92672">);</span>
+	<span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>인증처리가 제대로 되었다면 join/verify_Y로, 아니라면 join/verify_N 이라는 이름의 view로 들어가게 설정</p>
+<p>메일함을 열어본다면 이렇게 나온다</p>
+<p><img src="%7B%7B/images/Spring/4_1.jpg%7D%7D" alt="이메일"></p>
+<!-- raw HTML omitted -->
+<h3 id="결과화면-인증완료">결과화면: 인증완료</h3>
+<p><img src="%7B%7B/images/Spring/4_2.jpg%7D%7D" alt="인증완료"></p>
+<h3 id="결과화면-인증미완료">결과화면: 인증미완료</h3>
+<p><img src="%7B%7B/images/Spring/4_3.jpg%7D%7D" alt="인증미완료"></p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+
+
+<footer class="footline">
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/spring/user_register/3/" title="Spring 웹상에서 메일 보내보기"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/spring/user_register/5/" title="메이븐 빌드 및 배포란?" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1598367248"></script>
+    <script src="/js/perfect-scrollbar.min.js?1598367248"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1598367248"></script>
+    <script src="/js/jquery.sticky.js?1598367248"></script>
+    <script src="/js/featherlight.min.js?1598367248"></script>
+    <script src="/js/highlight.pack.js?1598367248"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1598367248"></script>
+    <script src="/js/learn.js?1598367248"></script>
+    <script src="/js/hugo-learn.js?1598367248"></script>
+
+    <link href="/mermaid/mermaid.css?1598367248" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1598367248"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+

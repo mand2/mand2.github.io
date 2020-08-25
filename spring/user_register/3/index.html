@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.74.3" />
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>Spring 웹상에서 메일 보내보기 :: GoRaNee&#39;s dev-log</title>
+
+    
+    <link href="/css/nucleus.css?1598367248" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1598367248" rel="stylesheet">
+    <link href="/css/hybrid.css?1598367248" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1598367248" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1598367248" rel="stylesheet">
+    <link href="/css/auto-complete.css?1598367248" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1598367248" rel="stylesheet">
+    <link href="/css/theme.css?1598367248" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1598367248" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1598367248"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/spring/user_register/3/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/">
+GoRaNee&#39;s dev-log
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1598367248"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1598367248"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1598367248"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/about/" title="About" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/about/">
+          <b>0. </b>About
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/about/portfolio/" title="Portfolio" class="dd-item ">
+        <a href="/about/portfolio/">
+        Portfolio
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/spring/" title="Spring" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/spring/">
+          <b>1. </b>Spring
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/spring/user_register/" title="회원가입" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/spring/user_register/">
+          회원가입
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/spring/user_register/1/" title="single-page 회원관리 폼 만들기" class="dd-item ">
+        <a href="/spring/user_register/1/">
+        single-page 회원관리 폼 만들기
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/spring/user_register/2/" title="Spring handler 인터셉터" class="dd-item ">
+        <a href="/spring/user_register/2/">
+        Spring handler 인터셉터
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/spring/user_register/3/" title="Spring 웹상에서 메일 보내보기" class="dd-item active">
+        <a href="/spring/user_register/3/">
+        Spring 웹상에서 메일 보내보기
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/spring/user_register/4/" title="회원가입 시 이메일 인증처리" class="dd-item ">
+        <a href="/spring/user_register/4/">
+        회원가입 시 이메일 인증처리
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/spring/user_register/5/" title="메이븐 빌드 및 배포란?" class="dd-item ">
+        <a href="/spring/user_register/5/">
+        메이븐 빌드 및 배포란?
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>GoRaNee's dev-log</a> > <a href='/spring/'>Spring</a> > <a href='/spring/user_register/'>회원가입</a> > Spring 웹상에서 메일 보내보기
+          
+        
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#목차">목차</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-pomxml에서-메일-설정">1. pom.xml에서 메일 설정</a></li>
+        <li><a href="#2-servlet-context-설정">2. servlet-context 설정</a></li>
+        <li><a href="#3-controller-작성">3. Controller 작성</a></li>
+        <li><a href="#왜-mailsender를-사용할-수-있을까">왜 MailSender를 사용할 수 있을까?</a></li>
+        <li><a href="#보낸사람을-설정해줬는데도-bean에서-설정한-메일주소로-보내지는-이유">보낸사람을 설정해줬는데도 bean에서 설정한 메일주소로 보내지는 이유</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#java-mail-api-가-뭐야">Java Mail API 가 뭐야?</a></li>
+        <li><a href="#1-html-형식으로-보내보기">1. HTML 형식으로 보내보기</a></li>
+        <li><a href="#2-파일-첨부해서-보내보기">2. 파일 첨부해서 보내보기</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Spring 웹상에서 메일 보내보기
+            </h1>
+          
+
+        
+
+
+<h1 id="웹상에서-메일-보내보기">웹상에서 메일 보내보기</h1>
+<h3 id="목차">목차</h3>
+<ol>
+<li>설정<br>
+-1 pom.xml<br>
+-2 servlet-context<br>
+-3 Controller<br>
+-4 왜 MailSender 사용가능할까?<br>
+-5 보낸사람이 다를 때?</li>
+<li>Java Mail API로 메일 작성하기<br>
+-1 Java Mail API 란?<br>
+-2 HTML 형식으로 보내기<br>
+-3 파일 첨부하기</li>
+</ol>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h1 id="설정부터-해보자">설정부터 해보자!</h1>
+<h3 id="1-pomxml에서-메일-설정">1. pom.xml에서 메일 설정</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;!-- 메일 설정 시작 --&gt;</span> 
+    <span style="color:#75715e">&lt;!-- javax.mail/mail --&gt;</span>
+    <span style="color:#f92672">&lt;dependency&gt;</span>
+        <span style="color:#f92672">&lt;groupId&gt;</span>javax.mail<span style="color:#f92672">&lt;/groupId&gt;</span>
+        <span style="color:#f92672">&lt;artifactId&gt;</span>mail<span style="color:#f92672">&lt;/artifactId&gt;</span>
+        <span style="color:#f92672">&lt;version&gt;</span>1.4.7<span style="color:#f92672">&lt;/version&gt;</span>
+    <span style="color:#f92672">&lt;/dependency&gt;</span>
+    <span style="color:#f92672">&lt;dependency&gt;</span>
+        <span style="color:#f92672">&lt;groupId&gt;</span>org.springframework<span style="color:#f92672">&lt;/groupId&gt;</span>
+        <span style="color:#f92672">&lt;artifactId&gt;</span>spring-context-support<span style="color:#f92672">&lt;/artifactId&gt;</span>
+        <span style="color:#f92672">&lt;version&gt;</span>${org.springframework-version}<span style="color:#f92672">&lt;/version&gt;</span>
+    <span style="color:#f92672">&lt;/dependency&gt;</span> 
+</code></pre></div><p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h3 id="2-servlet-context-설정">2. servlet-context 설정</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;beans:bean</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;mailSender&#34;</span>
+		<span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;org.springframework.mail.javamail.JavaMailSenderImpl&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;beans:property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;host&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;smtp.gmail.com&#34;</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;beans:property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;port&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;587&#34;</span> <span style="color:#f92672">/&gt;</span><span style="color:#75715e">&lt;!-- 465 or 25 --&gt;</span>
+    <span style="color:#f92672">&lt;beans:property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;username&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;본인 이메일 계정&#34;</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;beans:property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;password&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;해당 계정의 비밀번호&#34;</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;beans:property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;defaultEncoding&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;utf-8&#34;</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;beans:property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;javaMailProperties&#34;</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;beans:props&gt;</span>
+            <span style="color:#f92672">&lt;beans:prop</span> <span style="color:#a6e22e">key=</span><span style="color:#e6db74">&#34;mail.transport.protocol&#34;</span><span style="color:#f92672">&gt;</span>smtp<span style="color:#f92672">&lt;/beans:prop&gt;</span>
+            <span style="color:#f92672">&lt;beans:prop</span> <span style="color:#a6e22e">key=</span><span style="color:#e6db74">&#34;mail.smtp.auth&#34;</span><span style="color:#f92672">&gt;</span>true<span style="color:#f92672">&lt;/beans:prop&gt;</span>
+            <span style="color:#f92672">&lt;beans:prop</span> <span style="color:#a6e22e">key=</span><span style="color:#e6db74">&#34;mail.smtp.starttls.enable&#34;</span><span style="color:#f92672">&gt;</span>true<span style="color:#f92672">&lt;/beans:prop&gt;</span>
+            <span style="color:#f92672">&lt;beans:prop</span> <span style="color:#a6e22e">key=</span><span style="color:#e6db74">&#34;mail.debug&#34;</span><span style="color:#f92672">&gt;</span>true<span style="color:#f92672">&lt;/beans:prop&gt;</span>
+        <span style="color:#f92672">&lt;/beans:props&gt;</span>
+    <span style="color:#f92672">&lt;/beans:property&gt;</span>
+<span style="color:#f92672">&lt;/beans:bean&gt;</span>
+</code></pre></div><p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h3 id="3-controller-작성">3. Controller 작성</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Controller</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MailSendController</span> <span style="color:#f92672">{</span>
+	<span style="color:#a6e22e">@Autowired</span>
+	MailSender sender<span style="color:#f92672">;</span>
+	
+	<span style="color:#a6e22e">@ResponseBody</span>
+	<span style="color:#a6e22e">@RequestMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/mail/send&#34;</span><span style="color:#f92672">)</span>
+	<span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">sendMail</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+		
+		<span style="color:#75715e">//메일내용설정해주기
+</span><span style="color:#75715e"></span>		SimpleMailMessage message <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SimpleMailMessage<span style="color:#f92672">();</span>
+		message<span style="color:#f92672">.</span><span style="color:#a6e22e">setTo</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;보내는사람 이메일~~&#34;</span><span style="color:#f92672">);</span>
+		message<span style="color:#f92672">.</span><span style="color:#a6e22e">setSubject</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;hiiiiiiiiiiiii&#34;</span><span style="color:#f92672">);</span>
+		message<span style="color:#f92672">.</span><span style="color:#a6e22e">setText</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;my first email to send a letter&#34;</span><span style="color:#f92672">);</span>
+		message<span style="color:#f92672">.</span><span style="color:#a6e22e">setFrom</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;받는사람 이메일!!&#34;</span><span style="color:#f92672">);</span>
+		
+		sender<span style="color:#f92672">.</span><span style="color:#a6e22e">send</span><span style="color:#f92672">(</span>message<span style="color:#f92672">);</span>
+		
+		<span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;send OK&#34;</span><span style="color:#f92672">;</span>
+	<span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h3 id="왜-mailsender를-사용할-수-있을까">왜 MailSender를 사용할 수 있을까?</h3>
+<p>bean으로 설정된 <code>mailSender</code>는 <code>JavaMailSenderImpl</code> 클래스임.<br>
+이 클래스는 <code>JavaMailSender</code> 인터페이스의 구현체.  <code>JavaMailSender</code>를 살펴본다면,</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">JavaMailSender</span> <span style="color:#66d9ef">extends</span> MailSender <span style="color:#f92672">{}</span>
+</code></pre></div><p>즉, <code>MailSender</code>를 상속받기 때문에 <strong>다형성이 가능하므로</strong> 컨트롤러에서 <code>MailSender</code> 클래스를 주입받을 수 있게 된다.</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h3 id="보낸사람을-설정해줬는데도-bean에서-설정한-메일주소로-보내지는-이유">보낸사람을 설정해줬는데도 bean에서 설정한 메일주소로 보내지는 이유</h3>
+<p>google의 보안정책이 바뀌어서 설정된 계정으로만 보내짐.</p>
+<p>google 계정을 쉽게 만들 수 있기도 하고, 이를 악용하여 악성코드를 보낼 수도 있기 때문인게 아닌가 싶다.</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h1 id="그러면-이제-java-mail-api로-메일을-작성해보자">그러면 이제 Java Mail API로 메일을 작성해보자!</h1>
+<h3 id="java-mail-api-가-뭐야">Java Mail API 가 뭐야?</h3>
+<ul>
+<li>파일 첨부 또는 HTML로 구성되어 있는 경우 <code>MimeMessage</code> 이용</li>
+<li><code> JavaMailSender</code> 인터페이스는 <code>MimeMessage</code> 객체를 생성해주는 <code>createMimeMessage() </code>메서드를 제공</li>
+<li>이 메서드가 리턴한 <code>MimeMessage</code> 객체를 이용해서 메시지를 구성한 뒤 메일 발송</li>
+</ul>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h3 id="1-html-형식으로-보내보기">1. HTML 형식으로 보내보기</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Autowired</span>
+JavaMailSender jmsender<span style="color:#f92672">;</span>
+
+
+<span style="color:#a6e22e">@ResponseBody</span>
+<span style="color:#a6e22e">@RequestMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/mail/send/javamail&#34;</span><span style="color:#f92672">)</span>
+<span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">sendJavaMailSender</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+
+    MimeMessage message <span style="color:#f92672">=</span> jmsender<span style="color:#f92672">.</span><span style="color:#a6e22e">createMimeMessage</span><span style="color:#f92672">();</span>
+    <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+        <span style="color:#75715e">//메일제목설정
+</span><span style="color:#75715e"></span>        message<span style="color:#f92672">.</span><span style="color:#a6e22e">setSubject</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;[안내] 처음보내는 JAVAMAIL SENDER&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;utf-8&#34;</span><span style="color:#f92672">);</span>
+
+        <span style="color:#75715e">//html메일내용
+</span><span style="color:#75715e"></span>        String htmlStr <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&lt;h1 style=\&#34;color: lightblue;\&#34;&gt;hi everyone~~&lt;/h1&gt;&#34;</span>
+                <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;&lt;a href=\&#34;http://www.naver.com\&#34;&gt;naver&lt;/a&gt;&#34;</span><span style="color:#f92672">;</span>
+
+        <span style="color:#75715e">//내용설정 
+</span><span style="color:#75715e"></span>        message<span style="color:#f92672">.</span><span style="color:#a6e22e">setText</span><span style="color:#f92672">(</span>htmlStr<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;utf-8&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;html&#34;</span><span style="color:#f92672">);</span>
+
+        <span style="color:#75715e">//TO 설정 
+</span><span style="color:#75715e"></span>        message<span style="color:#f92672">.</span><span style="color:#a6e22e">addRecipient</span><span style="color:#f92672">(</span>RecipientType<span style="color:#f92672">.</span><span style="color:#a6e22e">TO</span><span style="color:#f92672">,</span> 
+                             <span style="color:#66d9ef">new</span> InternetAddress<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;받는사람메일계정&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;mand2 님&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;utf-8&#34;</span><span style="color:#f92672">));</span>
+
+        jmsender<span style="color:#f92672">.</span><span style="color:#a6e22e">send</span><span style="color:#f92672">(</span>message<span style="color:#f92672">);</span>
+    
+    <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>MessagingException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        e<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>UnsupportedEncodingException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        e<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;send OK&#34;</span><span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p><code>setText</code> 메서드: <code>subtype</code>을 설정해주지 않으면 그냥 다 전해짐,, 태그를 텍스트로 인식!</p>
+<p>To설정에서 <code>new InternetAddress</code>를 사용하는 이유?<br>
+받는사람의 메일계정이 아닌 사용자 이름으로 보내줄 수 있음</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h3 id="2-파일-첨부해서-보내보기">2. 파일 첨부해서 보내보기</h3>
+<p>스프링이 제공하는 <code>MimeMessageHelper</code> 클래스를 사용</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@RequestMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/mail/send/file&#34;</span><span style="color:#f92672">)</span>
+<span style="color:#a6e22e">@ResponseBody</span>
+<span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">sendFileAttach</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+
+    MimeMessage message <span style="color:#f92672">=</span> jmsender<span style="color:#f92672">.</span><span style="color:#a6e22e">createMimeMessage</span><span style="color:#f92672">();</span>
+
+    <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+        MimeMessageHelper helper <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> MimeMessageHelper<span style="color:#f92672">(</span>message<span style="color:#f92672">,</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;utf-8&#34;</span><span style="color:#f92672">);</span>
+
+        <span style="color:#75715e">//title
+</span><span style="color:#75715e"></span>        helper<span style="color:#f92672">.</span><span style="color:#a6e22e">setSubject</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;[info] file attatched&#34;</span><span style="color:#f92672">);</span>
+
+        <span style="color:#75715e">//content html
+</span><span style="color:#75715e"></span>        String htmlStr <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&lt;h1&gt;file has been attatched.&#34;</span>
+            		<span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;please download the file I send &lt;/h1&gt;&#34;</span><span style="color:#f92672">;</span>
+
+        <span style="color:#75715e">//content setting
+</span><span style="color:#75715e"></span>        helper<span style="color:#f92672">.</span><span style="color:#a6e22e">setText</span><span style="color:#f92672">(</span>htmlStr<span style="color:#f92672">,</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
+
+        <span style="color:#75715e">//to
+</span><span style="color:#75715e"></span>        helper<span style="color:#f92672">.</span><span style="color:#a6e22e">setTo</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> InternetAddress<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;받는사람 메일주소&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;만득이 님&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;utf-8&#34;</span><span style="color:#f92672">));</span>
+
+        <span style="color:#75715e">//create file instance + absolute root
+</span><span style="color:#75715e"></span>        DataSource dataSource <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileDataSource<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;절대경로루트&#34;</span><span style="color:#f92672">);</span>
+        helper<span style="color:#f92672">.</span><span style="color:#a6e22e">addAttachment</span><span style="color:#f92672">(</span>MimeUtility<span style="color:#f92672">.</span><span style="color:#a6e22e">encodeText</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;파일이름&#34;</span><span style="color:#f92672">,</span> 
+                                                    <span style="color:#e6db74">&#34;utf-8&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;B&#34;</span><span style="color:#f92672">),</span> dataSource<span style="color:#f92672">);</span>
+       	jmsender<span style="color:#f92672">.</span><span style="color:#a6e22e">send</span><span style="color:#f92672">(</span>message<span style="color:#f92672">);</span>
+
+    <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>MessagingException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        e<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>UnsupportedEncodingException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        e<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;send ok&#34;</span><span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>#1 <code>MimeMessage</code> 객체로 메세지생성</p>
+<p>#2 <code>MimeMessageHelper</code> 객체 생성 ( 메세지객체, 파일유무, charset)</p>
+<p>#3 메일 제목 설정</p>
+<p>#4 내용 html 설정</p>
+<p>#5  받는사람 설정</p>
+<p>#6 보낼 파일 설정</p>
+<p>​		파일 위치<br>
+​		파일이름 설정<br>
+​		- MimUtility 의 encodeText 메서드를 이용<br>
+​		- 파일이름(한글일 때) 설정</p>
+<p>#7 해당 메세지 객체를 send 해주기</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+
+
+<footer class="footline">
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/spring/user_register/2/" title="Spring handler 인터셉터"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/spring/user_register/4/" title="회원가입 시 이메일 인증처리" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1598367248"></script>
+    <script src="/js/perfect-scrollbar.min.js?1598367248"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1598367248"></script>
+    <script src="/js/jquery.sticky.js?1598367248"></script>
+    <script src="/js/featherlight.min.js?1598367248"></script>
+    <script src="/js/highlight.pack.js?1598367248"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1598367248"></script>
+    <script src="/js/learn.js?1598367248"></script>
+    <script src="/js/hugo-learn.js?1598367248"></script>
+
+    <link href="/mermaid/mermaid.css?1598367248" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1598367248"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+

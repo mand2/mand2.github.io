@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Portfolio :: GoRaNee&#39;s dev-log</title>
+    <title>Spring handler 인터셉터 :: GoRaNee&#39;s dev-log</title>
 
     
     <link href="/css/nucleus.css?1598367248" rel="stylesheet">
@@ -34,7 +34,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/about/portfolio/">
+  <body class="" data-url="/spring/user_register/2/">
     <nav id="sidebar" class="">
 
 
@@ -79,7 +79,7 @@ GoRaNee&#39;s dev-log
   
     
     <li data-nav-id="/about/" title="About" class="dd-item 
-        parent
+        
         
         
         ">
@@ -105,7 +105,7 @@ GoRaNee&#39;s dev-log
  
   
     
-      <li data-nav-id="/about/portfolio/" title="Portfolio" class="dd-item active">
+      <li data-nav-id="/about/portfolio/" title="Portfolio" class="dd-item ">
         <a href="/about/portfolio/">
         Portfolio
         
@@ -134,7 +134,7 @@ GoRaNee&#39;s dev-log
   
     
     <li data-nav-id="/spring/" title="Spring" class="dd-item 
-        
+        parent
         
         
         ">
@@ -163,7 +163,7 @@ GoRaNee&#39;s dev-log
   
     
     <li data-nav-id="/spring/user_register/" title="회원가입" class="dd-item 
-        
+        parent
         
         
         ">
@@ -210,7 +210,7 @@ GoRaNee&#39;s dev-log
  
   
     
-      <li data-nav-id="/spring/user_register/2/" title="Spring handler 인터셉터" class="dd-item ">
+      <li data-nav-id="/spring/user_register/2/" title="Spring handler 인터셉터" class="dd-item active">
         <a href="/spring/user_register/2/">
         Spring handler 인터셉터
         
@@ -350,7 +350,13 @@ GoRaNee&#39;s dev-log
             
           
           
-            <a href='/'>GoRaNee's dev-log</a> > <a href='/about/'>About</a> > Portfolio
+            
+            
+          
+          
+            <a href='/'>GoRaNee's dev-log</a> > <a href='/spring/'>Spring</a> > <a href='/spring/user_register/'>회원가입</a> > Spring handler 인터셉터
+          
+        
           
         
           
@@ -365,7 +371,16 @@ GoRaNee&#39;s dev-log
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#portfolio">portfolio</a></li>
+    <li>
+      <ul>
+        <li><a href="#핸들러-인터셉터">핸들러 인터셉터</a></li>
+        <li><a href="#handlerinterceptor-어떻게-쓸까">HandlerInterceptor 어떻게 쓸까?</a></li>
+        <li><a href="#1-servlet-contextxml-에-등록">1. servlet-context.xml 에 등록</a></li>
+        <li><a href="#2-interceptor-class-등록">2. interceptor class 등록</a></li>
+        <li><a href="#3-view-등록-jsp">3. VIEW 등록 (jsp)</a></li>
+        <li><a href="#4-결과페이지-확인">4. 결과페이지 확인</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </div>
@@ -383,15 +398,93 @@ GoRaNee&#39;s dev-log
           
             <h1>
               
-              Portfolio
+              Spring handler 인터셉터
             </h1>
           
 
         
 
 
-<h2 id="portfolio">portfolio</h2>
-<p>created in Oct, 2019.</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h1 id="필터와-인터셉터의-실행시기-차이">필터와 인터셉터의 실행시기 차이?</h1>
+<p>실행시점은 차이가 있음<br>
+인터셉터 중 핸들러인터셉터는 필터의 일종이긴 하나, 요청컨트롤러가 있고 확인이 된 후에 실행(컨트롤러 요청 전후) 됨</p>
+<h3 id="핸들러-인터셉터">핸들러 인터셉터</h3>
+<p>핸들러 인터셉터는 <code>DispatcherServlet</code> 이 <strong>컨트롤러를 호출하기 전과 후</strong>에 요청과 응답을 참조하거나 가공할 수 있는 일종의 <strong>필터</strong></p>
+<p>필터와 인터셉터의 자세한 차이를 알고싶다면 <a href="https://supawer0728.github.io/2018/04/04/spring-filter-interceptor/">여기로</a></p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h3 id="handlerinterceptor-어떻게-쓸까">HandlerInterceptor 어떻게 쓸까?</h3>
+<p>HandlerInterceptorAdaptor 클래스를 상속받은 뒤, 자신이 원하는 메서드만 오버라이딩하면 된다.</p>
+<pre><code>~'Adaptor'가 붙어있는 클래스
+인터페이스 구현체이나, 안에 내용이 없음. 내가 구현하고자 하는 메서드만 재구성하면 됨. 즉 구현하지 않아도 될 메서드들은 구현하지 않음! 번거로움이 줄어든다.
+</code></pre><ol>
+<li>
+<p>HandlerMapping에 인터셉터 설정 (servlet-context.xml 에 등록)</p>
+</li>
+<li>
+<p>Interceptor 실행순서?</p>
+<p><code>preHandle</code>: HandlerMapping에 등록된 순서대로 실행</p>
+<p><code>postHandle</code>: 등록 순서와 <strong>역순으로</strong> 실행</p>
+</li>
+<li>
+<p>view 렌더링 한 후: &lsquo;Interceptor 처리 완료 후&rsquo; 혹은 &lsquo;뷰 생성 후&rsquo;라 할 수 있으며, 등록된 순서의 반대로 <code>afterCompletion()</code> 실행</p>
+</li>
+</ol>
+<h3 id="1-servlet-contextxml-에-등록">1. servlet-context.xml 에 등록</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;!-- interceptor 등록 --&gt;</span>
+<span style="color:#f92672">&lt;interceptors&gt;</span>
+    <span style="color:#f92672">&lt;interceptor&gt;</span>
+        <span style="color:#f92672">&lt;mapping</span> <span style="color:#a6e22e">path=</span><span style="color:#e6db74">&#34;/member/mypage/**&#34;</span><span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;exclude-mapping</span> <span style="color:#a6e22e">path=</span><span style="color:#e6db74">&#34;/member/mypage/help&#34;</span><span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;beans:bean</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;com.ny.mm.interceptor.AuthCheckInterceptor&#34;</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;/interceptor&gt;</span>
+<span style="color:#f92672">&lt;/interceptors&gt;</span>
+</code></pre></div><p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h3 id="2-interceptor-class-등록">2. interceptor class 등록</h3>
+<blockquote>
+<p>목표:<br>
+세션에 loginInfo 속성이 존재하면 return true 해주기</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AuthCheckInterceptor</span> <span style="color:#66d9ef">extends</span> HandlerInterceptorAdapter <span style="color:#f92672">{</span>
+    <span style="color:#a6e22e">@Override</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">preHandle</span><span style="color:#f92672">(</span>HttpServletRequest request<span style="color:#f92672">,</span> HttpServletResponse response<span style="color:#f92672">,</span> Object handler<span style="color:#f92672">)</span>
+        <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
+
+    
+<span style="color:#75715e">//		1. 현재 요청에서 세션객체 받기
+</span><span style="color:#75715e"></span>        HttpSession session <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span><span style="color:#a6e22e">getSession</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
+
+<span style="color:#75715e">//		2. loginInfo가 저장되어있는지,,
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>session <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">&amp;&amp;</span> session<span style="color:#f92672">.</span><span style="color:#a6e22e">getAttribute</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;loginInfo&#34;</span><span style="color:#f92672">)</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+
+        <span style="color:#75715e">//context 경로 지정해줘야한다. 
+</span><span style="color:#75715e"></span>        response<span style="color:#f92672">.</span><span style="color:#a6e22e">sendRedirect</span><span style="color:#f92672">(</span>request<span style="color:#f92672">.</span><span style="color:#a6e22e">getContextPath</span><span style="color:#f92672">()</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;/login/form&#34;</span><span style="color:#f92672">);</span>
+
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
+	<span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h3 id="3-view-등록-jsp">3. VIEW 등록 (jsp)</h3>
+<pre><code class="language-jsp" data-lang="jsp">&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;
+    pageEncoding=&quot;UTF-8&quot;%&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;title&gt;Insert title here&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;삐용삐용!!!!!!!!!!!! null pointer exception 발생!!!!!!!!!!!!&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h3 id="4-결과페이지-확인">4. 결과페이지 확인</h3>
+<p>![결과페이지]({{ /images/Spring/2_1.jpg }})</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 
 
 <footer class="footline">
@@ -429,57 +522,8 @@ GoRaNee&#39;s dev-log
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                         
                         
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -505,10 +549,46 @@ GoRaNee&#39;s dev-log
             
         
                     
+            
+        
+                    
                         
             
             
                 
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -525,6 +605,26 @@ GoRaNee&#39;s dev-log
             
             
                 
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -584,10 +684,10 @@ GoRaNee&#39;s dev-log
 	 
 	 
 		
-			<a class="nav nav-prev" href="/about/" title="About"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/spring/user_register/1/" title="single-page 회원관리 폼 만들기"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/spring/" title="Spring" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/spring/user_register/3/" title="Spring 웹상에서 메일 보내보기" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
