@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Others on GoRaNee&#39;s dev-log</title>
+    <link>/tags/others/</link>
+    <description>Recent content in Others on GoRaNee&#39;s dev-log</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Tue, 05 Nov 2019 18:10:40 +0900</lastBuildDate>
+    
+	<atom:link href="/tags/others/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>면접질문 정리</title>
+      <link>/others/interviews/</link>
+      <pubDate>Tue, 05 Nov 2019 18:10:40 +0900</pubDate>
+      
+      <guid>/others/interviews/</guid>
+      <description>신입 개발자로서 면접을 보며 받았던 면접질문들을 기억이 나는 대로 복기하여 써보려 한다. 일단 기억력이 좋지 않아서 정확한 질문은 기억이 나지 않지만, 이런 종류 or 느낌의 면접 질문을 받았구나~ 라고 보면 좋을 것 같다. 편안하게 커피 한 잔 하며 보시길 추천! ☕
+🐸 기본 인성 면접(비전공자 기준) 일단 본인이 비전공자이며, 직장경험이 없잖아 있는(없다고 하기도 그렇고 있다고 하기도 뭐한 수준) 것을 먼저 밝히는 바이다. 모든 곳에서 공통적으로 받은 질문은
+ 왜 이 길을 선택했나요?</description>
+    </item>
+    
+    <item>
+      <title>[책] 오브젝트 (1)</title>
+      <link>/others/books/objects_1/</link>
+      <pubDate>Thu, 24 Oct 2019 22:10:41 +0900</pubDate>
+      
+      <guid>/others/books/objects_1/</guid>
+      <description>객체지향를 정확하게 구현하고자 오브젝트 라는 책을 구입하였다. 구입하게 된 계기는 우아한형제들 기술블로그에서 신입 개발자의 적응기를 보았다. 자신의 선배가 추천한 책이라고 하였고, 실제로도 많은 도움을 받았다는 후기를 봤다. 웹서핑을 하며 돌아다니다 오브젝트 책에 관한 후기도 몇 개 보기도 하였고 하여 바로 구입!!
+🐸 나를 괴롭히는 객체지향 객체지향, 학원에서 수강을 할 때 가장 재미있었던 개념이었다. 객체가 상태(field)와 행동(method)을 갖고 있다! 얼마나 간단한가. 숙제로 나온 구슬치기게임(가위바위보와 같은..)을 자바로 쉽게 구현해보기도 하였고 수업시간 동안 어렵다라는 느낌을 받은 적이 없었다.</description>
+    </item>
+    
+  </channel>
+</rss>

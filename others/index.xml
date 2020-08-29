@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Others on GoRaNee&#39;s dev-log</title>
+    <link>/others/</link>
+    <description>Recent content in Others on GoRaNee&#39;s dev-log</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Sat, 29 Aug 2020 21:20:01 +0900</lastBuildDate>
+    
+	<atom:link href="/others/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>면접질문 정리</title>
+      <link>/others/interviews/</link>
+      <pubDate>Tue, 05 Nov 2019 18:10:40 +0900</pubDate>
+      
+      <guid>/others/interviews/</guid>
+      <description>신입 개발자로서 면접을 보며 받았던 면접질문들을 기억이 나는 대로 복기하여 써보려 한다. 일단 기억력이 좋지 않아서 정확한 질문은 기억이 나지 않지만, 이런 종류 or 느낌의 면접 질문을 받았구나~ 라고 보면 좋을 것 같다. 편안하게 커피 한 잔 하며 보시길 추천! ☕
+🐸 기본 인성 면접(비전공자 기준) 일단 본인이 비전공자이며, 직장경험이 없잖아 있는(없다고 하기도 그렇고 있다고 하기도 뭐한 수준) 것을 먼저 밝히는 바이다. 모든 곳에서 공통적으로 받은 질문은
+ 왜 이 길을 선택했나요?</description>
+    </item>
+    
+  </channel>
+</rss>

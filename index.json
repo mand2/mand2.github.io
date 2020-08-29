@@ -14,6 +14,34 @@
 	"content": "Chapter 1 Spring \rSpring Boot\r\r\r\rspring.jpa.open-in-view 로그 오류 해결하기\r\r\rquerydsl 설정하기\r\r\rmaven 빌드 오류\r\r\r@SpringBootApplication\r\r\r\r회원가입\r\r\r\rsingle-page 회원관리 폼 만들기\r\r\rSpring handler 인터셉터\r\r\rSpring 웹상에서 메일 보내보기\r\r\r회원가입 시 이메일 인증처리\r\r\r메이븐 빌드 및 배포란?\r\r\r\r"
 },
 {
+	"uri": "/python/",
+	"title": "Python",
+	"tags": [],
+	"description": "",
+	"content": "Chapter 3 Python \rgetter setter 설정\r\r\r\r\r윈도우에서 Ubuntu로 pycharm 설치할 수 있을까\r\r\r\r\r"
+},
+{
+	"uri": "/node.js/",
+	"title": "Node.js",
+	"tags": [],
+	"description": "",
+	"content": "Chapter 4 Node.js \rpackage-lock.json 이란?\r\r\r\r\rformidable 설치 오류 해결하기\r\r\r\r\raws EC2로 node.js 배포하기\r\r\r\r\r"
+},
+{
+	"uri": "/react/",
+	"title": "React",
+	"tags": [],
+	"description": "",
+	"content": "Chapter 5 React \r데이터 테이블로 정렬하기\r\r\r\r\r테이블을 엑셀로 다운로드\r\r\r\r\rjavascript의 innerHTML과 같은 기능은?\r\r\r\r\r"
+},
+{
+	"uri": "/others/",
+	"title": "Others",
+	"tags": [],
+	"description": "",
+	"content": "Chapter 99 Others\u0026hellip; \rBooks\r\r\r\r[책] 오브젝트 (1)\r\r\r\r면접질문 정리\r\r\r\r\r"
+},
+{
 	"uri": "/python/1/",
 	"title": "getter setter 설정",
 	"tags": ["Python", "TIL"],
@@ -23,7 +51,7 @@
 {
 	"uri": "/react/1/",
 	"title": "데이터 테이블로 정렬하기",
-	"tags": ["React", "TIL"],
+	"tags": ["React", "Table", "Sort", "TIL"],
 	"description": "",
 	"content": "react table 사용하기 목적 원하는 list를 게시판 형식으로 가져온 후, 모든 컬럼을 sorting 하기 위함. 찾아보니 react-bootstrap-table-next 라는 걸 찾음.\n설치과정  react-create-app 사용(git push 후 babel 설정 modify + 그 외 기능들 추가) yarn add react-bootstrap-table-next 명령어로 react-bootstrap-table 설치   public/index.html 파일에 bootstrap CSS 추가해야 함! 이쁘게 보고싶다면 설치!   component에서 css 추가  import \u0026#39;react-bootstrap-table-next/dist/react-bootstrap-table2.min.css\u0026#39;; 결론은 회사에선 쓸 수 없음 ㅠ_ㅠ 기존 css 랑 충돌될 것 같음 ,,\n해결 ! index.html에 부트스트랩css 추가 안해도 됨. 테이블 형식으로 나오긴 하는데, 관련 css는 따로 작성해서 import 처리하면 된다 ㅎ\n출처 react-bootstrap-table2 doc LIVE DEMO 사이트\nApp.js import React, {Component} from \u0026#39;react\u0026#39;; import Table from \u0026#39;./components/table1\u0026#39;; class App extends Component { render() { return ( \u0026lt;div\u0026gt; \u0026lt;Table /\u0026gt; \u0026lt;/div\u0026gt; ); } } export default App; table1.js import React, { Component } from \u0026#39;react\u0026#39;; import Table2 from \u0026#34;./table2\u0026#34;; class Table extends Component{ render(){ return( \u0026lt;div\u0026gt; \u0026lt;Table2 /\u0026gt; \u0026lt;/div\u0026gt; ); } } export default Table; table2.js import React, { Component } from \u0026#39;react\u0026#39;; import \u0026#39;react-bootstrap-table-next/dist/react-bootstrap-table2.min.css\u0026#39;; import BootstrapTable from \u0026#39;react-bootstrap-table-next\u0026#39;; import {inject, observer} from \u0026#34;mobx-react\u0026#34;; class Table2 extends Component{ render(){ const products = [ { id: 0, name: \u0026#39;good\u0026#39;, price: 1000 }, { id: 1, name: \u0026#39;soso\u0026#39;, price: 1500 }, { id: 2, name: \u0026#39;bad\u0026#39;, price: 500 }, { id: 3, name: \u0026#39;good3\u0026#39;, price: 41000 }, { id: 4, name: \u0026#39;soso4\u0026#39;, price: 800 } ]; const columns = [ { dataField: \u0026#39;id\u0026#39;, text: \u0026#39;Product ID\u0026#39;, sort: true },{ dataField: \u0026#39;name\u0026#39;, text: \u0026#39;Product Name\u0026#39;, sort: true },{ dataField: \u0026#39;price\u0026#39;, text: \u0026#39;Product Price\u0026#39;, sort: true } ]; const defaultSorted = [{ dataField: \u0026#39;name\u0026#39;, order: \u0026#39;desc\u0026#39; }]; return( \u0026lt;div\u0026gt; \u0026lt;BootstrapTable keyField=\u0026#39;id\u0026#39; data={ products } columns={ columns } defaultSorted={ defaultSorted } striped hover /\u0026gt; \u0026lt;/div\u0026gt; ); } } export default Table2; 기본적으로 가져올 때, name을 기준으로 desc형태로 가져옴. 각 컬럼을 누를 떄마다 desc/asc 형태로 된다.\n\u0026lt;BootstrapTable /\u0026gt; 의 필수 요소\n keyField data columns  손쉽게 정렬을 완성할 수 있다!\n"
 },
@@ -49,13 +77,6 @@
 	"content": "  single page : CRUD(가입+수정+삭제+리스트 보여주기)를 Single page 처리 REST API 이용   개발순서 (MVC 2 패턴으로 함)\n DAO설정\nController\nService\nView\n 참고사항\n REST API 연습용입니다.\n기존에 사용하던 코드를 재활용하였으므로, 변수명의 차이가 있을 수 있습니다. 회원정보 수정에서의 parametertype 문제\nMap으로 설정해야 하나,\n빠르게 제작하기 위하여 model(DTO)인 EditMember를 parameter로 설정함. 회원가입시 not null 조건인 ID, PW, NAME만 기입하도록 하였습니다.  결과화면\n회원가입화면\n회원수정화면\n DAO 설정 //인터페이스 작성 public interface MemberDao { public Member selectById(String id) ; //회원한명의 정보가져오기(login + update ) \tpublic int deleteMember(int idx) ; //삭제 \t/* Rest Api를 위한 메서드 */ public List\u0026lt;Member\u0026gt; selectAllList(); public int insertMem(Member member); public int updateMem(Member member); //업데이트 수정 } \u0026lt;!-- mapper.xml 작성 --\u0026gt; \u0026lt;mapper namespace=\u0026#34;com.ny.mm.dao.MemberDao\u0026#34;\u0026gt; \u0026lt;!-- SQL의 컬럼명과 객체의 변수명(field)이 다르므로 resultMap을 통해 호환가능하도록 만듬 --\u0026gt; \u0026lt;resultMap type=\u0026#34;com.ny.mm.model.member.Member\u0026#34; id=\u0026#34;MemberVO\u0026#34;\u0026gt; \u0026lt;result property=\u0026#34;idx\u0026#34; column=\u0026#34;idx_m\u0026#34;/\u0026gt; \u0026lt;result property=\u0026#34;id\u0026#34; column=\u0026#34;id\u0026#34;/\u0026gt; \u0026lt;result property=\u0026#34;pw\u0026#34; column=\u0026#34;pw\u0026#34;/\u0026gt; \u0026lt;result property=\u0026#34;name\u0026#34; column=\u0026#34;name\u0026#34;/\u0026gt; \u0026lt;result property=\u0026#34;photo\u0026#34; column=\u0026#34;photo\u0026#34;/\u0026gt; \u0026lt;result property=\u0026#34;regDate\u0026#34; column=\u0026#34;regdate\u0026#34;/\u0026gt; \u0026lt;result property=\u0026#34;phone\u0026#34; column=\u0026#34;phone\u0026#34;/\u0026gt; \u0026lt;/resultMap\u0026gt; \u0026lt;!-- 회원한명의정보가져오기 --\u0026gt; \u0026lt;select id=\u0026#34;selectById\u0026#34; resultMap=\u0026#34;MemberVO\u0026#34; \u0026gt; select * from moonchild.member where id = #{id} \u0026lt;/select\u0026gt; \u0026lt;!-- 회원삭제 --\u0026gt; \u0026lt;delete id=\u0026#34;deleteMember\u0026#34;\u0026gt; delete from moonchild.member where idx_m = #{idx} \u0026lt;/delete\u0026gt; \u0026lt;!-- 회원리스트가져오기 --\u0026gt; \u0026lt;select id=\u0026#34;selectAllList\u0026#34; resultMap=\u0026#34;MemberVO\u0026#34;\u0026gt; select * from moonchild.member order by regdate desc \u0026lt;/select\u0026gt; \u0026lt;!-- 회원가입 --\u0026gt; \u0026lt;insert id=\u0026#34;insertMem\u0026#34; parameterType=\u0026#34;com.ny.mm.model.member.Member\u0026#34;\u0026gt; insert into moonchild.member (ID, PW, NAME) values (#{id}, #{pw}, #{name}) \u0026lt;/insert\u0026gt; \u0026lt;!-- 회원정보수정 --\u0026gt; \u0026lt;update id=\u0026#34;updateMem\u0026#34; parameterType=\u0026#34;com.ny.mm.model.member.EditMember\u0026#34;\u0026gt; update moonchild.member set name = #{name}, pw = #{pw} where idx_m = #{idx} \u0026lt;/update\u0026gt; \u0026lt;/mapper\u0026gt; Controller 설정  pw는 JsonIgnore로 설정되어 있음. /rest-api/members 공통 URI 설정 CRUD 설명  /rest-api/members method: GET 리스트 보여주기 /rest-api/members method: POST 회원가입 /rest-api/members/{id} method: GET 해당 아이디의 회원정보 보여주기(수정을 위함) /rest-api/members method: PUT 회원정보 수정 /rest-api/members/{idx} method: DELETE 회원 삭제(탈퇴)    회원수정(service, controller, DTO 등) 설명 회원수정이 가장 까다로웠으므로, REST API Controller 중 회원수정과 관련된 것(service와 controller, model 등)만 올립니다.\nservice @Autowired private SqlSessionTemplate template; private MemberDao dao; //수정할 멤버 가져오기 \tpublic Member select(String id) { dao = template.getMapper(MemberDao.class); Member member = dao.selectById(id); return member; } //해당멤버의 정보 변경 \tpublic int editRest(EditMember edit) { dao = template.getMapper(MemberDao.class); int result = 0; Member member = edit.toMemberRest(); result = dao.updateMem(member); return result; } controller @Controller @RequestMapping(\u0026#34;/rest-api/members\u0026#34;) public class RestApiController { @Autowired private memEditService editService; //수정:회원정보가져오기 \t@CrossOrigin @ResponseBody @RequestMapping(value = \u0026#34;/{id}\u0026#34;, method = RequestMethod.GET) public Member geteditMember(@PathVariable(\u0026#34;id\u0026#34;) String id) { return editService.select(id); } //회원수정 \t@CrossOrigin @ResponseBody @RequestMapping(method = RequestMethod.PUT) public int editMember(@RequestBody EditMember edit) { return editService.editRest(edit); } }    @Contoroller RestApiController 를 controller로 인식하도록 어노테이션 설정.     @CrossOrigin client와 server를 분리할 때 발생할 수 있는 크로스도메인 이슈를 해결하기 위한 설정. 해당 이슈는 서버측에서 해결하는 게 보편적이라 함. client가 요청하는 위치가 달라도 해당 메서드를 사용할 수 있도록 한다.    RequestParam 과 PathVariable\n RequestParam 은 naver.com/search?page=12와 같이 URL 자체에 전달된 parameter를 호출\nPathVariable 은 naver.com/search/index/1REST API에서 값을 호출할 때 사용\n RequestMapping의 value = \u0026ldquo;{ 템플릿변수 }\u0026ldquo;의 템플릿 변수와 @PathVariable 어노테이션에서 불러오는 템플릿 변수는 동일한 이름(변수명)을 갖는다. 해당 템플릿변수를 불러와 변수로 사용가능!     view //수정버튼 클릭시 실행(수정할 멤버의 정보 가져오기) function edit(id) { if(confirm(\u0026#39;정말 수정할거야?????리얼리????\u0026#39;)){ $.ajax({ url:\u0026#39;http://localhost:8080/mc/rest-api/members/\u0026#39;+id, type: \u0026#39;GET\u0026#39;, error: function() { alert(\u0026#39;error.....\u0026#39;); list(); }, success: function(data) { //alert(data.idx);  $(\u0026#39;#join\u0026#39;).css(\u0026#39;display\u0026#39;,\u0026#39;none\u0026#39;); //가입폼 안보이게 하고  $(\u0026#39;#edit\u0026#39;).css(\u0026#39;display\u0026#39;,\u0026#39;block\u0026#39;); //수정폼 보이게  var output = \u0026#39;\u0026#39;; output += \u0026#39;아이디는안바꿔줘\u0026#39; output += \u0026#39;\u0026lt;input type=\u0026#34;text\u0026#34; value=\u0026#34;\u0026#39;+data.id +\u0026#39;\u0026#34; disabled\u0026gt;\u0026lt;br\u0026gt;\\n\u0026#39;; output += \u0026#39;패스워드는?????? \u0026#39;; output += \u0026#39;\u0026lt;input type=\u0026#34;password\u0026#34; id=\u0026#34;pw2\u0026#34; name=\u0026#34;pw\u0026#34;\u0026gt; \u0026lt;br\u0026gt;\\n\u0026#39;; output += \u0026#39;이름 좀 알려줄래?\u0026#39;; output += \u0026#39;\u0026lt;input type=\u0026#34;text\u0026#34; id=\u0026#34;name2\u0026#34; name=\u0026#34;name\u0026#34;\u0026gt; \u0026lt;br\u0026gt;\\n\u0026#39;; output += \u0026#39;\u0026lt;span class=\u0026#34;submit\u0026#34; onclick=\u0026#34;getEdit(\u0026#39;+data.idx+\u0026#39;)\u0026#34;\u0026gt;\u0026#39;; output += \u0026#39;수정할래요오오오옹!\u0026lt;/span\u0026gt;\u0026#39;; $(\u0026#39;#editForm\u0026#39;).html(output); } }); } } //수정할래요오오오옹! 이라는 버튼을 클릭 할 때 (== 수정 update 전송 버튼) function getEdit(idx) { $.ajax({ url:\u0026#39;http://localhost:8080/mc/rest-api/members\u0026#39;, type: \u0026#39;PUT\u0026#39;, data: JSON.stringify({ idx: idx, pw : $(\u0026#39;#pw2\u0026#39;).val(), name : $(\u0026#39;#name2\u0026#39;).val() }), contentType: \u0026#39;application/json;charset=utf-8\u0026#39;, dataType: \u0026#39;json\u0026#39;, success: function(data) { if(data \u0026gt; 0 ){ alert(\u0026#39;수정되었습니다\u0026#39;); } else { alert(\u0026#39;실-패\u0026#39;); } }, error: function(){ alert(\u0026#39;error ㅠㅠㅠㅠ\u0026#39;); }, complete: function() { list(); $(\u0026#39;#edit\u0026#39;).css(\u0026#39;display\u0026#39;,\u0026#39;none\u0026#39;); $(\u0026#39;#join\u0026#39;).css(\u0026#39;display\u0026#39;,\u0026#39;block\u0026#39;); } }); } TIL   complete  를 쓰면 성공/에러에 상관없이 실행함.\n가독성이 좋아짐!\n순서는 success - complete 혹은 error - complete 순. edit 에서는 controller에서 Member 타입으로 받아오기 때문에 data.id 와 같이 get메서드를 호출 할 수 있다. getEdit 은 result값을 int 타입으로 받도록 만들어 success 에서 바로 체크하도록 함.   추가: EditMember public class EditMember { /** * 참고로 REST-API에서만 사용하는 변수/메서드만 편집하여 올림 * getter setter 설정하였음. */ private int idx; private String id; private String pw; private String name; public Member toMemberRest() { Member member = new Member(); member.setIdx(idx); member.setPw(pw); member.setName(name); return member; } } "
 },
 {
-	"uri": "/python/",
-	"title": "Python",
-	"tags": [],
-	"description": "",
-	"content": "Chapter 3 Python \rgetter setter 설정\r\r\r\r\r윈도우에서 Ubuntu로 pycharm 설치할 수 있을까\r\r\r\r\r"
-},
-{
 	"uri": "/about/portfolio/",
 	"title": "Portfolio",
 	"tags": [],
@@ -72,7 +93,7 @@
 {
 	"uri": "/react/2/",
 	"title": "테이블을 엑셀로 다운로드",
-	"tags": ["React", "TIL"],
+	"tags": ["React", "Table", "Excel", "TIL"],
 	"description": "",
 	"content": "excel download 만들기 목적 전체 리스트를 테이블로 출력한 후, 화면에 보여지는 부분을 엑셀 형식으로 다운로드 가능하게 만들어 보자. 다운로드 창이 나오고, 다운로드 시 해당 파일명을 자동으로 설정까지 해주기!\nSpec  react.js ^16.8.6 mobx ^5.13.0  사실 구글에 검색하면 잘 나온다..(검색어 : Export html table data to Excel using JavaScript) 나는 그 글을 긁어왔을 뿐ㅎㅎ,, 다른 방법으로도 가능한데, 지금 내가 구현한 부분은 서버에 과부하를 생성하지 않도록 현재 화면에서 보여지는 것만 엑셀로 출력하도록 만든것임. 현재 화면 뿐만 아니라 전체 리스트를 다 갖고오고 싶다면 다른 방법을 써야 한다.\n01 Store.js @action download() { const table = document.getElementsByTagName(\u0026#39;table\u0026#39;)[0]; let tab_text = \u0026#39;\u0026lt;html xmlns:x=\u0026#34;urn:schemas-microsoft-com:office:excel\u0026#34;\u0026gt;\u0026#39;; tab_text += \u0026#39;\u0026lt;head\u0026gt;\u0026lt;meta http-equiv=\u0026#34;content-type\u0026#34; content=\u0026#34;application/vnd.ms-excel; charset=UTF-8\u0026#34;\u0026gt;\u0026#39;; tab_text += \u0026#39;\u0026lt;xml\u0026gt;\u0026lt;x:ExcelWorkbook\u0026gt;\u0026lt;x:ExcelWorksheets\u0026gt;\u0026lt;x:ExcelWorksheet\u0026gt;\u0026#39; tab_text += \u0026#39;\u0026lt;x:Name\u0026gt;Test Sheet\u0026lt;/x:Name\u0026gt;\u0026#39;; tab_text += \u0026#39;\u0026lt;x:WorksheetOptions\u0026gt;\u0026lt;x:Panes\u0026gt;\u0026lt;/x:Panes\u0026gt;\u0026lt;/x:WorksheetOptions\u0026gt;\u0026lt;/x:ExcelWorksheet\u0026gt;\u0026#39;; tab_text += \u0026#39;\u0026lt;/x:ExcelWorksheets\u0026gt;\u0026lt;/x:ExcelWorkbook\u0026gt;\u0026lt;/xml\u0026gt;\u0026lt;/head\u0026gt;\u0026lt;body\u0026gt;\u0026#39;; tab_text += \u0026#34;\u0026lt;table border=\u0026#39;1px\u0026#39;\u0026gt;\u0026#34;; let exportTable = table.cloneNode(true); tab_text += exportTable.outerHTML; tab_text += \u0026#39;\u0026lt;/table\u0026gt;\u0026lt;/body\u0026gt;\u0026lt;/html\u0026gt;\u0026#39;; let data_type = \u0026#39;data:application/vnd.ms-excel\u0026#39;; let ua = window.navigator.userAgent; let msie = ua.indexOf(\u0026#34;MSIE \u0026#34;); let fileName = this.period + \u0026#39;_Table\u0026#39; + \u0026#39;.xls\u0026#39;; // browser 처리  if (msie \u0026gt; 0 || !!navigator.userAgent.match(/Trident.*rv\\:11\\./)) { //ie 용  if (window.navigator.msSaveBlob) { let blob = new Blob([tab_text], { type: \u0026#34;application/csv;charset=utf-8;\u0026#34; }); navigator.msSaveBlob(blob, fileName); } } else { //그외  let blob2 = new Blob([tab_text], { type: \u0026#34;application/csv;charset=utf-8;\u0026#34; }); let filename = fileName; let elem = window.document.createElement(\u0026#39;a\u0026#39;); elem.href = window.URL.createObjectURL(blob2); elem.download = filename; document.body.appendChild(elem); elem.click(); document.body.removeChild(elem); } } 02 Component.js import React, {Component} from \u0026#39;react\u0026#39;; import {inject, observer} from \u0026#34;mobx-react\u0026#34;; @inject(stores =\u0026gt; ({ store: stores.Store; })) @observer class Table extends Component{ render(){ return( \u0026lt;div\u0026gt; \u0026lt;button\u0026gt; \u0026lt;div onClick={ ()=\u0026gt; store.download() }\u0026gt;엑셀다운로드\u0026lt;/div\u0026gt; \u0026lt;/button\u0026gt; \u0026lt;/div\u0026gt; ); } } export default Table; "
 },
@@ -96,13 +117,6 @@
 	"tags": [],
 	"description": "",
 	"content": "필터와 인터셉터의 실행시기 차이? 실행시점은 차이가 있음\n인터셉터 중 핸들러인터셉터는 필터의 일종이긴 하나, 요청컨트롤러가 있고 확인이 된 후에 실행(컨트롤러 요청 전후) 됨\n핸들러 인터셉터 핸들러 인터셉터는 DispatcherServlet 이 컨트롤러를 호출하기 전과 후에 요청과 응답을 참조하거나 가공할 수 있는 일종의 필터\n필터와 인터셉터의 자세한 차이를 알고싶다면 여기로\nHandlerInterceptor 어떻게 쓸까? HandlerInterceptorAdaptor 클래스를 상속받은 뒤, 자신이 원하는 메서드만 오버라이딩하면 된다.\n~'Adaptor'가 붙어있는 클래스\r인터페이스 구현체이나, 안에 내용이 없음. 내가 구현하고자 하는 메서드만 재구성하면 됨. 즉 구현하지 않아도 될 메서드들은 구현하지 않음! 번거로움이 줄어든다.\r  HandlerMapping에 인터셉터 설정 (servlet-context.xml 에 등록)\n  Interceptor 실행순서?\npreHandle: HandlerMapping에 등록된 순서대로 실행\npostHandle: 등록 순서와 역순으로 실행\n  view 렌더링 한 후: \u0026lsquo;Interceptor 처리 완료 후\u0026rsquo; 혹은 \u0026lsquo;뷰 생성 후\u0026rsquo;라 할 수 있으며, 등록된 순서의 반대로 afterCompletion() 실행\n  1. servlet-context.xml 에 등록 \u0026lt;!-- interceptor 등록 --\u0026gt; \u0026lt;interceptors\u0026gt; \u0026lt;interceptor\u0026gt; \u0026lt;mapping path=\u0026#34;/member/mypage/**\u0026#34;/\u0026gt; \u0026lt;exclude-mapping path=\u0026#34;/member/mypage/help\u0026#34;/\u0026gt; \u0026lt;beans:bean class=\u0026#34;com.ny.mm.interceptor.AuthCheckInterceptor\u0026#34; /\u0026gt; \u0026lt;/interceptor\u0026gt; \u0026lt;/interceptors\u0026gt; 2. interceptor class 등록  목표:\n세션에 loginInfo 속성이 존재하면 return true 해주기\n public class AuthCheckInterceptor extends HandlerInterceptorAdapter { @Override public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception { //\t1. 현재 요청에서 세션객체 받기  HttpSession session = request.getSession(false); //\t2. loginInfo가 저장되어있는지,,  if(session != null \u0026amp;\u0026amp; session.getAttribute(\u0026#34;loginInfo\u0026#34;) != null) { return true; } //context 경로 지정해줘야한다.  response.sendRedirect(request.getContextPath() + \u0026#34;/login/form\u0026#34;); return false; } } 3. VIEW 등록 (jsp) \u0026lt;%@ page language=\u0026quot;java\u0026quot; contentType=\u0026quot;text/html; charset=UTF-8\u0026quot;\rpageEncoding=\u0026quot;UTF-8\u0026quot;%\u0026gt;\r\u0026lt;!DOCTYPE html\u0026gt;\r\u0026lt;html\u0026gt;\r\u0026lt;head\u0026gt;\r\u0026lt;meta charset=\u0026quot;UTF-8\u0026quot;\u0026gt;\r\u0026lt;title\u0026gt;Insert title here\u0026lt;/title\u0026gt;\r\u0026lt;/head\u0026gt;\r\u0026lt;body\u0026gt;\r\u0026lt;h1\u0026gt;삐용삐용!!!!!!!!!!!! null pointer exception 발생!!!!!!!!!!!!\u0026lt;/h1\u0026gt;\r\u0026lt;/body\u0026gt;\r\u0026lt;/html\u0026gt;\r4. 결과페이지 확인 ![결과페이지]({{ /images/Spring/2_1.jpg }})\n"
-},
-{
-	"uri": "/node.js/",
-	"title": "Node.js",
-	"tags": [],
-	"description": "",
-	"content": "Chapter 4 Node.js \rpackage-lock.json 이란?\r\r\r\r\rformidable 설치 오류 해결하기\r\r\r\r\raws EC2로 node.js 배포하기\r\r\r\r\r"
 },
 {
 	"uri": "/react/3/",
@@ -133,13 +147,6 @@
 	"content": "웹상에서 메일 보내보기 목차  설정\n-1 pom.xml\n-2 servlet-context\n-3 Controller\n-4 왜 MailSender 사용가능할까?\n-5 보낸사람이 다를 때? Java Mail API로 메일 작성하기\n-1 Java Mail API 란?\n-2 HTML 형식으로 보내기\n-3 파일 첨부하기  설정부터 해보자! 1. pom.xml에서 메일 설정 \u0026lt;!-- 메일 설정 시작 --\u0026gt; \u0026lt;!-- javax.mail/mail --\u0026gt; \u0026lt;dependency\u0026gt; \u0026lt;groupId\u0026gt;javax.mail\u0026lt;/groupId\u0026gt; \u0026lt;artifactId\u0026gt;mail\u0026lt;/artifactId\u0026gt; \u0026lt;version\u0026gt;1.4.7\u0026lt;/version\u0026gt; \u0026lt;/dependency\u0026gt; \u0026lt;dependency\u0026gt; \u0026lt;groupId\u0026gt;org.springframework\u0026lt;/groupId\u0026gt; \u0026lt;artifactId\u0026gt;spring-context-support\u0026lt;/artifactId\u0026gt; \u0026lt;version\u0026gt;${org.springframework-version}\u0026lt;/version\u0026gt; \u0026lt;/dependency\u0026gt; 2. servlet-context 설정 \u0026lt;beans:bean id=\u0026#34;mailSender\u0026#34; class=\u0026#34;org.springframework.mail.javamail.JavaMailSenderImpl\u0026#34;\u0026gt; \u0026lt;beans:property name=\u0026#34;host\u0026#34; value=\u0026#34;smtp.gmail.com\u0026#34; /\u0026gt; \u0026lt;beans:property name=\u0026#34;port\u0026#34; value=\u0026#34;587\u0026#34; /\u0026gt;\u0026lt;!-- 465 or 25 --\u0026gt; \u0026lt;beans:property name=\u0026#34;username\u0026#34; value=\u0026#34;본인 이메일 계정\u0026#34; /\u0026gt; \u0026lt;beans:property name=\u0026#34;password\u0026#34; value=\u0026#34;해당 계정의 비밀번호\u0026#34; /\u0026gt; \u0026lt;beans:property name=\u0026#34;defaultEncoding\u0026#34; value=\u0026#34;utf-8\u0026#34; /\u0026gt; \u0026lt;beans:property name=\u0026#34;javaMailProperties\u0026#34;\u0026gt; \u0026lt;beans:props\u0026gt; \u0026lt;beans:prop key=\u0026#34;mail.transport.protocol\u0026#34;\u0026gt;smtp\u0026lt;/beans:prop\u0026gt; \u0026lt;beans:prop key=\u0026#34;mail.smtp.auth\u0026#34;\u0026gt;true\u0026lt;/beans:prop\u0026gt; \u0026lt;beans:prop key=\u0026#34;mail.smtp.starttls.enable\u0026#34;\u0026gt;true\u0026lt;/beans:prop\u0026gt; \u0026lt;beans:prop key=\u0026#34;mail.debug\u0026#34;\u0026gt;true\u0026lt;/beans:prop\u0026gt; \u0026lt;/beans:props\u0026gt; \u0026lt;/beans:property\u0026gt; \u0026lt;/beans:bean\u0026gt; 3. Controller 작성 @Controller public class MailSendController { @Autowired MailSender sender; @ResponseBody @RequestMapping(\u0026#34;/mail/send\u0026#34;) public String sendMail() { //메일내용설정해주기 \tSimpleMailMessage message = new SimpleMailMessage(); message.setTo(\u0026#34;보내는사람 이메일~~\u0026#34;); message.setSubject(\u0026#34;hiiiiiiiiiiiii\u0026#34;); message.setText(\u0026#34;my first email to send a letter\u0026#34;); message.setFrom(\u0026#34;받는사람 이메일!!\u0026#34;); sender.send(message); return \u0026#34;send OK\u0026#34;; } } 왜 MailSender를 사용할 수 있을까? bean으로 설정된 mailSender는 JavaMailSenderImpl 클래스임.\n이 클래스는 JavaMailSender 인터페이스의 구현체. JavaMailSender를 살펴본다면,\npublic interface JavaMailSender extends MailSender {} 즉, MailSender를 상속받기 때문에 다형성이 가능하므로 컨트롤러에서 MailSender 클래스를 주입받을 수 있게 된다.\n보낸사람을 설정해줬는데도 bean에서 설정한 메일주소로 보내지는 이유 google의 보안정책이 바뀌어서 설정된 계정으로만 보내짐.\ngoogle 계정을 쉽게 만들 수 있기도 하고, 이를 악용하여 악성코드를 보낼 수도 있기 때문인게 아닌가 싶다.\n그러면 이제 Java Mail API로 메일을 작성해보자! Java Mail API 가 뭐야?  파일 첨부 또는 HTML로 구성되어 있는 경우 MimeMessage 이용  JavaMailSender 인터페이스는 MimeMessage 객체를 생성해주는 createMimeMessage() 메서드를 제공 이 메서드가 리턴한 MimeMessage 객체를 이용해서 메시지를 구성한 뒤 메일 발송  1. HTML 형식으로 보내보기 @Autowired JavaMailSender jmsender; @ResponseBody @RequestMapping(\u0026#34;/mail/send/javamail\u0026#34;) public String sendJavaMailSender() { MimeMessage message = jmsender.createMimeMessage(); try { //메일제목설정  message.setSubject(\u0026#34;[안내] 처음보내는 JAVAMAIL SENDER\u0026#34;, \u0026#34;utf-8\u0026#34;); //html메일내용  String htmlStr = \u0026#34;\u0026lt;h1 style=\\\u0026#34;color: lightblue;\\\u0026#34;\u0026gt;hi everyone~~\u0026lt;/h1\u0026gt;\u0026#34; + \u0026#34;\u0026lt;a href=\\\u0026#34;http://www.naver.com\\\u0026#34;\u0026gt;naver\u0026lt;/a\u0026gt;\u0026#34;; //내용설정  message.setText(htmlStr, \u0026#34;utf-8\u0026#34;, \u0026#34;html\u0026#34;); //TO 설정  message.addRecipient(RecipientType.TO, new InternetAddress(\u0026#34;받는사람메일계정\u0026#34;, \u0026#34;mand2 님\u0026#34;, \u0026#34;utf-8\u0026#34;)); jmsender.send(message); } catch (MessagingException e) { e.printStackTrace(); } catch (UnsupportedEncodingException e) { e.printStackTrace(); } return \u0026#34;send OK\u0026#34;; } setText 메서드: subtype을 설정해주지 않으면 그냥 다 전해짐,, 태그를 텍스트로 인식!\nTo설정에서 new InternetAddress를 사용하는 이유?\n받는사람의 메일계정이 아닌 사용자 이름으로 보내줄 수 있음\n2. 파일 첨부해서 보내보기 스프링이 제공하는 MimeMessageHelper 클래스를 사용\n@RequestMapping(\u0026#34;/mail/send/file\u0026#34;) @ResponseBody public String sendFileAttach() { MimeMessage message = jmsender.createMimeMessage(); try { MimeMessageHelper helper = new MimeMessageHelper(message, true, \u0026#34;utf-8\u0026#34;); //title  helper.setSubject(\u0026#34;[info] file attatched\u0026#34;); //content html  String htmlStr = \u0026#34;\u0026lt;h1\u0026gt;file has been attatched.\u0026#34; + \u0026#34;please download the file I send \u0026lt;/h1\u0026gt;\u0026#34;; //content setting  helper.setText(htmlStr, true); //to  helper.setTo(new InternetAddress(\u0026#34;받는사람 메일주소\u0026#34;, \u0026#34;만득이 님\u0026#34;, \u0026#34;utf-8\u0026#34;)); //create file instance + absolute root  DataSource dataSource = new FileDataSource(\u0026#34;절대경로루트\u0026#34;); helper.addAttachment(MimeUtility.encodeText(\u0026#34;파일이름\u0026#34;, \u0026#34;utf-8\u0026#34;, \u0026#34;B\u0026#34;), dataSource); jmsender.send(message); } catch (MessagingException e) { e.printStackTrace(); } catch (UnsupportedEncodingException e) { e.printStackTrace(); } return \u0026#34;send ok\u0026#34;; } #1 MimeMessage 객체로 메세지생성\n#2 MimeMessageHelper 객체 생성 ( 메세지객체, 파일유무, charset)\n#3 메일 제목 설정\n#4 내용 html 설정\n#5 받는사람 설정\n#6 보낼 파일 설정\n​\t파일 위치\n​\t파일이름 설정\n​\t- MimUtility 의 encodeText 메서드를 이용\n​\t- 파일이름(한글일 때) 설정\n#7 해당 메세지 객체를 send 해주기\n"
 },
 {
-	"uri": "/react/",
-	"title": "React",
-	"tags": [],
-	"description": "",
-	"content": "Chapter 5 React \r데이터 테이블로 정렬하기\r\r\r\r\r테이블을 엑셀로 다운로드\r\r\r\r\rjavascript의 innerHTML과 같은 기능은?\r\r\r\r\r"
-},
-{
 	"uri": "/spring/user_register/4/",
 	"title": "회원가입 시 이메일 인증처리",
 	"tags": [],
@@ -159,6 +166,13 @@
 	"tags": [],
 	"description": "",
 	"content": "메이븐은 프로젝트 객체 모델(Project Object Model)이라는 개념을 바탕으로 프로젝트 의존성 관리, 라이브러리 관리, 프로젝트 생명 주기 관리 기능 등을 제공하는 프로젝트 관리 도구이다. 또한 플러그인을 기반으로 소스 코드로부터 배포 가능한 산출물을 만들어 내는 빌드 기능 뿐만 아니라 레포팅 및 documentation 작성 기능 등을 제공한다.\n메이븐 자세히 알아보러 가기\npom.xml 태그들 자세히 알아보기\npom.xml 태그 조금 더 간결하게, 정리 더 잘 된 것\nmaven (메이븐 구조, 차이점, 플러그인, 라이프사이클, 의존성, pom.xml)\n자바 웹 어플리케이션 배포  SVN 으로 형상관리 하는 경우도 있다 (회사에서,,) git으로 형상관리 하기  배포 순서 :\n 각자 소스 코딩 후 형상관리 툴에 push 배포용 서버 컴퓨터에서 pull 받음 war 파일로 package tomcat에 배포  "
+},
+{
+	"uri": "/others/books/",
+	"title": "Books",
+	"tags": [],
+	"description": "",
+	"content": "\r\r[책] 오브젝트 (1)\r\r\r\r\r"
 },
 {
 	"uri": "/",
@@ -233,6 +247,83 @@
 {
 	"uri": "/categories/react/",
 	"title": "React",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/tags/excel/",
+	"title": "Excel",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/tags/table/",
+	"title": "Table",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/tags/sort/",
+	"title": "Sort",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/tags/interviews/",
+	"title": "Interviews",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/categories/interviews/",
+	"title": "Interviews",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/tags/others/",
+	"title": "Others",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/others/interviews/",
+	"title": "면접질문 정리",
+	"tags": ["Interviews", "Others"],
+	"description": "",
+	"content": "신입 개발자로서 면접을 보며 받았던 면접질문들을 기억이 나는 대로 복기하여 써보려 한다. 일단 기억력이 좋지 않아서 정확한 질문은 기억이 나지 않지만, 이런 종류 or 느낌의 면접 질문을 받았구나~ 라고 보면 좋을 것 같다. 편안하게 커피 한 잔 하며 보시길 추천! ☕\n🐸 기본 인성 면접(비전공자 기준) 일단 본인이 비전공자이며, 직장경험이 없잖아 있는(없다고 하기도 그렇고 있다고 하기도 뭐한 수준) 것을 먼저 밝히는 바이다. 모든 곳에서 공통적으로 받은 질문은\n 왜 이 길을 선택했나요? 꼭 개발자여야만 하는 이유는? 경력이 상당히 특이하신데, 어떻게 생각하는지? 학원에서 개발 6개월 배운 거 맞나요? 6개월 간 공부하며 느낀 점 / 어려웠던 점 / 힘들었던 점 비개발 부문으로도 경력을 살릴 수 있는데 왜 굳이? 만득씨가 생각하기에 본인이 타 지원자보다 더 내세울 수 있는 부분? 학원 사람들에 비해서 본인이 어느정도 위치에 속한다 생각하나? (실력 / 노력으로 나눠서 대답) 요즘 관심있는 분야는? 공부중인가? 본인이 생각하기에 자신의 장점 / 단점이 개발직에 적합하다 생각하나?  🔑 기술 면접 -1  이 포트폴리오 본인이 직접 작성한건가? 학원에서 만들어 준 것 아닌가? 깃허브 관리에 대해 질문(깃허브 자주 사용하는지 등등..) 이 프로젝트 간단 설명해봐라 기술스택 질문1: RDS 무엇 사용했는지? 등.. 기술스택 질문2: WAS 와 TOMCAT의 차이? / WAS와 웹서버의 차이? 기술스택 질문3: Spring과 Springboot의 차이점 설명 -\u0026gt; 꼬리질문 기술스택 질문4: node.js 사용한 이유? 기술스택 질문5: Oracle과 Mysql 모두 사용해봤는데 사용하면서 느낀 둘의 차이점 / 특징은? 스프링만 사용했나? 다른 건? 이 프로젝트를 했을 때 가장 어려웠던 점 설명 -\u0026gt; 꼬리질문 반대로 가장 재미있었던 경험은? -\u0026gt; 관련 기술로 또 꼬리질문 이 프로젝트에서 본인이 기여한 부분은? 수치화 한다면 어느 정도라 생각? 본인이 했다고 한 부분을 혼자서 다 했다는 건가? -\u0026gt; 꼬리질문 백엔드(server) 쪽만 구현한건가? 프론트는 해 본 경험이 없나? 배포를 어떤 방식으로 했나? 팀장이었나? 왜 이리 한 게 많은가?  🔑 기술 면접 -2  REST 구조를 썼던데 왜 선택했나? REST 구조 설명 / REST와 RESTFUL의 차이가 있다면 설명해봐라 메서드 오버라이딩/오버로딩의 차이점? 쓰는 이유? 어노테이션의 뜻 Bean을 만드는 어노테이션 생각나는 대로 다 말해봐라 / 비슷한 질문 있음. @SecondaryTable 이게 뭔가? 설명해봐라 (위의 질문과 연결) Boot를 쓸 때 사용한 어노테이션 외에도 알아본 어노테이션이 있는가? 있다면 설명 서브 쿼리의 정의/종류/차이점? SQL 실행순서 설명해봐라 Mysql로 댓글을 만든다면 어떤 방식으로 만들 것인가? SQL문 작성해봐라 .ready() vs .onload() 특징 및 차이 jQuery란 무엇인가 MVC 패턴 JPA 썼던데 소감? 왜 JPA를 쓰는지 설명해봐라 (특징위주로 답변) EL JSTL JSP 정의 / 차이 자바 버전 관련 질문 DAO, DTO, Entity Class의 차이 maven vs gradle rest 메서드 질문: template 사용한 이유와 왜 이 메서드를 썼는지? inner join / outer join / full outer join 특징 설명 DI가 뭔지 아는가? 무엇인가? Spring Aop가 무엇인가? 관련해서 사용해본 경험이 있는지? 다른 팀원이 구현한 부분 질문 / 이 상황에 대해 어떻게 할 것인지?  사실 이 글을 쓰는 이유 중의 하나는 이런 기본적인 CS도 까먹지 말고!!! 다시 보면서 정리하고 내재화 할 때까지 끊임없이 보자는 뜻에서 작성했다. 말이 엄청 기네, 짧게 말하자면 나 자신을 위한 포스팅이었다,, 구글링을 잘 하다보면 각자 정리한 것들이 많은데 눈팅만 하고 면접을 보러가면 바로 발려버린다. 가장 기본적이며 개념을 묻는 질문은 이 질문 리스트에서 제외시켰는데 구글링만 해도 다 아니까,, 이 글을 읽는 사람이 자신의 상황에 잘 대입하여 준비를 하면 되지 않을까 싶어 공유한다.\n"
+},
+{
+	"uri": "/others/books/objects_1/",
+	"title": "[책] 오브젝트 (1)",
+	"tags": ["Books", "Reviews", "Others"],
+	"description": "",
+	"content": "객체지향를 정확하게 구현하고자 오브젝트 라는 책을 구입하였다. 구입하게 된 계기는 우아한형제들 기술블로그에서 신입 개발자의 적응기를 보았다. 자신의 선배가 추천한 책이라고 하였고, 실제로도 많은 도움을 받았다는 후기를 봤다. 웹서핑을 하며 돌아다니다 오브젝트 책에 관한 후기도 몇 개 보기도 하였고 하여 바로 구입!!\n🐸 나를 괴롭히는 객체지향 객체지향, 학원에서 수강을 할 때 가장 재미있었던 개념이었다. 객체가 상태(field)와 행동(method)을 갖고 있다! 얼마나 간단한가. 숙제로 나온 구슬치기게임(가위바위보와 같은..)을 자바로 쉽게 구현해보기도 하였고 수업시간 동안 어렵다라는 느낌을 받은 적이 없었다.\n그런데 카페주문시스템 프로젝트를 하며 당황했다. 객체의 범위를 어디까지 만들어야하는지 명확한 기준이 세워지지 않았다. 일단 만들어보자! 라는 생각을 하여 객체 하나에 주문클래스를 구현하였고\u0026hellip;. 프로젝트가 끝날 때까지 리팩토링을 하지 못한 채 하나의 클래스로 만들어버렸다\u0026hellip; :scream: 무려 500줄\u0026hellip;. 엄청난 뎁스의 메서드들\u0026hellip;.. 그때부터였다. 객체지향이 어려운게 책임과 역할을 객체에 잘 분배하기 어렵다는 것임을. 끝까지 내가 쫓아가야 할 존재임을.\n이러저러한 이유로 오브젝트를 보게 되었고, 다 읽지 못하였지만 지금까지 받은 느낌은 \u0026lsquo;어떻게 이렇게 쉽게 설명할 수 있을까? 멋있다.. 신기하다..\u0026rsquo; 이다. 아직 고급단계의 개발자는 아니지만, 저자의 \u0026lsquo;객체지향\u0026rsquo;에 대한 고민과 탐구 흐름, 그 결과를 문장 사이사이에서 느낄 수 있다. 한줄 한줄이 깨알같다고나 할까\u0026hellip; 조금 더 지나서 읽는다면 더 공감되는 부분이 많을 것 같다.\n4장: 캡슐화 지키기, 낮은 결합도와 높은 응집도로   캡슐화란 변할 수 있는 어떤 것이라도 감추는 것\n  **파급효과(ripple effect)**를 조심해야 한다.\nDiscountCondition을 변경하면 Movie, Screening, Reservation Agency 까지 변경하는 상황이 발생한다.\n  객체는 역할과 책임을 갖고있다. 상태와 행동은 field와 method로 구현됨.\n  설계의 무게가 외부로 향해야 한다. 즉, 객체간 협력하는 방법에 대해 고민해야 한다.\n  낮은 결합도를 만들자\n DiscountCondition 의 구현에 속하는 부분(명칭이 변경되거나 종류가 추가되거나 조건절을 충족하는 필요 정보가 변경될 때 등)은 Movie가 아니라 DiscountCondition에서 구현해야 한다.    의존성을 낮춰야 한다. 제어 로직이 한 객체 안에 밀집되면 안된다.\n  이런 문제가 발생하는 이유 ? 데이터 중심의 설계 때문 !\n 데이터 결정 시기가 빠르다. 객체를 단순한 데이터의 집합체라 생각하게 된다. 오퍼레이션이 고립된다. 접근자와 수정자(getter setter)를 과도하게 남발하고, 내부 구현 내용을 인터페이스를 통해 외부로 그대로 노출한다.    5장: 책임 할당하기  책임 중심의 코드를 만들기 : 데이터보다 행동을, \u0026lsquo;협력\u0026rsquo;이라는 문맥 안에서 책임 결정하기 어떤 객체에게 어떤 책임을 줄 지, 즉 트레이드오프 할당방법은 그때그때 다르다. 상황과 문맥에 따라천차만별 GRASP 패턴 : 가장 기본적인 패턴방법.   참고  GRASP 패턴에 대해 잘 정리해놓은 블로그 - neosy Blog  "
+},
+{
+	"uri": "/tags/books/",
+	"title": "Books",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/categories/books/",
+	"title": "Books",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/tags/reviews/",
+	"title": "Reviews",
 	"tags": [],
 	"description": "",
 	"content": ""
