@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Series :: GoRaNee&#39;s dev-log</title>
+    <title>spring.jpa.open-in-view 로그 오류 해결하기 :: GoRaNee&#39;s dev-log</title>
 
     
     <link href="/css/nucleus.css?1598699828" rel="stylesheet">
@@ -34,7 +34,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/series/">
+  <body class="" data-url="/spring/spring-boot/1/">
     <nav id="sidebar" class="">
 
 
@@ -134,7 +134,7 @@ GoRaNee&#39;s dev-log
   
     
     <li data-nav-id="/spring/" title="Spring" class="dd-item 
-        
+        parent
         
         
         ">
@@ -163,7 +163,7 @@ GoRaNee&#39;s dev-log
   
     
     <li data-nav-id="/spring/spring-boot/" title="Spring Boot" class="dd-item 
-        
+        parent
         
         
         ">
@@ -189,7 +189,7 @@ GoRaNee&#39;s dev-log
  
   
     
-      <li data-nav-id="/spring/spring-boot/1/" title="spring.jpa.open-in-view 로그 오류 해결하기" class="dd-item ">
+      <li data-nav-id="/spring/spring-boot/1/" title="spring.jpa.open-in-view 로그 오류 해결하기" class="dd-item active">
         <a href="/spring/spring-boot/1/">
         spring.jpa.open-in-view 로그 오류 해결하기
         
@@ -563,7 +563,19 @@ GoRaNee&#39;s dev-log
             
           
           
-            <a href='/'>GoRaNee's dev-log</a> > Series
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>GoRaNee's dev-log</a> > <a href='/spring/'>Spring</a> > <a href='/spring/spring-boot/'>Spring Boot</a> > spring.jpa.open-in-view 로그 오류 해결하기
+          
+        
+          
+        
           
         
           
@@ -574,7 +586,17 @@ GoRaNee&#39;s dev-log
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-문제상황--왜-로그에-warn이-뜨지">1. 문제상황 : 왜 로그에 warn이 뜨지?</a></li>
+        <li><a href="#2-문제-이유">2. 문제 이유</a></li>
+        <li><a href="#3-해결방안">3. 해결방안</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -590,24 +612,44 @@ GoRaNee&#39;s dev-log
           
             <h1>
               
-                taxonomy ::
-              
-              Series
+              spring.jpa.open-in-view 로그 오류 해결하기
             </h1>
           
 
         
 
 
-
-
-
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h3 id="1-문제상황--왜-로그에-warn이-뜨지">1. 문제상황 : 왜 로그에 warn이 뜨지?</h3>
+<p>스프링 부트 app을 시작하면 로그가 나오는데,</p>
+<p>잘 보면 아래와 같이 warning 메세지가 뜬다</p>
+<pre><code>aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+</code></pre><p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h3 id="2-문제-이유">2. 문제 이유</h3>
+<p>Spring Boot에서는 <code>spring.jpa.open-in-view</code>를 true로 설정하고 있는데, 이는 <strong>OSIV 측면에서 매우 부적절</strong>하다고 함.  즉 <strong>성능이나</strong> scalability,, 즉 <strong>확장성 측면</strong>에서 볼 때 false로 해야 하는데 true로 하고 있어 warning 경고 사인이 뜨는 거라고.</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><a href="https://stackoverflow.com/questions/30549489/what-is-this-spring-jpa-open-in-view-true-property-in-spring-boot">참고 사이트-스택오버플로우-로 바로가기</a></p>
+<!-- raw HTML omitted -->
+<h3 id="3-해결방안">3. 해결방안</h3>
+<p>검색결과 spring.jpa.open-in-view 설정을 true 에서 <strong>false로 바꿔주면 해결</strong>된다.</p>
+<p>바꿔주는 방법은 크게 두 가지 방법이 있다.</p>
 <ul>
-	
+<li><strong>application.properties</strong>에서 설정하기</li>
 </ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">spring<span style="color:#f92672">.</span><span style="color:#a6e22e">jpa</span><span style="color:#f92672">.</span><span style="color:#a6e22e">open</span><span style="color:#f92672">-</span>in<span style="color:#f92672">-</span>view<span style="color:#f92672">=</span><span style="color:#66d9ef">false</span>
+</code></pre></div><ul>
+<li>
+<p><strong>application.yml</strong>으로 설정 설정</p>
+<blockquote>
+<p>yaml으로 설정하는 방법은 <a href="https://kihoonkim.github.io/2017/01/27/JPA(Java%20ORM)/1.%20JPA-%ED%99%98%EA%B2%BD%20%EC%84%A4%EC%A0%95/">여기</a>에서 잘 설명하고 있다.<br>
+관련 <a href="https://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#boot-features-external-config-yaml">스프링 부트 doc 사이트</a>로 가기</p>
+</blockquote>
+</li>
+</ul>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 
 
-<footer class=" footline" >
+<footer class="footline">
 	
 </footer>
 
@@ -677,6 +719,7 @@ GoRaNee&#39;s dev-log
             
                 
                     
+                    
                 
                 
 
@@ -692,6 +735,7 @@ GoRaNee&#39;s dev-log
             
                 
                     
+                    
                 
                 
 
@@ -704,6 +748,7 @@ GoRaNee&#39;s dev-log
             
             
                 
+                    
                     
                 
                 
@@ -720,6 +765,9 @@ GoRaNee&#39;s dev-log
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -939,8 +987,10 @@ GoRaNee&#39;s dev-log
 	 
 	 
 		
+			<a class="nav nav-prev" href="/spring/spring-boot/" title="Spring Boot"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/about/" title="About" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/spring/spring-boot/2/" title="querydsl 설정하기" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -970,3 +1020,4 @@ GoRaNee&#39;s dev-log
 
   </body>
 </html>
+

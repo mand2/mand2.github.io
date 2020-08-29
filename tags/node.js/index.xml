@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>node.js on GoRaNee&#39;s dev-log</title>
+    <link>/tags/node.js/</link>
+    <description>Recent content in node.js on GoRaNee&#39;s dev-log</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Tue, 15 Oct 2019 09:43:26 +0900</lastBuildDate>
+    
+	<atom:link href="/tags/node.js/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>package-lock.json 이란?</title>
+      <link>/node.js/1/</link>
+      <pubDate>Wed, 11 Sep 2019 21:37:04 +0900</pubDate>
+      
+      <guid>/node.js/1/</guid>
+      <description>package-lock.json 파일이란? 프로젝트에 설치된 노드 모듈들의 의존성 트리를 기록하고 있음.
+package-lock.json이 유용한 이유? git 저장소에 node.js 프로젝트를 커밋할 때 보통 node_modules 폴더는 부피가 커서 commit에 포함시키지 않습니다.이 때 package-lock.json 파일은 꼭 함께 커밋을 해주어야 합니다. 다른 팀원이 이 프로젝트를 처음 pull 받아서 npm install 을 했을 때 개발 당시의 동일한 버전의 모듈들이 설치됨을 보장하기 위함입니다. express 모듈을 프로젝트에 설치하게 되면 package.json 파일에 &amp;quot;express&amp;quot;: &amp;quot;~4.16.1&amp;quot; 처럼 Tilde Ranges 표기법으로 버전이 명시됩니다. 4.</description>
+    </item>
+    
+    <item>
+      <title>formidable 설치 오류 해결하기</title>
+      <link>/node.js/2/</link>
+      <pubDate>Thu, 26 Sep 2019 21:55:23 +0900</pubDate>
+      
+      <guid>/node.js/2/</guid>
+      <description>위와 같이 npm에 formidable을 설정하려고 하니 package.json이 없다고 뜸
+package.json은 해당 프로젝트 의존모듈 관리를 도와주기 때문에 설치해야 한다.정리:: npm 이란? node package manager : 모듈관리매니저
+1. 해당 프로젝트 디렉토리로 들어감 cd D:\node\nodeJS_test 2. npm init 을 써준다 npm init -y 위의 이미지를 보면, package.json내부에 해당 프로젝트의 이름, 버전, 사용되는 모듈 등의 스펙을 볼 수 있다. 이 package.json을 통해 모듈 의존성 모듈 관리도 진행할 수 있다. 만약 어떤 오픈 소스를 다운 받을 때 이 package.</description>
+    </item>
+    
+    <item>
+      <title>aws EC2로 node.js 배포하기</title>
+      <link>/node.js/3/</link>
+      <pubDate>Tue, 15 Oct 2019 09:43:26 +0900</pubDate>
+      
+      <guid>/node.js/3/</guid>
+      <description>1. node.js로 서버 배포하기 마지막 프로젝트를 하며 간단한 채팅을 node.js로 만들었다. 간단하게 구현하는 건 어찌어찌 했는데,, 문제는 배포하는 것. 주변에 구현하면서 고생한 친구가 있어서 편하게 했다.
+[STEP 1] 인스턴스 생성부터 - putty 설정까지  aws ec2 인스턴스 생성
+프리티어만으로 체크한 후
+Amazon Linux AMI 2018.03.0 (HVM), SSD Volume Type 를 선택했다
+자동으로 선택되어 있는 t2.micro 로 했으며,
+관리하기 쉽게 보안그룹 이름을 내가 원하는 이름으로 변경함. pem 키 발급 (인증키임.. 재발급 불가라 잃어버리면 새로 인스턴스 생성해야함 ㅠ)</description>
+    </item>
+    
+  </channel>
+</rss>

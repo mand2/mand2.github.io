@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Series :: GoRaNee&#39;s dev-log</title>
+    <title>@SpringBootApplication :: GoRaNee&#39;s dev-log</title>
 
     
     <link href="/css/nucleus.css?1598699828" rel="stylesheet">
@@ -34,7 +34,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/series/">
+  <body class="" data-url="/spring/spring-boot/4/">
     <nav id="sidebar" class="">
 
 
@@ -134,7 +134,7 @@ GoRaNee&#39;s dev-log
   
     
     <li data-nav-id="/spring/" title="Spring" class="dd-item 
-        
+        parent
         
         
         ">
@@ -163,7 +163,7 @@ GoRaNee&#39;s dev-log
   
     
     <li data-nav-id="/spring/spring-boot/" title="Spring Boot" class="dd-item 
-        
+        parent
         
         
         ">
@@ -252,7 +252,7 @@ GoRaNee&#39;s dev-log
  
   
     
-      <li data-nav-id="/spring/spring-boot/4/" title="@SpringBootApplication" class="dd-item ">
+      <li data-nav-id="/spring/spring-boot/4/" title="@SpringBootApplication" class="dd-item active">
         <a href="/spring/spring-boot/4/">
         @SpringBootApplication
         
@@ -563,7 +563,19 @@ GoRaNee&#39;s dev-log
             
           
           
-            <a href='/'>GoRaNee's dev-log</a> > Series
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>GoRaNee's dev-log</a> > <a href='/spring/'>Spring</a> > <a href='/spring/spring-boot/'>Spring Boot</a> > @SpringBootApplication
+          
+        
+          
+        
           
         
           
@@ -574,7 +586,16 @@ GoRaNee&#39;s dev-log
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#springbootapplication-이란">@SpringBootApplication 이란?</a></li>
+        <li><a href="#spring-빈-컨테이너--주기-관리">Spring 빈 컨테이너 : 주기 관리</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -590,24 +611,113 @@ GoRaNee&#39;s dev-log
           
             <h1>
               
-                taxonomy ::
-              
-              Series
+              @SpringBootApplication
             </h1>
           
 
         
 
 
-
-
-
+<h3 id="springbootapplication-이란">@SpringBootApplication 이란?</h3>
+<p>잠시 돌아가서, 이 <code>@SpringBootApplication</code>이 뭐기에 빌드 오류를 뱉어내는지 보자</p>
+<h4 id="1-springbootapplication의-의미는">1. @SpringBootApplication의 의미는</h4>
+<p>@Configuration + @EnableAutoConfiguration + @ComponentScan 을 합친 것이다.</p>
+<h4 id="-1-configuration-이란">-1 <strong>@Configuration</strong> 이란?</h4>
 <ul>
-	
+<li>현재 클래스가 <strong>Spring의 설정 파일</strong>임을 알려주는 어노테이션</li>
+<li>==  Spring이 Java config로 간주한다!</li>
+<li>Configuration을 클래스에 적용하고 @Bean을 해당 클래스의 메소드에 적용하면<br>
+@Autowired로 빈을 부를 수 있다.</li>
+<li>개발자가 생성한 class를 Bean으로 생성 할 때 <strong>Single Tone</strong>으로 한번만 생성하고<br>
+@Component는 Bean을 생성 할 때 java에서 new로 생성하듯이 생성한다.</li>
 </ul>
+<!-- raw HTML omitted -->
+<h4 id="-2-enableautoconfiguration-이란">-2 <strong>@EnableAutoConfiguration</strong> 이란?</h4>
+<ul>
+<li>Spring boot 클래스패스 세팅 및 다양한 Bean 추가 등을 시켜주는 어노테이션</li>
+<li>어플리케이션에 추가된 설정들을 자동으로 추가해주는 어노테이션</li>
+</ul>
+<!-- raw HTML omitted -->
+<h4 id="-3-componentscan-이란">-3 <strong>@ComponentScan</strong> 이란?</h4>
+<ul>
+<li>
+<p>다른 컴포넌트, 서비스, 설정 등을 찾을 수 있게 도와주는 어노테이션<br>
+즉 자바 클래스를 <strong>스프링 빈이라고 표시</strong>하고<br>
+스프링의 component-scanning 기술을 통해 ApplicationContext에 빈으로 등록하게 하는 역할</p>
+</li>
+<li>
+<p>== @Component를 검색하도록 도와준다</p>
+</li>
+<li>
+<p>@Configuration 클래스도 컴포넌트로서 검색 대상이 된다.</p>
+<blockquote>
+<p>스프링은 기본적으로 객체를 자동으로 생성하여 관리하기 때문에 @Component 어노테이션이 있는 클래스들을 스프링 컨테이너가 생성해준다. @ComponentScan는 특별히 basePackage를 지정하지 않아도 main class가 위치한 패키지를 Root package로 하여 그 이하의 모든 컴포넌트 클래스들을 검색하여 빈으로 등록한다.</p>
+</blockquote>
+</li>
+<li>
+<p>메인 클래스인 <strong><code>YcarBootServerApplication</code></strong> 를 보면, 이 클래스는 <code>com.ycar.boot</code> 패키지에 있다. 이 패키지가 컴포넌트 스캔의 <strong>루트패키지</strong>가 된다. 따라서 com.ycar.boot 패키지를 기준으로 그 하위에 있는(== 하위 패키지) 모든 컴포넌트들을 검색한다.</p>
+</li>
+<li>
+<p><strong>(주의)</strong> pom.xml에서 루트 패키지를 정확하게 매칭시켜야 한다.</p>
+</li>
+<li>
+<p>Spring XML설정의 <code>&lt;context:component-scan&gt;</code>을 대신해 자바에 설정</p>
+</li>
+<li>
+<p>컴포넌트에 대해서는 아래에 따로 기술!</p>
+</li>
+</ul>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h4 id="2-component---repository-service-controller">2 @Component :  @Repository, @Service, @Controller</h4>
+<p>@Repository, @Service, @Controller는 @Component에 속한 어노테이션이다.</p>
+<!-- raw HTML omitted -->
+<h4 id="2---1-왜-component-대신-쓸까">2 - 1 왜 @Component 대신 쓸까?</h4>
+<blockquote>
+<p>@Repository<br>
+@Service<br>
+@Contoller - @RestController</p>
+</blockquote>
+<p>** 3가지 종류의 컴포넌트가 다른 이름을 가진 이유는 <strong>레이어를 구분</strong>하기 위함</p>
+<h4 id="2---2-repository-어노테이션">2 - 2 @Repository 어노테이션</h4>
+<p>DAO에 특화된 어노테이션이다. @Component 어노테이션을 써도 상관없지만, DAO 클래스들에 @Repository 어노테이션을 사용함으로써 @Component 어노테션이 가진 특성과 함께, DAO의 메소드에서 발생할 수 있는 unchecked exception들을 스프링의 DataAccessException으로 처리할 수 있는 장점 또한 가질 수 있다.</p>
+<h4 id="2---3-service-어노테이션">2 - 3 @Service 어노테이션</h4>
+<p>서비스 레이어 클래스들에 사용되어지는 어노테이션이다. 역시나 @Component 어노테이션을 사용해도 상관없다. @Service 어노테이션을 사용함으로써 해당 클래스가 서비스 레이어 클래스라는 것을 명확하게 할 수 있다. 현재는 @Repository 어노테이션 처럼 추가적인 behavior는 없지만, 추후에 추가될 예정이다.</p>
+<h4 id="2---4-controller-어노테이션">2 - 4 @Controller 어노테이션</h4>
+<p>MVC 패턴에서 Controller 클래스에 선언되어진다. 이 또한 @Component 로 대체할 수 있다. 하지만, @Controller 어노테이션을 사용함으로써 @RequestMapping 등의 추가적인 어노테이션을 사용할 수 있게 된다.</p>
+<h4 id="2---5">2 - 5</h4>
+<p>** 실제 프로젝트에서 @Component가 필요한 비슷한 상황들을 직면하곤 한다. 하지만, 대부분의 상황에서 우리는 @Repository, @Service, @Controller 어노테이션을 사용하는게 좋다고 한다.</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h3 id="spring-빈-컨테이너--주기-관리">Spring 빈 컨테이너 : 주기 관리</h3>
+<p>이렇게 @SpringBootApplication 와 그 안의 @Configuration, @EnableAutoConfiguration, @ComponentScan 에 대해 간단히 살펴보았다.</p>
+<p>그러면 생성된 Bean을 <strong>누가</strong> 등록해줄까?  스프링 빈 컨테이너다.</p>
+<blockquote>
+<p>스프링 빈 컨테이너는 인스턴스의 생명주기를 관리한다.<br>
+컨테이너의 종류는 ApplicationContext와 BeanFactory 2가지로 나누어지는데,<br>
+둘의 차이점은 쉽게 말하면 ApplicationContext가 BeanFactory의 향상된 버전이라 한다.</p>
+</blockquote>
+<p><code>ApplicationContext</code> 는 run() 메서드를 통해 Java configure를 읽어 bean을 등록한다. 
+싱글턴으로  객체 관리를 하기 때문에 한번만 실행된다.</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h1 id="spring-boot-구조의-이해---우리의-문제점은-여기에">🔑​Spring Boot 구조의 이해 - 우리의 문제점은 여기에</h1>
+<p>ApplicationContext , 빈 관리 등 스프링 구조를 잘 몰랐기 때문에 발생한 문제였다. 기준이 되는 패키지를 생각하고 형상관리를 했어야 했다&hellip;. 문제를 알았으니 이제 해결해야겠죠</p>
+<p><img src="https://mand2.github.io/assets/images/spring-4/boot_1021_path2.JPG" alt="배포성공path"></p>
+<p><img src="https://mand2.github.io/assets/images/spring-4/boot_1021_pom2.JPG" alt="배포성공pom"></p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p>프로젝트를 하면서 컴퓨터 구조를 확실하게 알아야겠다는 생각을 많이 했다. 나 뿐만 아니라 우리 팀원 모두 그런 느낌을 받은건 우연이 아닌것 같다. 빠른 문제 해결을 위해선 기본적인 구조를 파악하고 체화해야 함을,, 오늘도 배운다- 까먹을 땐 이 블로그 포스트를 보며 다시 공부하자 😀😀</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p>출처:</p>
+<ul>
+<li><a href="https://jeong-pro.tistory.com/151">기본기를 쌓는 정아마추어 코딩블로그</a></li>
+<li><a href="https://lee-mandu.tistory.com/343">개발/일상_Mr.lee</a></li>
+<li><a href="https://jhkang-tech.tistory.com/44">jhkang-dev님의 블로그</a></li>
+<li><a href="https://sieunlim.tistory.com/10">https://sieunlim.tistory.com/10</a></li>
+</ul>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 
 
-<footer class=" footline" >
+<footer class="footline">
 	
 </footer>
 
@@ -677,6 +787,7 @@ GoRaNee&#39;s dev-log
             
                 
                     
+                    
                 
                 
 
@@ -692,6 +803,7 @@ GoRaNee&#39;s dev-log
             
                 
                     
+                    
                 
                 
 
@@ -704,6 +816,9 @@ GoRaNee&#39;s dev-log
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -753,6 +868,7 @@ GoRaNee&#39;s dev-log
             
                 
                     
+                    
                 
                 
 
@@ -771,6 +887,9 @@ GoRaNee&#39;s dev-log
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -939,8 +1058,10 @@ GoRaNee&#39;s dev-log
 	 
 	 
 		
+			<a class="nav nav-prev" href="/spring/spring-boot/3/" title="maven 빌드 오류"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/about/" title="About" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/spring/user_register/" title="회원가입" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -970,3 +1091,4 @@ GoRaNee&#39;s dev-log
 
   </body>
 </html>
+

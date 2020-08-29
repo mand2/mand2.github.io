@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Series :: GoRaNee&#39;s dev-log</title>
+    <title>aws EC2로 node.js 배포하기 :: GoRaNee&#39;s dev-log</title>
 
     
     <link href="/css/nucleus.css?1598699828" rel="stylesheet">
@@ -34,7 +34,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/series/">
+  <body class="" data-url="/node.js/3/">
     <nav id="sidebar" class="">
 
 
@@ -431,7 +431,7 @@ GoRaNee&#39;s dev-log
   
     
     <li data-nav-id="/node.js/" title="Node.js" class="dd-item 
-        
+        parent
         
         
         ">
@@ -499,7 +499,7 @@ GoRaNee&#39;s dev-log
  
   
     
-      <li data-nav-id="/node.js/3/" title="aws EC2로 node.js 배포하기" class="dd-item ">
+      <li data-nav-id="/node.js/3/" title="aws EC2로 node.js 배포하기" class="dd-item active">
         <a href="/node.js/3/">
         aws EC2로 node.js 배포하기
         
@@ -563,7 +563,13 @@ GoRaNee&#39;s dev-log
             
           
           
-            <a href='/'>GoRaNee's dev-log</a> > Series
+            
+            
+          
+          
+            <a href='/'>GoRaNee's dev-log</a> > <a href='/node.js/'>Node.js</a> > aws EC2로 node.js 배포하기
+          
+        
           
         
           
@@ -574,7 +580,17 @@ GoRaNee&#39;s dev-log
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-nodejs로-서버-배포하기">1. node.js로 서버 배포하기</a>
+      <ul>
+        <li><a href="#step-1-인스턴스-생성부터---putty-설정까지">[STEP 1] 인스턴스 생성부터 - putty 설정까지</a></li>
+        <li><a href="#step-2-git-클론-후-node-js-배포하기">[STEP 2] git 클론 후 node js 배포하기</a></li>
+        <li><a href="#노드서버-백그라운드-실행하기">노드서버 백그라운드 실행하기</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -584,30 +600,149 @@ GoRaNee&#39;s dev-log
             
         <div id="head-tags">
         
+<div class="tags">
+
+  <a class="tag-link" href="/tags/node.js">node.js</a>
+
+  <a class="tag-link" href="/tags/til">TIL</a>
+
+</div>
+
         </div>
         
         <div id="body-inner">
           
             <h1>
               
-                taxonomy ::
-              
-              Series
+              aws EC2로 node.js 배포하기
             </h1>
           
 
         
 
 
-
-
-
+<h2 id="1-nodejs로-서버-배포하기">1. node.js로 서버 배포하기</h2>
+<p>마지막 프로젝트를 하며 간단한 채팅을 <code>node.js</code>로 만들었다. 간단하게 구현하는 건 어찌어찌 했는데,, 문제는 배포하는 것. 주변에 구현하면서 고생한 친구가 있어서 편하게 했다.</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h3 id="step-1-인스턴스-생성부터---putty-설정까지">[STEP 1] 인스턴스 생성부터 - putty 설정까지</h3>
+<ol>
+<li>aws ec2 인스턴스 생성<br>
+프리티어만으로 체크한 후<br>
+<strong>Amazon Linux AMI 2018.03.0 (HVM), SSD Volume Type</strong> 를 선택했다<br>
+자동으로 선택되어 있는 <strong>t2.micro</strong> 로 했으며,<br>
+관리하기 쉽게 보안그룹 이름을 내가 원하는 이름으로 변경함.</li>
+<li>pem 키 발급 (인증키임.. 재발급 불가라 잃어버리면 새로 인스턴스 생성해야함 ㅠ)<br>
+알아보기 쉽게 <strong>키 페어 이름</strong>을 잘 적어준다<br>
+외장하드나 개인이 보관하기 쉬운 파일에 저장하기</li>
+<li><code>puttygen.exe</code> 로 ppk 키로 발급받기
+<code>LOAD</code> 를 눌러 방금 발급받은 pem 키를 불러온다<br>
+<code>save private key</code> 를 눌러 ppk키로 저장 (동일한 이름으로 하되, 확장자만 달라야 함. <strong>다르면 서버에러</strong>)</li>
+<li><code>putty.exe</code>를 실행 새로운 session을 만들고 저장한다<br>
+<strong>주의:</strong> hostname과 이름을 만들고 &lsquo;save&rsquo; 버튼을 눌러줘야 함.
+<ol>
+<li>session 탭:<br>
+HostName은 ec2-user@(ip주소)</li>
+<li>Connection - SSH - Auth 탭:<br>
+ppk키를 저장해준다.</li>
+</ol>
+</li>
+<li>putty에서 저장한 세션을 open</li>
+</ol>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h3 id="step-2-git-클론-후-node-js-배포하기">[STEP 2] git 클론 후 node js 배포하기</h3>
+<ol>
+<li>
+<p>현재 ec2 인스턴스에 깃 설치</p>
+<pre><code>sudo yum install git
+git init
+git config --global user.name &quot;your username&quot;
+git config --global user.email [your mail address]
+</code></pre><p><strong>주의</strong>할 점: <code>&quot; &quot;</code> 와  <code>[ ]</code> 를 무조건 써준다! 안써주면 인식을 못함!</p>
+</li>
+<li>
+<p>nvm 설치</p>
+<pre><code>curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+</code></pre></li>
+<li>
+<p>nvm 활성화</p>
+<pre><code>. ~/.nvm/nvm.sh
+</code></pre></li>
+<li>
+<p>node 설치</p>
+<pre><code>nvm install node
+</code></pre></li>
+<li>
+<p>설치 확인</p>
+<pre><code>node -e &quot;console.log('Running Node.js ' + process.version)&quot;
+</code></pre></li>
+<li>
+<p>깃에 배포용 repository 생성</p>
+</li>
+<li>
+<p>해당 repository의 주소 복사 후 현재 ec2 인스턴스로 클론하기</p>
+<pre><code>git clone + [repository 주소]
+</code></pre></li>
+<li>
+<p>node js 에서 연습했던 대로 서버 실행</p>
+</li>
+<li>
+<p>하면 끝인 줄 알았지? 는 안됨!</p>
+</li>
+</ol>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h3 id="노드서버-백그라운드-실행하기">노드서버 백그라운드 실행하기</h3>
+<ol>
+<li>
+<p>일단 현재 채팅용 포트를 설정하지 않았음.
+AWS의 보안그룹으로 들어가서 ec2 인스턴스 생성시 만들었던 보안그룹으로 들어간다.
+<code>인바운드</code> 탭에서 사용자지정TCP규칙 &gt; 원하는 채팅포트 &gt; 저장</p>
+</li>
+<li>
+<p>위의 1번을 해결한다고 해도 완벽하게 해결되는 건 아님
+이유? 내가 <strong>putty를 꺼도 실행이 되어야</strong> 확실한 배포인 거니까</p>
+</li>
+<li>
+<p>백그라운드 실행하기 1 forever 설치</p>
+<pre><code>npm install forever -g
+</code></pre></li>
+<li>
+<p>백그라운드 실행하기 2 원하는 js파일 실행하기</p>
+<pre><code>(실행파일 위치까지 들어간 후) 
+forever start [js script]
+</code></pre></li>
+<li>
+<p>현재 백그라운드로 실행중인 서버 확인하기</p>
+<pre><code>forever list
+</code></pre></li>
+<li>
+<p>백그라운드 서버 종료하기</p>
+<pre><code>forever stop [js script]
+</code></pre></li>
+</ol>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p>참고) nohup으로 했으나 실행되지 않았음</p>
 <ul>
-	
+<li>nohup으로 백그라운드 실행</li>
 </ul>
+<pre><code>$ sudo nohup node (js파일) &amp;
+</code></pre><ul>
+<li>
+<p>실행 후 백그라운드로 올라왔으면 ENTER 키로 빠져나오면 된다.</p>
+</li>
+<li>
+<p>프로세스 실행되고 있는지 확인</p>
+<pre><code>$ ps -ef
+</code></pre></li>
+<li>
+<p>종료</p>
+<pre><code>sudo kill -9 [종료하고 싶은 프로세스 pid]
+</code></pre></li>
+</ul>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 
 
-<footer class=" footline" >
+<footer class="footline">
 	
 </footer>
 
@@ -871,6 +1006,7 @@ GoRaNee&#39;s dev-log
             
                 
                     
+                    
                 
                 
 
@@ -883,6 +1019,9 @@ GoRaNee&#39;s dev-log
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -915,6 +1054,7 @@ GoRaNee&#39;s dev-log
             
             
                 
+                    
                     
                 
                 
@@ -939,8 +1079,10 @@ GoRaNee&#39;s dev-log
 	 
 	 
 		
+			<a class="nav nav-prev" href="/node.js/2/" title="formidable 설치 오류 해결하기"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/about/" title="About" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/node.js/1/" title="package-lock.json 이란?" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -970,3 +1112,4 @@ GoRaNee&#39;s dev-log
 
   </body>
 </html>
+

@@ -20,5 +20,23 @@
       <description></description>
     </item>
     
+    <item>
+      <title>Spring Boot</title>
+      <link>/categories/spring-boot/</link>
+      <pubDate>Mon, 21 Oct 2019 18:28:29 +0900</pubDate>
+      
+      <guid>/categories/spring-boot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Node.js</title>
+      <link>/categories/node.js/</link>
+      <pubDate>Tue, 15 Oct 2019 09:43:26 +0900</pubDate>
+      
+      <guid>/categories/node.js/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

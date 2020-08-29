@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Series :: GoRaNee&#39;s dev-log</title>
+    <title>querydsl 설정하기 :: GoRaNee&#39;s dev-log</title>
 
     
     <link href="/css/nucleus.css?1598699828" rel="stylesheet">
@@ -34,7 +34,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/series/">
+  <body class="" data-url="/spring/spring-boot/2/">
     <nav id="sidebar" class="">
 
 
@@ -134,7 +134,7 @@ GoRaNee&#39;s dev-log
   
     
     <li data-nav-id="/spring/" title="Spring" class="dd-item 
-        
+        parent
         
         
         ">
@@ -163,7 +163,7 @@ GoRaNee&#39;s dev-log
   
     
     <li data-nav-id="/spring/spring-boot/" title="Spring Boot" class="dd-item 
-        
+        parent
         
         
         ">
@@ -210,7 +210,7 @@ GoRaNee&#39;s dev-log
  
   
     
-      <li data-nav-id="/spring/spring-boot/2/" title="querydsl 설정하기" class="dd-item ">
+      <li data-nav-id="/spring/spring-boot/2/" title="querydsl 설정하기" class="dd-item active">
         <a href="/spring/spring-boot/2/">
         querydsl 설정하기
         
@@ -563,7 +563,19 @@ GoRaNee&#39;s dev-log
             
           
           
-            <a href='/'>GoRaNee's dev-log</a> > Series
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>GoRaNee's dev-log</a> > <a href='/spring/'>Spring</a> > <a href='/spring/spring-boot/'>Spring Boot</a> > querydsl 설정하기
+          
+        
+          
+        
           
         
           
@@ -574,7 +586,18 @@ GoRaNee&#39;s dev-log
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-querydsl-을-선택한-이유">1. QueryDSL 을 선택한 이유?</a></li>
+        <li><a href="#2-maven-설정">2. maven 설정</a></li>
+        <li><a href="#3-플러그인-추가시-문제점-발생">3. 플러그인 추가시 문제점 발생</a></li>
+        <li><a href="#4-문제점-해결">4. 문제점 해결</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -590,24 +613,83 @@ GoRaNee&#39;s dev-log
           
             <h1>
               
-                taxonomy ::
-              
-              Series
+              querydsl 설정하기
             </h1>
           
 
         
 
 
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h3 id="1-querydsl-을-선택한-이유">1. QueryDSL 을 선택한 이유?</h3>
+<p>스프링 부트 + JPA 를 선택하면서 고민했던 사항이 테이블 연결이었다.</p>
+<p>JPQL로 간단하게 쿼리문을 불러오는 것이 아닌, 내가 <strong>원하는 쿼리문을 사용하기 어렵다</strong>는 문제점 때문이었다.</p>
+<p>많은 블로그에서 탐색한 결과, QueryDsl을 선택하였다. 비교적 직관적이며, join 중에서도 left outer join / right outer join 등 다양한 조인과 동적쿼리문 작성이 가장 좋아보였다. 사실은 criteriaBuilder를 사용할까 했는데 QueryDsl이 더 직관적이라 선택하였다. 조금 더 보기 편하달까.. 생각보다 많은 레퍼런스와 doc(문서)가 있고, 심지어 한글로 문서번역이 되어있어 편했다. maven 설정할 때 조금 애먹긴 했지만..</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h3 id="2-maven-설정">2. maven 설정</h3>
+<p>레퍼런스에서는 gradle로 설정하는 방법이 많이 있는데 아직 초보개발자인 나로서는 (=배운 지식 활용하기에도 벅찬,,) 감수할 수 없는 위험이라 판단, 조금 더 친숙한 maven으로 dependency를 설정하였다.</p>
+<h4 id="2-1-dependency-설정">2-1 dependency 설정</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">&lt;!--</span> querydsl <span style="color:#f92672">--&gt;</span>
+<span style="color:#f92672">&lt;</span>dependency<span style="color:#f92672">&gt;</span>
+	<span style="color:#f92672">&lt;</span>groupId<span style="color:#f92672">&gt;</span>com<span style="color:#f92672">.</span><span style="color:#a6e22e">querydsl</span><span style="color:#f92672">&lt;/</span>groupId<span style="color:#f92672">&gt;</span>
+	<span style="color:#f92672">&lt;</span>artifactId<span style="color:#f92672">&gt;</span>querydsl<span style="color:#f92672">-</span>apt<span style="color:#f92672">&lt;/</span>artifactId<span style="color:#f92672">&gt;</span>
+	<span style="color:#f92672">&lt;</span>version<span style="color:#f92672">&gt;</span>$<span style="color:#f92672">{</span>querydsl<span style="color:#f92672">.</span><span style="color:#a6e22e">version</span><span style="color:#f92672">}&lt;/</span>version<span style="color:#f92672">&gt;</span>
+	<span style="color:#f92672">&lt;</span>scope<span style="color:#f92672">&gt;</span>provided<span style="color:#f92672">&lt;/</span>scope<span style="color:#f92672">&gt;</span>
+<span style="color:#f92672">&lt;/</span>dependency<span style="color:#f92672">&gt;</span>
+
+<span style="color:#f92672">&lt;</span>dependency<span style="color:#f92672">&gt;</span>
+	<span style="color:#f92672">&lt;</span>groupId<span style="color:#f92672">&gt;</span>com<span style="color:#f92672">.</span><span style="color:#a6e22e">querydsl</span><span style="color:#f92672">&lt;/</span>groupId<span style="color:#f92672">&gt;</span>
+	<span style="color:#f92672">&lt;</span>artifactId<span style="color:#f92672">&gt;</span>querydsl<span style="color:#f92672">-</span>jpa<span style="color:#f92672">&lt;/</span>artifactId<span style="color:#f92672">&gt;</span>
+	<span style="color:#f92672">&lt;</span>version<span style="color:#f92672">&gt;</span>$<span style="color:#f92672">{</span>querydsl<span style="color:#f92672">.</span><span style="color:#a6e22e">version</span><span style="color:#f92672">}&lt;/</span>version<span style="color:#f92672">&gt;</span>
+<span style="color:#f92672">&lt;/</span>dependency<span style="color:#f92672">&gt;</span>
+</code></pre></div><h4 id="2-2-plug-in-설정">2-2 plug-in 설정</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">&lt;!--</span> querydsl plugin <span style="color:#f92672">--&gt;</span>
+  <span style="color:#f92672">&lt;</span>plugin<span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;</span>groupId<span style="color:#f92672">&gt;</span>com<span style="color:#f92672">.</span><span style="color:#a6e22e">mysema</span><span style="color:#f92672">.</span><span style="color:#a6e22e">maven</span><span style="color:#f92672">&lt;/</span>groupId<span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;</span>artifactId<span style="color:#f92672">&gt;</span>apt<span style="color:#f92672">-</span>maven<span style="color:#f92672">-</span>plugin<span style="color:#f92672">&lt;/</span>artifactId<span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;</span>version<span style="color:#f92672">&gt;</span>1<span style="color:#f92672">.</span><span style="color:#a6e22e">1</span><span style="color:#f92672">.</span><span style="color:#a6e22e">3</span><span style="color:#f92672">&lt;/</span>version<span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;</span>executions<span style="color:#f92672">&gt;</span>
+      <span style="color:#f92672">&lt;</span>execution<span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;</span>goals<span style="color:#f92672">&gt;</span>
+          <span style="color:#f92672">&lt;</span>goal<span style="color:#f92672">&gt;</span>process<span style="color:#f92672">&lt;/</span>goal<span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;/</span>goals<span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;</span>configuration<span style="color:#f92672">&gt;</span>
+          <span style="color:#f92672">&lt;</span>outputDirectory<span style="color:#f92672">&gt;</span>target<span style="color:#f92672">/</span>generated<span style="color:#f92672">-</span>sources<span style="color:#f92672">/</span>java<span style="color:#f92672">&lt;/</span>outputDirectory<span style="color:#f92672">&gt;</span>
+          <span style="color:#f92672">&lt;</span>processor<span style="color:#f92672">&gt;</span>com<span style="color:#f92672">.</span><span style="color:#a6e22e">querydsl</span><span style="color:#f92672">.</span><span style="color:#a6e22e">apt</span><span style="color:#f92672">.</span><span style="color:#a6e22e">jpa</span><span style="color:#f92672">.</span><span style="color:#a6e22e">JPAAnnotationProcessor</span><span style="color:#f92672">&lt;/</span>processor<span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;/</span>configuration<span style="color:#f92672">&gt;</span>
+      <span style="color:#f92672">&lt;/</span>execution<span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;/</span>executions<span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;/</span>plugin<span style="color:#f92672">&gt;</span>
+</code></pre></div><p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h3 id="3-플러그인-추가시-문제점-발생">3. 플러그인 추가시 문제점 발생</h3>
+<p>플러그인을 추가할때 <!-- raw HTML omitted --> 부분에서 에러가 발생했다.</p>
+<p>오류메세지는 <code>You need to run build with JDK or have tools.jar on the classpath.</code></p>
+<p>!!<strong>주의</strong>!! 이 오류메세지가 뜨면 QClass 자체가 생성이 안되어 QueryFactory 사용 자체를 할 수가 없게된다.</p>
+<p><code>QClass</code>란? QueryDsl에서 제공하는 클래스. 도메인(repository) 클래스가 자동으로 QClass로 변환되며(target/generated-sources/java 패키지에 자동 생성) 이 클래스를 QueryFactory에 주입하여 사용하게 된다.</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h3 id="4-문제점-해결">4. 문제점 해결</h3>
+<p>해결방법은 생각보다 간단하다.</p>
+<ol>
+<li>
+<p>이클립스 설치경로 혹은 STS 설치경로에 eclipse.ini  혹은 STS.ini 파일을 연다</p>
+</li>
+<li>
+<p>아래의 두 줄을 추가하면 됨. 주의할 점은 -vmargs 설정 전에 써줘야 한다.</p>
+<pre><code>-vm
+C:\Program Files\Java\jdk1.8.0_211\bin\javaw.exe
+</code></pre><p>생각없이 사람들이 쓴 걸 복붙했는데 \ 대신에 /로 루트설정이 되어있어서 sts실행 자체가 안되었었다. 사소한 부분이지만 <strong>루트는 역슬래쉬</strong>..!!</p>
+</li>
+<li>
+<p>STS실행</p>
+</li>
+<li>
+<p>해당 프로젝트 우클릭 &gt; maven &gt; Update Project.. 클릭하고 메이븐업데이트 및 클린 시키면 된다 !</p>
+</li>
+</ol>
+<!-- raw HTML omitted -->
 
 
-
-<ul>
-	
-</ul>
-
-
-<footer class=" footline" >
+<footer class="footline">
 	
 </footer>
 
@@ -677,6 +759,7 @@ GoRaNee&#39;s dev-log
             
                 
                     
+                    
                 
                 
 
@@ -692,6 +775,7 @@ GoRaNee&#39;s dev-log
             
                 
                     
+                    
                 
                 
 
@@ -704,6 +788,9 @@ GoRaNee&#39;s dev-log
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -721,6 +808,7 @@ GoRaNee&#39;s dev-log
             
                 
                     
+                    
                 
                 
 
@@ -736,6 +824,9 @@ GoRaNee&#39;s dev-log
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -939,8 +1030,10 @@ GoRaNee&#39;s dev-log
 	 
 	 
 		
+			<a class="nav nav-prev" href="/spring/spring-boot/1/" title="spring.jpa.open-in-view 로그 오류 해결하기"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/about/" title="About" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/spring/spring-boot/3/" title="maven 빌드 오류" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -970,3 +1063,4 @@ GoRaNee&#39;s dev-log
 
   </body>
 </html>
+

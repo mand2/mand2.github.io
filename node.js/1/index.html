@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Series :: GoRaNee&#39;s dev-log</title>
+    <title>package-lock.json 이란? :: GoRaNee&#39;s dev-log</title>
 
     
     <link href="/css/nucleus.css?1598699828" rel="stylesheet">
@@ -34,7 +34,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/series/">
+  <body class="" data-url="/node.js/1/">
     <nav id="sidebar" class="">
 
 
@@ -431,7 +431,7 @@ GoRaNee&#39;s dev-log
   
     
     <li data-nav-id="/node.js/" title="Node.js" class="dd-item 
-        
+        parent
         
         
         ">
@@ -457,7 +457,7 @@ GoRaNee&#39;s dev-log
  
   
     
-      <li data-nav-id="/node.js/1/" title="package-lock.json 이란?" class="dd-item ">
+      <li data-nav-id="/node.js/1/" title="package-lock.json 이란?" class="dd-item active">
         <a href="/node.js/1/">
         package-lock.json 이란?
         
@@ -563,7 +563,13 @@ GoRaNee&#39;s dev-log
             
           
           
-            <a href='/'>GoRaNee's dev-log</a> > Series
+            
+            
+          
+          
+            <a href='/'>GoRaNee's dev-log</a> > <a href='/node.js/'>Node.js</a> > package-lock.json 이란?
+          
+        
           
         
           
@@ -574,7 +580,16 @@ GoRaNee&#39;s dev-log
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#package-lockjson-파일이란">package-lock.json 파일이란?</a></li>
+        <li><a href="#package-lockjson이-유용한-이유">package-lock.json이 유용한 이유?</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -584,30 +599,38 @@ GoRaNee&#39;s dev-log
             
         <div id="head-tags">
         
+<div class="tags">
+
+  <a class="tag-link" href="/tags/node.js">node.js</a>
+
+  <a class="tag-link" href="/tags/til">TIL</a>
+
+</div>
+
         </div>
         
         <div id="body-inner">
           
             <h1>
               
-                taxonomy ::
-              
-              Series
+              package-lock.json 이란?
             </h1>
           
 
         
 
 
+<h3 id="package-lockjson-파일이란">package-lock.json 파일이란?</h3>
+<p>프로젝트에 설치된 노드 모듈들의 의존성 트리를 기록하고 있음.</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h3 id="package-lockjson이-유용한-이유">package-lock.json이 유용한 이유?</h3>
+<p>git 저장소에 node.js 프로젝트를 커밋할 때 보통 <code>node_modules</code> 폴더는 부피가 커서 commit에 포함시키지 않습니다.이 때 <code>package-lock.json</code> 파일은 꼭 함께 커밋을 해주어야 합니다. 다른 팀원이 이 프로젝트를 처음 pull 받아서 <code>npm install</code> 을 했을 때 개발 당시의 동일한 버전의 모듈들이 설치됨을 보장하기 위함입니다. express 모듈을 프로젝트에 설치하게 되면 <code>package.json</code> 파일에 <code>&quot;express&quot;: &quot;~4.16.1&quot;</code> 처럼 <a href="https://github.com/npm/node-semver#tilde-ranges-123-12-1">Tilde Ranges</a> 표기법으로 버전이 명시됩니다. <code>4.16.1</code> 버전보다 높은 버전이 npm에 publish 된다면 <code>node install</code> 명령어로 로컬에 모듈을 설치하면 더 높은 버전의 express 모듈이 로컬에 설치가됩니다. 이는 개발당시의 버전과 달라져 예기치 않던 버그가 발생할 수 있습니다. 따라서 <code>package-lock.json</code>은 의존성 관리를 위해 필수이며 꼭 git 저장소에 <code>commit</code> 해야하는 대상입니다.</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<hr>
+<p>출처: <a href="https://simsi6.tistory.com/56">https://simsi6.tistory.com/56</a> [곰돌푸우]</p>
 
 
-
-<ul>
-	
-</ul>
-
-
-<footer class=" footline" >
+<footer class="footline">
 	
 </footer>
 
@@ -871,6 +894,7 @@ GoRaNee&#39;s dev-log
             
                 
                     
+                    
                 
                 
 
@@ -883,6 +907,7 @@ GoRaNee&#39;s dev-log
             
             
                 
+                    
                     
                 
                 
@@ -899,6 +924,9 @@ GoRaNee&#39;s dev-log
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -939,8 +967,10 @@ GoRaNee&#39;s dev-log
 	 
 	 
 		
+			<a class="nav nav-prev" href="/node.js/" title="Node.js"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/about/" title="About" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/node.js/2/" title="formidable 설치 오류 해결하기" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -970,3 +1000,4 @@ GoRaNee&#39;s dev-log
 
   </body>
 </html>
+
