@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Categories :: GoRaNee&#39;s dev-log</title>
+    <title>테이블을 엑셀로 다운로드 :: GoRaNee&#39;s dev-log</title>
 
     
     <link href="/css/nucleus.css?1598702672" rel="stylesheet">
@@ -34,7 +34,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/categories/">
+  <body class="" data-url="/react/2/">
     <nav id="sidebar" class="">
 
 
@@ -604,7 +604,7 @@ GoRaNee&#39;s dev-log
   
     
     <li data-nav-id="/react/" title="React" class="dd-item 
-        
+        parent
         
         
         ">
@@ -651,7 +651,7 @@ GoRaNee&#39;s dev-log
  
   
     
-      <li data-nav-id="/react/2/" title="테이블을 엑셀로 다운로드" class="dd-item ">
+      <li data-nav-id="/react/2/" title="테이블을 엑셀로 다운로드" class="dd-item active">
         <a href="/react/2/">
         테이블을 엑셀로 다운로드
         
@@ -736,7 +736,13 @@ GoRaNee&#39;s dev-log
             
           
           
-            <a href='/'>GoRaNee's dev-log</a> > Categories
+            
+            
+          
+          
+            <a href='/'>GoRaNee's dev-log</a> > <a href='/react/'>React</a> > 테이블을 엑셀로 다운로드
+          
+        
           
         
           
@@ -747,7 +753,15 @@ GoRaNee&#39;s dev-log
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#excel-download-만들기">excel download 만들기</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -757,40 +771,109 @@ GoRaNee&#39;s dev-log
             
         <div id="head-tags">
         
+<div class="tags">
+
+  <a class="tag-link" href="/tags/react">React</a>
+
+  <a class="tag-link" href="/tags/til">TIL</a>
+
+</div>
+
         </div>
         
         <div id="body-inner">
           
             <h1>
               
-                taxonomy ::
-              
-              Categories
+              테이블을 엑셀로 다운로드
             </h1>
           
 
         
 
 
-
-
-
+<!-- raw HTML omitted -->
+<h2 id="excel-download-만들기">excel download 만들기</h2>
+<h4 id="목적">목적</h4>
+<p>전체 리스트를 테이블로 출력한 후, <strong>화면에 보여지는 부분을 엑셀 형식으로 다운로드 가능하게</strong> 만들어 보자. 다운로드 창이 나오고, 다운로드 시 해당 파일명을 자동으로 설정까지 해주기!</p>
+<!-- raw HTML omitted -->
+<h4 id="spec">Spec</h4>
 <ul>
-	
-		<li><a href="/categories/spring/">Spring</a></li>
-	
-		<li><a href="/categories/python/">Python</a></li>
-	
-		<li><a href="/categories/react/">React</a></li>
-	
-		<li><a href="/categories/spring-boot/">Spring Boot</a></li>
-	
-		<li><a href="/categories/node.js/">Node.js</a></li>
-	
+<li><code>react.js</code> ^16.8.6</li>
+<li><code>mobx</code> ^5.13.0</li>
 </ul>
+<!-- raw HTML omitted -->
+<p>사실 구글에 검색하면 잘 나온다..(<code>검색어</code> : Export html table data to Excel using JavaScript) 나는 그 글을 긁어왔을 뿐ㅎㅎ,, 다른 방법으로도 가능한데, 지금 내가 구현한 부분은 서버에 과부하를 생성하지 않도록 현재 화면에서 보여지는 것만 엑셀로 출력하도록 만든것임. 현재 화면 뿐만 아니라 전체 리스트를 다 갖고오고 싶다면 다른 방법을 써야 한다.</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h4 id="01-storejs">01 Store.js</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-react" data-lang="react"><span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">action</span>
+<span style="color:#a6e22e">download</span>() {
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">table</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementsByTagName</span>(<span style="color:#e6db74">&#39;table&#39;</span>)[<span style="color:#ae81ff">0</span>];
+    
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">tab_text</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;html xmlns:x=&#34;urn:schemas-microsoft-com:office:excel&#34;&gt;&#39;</span>;
+        <span style="color:#a6e22e">tab_text</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#39;&lt;head&gt;&lt;meta http-equiv=&#34;content-type&#34; content=&#34;application/vnd.ms-excel; charset=UTF-8&#34;&gt;&#39;</span>;
+        <span style="color:#a6e22e">tab_text</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#39;&lt;xml&gt;&lt;x:ExcelWorkbook&gt;&lt;x:ExcelWorksheets&gt;&lt;x:ExcelWorksheet&gt;&#39;</span>
+        <span style="color:#a6e22e">tab_text</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#39;&lt;x:Name&gt;Test Sheet&lt;/x:Name&gt;&#39;</span>;
+        <span style="color:#a6e22e">tab_text</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#39;&lt;x:WorksheetOptions&gt;&lt;x:Panes&gt;&lt;/x:Panes&gt;&lt;/x:WorksheetOptions&gt;&lt;/x:ExcelWorksheet&gt;&#39;</span>;
+        <span style="color:#a6e22e">tab_text</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#39;&lt;/x:ExcelWorksheets&gt;&lt;/x:ExcelWorkbook&gt;&lt;/xml&gt;&lt;/head&gt;&lt;body&gt;&#39;</span>;
+        <span style="color:#a6e22e">tab_text</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;&lt;table border=&#39;1px&#39;&gt;&#34;</span>;
+
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">exportTable</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">table</span>.<span style="color:#a6e22e">cloneNode</span>(<span style="color:#66d9ef">true</span>);
+
+    <span style="color:#a6e22e">tab_text</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">exportTable</span>.<span style="color:#a6e22e">outerHTML</span>;
+    <span style="color:#a6e22e">tab_text</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#39;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;&#39;</span>;
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">data_type</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;data:application/vnd.ms-excel&#39;</span>;
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">ua</span> <span style="color:#f92672">=</span> window.<span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">userAgent</span>;
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">msie</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ua</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#e6db74">&#34;MSIE &#34;</span>);
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">fileName</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">period</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;_Table&#39;</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;.xls&#39;</span>;
+
+    <span style="color:#75715e">// browser 처리
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">msie</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> <span style="color:#f92672">!!</span><span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">userAgent</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/Trident.*rv\:11\./</span>)) {
+        <span style="color:#75715e">//ie 용
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> (window.<span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">msSaveBlob</span>) {
+            <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">blob</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Blob</span>([<span style="color:#a6e22e">tab_text</span>], {
+                <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;application/csv;charset=utf-8;&#34;</span>
+            });
+            <span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">msSaveBlob</span>(<span style="color:#a6e22e">blob</span>, <span style="color:#a6e22e">fileName</span>);
+        }
+    } <span style="color:#66d9ef">else</span> { <span style="color:#75715e">//그외
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">blob2</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Blob</span>([<span style="color:#a6e22e">tab_text</span>], {
+            <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;application/csv;charset=utf-8;&#34;</span>
+        });
+        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">filename</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">fileName</span>;
+        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">elem</span> <span style="color:#f92672">=</span> window.document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;a&#39;</span>);
+        <span style="color:#a6e22e">elem</span>.<span style="color:#a6e22e">href</span> <span style="color:#f92672">=</span> window.<span style="color:#a6e22e">URL</span>.<span style="color:#a6e22e">createObjectURL</span>(<span style="color:#a6e22e">blob2</span>);
+        <span style="color:#a6e22e">elem</span>.<span style="color:#a6e22e">download</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">filename</span>;
+        document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">elem</span>);
+        <span style="color:#a6e22e">elem</span>.<span style="color:#a6e22e">click</span>();
+        document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">removeChild</span>(<span style="color:#a6e22e">elem</span>);
+    }
+}
+</code></pre></div><p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h4 id="02-componentjs">02 Component.js</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-react" data-lang="react"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">React</span>, {<span style="color:#a6e22e">Component</span>} <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>;
+<span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">inject</span>, <span style="color:#a6e22e">observer</span>} <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;mobx-react&#34;</span>;
+
+<span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">inject</span>(<span style="color:#a6e22e">stores</span> =&gt; ({
+    <span style="color:#a6e22e">store</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">stores</span>.<span style="color:#a6e22e">Store</span>;
+}))
+<span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">observer</span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Table</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Component</span>{
+    <span style="color:#a6e22e">render</span>(){
+        <span style="color:#66d9ef">return</span>(
+            &lt;<span style="color:#f92672">div</span>&gt;
+                &lt;<span style="color:#f92672">button</span>&gt;
+                    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span>{ ()=&gt; <span style="color:#a6e22e">store</span>.<span style="color:#a6e22e">download</span>() }&gt;<span style="color:#a6e22e">엑셀다운로드</span>&lt;/<span style="color:#f92672">div</span>&gt;
+                &lt;/<span style="color:#f92672">button</span>&gt;
+            &lt;/<span style="color:#f92672">div</span>&gt;
+        );
+    }    
+}
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">Table</span>;
+</code></pre></div><!-- raw HTML omitted -->
 
 
-<footer class=" footline" >
+<footer class="footline">
 	
 </footer>
 
@@ -1166,6 +1249,7 @@ GoRaNee&#39;s dev-log
             
                 
                     
+                    
                 
                 
 
@@ -1178,6 +1262,9 @@ GoRaNee&#39;s dev-log
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1195,6 +1282,7 @@ GoRaNee&#39;s dev-log
             
                 
                     
+                    
                 
                 
 
@@ -1210,6 +1298,9 @@ GoRaNee&#39;s dev-log
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1234,8 +1325,10 @@ GoRaNee&#39;s dev-log
 	 
 	 
 		
+			<a class="nav nav-prev" href="/react/1/" title="데이터 테이블로 정렬하기"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/about/" title="About" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/react/3/" title="javascript의 innerHTML과 같은 기능은?" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1265,3 +1358,4 @@ GoRaNee&#39;s dev-log
 
   </body>
 </html>
+

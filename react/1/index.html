@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Categories :: GoRaNee&#39;s dev-log</title>
+    <title>데이터 테이블로 정렬하기 :: GoRaNee&#39;s dev-log</title>
 
     
     <link href="/css/nucleus.css?1598702672" rel="stylesheet">
@@ -34,7 +34,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/categories/">
+  <body class="" data-url="/react/1/">
     <nav id="sidebar" class="">
 
 
@@ -604,7 +604,7 @@ GoRaNee&#39;s dev-log
   
     
     <li data-nav-id="/react/" title="React" class="dd-item 
-        
+        parent
         
         
         ">
@@ -630,7 +630,7 @@ GoRaNee&#39;s dev-log
  
   
     
-      <li data-nav-id="/react/1/" title="데이터 테이블로 정렬하기" class="dd-item ">
+      <li data-nav-id="/react/1/" title="데이터 테이블로 정렬하기" class="dd-item active">
         <a href="/react/1/">
         데이터 테이블로 정렬하기
         
@@ -736,7 +736,13 @@ GoRaNee&#39;s dev-log
             
           
           
-            <a href='/'>GoRaNee's dev-log</a> > Categories
+            
+            
+          
+          
+            <a href='/'>GoRaNee's dev-log</a> > <a href='/react/'>React</a> > 데이터 테이블로 정렬하기
+          
+        
           
         
           
@@ -747,7 +753,18 @@ GoRaNee&#39;s dev-log
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#react-table-사용하기">react table 사용하기</a>
+      <ul>
+        <li></li>
+        <li><a href="#appjs">App.js</a></li>
+        <li><a href="#table1js">table1.js</a></li>
+        <li><a href="#table2js">table2.js</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -757,40 +774,150 @@ GoRaNee&#39;s dev-log
             
         <div id="head-tags">
         
+<div class="tags">
+
+  <a class="tag-link" href="/tags/react">React</a>
+
+  <a class="tag-link" href="/tags/til">TIL</a>
+
+</div>
+
         </div>
         
         <div id="body-inner">
           
             <h1>
               
-                taxonomy ::
-              
-              Categories
+              데이터 테이블로 정렬하기
             </h1>
           
 
         
 
 
-
-
-
+<!-- raw HTML omitted -->
+<h2 id="react-table-사용하기">react table 사용하기</h2>
+<h4 id="목적">목적</h4>
+<p>원하는 list를 게시판 형식으로 가져온 후, 모든 컬럼을 sorting 하기 위함. 찾아보니 <code>react-bootstrap-table-next</code> 라는 걸 찾음.</p>
+<!-- raw HTML omitted -->
+<h4 id="설치과정">설치과정</h4>
 <ul>
-	
-		<li><a href="/categories/spring/">Spring</a></li>
-	
-		<li><a href="/categories/python/">Python</a></li>
-	
-		<li><a href="/categories/react/">React</a></li>
-	
-		<li><a href="/categories/spring-boot/">Spring Boot</a></li>
-	
-		<li><a href="/categories/node.js/">Node.js</a></li>
-	
+<li><code>react-create-app</code> 사용(git push 후 babel 설정 modify + 그 외 기능들 추가)</li>
+<li><code>yarn add react-bootstrap-table-next</code> 명령어로 react-bootstrap-table <strong>설치</strong></li>
+<li>
+<dl>
+<dt><strong><code>public/index.html</code></strong> 파일에 bootstrap CSS 추가해야 함!</dt>
+<dd>이쁘게 보고싶다면 설치!</dd>
+</dl>
+</li>
+<li>component에서 css 추가</li>
 </ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-react" data-lang="react"><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;react-bootstrap-table-next/dist/react-bootstrap-table2.min.css&#39;</span>;
+</code></pre></div><!-- raw HTML omitted -->
+<p>결론은 <del>회사에선 쓸 수 없음 ㅠ_ㅠ 기존 css 랑 충돌될 것 같음</del> ,,<br>
+<strong>해결</strong> ! index.html에 부트스트랩css 추가 안해도 됨. 테이블 형식으로 나오긴 하는데, 관련 css는 따로 작성해서 import 처리하면 된다 ㅎ</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h5 id="출처">출처</h5>
+<p><a href="https://react-bootstrap-table.github.io/react-bootstrap-table2/docs/getting-started.html">react-bootstrap-table2 doc</a>
+<a href="https://react-bootstrap-table.github.io/react-bootstrap-table2/storybook/index.html?selectedKind=Basic%20Table&amp;selectedStory=basic%20table&amp;full=0&amp;addons=1&amp;stories=1&amp;panelRight=0&amp;addonPanel=storybook%2Factions%2Factions-panel">LIVE DEMO 사이트</a></p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h3 id="appjs">App.js</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-react" data-lang="react"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">React</span>, {<span style="color:#a6e22e">Component</span>} <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>;
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Table</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./components/table1&#39;</span>;
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">App</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Component</span> {
+  <span style="color:#a6e22e">render</span>() {
+    <span style="color:#66d9ef">return</span> (
+      &lt;<span style="color:#f92672">div</span>&gt;
+        &lt;<span style="color:#f92672">Table</span> /&gt;
+      &lt;/<span style="color:#f92672">div</span>&gt;
+    );
+  }
+}
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">App</span>;
+</code></pre></div><p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h3 id="table1js">table1.js</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-react" data-lang="react"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">React</span>, { <span style="color:#a6e22e">Component</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>;
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Table2</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;./table2&#34;</span>;
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Table</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Component</span>{
+    <span style="color:#a6e22e">render</span>(){
+        
+        <span style="color:#66d9ef">return</span>(
+            &lt;<span style="color:#f92672">div</span>&gt;
+                &lt;<span style="color:#f92672">Table2</span> /&gt;
+            &lt;/<span style="color:#f92672">div</span>&gt;
+        );
+    }
+}
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">Table</span>;
+</code></pre></div><p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h3 id="table2js">table2.js</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-react" data-lang="react"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">React</span>, { <span style="color:#a6e22e">Component</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>;
+<span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;react-bootstrap-table-next/dist/react-bootstrap-table2.min.css&#39;</span>;
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">BootstrapTable</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react-bootstrap-table-next&#39;</span>;
+<span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">inject</span>, <span style="color:#a6e22e">observer</span>} <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;mobx-react&#34;</span>;
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Table2</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Component</span>{
+    <span style="color:#a6e22e">render</span>(){
+        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">products</span> <span style="color:#f92672">=</span> [
+
+            { <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;good&#39;</span>, <span style="color:#a6e22e">price</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1000</span> },
+            { <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;soso&#39;</span>, <span style="color:#a6e22e">price</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1500</span> },
+            { <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>, <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;bad&#39;</span>, <span style="color:#a6e22e">price</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">500</span> },
+            { <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span>, <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;good3&#39;</span>, <span style="color:#a6e22e">price</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">41000</span> },
+            { <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">4</span>, <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;soso4&#39;</span>, <span style="color:#a6e22e">price</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">800</span> }
+
+        ];
+        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">columns</span> <span style="color:#f92672">=</span> [
+            {
+                <span style="color:#a6e22e">dataField</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;id&#39;</span>,
+                <span style="color:#a6e22e">text</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Product ID&#39;</span>,
+                <span style="color:#a6e22e">sort</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>
+            },{
+                <span style="color:#a6e22e">dataField</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;name&#39;</span>,
+                <span style="color:#a6e22e">text</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Product Name&#39;</span>,
+                <span style="color:#a6e22e">sort</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>  
+            },{
+                <span style="color:#a6e22e">dataField</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;price&#39;</span>,
+                <span style="color:#a6e22e">text</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Product Price&#39;</span>,
+                <span style="color:#a6e22e">sort</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>  
+            }
+        ]; 
+
+        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">defaultSorted</span> <span style="color:#f92672">=</span> [{
+            <span style="color:#a6e22e">dataField</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;name&#39;</span>,
+            <span style="color:#a6e22e">order</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;desc&#39;</span>
+          }];
+          
+        <span style="color:#66d9ef">return</span>(
+            &lt;<span style="color:#f92672">div</span>&gt;
+                &lt;<span style="color:#f92672">BootstrapTable</span> <span style="color:#a6e22e">keyField</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;id&#39;</span> <span style="color:#a6e22e">data</span><span style="color:#f92672">=</span>{ <span style="color:#a6e22e">products</span> } <span style="color:#a6e22e">columns</span><span style="color:#f92672">=</span>{ <span style="color:#a6e22e">columns</span> } 
+                <span style="color:#a6e22e">defaultSorted</span><span style="color:#f92672">=</span>{ <span style="color:#a6e22e">defaultSorted</span> }
+                <span style="color:#a6e22e">striped</span>
+                <span style="color:#a6e22e">hover</span>
+                /&gt;
+            &lt;/<span style="color:#f92672">div</span>&gt;
+        );
+    }
+}
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">Table2</span>;
+</code></pre></div><p>기본적으로 가져올 때, name을 기준으로 desc형태로 가져옴. 각 컬럼을 누를 떄마다 desc/asc 형태로 된다.</p>
+<p><code>&lt;BootstrapTable /&gt;</code> 의 필수 요소</p>
+<ul>
+<li>keyField</li>
+<li>data</li>
+<li>columns</li>
+</ul>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p>손쉽게 정렬을 완성할 수 있다!</p>
+<!-- raw HTML omitted -->
 
 
-<footer class=" footline" >
+<footer class="footline">
 	
 </footer>
 
@@ -1166,6 +1293,7 @@ GoRaNee&#39;s dev-log
             
                 
                     
+                    
                 
                 
 
@@ -1178,6 +1306,7 @@ GoRaNee&#39;s dev-log
             
             
                 
+                    
                     
                 
                 
@@ -1194,6 +1323,9 @@ GoRaNee&#39;s dev-log
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1234,8 +1366,10 @@ GoRaNee&#39;s dev-log
 	 
 	 
 		
+			<a class="nav nav-prev" href="/react/" title="React"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/about/" title="About" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/react/2/" title="테이블을 엑셀로 다운로드" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1265,3 +1399,4 @@ GoRaNee&#39;s dev-log
 
   </body>
 </html>
+

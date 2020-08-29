@@ -12,19 +12,19 @@
     <title>GoRaNee&#39;s dev-log :: GoRaNee&#39;s dev-log</title>
 
     
-    <link href="/css/nucleus.css?1598700717" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1598700717" rel="stylesheet">
-    <link href="/css/hybrid.css?1598700717" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1598700717" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1598700717" rel="stylesheet">
-    <link href="/css/auto-complete.css?1598700717" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1598700717" rel="stylesheet">
-    <link href="/css/theme.css?1598700717" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1598700717" rel="stylesheet">
+    <link href="/css/nucleus.css?1598702672" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1598702672" rel="stylesheet">
+    <link href="/css/hybrid.css?1598702672" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1598702672" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1598702672" rel="stylesheet">
+    <link href="/css/auto-complete.css?1598702672" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1598702672" rel="stylesheet">
+    <link href="/css/theme.css?1598702672" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1598702672" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1598700717"></script>
+    <script src="/js/jquery-3.3.1.min.js?1598702672"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -53,14 +53,14 @@ GoRaNee&#39;s dev-log
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1598700717"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1598700717"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1598702672"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1598702672"></script>
 <script type="text/javascript">
     
         var baseurl = "\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1598700717"></script>
+<script type="text/javascript" src="/js/search.js?1598702672"></script>
 
     
   </div>
@@ -595,6 +595,103 @@ GoRaNee&#39;s dev-log
  
 
           
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/react/" title="React" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/react/">
+          <b>5. </b>React
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/react/1/" title="데이터 테이블로 정렬하기" class="dd-item ">
+        <a href="/react/1/">
+        데이터 테이블로 정렬하기
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/react/2/" title="테이블을 엑셀로 다운로드" class="dd-item ">
+        <a href="/react/2/">
+        테이블을 엑셀로 다운로드
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/react/3/" title="javascript의 innerHTML과 같은 기능은?" class="dd-item ">
+        <a href="/react/3/">
+        javascript의 innerHTML과 같은 기능은?
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
          
     </ul>
 
@@ -651,6 +748,12 @@ GoRaNee&#39;s dev-log
 # test.py class Test: def __init__(self, limit=None, persistent=None): if limit is None: self.__limit = False else : self.__limit = limit if persistent is None: self.__persistent = False else : self.__persistent = persistent @property def limit(self): return self.__limit @property def persistent(self): return self.__persistent @limit.setter def limit(self, limit): self.
         </li>
         
+        <li><b>데이터 테이블로 정렬하기</b> | 2019-11-29
+            <br>
+            react table 사용하기 목적 원하는 list를 게시판 형식으로 가져온 후, 모든 컬럼을 sorting 하기 위함. 찾아보니 react-bootstrap-table-next 라는 걸 찾음.
+설치과정  react-create-app 사용(git push 후 babel 설정 modify + 그 외 기능들 추가) yarn add react-bootstrap-table-next 명령어로 react-bootstrap-table 설치   public/index.html 파일에 bootstrap CSS 추가해야 함! 이쁘게 보고싶다면 설치!   component에서 css 추가  import &#39;react-bootstrap-table-next/dist/react-bootstrap-table2.min.css&#39;; 결론은 회사에선 쓸 수 없음 ㅠ_ㅠ 기존 css 랑 충돌될 것 같음 ,,
+        </li>
+        
         <li><b>spring.jpa.open-in-view 로그 오류 해결하기</b> | 2019-09-27
             <br>
             1. 문제상황 : 왜 로그에 warn이 뜨지? 스프링 부트 app을 시작하면 로그가 나오는데,
@@ -699,13 +802,6 @@ Map으로 설정해야 하나,
   Ubuntu 에서 user &amp;&amp; pw 설정
   Ubuntu distro 세팅
 sudo apt update &amp;&amp; sudo apt upgrade   1-2 결과 WSL로 pycharm 세팅하려 했지만, snap 을 지원하지 않는다고 하여 실패.
-        </li>
-        
-        <li><b>querydsl 설정하기</b> | 2019-09-27
-            <br>
-            1. QueryDSL 을 선택한 이유? 스프링 부트 + JPA 를 선택하면서 고민했던 사항이 테이블 연결이었다.
-JPQL로 간단하게 쿼리문을 불러오는 것이 아닌, 내가 원하는 쿼리문을 사용하기 어렵다는 문제점 때문이었다.
-많은 블로그에서 탐색한 결과, QueryDsl을 선택하였다. 비교적 직관적이며, join 중에서도 left outer join / right outer join 등 다양한 조인과 동적쿼리문 작성이 가장 좋아보였다. 사실은 criteriaBuilder를 사용할까 했는데 QueryDsl이 더 직관적이라 선택하였다. 조금 더 보기 편하달까.. 생각보다 많은 레퍼런스와 doc(문서)가 있고, 심지어 한글로 문서번역이 되어있어 편했다.
         </li>
         
     </ul>
@@ -1077,6 +1173,70 @@ JPQL로 간단하게 쿼리문을 불러오는 것이 아닌, 내가 원하는 �
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
             
         
         
@@ -1097,19 +1257,19 @@ JPQL로 간단하게 쿼리문을 불러오는 것이 아닌, 내가 원하는 �
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1598700717"></script>
-    <script src="/js/perfect-scrollbar.min.js?1598700717"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1598700717"></script>
-    <script src="/js/jquery.sticky.js?1598700717"></script>
-    <script src="/js/featherlight.min.js?1598700717"></script>
-    <script src="/js/highlight.pack.js?1598700717"></script>
+    <script src="/js/clipboard.min.js?1598702672"></script>
+    <script src="/js/perfect-scrollbar.min.js?1598702672"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1598702672"></script>
+    <script src="/js/jquery.sticky.js?1598702672"></script>
+    <script src="/js/featherlight.min.js?1598702672"></script>
+    <script src="/js/highlight.pack.js?1598702672"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1598700717"></script>
-    <script src="/js/learn.js?1598700717"></script>
-    <script src="/js/hugo-learn.js?1598700717"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1598702672"></script>
+    <script src="/js/learn.js?1598702672"></script>
+    <script src="/js/hugo-learn.js?1598702672"></script>
 
-    <link href="/mermaid/mermaid.css?1598700717" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1598700717"></script>
+    <link href="/mermaid/mermaid.css?1598702672" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1598702672"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

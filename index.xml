@@ -6,7 +6,7 @@
     <description>Recent content on GoRaNee&#39;s dev-log</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Sat, 29 Aug 2020 20:25:41 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 29 Aug 2020 20:56:57 +0900</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
@@ -19,6 +19,16 @@
       <guid>/python/1/</guid>
       <description>Python : getter setter 설정 클래스 내부에서 getter setter 설정 쉽게하기 메서드 낭비하지 않고 쉽게 쓸 수 있다! 불러오는 방법이나 셋하는 방법도 java와 조금 다름. 주의할 것..
 # test.py class Test: def __init__(self, limit=None, persistent=None): if limit is None: self.__limit = False else : self.__limit = limit if persistent is None: self.__persistent = False else : self.__persistent = persistent @property def limit(self): return self.__limit @property def persistent(self): return self.__persistent @limit.setter def limit(self, limit): self.</description>
+    </item>
+    
+    <item>
+      <title>데이터 테이블로 정렬하기</title>
+      <link>/react/1/</link>
+      <pubDate>Fri, 29 Nov 2019 15:48:28 +0900</pubDate>
+      
+      <guid>/react/1/</guid>
+      <description>react table 사용하기 목적 원하는 list를 게시판 형식으로 가져온 후, 모든 컬럼을 sorting 하기 위함. 찾아보니 react-bootstrap-table-next 라는 걸 찾음.
+설치과정  react-create-app 사용(git push 후 babel 설정 modify + 그 외 기능들 추가) yarn add react-bootstrap-table-next 명령어로 react-bootstrap-table 설치   public/index.html 파일에 bootstrap CSS 추가해야 함! 이쁘게 보고싶다면 설치!   component에서 css 추가  import &amp;#39;react-bootstrap-table-next/dist/react-bootstrap-table2.min.css&amp;#39;; 결론은 회사에선 쓸 수 없음 ㅠ_ㅠ 기존 css 랑 충돌될 것 같음 ,,</description>
     </item>
     
     <item>
@@ -87,6 +97,16 @@ sudo apt update &amp;amp;&amp;amp; sudo apt upgrade   1-2 결과 WSL로 pycharm 
     </item>
     
     <item>
+      <title>테이블을 엑셀로 다운로드</title>
+      <link>/react/2/</link>
+      <pubDate>Fri, 13 Dec 2019 18:31:31 +0900</pubDate>
+      
+      <guid>/react/2/</guid>
+      <description>excel download 만들기 목적 전체 리스트를 테이블로 출력한 후, 화면에 보여지는 부분을 엑셀 형식으로 다운로드 가능하게 만들어 보자. 다운로드 창이 나오고, 다운로드 시 해당 파일명을 자동으로 설정까지 해주기!
+Spec  react.js ^16.8.6 mobx ^5.13.0  사실 구글에 검색하면 잘 나온다..(검색어 : Export html table data to Excel using JavaScript) 나는 그 글을 긁어왔을 뿐ㅎㅎ,, 다른 방법으로도 가능한데, 지금 내가 구현한 부분은 서버에 과부하를 생성하지 않도록 현재 화면에서 보여지는 것만 엑셀로 출력하도록 만든것임.</description>
+    </item>
+    
+    <item>
       <title>querydsl 설정하기</title>
       <link>/spring/spring-boot/2/</link>
       <pubDate>Fri, 27 Sep 2019 13:32:21 +0900</pubDate>
@@ -120,6 +140,18 @@ package.json은 해당 프로젝트 의존모듈 관리를 도와주기 때문�
 필터와 인터셉터의 자세한 차이를 알고싶다면 여기로
 HandlerInterceptor 어떻게 쓸까? HandlerInterceptorAdaptor 클래스를 상속받은 뒤, 자신이 원하는 메서드만 오버라이딩하면 된다.
 ~&#39;Adaptor&#39;가 붙어있는 클래스인터페이스 구현체이나, 안에 내용이 없음. 내가 구현하고자 하는 메서드만 재구성하면 됨.</description>
+    </item>
+    
+    <item>
+      <title>javascript의 innerHTML과 같은 기능은?</title>
+      <link>/react/3/</link>
+      <pubDate>Fri, 13 Dec 2019 20:48:37 +0900</pubDate>
+      
+      <guid>/react/3/</guid>
+      <description>리액트의 innerHTML 은 ? 목적 String으로 tag를 다 만들어서 컴포넌트에 넣고 싶은데, 왜 태그 인식이 안될까요,,, 에서 시작되었다. 호출할 컴포넌트에 String으로 넣어주면 알아서 될 줄 알았건만.. 변환이 안되어서 innterHTML도 써보고 여러가지 해봤는데 리액트는 기본적으로 innterHTML 자체를 인식하지 못한다고 한다.
+그러면 뭘 인식하져? 라고하면 아래의 글을 읽으면 됩니다 :-)
+HOW TO dangerouslySetInnerHTML 이라는 걸 태그 내부에 설정해주면 된다.
+01 Store.js /** ------------------------------------------------ * String 으로 받은 메세지 내부 html 형식으로 변환 * * ------------------------------------------------*/ setDetails(){ return {__html: `${this.</description>
     </item>
     
     <item>

@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Categories :: GoRaNee&#39;s dev-log</title>
+    <title>javascript의 innerHTML과 같은 기능은? :: GoRaNee&#39;s dev-log</title>
 
     
     <link href="/css/nucleus.css?1598702672" rel="stylesheet">
@@ -34,7 +34,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/categories/">
+  <body class="" data-url="/react/3/">
     <nav id="sidebar" class="">
 
 
@@ -604,7 +604,7 @@ GoRaNee&#39;s dev-log
   
     
     <li data-nav-id="/react/" title="React" class="dd-item 
-        
+        parent
         
         
         ">
@@ -672,7 +672,7 @@ GoRaNee&#39;s dev-log
  
   
     
-      <li data-nav-id="/react/3/" title="javascript의 innerHTML과 같은 기능은?" class="dd-item ">
+      <li data-nav-id="/react/3/" title="javascript의 innerHTML과 같은 기능은?" class="dd-item active">
         <a href="/react/3/">
         javascript의 innerHTML과 같은 기능은?
         
@@ -736,7 +736,13 @@ GoRaNee&#39;s dev-log
             
           
           
-            <a href='/'>GoRaNee's dev-log</a> > Categories
+            
+            
+          
+          
+            <a href='/'>GoRaNee's dev-log</a> > <a href='/react/'>React</a> > javascript의 innerHTML과 같은 기능은?
+          
+        
           
         
           
@@ -747,7 +753,15 @@ GoRaNee&#39;s dev-log
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#리액트의-innerhtml-은-">리액트의 innerHTML 은 ?</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -757,40 +771,78 @@ GoRaNee&#39;s dev-log
             
         <div id="head-tags">
         
+<div class="tags">
+
+  <a class="tag-link" href="/tags/react">React</a>
+
+  <a class="tag-link" href="/tags/til">TIL</a>
+
+</div>
+
         </div>
         
         <div id="body-inner">
           
             <h1>
               
-                taxonomy ::
-              
-              Categories
+              javascript의 innerHTML과 같은 기능은?
             </h1>
           
 
         
 
 
+<!-- raw HTML omitted -->
+<h2 id="리액트의-innerhtml-은-">리액트의 innerHTML 은 ?</h2>
+<h4 id="목적">목적</h4>
+<p>String으로 tag를 다 만들어서 컴포넌트에 넣고 싶은데, <del>왜 태그 인식이 안될까요,,,</del> 에서 시작되었다. 호출할 컴포넌트에 String으로 넣어주면 알아서 될 줄 알았건만.. 변환이 안되어서 innterHTML도 써보고 여러가지 해봤는데 리액트는 기본적으로 innterHTML 자체를 인식하지 못한다고 한다.</p>
+<p>그러면 뭘 인식하져? 라고하면 아래의 글을 읽으면 됩니다 :-)</p>
+<!-- raw HTML omitted -->
+<h4 id="how-to">HOW TO</h4>
+<p><code>dangerouslySetInnerHTML</code> 이라는 걸 태그 내부에 설정해주면 된다.</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h4 id="01-storejs">01 Store.js</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-react" data-lang="react"><span style="color:#75715e">/** ------------------------------------------------
+</span><span style="color:#75715e"> * String 으로 받은 메세지 내부 html 형식으로 변환 *
+</span><span style="color:#75715e"> * ------------------------------------------------*/</span>
+<span style="color:#a6e22e">setDetails</span>(){
+    <span style="color:#66d9ef">return</span> {<span style="color:#a6e22e">__html</span><span style="color:#f92672">:</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">message</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>};
+}
+
+<span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">computed</span>
+<span style="color:#a6e22e">get</span> <span style="color:#a6e22e">showDetails</span>(){
+    <span style="color:#66d9ef">return</span>(
+        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">dangerouslySetInnerHTML</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setDetails</span>()} /&gt;
+    );
+}
+</code></pre></div><p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h4 id="02-componentjs">02 Component.js</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-react" data-lang="react"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">React</span>, {<span style="color:#a6e22e">Component</span>} <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>;
+<span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">inject</span>, <span style="color:#a6e22e">observer</span>} <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;mobx-react&#34;</span>;
+
+<span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">inject</span>(<span style="color:#a6e22e">stores</span> =&gt; ({
+    <span style="color:#a6e22e">store</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">stores</span>.<span style="color:#a6e22e">Store</span>;
+}))
+<span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">observer</span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Table</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Component</span>{
+    <span style="color:#a6e22e">render</span>(){
+        <span style="color:#66d9ef">return</span>(
+            &lt;<span style="color:#f92672">div</span>&gt;
+                &lt;<span style="color:#f92672">div</span>&gt;
+                	{<span style="color:#a6e22e">store</span>.<span style="color:#a6e22e">showDetails</span>}
+                &lt;/<span style="color:#f92672">div</span>&gt;
+            &lt;/<span style="color:#f92672">div</span>&gt;
+        );
+    }    
+}
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">Table</span>;
+</code></pre></div><p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h4 id="질문">질문!</h4>
+<p>왜 컴포넌트에서 <code>store.showDetails</code> 라고 하죠? 뒤에 <code>()</code> 를 왜 안쓰져..? 라고 하면 렌더링 하기 전부터 주입되어있는 상태라 가능함..으로 이해했다.(아니면 알려주세요)  <code>() </code>로 쓰면 function으로 인식되고, 내 <del>기억상</del> 에러가 났던 걸로 기억됨. 그리고 다른 메세지를 클릭해도 처음 클릭한 메세지가 계속 떠서 렌더링이 안되었다.</p>
+<p>이거 써보고 저거 써보고,, <del>완전히 이해하고 쓰는게 아니라</del> 일단 돌아가게 구글신의 도움을 받아 만들고 있어서 세련되지 못하다는 점.</p>
 
 
-
-<ul>
-	
-		<li><a href="/categories/spring/">Spring</a></li>
-	
-		<li><a href="/categories/python/">Python</a></li>
-	
-		<li><a href="/categories/react/">React</a></li>
-	
-		<li><a href="/categories/spring-boot/">Spring Boot</a></li>
-	
-		<li><a href="/categories/node.js/">Node.js</a></li>
-	
-</ul>
-
-
-<footer class=" footline" >
+<footer class="footline">
 	
 </footer>
 
@@ -1166,6 +1218,7 @@ GoRaNee&#39;s dev-log
             
                 
                     
+                    
                 
                 
 
@@ -1178,6 +1231,9 @@ GoRaNee&#39;s dev-log
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1210,6 +1266,7 @@ GoRaNee&#39;s dev-log
             
             
                 
+                    
                     
                 
                 
@@ -1234,8 +1291,10 @@ GoRaNee&#39;s dev-log
 	 
 	 
 		
+			<a class="nav nav-prev" href="/react/2/" title="테이블을 엑셀로 다운로드"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/about/" title="About" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/react/1/" title="데이터 테이블로 정렬하기" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1265,3 +1324,4 @@ GoRaNee&#39;s dev-log
 
   </body>
 </html>
+
