@@ -6,10 +6,20 @@
     <description>Recent content in TIL on GoRaNee&#39;s dev-log</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Tue, 15 Oct 2019 09:43:26 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 06 Feb 2020 23:21:03 +0900</lastBuildDate>
     
 	<atom:link href="/tags/til/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>getter setter 설정</title>
+      <link>/python/1/</link>
+      <pubDate>Tue, 04 Feb 2020 17:57:03 +0900</pubDate>
+      
+      <guid>/python/1/</guid>
+      <description>Python : getter setter 설정 클래스 내부에서 getter setter 설정 쉽게하기 메서드 낭비하지 않고 쉽게 쓸 수 있다! 불러오는 방법이나 셋하는 방법도 java와 조금 다름. 주의할 것..
+# test.py class Test: def __init__(self, limit=None, persistent=None): if limit is None: self.__limit = False else : self.__limit = limit if persistent is None: self.__persistent = False else : self.__persistent = persistent @property def limit(self): return self.__limit @property def persistent(self): return self.__persistent @limit.setter def limit(self, limit): self.</description>
+    </item>
     
     <item>
       <title>package-lock.json 이란?</title>
@@ -22,6 +32,20 @@ package-lock.json이 유용한 이유? git 저장소에 node.js 프로젝트를 
     </item>
     
     <item>
+      <title>윈도우에서 Ubuntu로 pycharm 설치할 수 있을까</title>
+      <link>/python/2/</link>
+      <pubDate>Thu, 06 Feb 2020 23:21:03 +0900</pubDate>
+      
+      <guid>/python/2/</guid>
+      <description>PyCharm 설치 ? 어쩌다보니(?)는 아니고, 자발적으로 파이썬 관련 업무를 맡게 되었다. 나아아-름 서버개발자라 윈도우 컴퓨터를 쓴다고 할지라도 리눅스 환경 + 가상환경으로 파이썬 개발을 하고자 했다. 오늘은 그 대서사시의 첫시작(&amp;hellip;)을 써보려고 한다.
+1. Ubuntu 18.04 1-1 설치방법(INSTALL)   windows - app 에서 설치
+  프로그램 설정 : 리눅스 허용 체크
+  Ubuntu 에서 user &amp;amp;&amp;amp; pw 설정
+  Ubuntu distro 세팅
+sudo apt update &amp;amp;&amp;amp; sudo apt upgrade   1-2 결과 WSL로 pycharm 세팅하려 했지만, snap 을 지원하지 않는다고 하여 실패.</description>
+    </item>
+    
+    <item>
       <title>formidable 설치 오류 해결하기</title>
       <link>/node.js/2/</link>
       <pubDate>Thu, 26 Sep 2019 21:55:23 +0900</pubDate>
@@ -29,7 +53,7 @@ package-lock.json이 유용한 이유? git 저장소에 node.js 프로젝트를 
       <guid>/node.js/2/</guid>
       <description>위와 같이 npm에 formidable을 설정하려고 하니 package.json이 없다고 뜸
 package.json은 해당 프로젝트 의존모듈 관리를 도와주기 때문에 설치해야 한다.정리:: npm 이란? node package manager : 모듈관리매니저
-1. 해당 프로젝트 디렉토리로 들어감 cd D:\node\nodeJS_test 2. npm init 을 써준다 npm init -y 위의 이미지를 보면, package.json내부에 해당 프로젝트의 이름, 버전, 사용되는 모듈 등의 스펙을 볼 수 있다. 이 package.json을 통해 모듈 의존성 모듈 관리도 진행할 수 있다. 만약 어떤 오픈 소스를 다운 받을 때 이 package.</description>
+1. 해당 프로젝트 디렉토리로 들어감 cd D:\node\nodeJS_test2. npm init 을 써준다 npm init -y위의 이미지를 보면, package.json내부에 해당 프로젝트의 이름, 버전, 사용되는 모듈 등의 스펙을 볼 수 있다. 이 package.json을 통해 모듈 의존성 모듈 관리도 진행할 수 있다. 만약 어떤 오픈 소스를 다운 받을 때 이 package.</description>
     </item>
     
     <item>

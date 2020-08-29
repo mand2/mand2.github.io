@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>formidable 설치 오류 해결하기 :: GoRaNee&#39;s dev-log</title>
+    <title>getter setter 설정 :: GoRaNee&#39;s dev-log</title>
 
     
     <link href="/css/nucleus.css?1598700717" rel="stylesheet">
@@ -34,7 +34,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/node.js/2/">
+  <body class="" data-url="/python/1/">
     <nav id="sidebar" class="">
 
 
@@ -431,7 +431,7 @@ GoRaNee&#39;s dev-log
   
     
     <li data-nav-id="/python/" title="Python" class="dd-item 
-        
+        parent
         
         
         ">
@@ -457,7 +457,7 @@ GoRaNee&#39;s dev-log
  
   
     
-      <li data-nav-id="/python/1/" title="getter setter 설정" class="dd-item ">
+      <li data-nav-id="/python/1/" title="getter setter 설정" class="dd-item active">
         <a href="/python/1/">
         getter setter 설정
         
@@ -507,7 +507,7 @@ GoRaNee&#39;s dev-log
   
     
     <li data-nav-id="/node.js/" title="Node.js" class="dd-item 
-        parent
+        
         
         
         ">
@@ -554,7 +554,7 @@ GoRaNee&#39;s dev-log
  
   
     
-      <li data-nav-id="/node.js/2/" title="formidable 설치 오류 해결하기" class="dd-item active">
+      <li data-nav-id="/node.js/2/" title="formidable 설치 오류 해결하기" class="dd-item ">
         <a href="/node.js/2/">
         formidable 설치 오류 해결하기
         
@@ -643,7 +643,7 @@ GoRaNee&#39;s dev-log
             
           
           
-            <a href='/'>GoRaNee's dev-log</a> > <a href='/node.js/'>Node.js</a> > formidable 설치 오류 해결하기
+            <a href='/'>GoRaNee's dev-log</a> > <a href='/python/'>Python</a> > getter setter 설정
           
         
           
@@ -658,14 +658,7 @@ GoRaNee&#39;s dev-log
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li></li>
-        <li><a href="#1-해당-프로젝트-디렉토리로-들어감">1. 해당 프로젝트 디렉토리로 들어감</a></li>
-        <li><a href="#2-npm-init-을-써준다">2. npm init 을 써준다</a></li>
-        <li><a href="#3-formidable-설치">3. formidable 설치</a></li>
-      </ul>
-    </li>
+    <li><a href="#python--getter-setter-설정">Python : getter setter 설정</a></li>
   </ul>
 </nav>
     </div>
@@ -679,7 +672,7 @@ GoRaNee&#39;s dev-log
         
 <div class="tags">
 
-  <a class="tag-link" href="/tags/node.js">node.js</a>
+  <a class="tag-link" href="/tags/python">Python</a>
 
   <a class="tag-link" href="/tags/til">TIL</a>
 
@@ -691,36 +684,52 @@ GoRaNee&#39;s dev-log
           
             <h1>
               
-              formidable 설치 오류 해결하기
+              getter setter 설정
             </h1>
           
 
         
 
 
-<!-- raw HTML omitted -->
-<p><img src="https://mand2.github.io/assets/images/node/node_01_01.JPG" alt="오류화면"></p>
-<!-- raw HTML omitted -->
-<p>위와 같이 npm에 formidable을 설정하려고 하니 package.json이 없다고 뜸</p>
-<p>package.json은 해당 프로젝트 의존모듈 관리를 도와주기 때문에 설치해야 한다.<!-- raw HTML omitted --></p>
-<h4 id="정리-npm-이란">정리:: npm 이란?</h4>
-<p>node package manager : 모듈관리매니저</p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
-<h3 id="1-해당-프로젝트-디렉토리로-들어감">1. 해당 프로젝트 디렉토리로 들어감</h3>
-<pre><code>cd D:\node\nodeJS_test
-</code></pre><p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
-<h3 id="2-npm-init-을-써준다">2. npm init 을 써준다</h3>
-<p><img src="https://mand2.github.io/assets/images/node/node_01_02.JPG" alt="npm init"></p>
-<pre><code>npm init -y
-</code></pre><p><!-- raw HTML omitted --><!-- raw HTML omitted -->
-위의 이미지를 보면, <code>package.json</code>내부에 해당 프로젝트의 이름, 버전, 사용되는 모듈 등의 스펙을 볼 수 있다.
-이 <code>package.json</code>을 통해 모듈 의존성 모듈 관리도 진행할 수 있다. 만약 어떤 오픈 소스를 다운 받을 때 이 <code>package.json</code>만 있다면 해당 오픈 소스가 의존하고 있는 모듈이 어떤 것인지. 그리고 그 모듈들을 아래 명령어로 한 번에 설치할 수 있다.<!-- raw HTML omitted --></p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
-<h3 id="3-formidable-설치">3. formidable 설치</h3>
-<pre><code>npm install formidable
-</code></pre><p><img src="https://mand2.github.io/assets/images/node/node_01_03.JPG" alt="npm install"></p>
-<!-- raw HTML omitted -->
+<h2 id="python--getter-setter-설정">Python : getter setter 설정</h2>
+<p>클래스 내부에서 getter setter 설정 쉽게하기 메서드 낭비하지 않고 쉽게 쓸 수 있다!  불러오는 방법이나 셋하는 방법도 java와 조금 다름. 주의할 것..</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># test.py</span>
 
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Test</span>:
+    <span style="color:#66d9ef">def</span> __init__(self, limit<span style="color:#f92672">=</span>None, persistent<span style="color:#f92672">=</span>None):
+        <span style="color:#66d9ef">if</span> limit <span style="color:#f92672">is</span> None:
+            self<span style="color:#f92672">.</span>__limit <span style="color:#f92672">=</span> False
+        <span style="color:#66d9ef">else</span> : 
+            self<span style="color:#f92672">.</span>__limit <span style="color:#f92672">=</span> limit
+
+        <span style="color:#66d9ef">if</span> persistent <span style="color:#f92672">is</span> None:
+            self<span style="color:#f92672">.</span>__persistent <span style="color:#f92672">=</span> False
+        <span style="color:#66d9ef">else</span> :
+            self<span style="color:#f92672">.</span>__persistent <span style="color:#f92672">=</span> persistent
+	
+    <span style="color:#a6e22e">@property</span>
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">limit</span>(self):
+        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>__limit
+
+    <span style="color:#a6e22e">@property</span>
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">persistent</span>(self):
+        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>__persistent
+    
+    <span style="color:#a6e22e">@limit.setter</span>
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">limit</span>(self, limit):
+        self<span style="color:#f92672">.</span>__limit <span style="color:#f92672">=</span> limit
+
+    <span style="color:#a6e22e">@persistent.setter</span>
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">persistent</span>(self, persistent):
+        self<span style="color:#f92672">.</span>__persistent <span style="color:#f92672">=</span> persistent
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">user <span style="color:#f92672">=</span> Test() 
+	<span style="color:#75715e"># 값이 None, None 으로 나옴</span>
+
+<span style="color:#75715e"># set: limit</span>
+user<span style="color:#f92672">.</span>limit <span style="color:#f92672">=</span> True
+<span style="color:#75715e"># get: limit </span>
+<span style="color:#66d9ef">print</span>(user<span style="color:#f92672">.</span>limit)
+</code></pre></div>
 
 <footer class="footline">
 	
@@ -986,6 +995,59 @@ GoRaNee&#39;s dev-log
             
                 
                     
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                 
                 
 
@@ -1026,66 +1088,10 @@ GoRaNee&#39;s dev-log
             
         
                     
-            
-        
-                    
                         
             
             
                 
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
                     
                 
                 
@@ -1110,10 +1116,10 @@ GoRaNee&#39;s dev-log
 	 
 	 
 		
-			<a class="nav nav-prev" href="/node.js/1/" title="package-lock.json 이란?"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/python/" title="Python"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/node.js/3/" title="aws EC2로 node.js 배포하기" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/python/2/" title="윈도우에서 Ubuntu로 pycharm 설치할 수 있을까" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

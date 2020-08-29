@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>formidable 설치 오류 해결하기 :: GoRaNee&#39;s dev-log</title>
+    <title>윈도우에서 Ubuntu로 pycharm 설치할 수 있을까 :: GoRaNee&#39;s dev-log</title>
 
     
     <link href="/css/nucleus.css?1598700717" rel="stylesheet">
@@ -34,7 +34,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/node.js/2/">
+  <body class="" data-url="/python/2/">
     <nav id="sidebar" class="">
 
 
@@ -431,7 +431,7 @@ GoRaNee&#39;s dev-log
   
     
     <li data-nav-id="/python/" title="Python" class="dd-item 
-        
+        parent
         
         
         ">
@@ -478,7 +478,7 @@ GoRaNee&#39;s dev-log
  
   
     
-      <li data-nav-id="/python/2/" title="윈도우에서 Ubuntu로 pycharm 설치할 수 있을까" class="dd-item ">
+      <li data-nav-id="/python/2/" title="윈도우에서 Ubuntu로 pycharm 설치할 수 있을까" class="dd-item active">
         <a href="/python/2/">
         윈도우에서 Ubuntu로 pycharm 설치할 수 있을까
         
@@ -507,7 +507,7 @@ GoRaNee&#39;s dev-log
   
     
     <li data-nav-id="/node.js/" title="Node.js" class="dd-item 
-        parent
+        
         
         
         ">
@@ -554,7 +554,7 @@ GoRaNee&#39;s dev-log
  
   
     
-      <li data-nav-id="/node.js/2/" title="formidable 설치 오류 해결하기" class="dd-item active">
+      <li data-nav-id="/node.js/2/" title="formidable 설치 오류 해결하기" class="dd-item ">
         <a href="/node.js/2/">
         formidable 설치 오류 해결하기
         
@@ -643,7 +643,7 @@ GoRaNee&#39;s dev-log
             
           
           
-            <a href='/'>GoRaNee's dev-log</a> > <a href='/node.js/'>Node.js</a> > formidable 설치 오류 해결하기
+            <a href='/'>GoRaNee's dev-log</a> > <a href='/python/'>Python</a> > 윈도우에서 Ubuntu로 pycharm 설치할 수 있을까
           
         
           
@@ -658,12 +658,11 @@ GoRaNee&#39;s dev-log
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#pycharm-설치-">PyCharm 설치 ?</a>
       <ul>
-        <li></li>
-        <li><a href="#1-해당-프로젝트-디렉토리로-들어감">1. 해당 프로젝트 디렉토리로 들어감</a></li>
-        <li><a href="#2-npm-init-을-써준다">2. npm init 을 써준다</a></li>
-        <li><a href="#3-formidable-설치">3. formidable 설치</a></li>
+        <li><a href="#1-ubuntu-1804">1. Ubuntu 18.04</a></li>
+        <li><a href="#2-vscode">2. VSCode</a></li>
+        <li><a href="#결론">결론</a></li>
       </ul>
     </li>
   </ul>
@@ -679,7 +678,7 @@ GoRaNee&#39;s dev-log
         
 <div class="tags">
 
-  <a class="tag-link" href="/tags/node.js">node.js</a>
+  <a class="tag-link" href="/tags/python">Python</a>
 
   <a class="tag-link" href="/tags/til">TIL</a>
 
@@ -691,35 +690,65 @@ GoRaNee&#39;s dev-log
           
             <h1>
               
-              formidable 설치 오류 해결하기
+              윈도우에서 Ubuntu로 pycharm 설치할 수 있을까
             </h1>
           
 
         
 
 
-<!-- raw HTML omitted -->
-<p><img src="https://mand2.github.io/assets/images/node/node_01_01.JPG" alt="오류화면"></p>
-<!-- raw HTML omitted -->
-<p>위와 같이 npm에 formidable을 설정하려고 하니 package.json이 없다고 뜸</p>
-<p>package.json은 해당 프로젝트 의존모듈 관리를 도와주기 때문에 설치해야 한다.<!-- raw HTML omitted --></p>
-<h4 id="정리-npm-이란">정리:: npm 이란?</h4>
-<p>node package manager : 모듈관리매니저</p>
+<h2 id="pycharm-설치-">PyCharm 설치 ?</h2>
+<p>어쩌다보니(?)는 아니고, 자발적으로 파이썬 관련 업무를 맡게 되었다. 나아아-름 서버개발자라 윈도우 컴퓨터를 쓴다고 할지라도 리눅스 환경 + 가상환경으로 파이썬 개발을 하고자 했다. 오늘은 그 대서사시의 첫시작(&hellip;)을 써보려고 한다.</p>
 <p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
-<h3 id="1-해당-프로젝트-디렉토리로-들어감">1. 해당 프로젝트 디렉토리로 들어감</h3>
-<pre><code>cd D:\node\nodeJS_test
-</code></pre><p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
-<h3 id="2-npm-init-을-써준다">2. npm init 을 써준다</h3>
-<p><img src="https://mand2.github.io/assets/images/node/node_01_02.JPG" alt="npm init"></p>
-<pre><code>npm init -y
-</code></pre><p><!-- raw HTML omitted --><!-- raw HTML omitted -->
-위의 이미지를 보면, <code>package.json</code>내부에 해당 프로젝트의 이름, 버전, 사용되는 모듈 등의 스펙을 볼 수 있다.
-이 <code>package.json</code>을 통해 모듈 의존성 모듈 관리도 진행할 수 있다. 만약 어떤 오픈 소스를 다운 받을 때 이 <code>package.json</code>만 있다면 해당 오픈 소스가 의존하고 있는 모듈이 어떤 것인지. 그리고 그 모듈들을 아래 명령어로 한 번에 설치할 수 있다.<!-- raw HTML omitted --></p>
+<h3 id="1-ubuntu-1804">1. Ubuntu 18.04</h3>
+<h5 id="1-1-설치방법install">1-1 설치방법(INSTALL)</h5>
+<ul>
+<li>
+<p>windows - app 에서 설치</p>
+</li>
+<li>
+<p>프로그램 설정 : <code>리눅스</code> 허용 체크</p>
+</li>
+<li>
+<p>Ubuntu 에서 user &amp;&amp; pw 설정</p>
+</li>
+<li>
+<p>Ubuntu distro 세팅</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt update <span style="color:#f92672">&amp;&amp;</span> sudo apt upgrade
+</code></pre></div></li>
+</ul>
 <p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
-<h3 id="3-formidable-설치">3. formidable 설치</h3>
-<pre><code>npm install formidable
-</code></pre><p><img src="https://mand2.github.io/assets/images/node/node_01_03.JPG" alt="npm install"></p>
-<!-- raw HTML omitted -->
+<h5 id="1-2-결과">1-2 결과</h5>
+<p>WSL로 pycharm 세팅하려 했지만, <code>snap</code> 을 지원하지 않는다고 하여 실패.</p>
+<p>그럼 Ubuntu로 pycharm 설치하는 다른 방법이 없느냐?! 하면 <strong>있긴 있다.</strong> 그런데 stackoverflow에서 <strong>배포할 수 없다</strong>는 글을 봤다. pycharm이 interpreter 세팅을 할 때 remote 로만 인식하게 되기 때문이라고.</p>
+<blockquote>
+<p>Configuring PyCharm PyCharm should be configured to use WSL as a remote interpreter but without deployment, since each drive on Windows is mapped to an appropriate folder in <code>/mnt/&lt;DRIVE_NAME&gt;</code> in WSL. So, you only need to configure the mapping. For remote interpreters, see <a href="https://www.jetbrains.com/help/pycharm/2016.1/configuring-remote-python-interpreters.html">configuration-remote-python-interpreters</a> . You should use <code>127.0.0.1</code> as hostname, and login and password you entered after first <code>lxrun /install</code>. You also should set <code>C:\</code> to <code>/mnt/c/</code> in your mappings. See the video from the previous post. <strong>전문 <a href="https://stackoverflow.com/questions/37000166/getting-pycharm-to-recognize-python-on-the-windows-linux-subsystem-bash-on-wind">URL</a></strong></p>
+</blockquote>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h3 id="2-vscode">2. VSCode</h3>
+<p>우회하는 방법으로 Microsoft의 Visual Studio Code로 파이썬 설치하여 해봤음</p>
+<ul>
+<li>장점
+<ul>
+<li>같은 회사에서 만든거라 연결하기는 간편함</li>
+<li>python extention만 설치하면 되어 쉽다</li>
+<li>여러 버전을 설치 후, bash 파일에서 alias 등록해서 사용하기도 쉽다 (리눅스니까,,)</li>
+</ul>
+</li>
+<li>단점
+<ul>
+<li>정말 여러가지 단점이 있지만 가장 극강은,,,</li>
+<li>VSCODE 자체의 에러 1 : setting.json 파일이 어찌나 여러 장소에 있는지&hellip; 환경 설정 맞추다가 시간 다 감. 그리고 vscode는 <code>1폴더 = 1프로젝트</code> 라는 그지같은 공식이 있다. 이 공식을 없애려고 환경설정 여러가지로 했는데, 뭔가 꼬였는지 안됨. 결국 원인을 못찾고(남탓ㅋ) 하드코딩해버림,, path 설정을 각 파일마다 해줘야해서 귀찮음.</li>
+<li>VSCODE의 자체의 에러 2 : test or debug 에러. vscode의 github 이슈트래커를 봤는데, 관련 질문이 <strong>너어어어어어무</strong> 많음. vscode가 제대로 F/U을 하고있는지 의문이다. 답변으로는 해결했다고 하는데 바로 다음 답글로 <code>안되는데?</code> 가 달린다 ㅋㅋ 나도 따라해보다가 더 꼬여서 어디서부터 해결해야할지.. 에러가 난무하는 나의 vscode파이썬 환경설정&hellip;</li>
+</ul>
+</li>
+<li>결론
+python을 할거면, vscode는 시간낭비! 라는게 나의 결론. 물론 인텔리제이를 비롯한 프로젝트 별로 환경설정을 (비교적) 쉽게 할 수 있는 IDE에 물들어버린 탓도 있겠지만 vscode는 설정 에러가 너무 많아서(예상보다도 더) 시간 낭비하게 된다. 그래서 결국 pycharm을 찾았고&hellip; 찾았으며&hellip; 또 나는 <del>jetbrain의 노예</del>가 되었다&hellip;</li>
+</ul>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h3 id="결론">결론</h3>
+<p>윈도우 + WSL (Ubuntu 18.04) + Pycharm은 귀찮고, 아닌걸로. 그래서 window 용 파이참과 윈도우용 가상환경 파일을 설치해버렸다. ㅎ ㅏ&hellip; 나의 원대한 꿈이 이렇게 막을 내리다니 😥</p>
+<p>그래서 1년 안에 맥을 구매하는 걸 목표로 했다. (돈을 모을 수 있을지 의문이긴 함) <del>답답해서 못해먹겠다</del>싶고. 요즘들어 리눅스 환경에 관심이 생겼는데 윈도우에서는 뭔가 제약사항이 많다. 물론 내가 더 좋은 개발자라면 연장 탓을 안하겠지만 ㅎㅎ  아직 만 1년도 안되었으니 ㅎㅎㅎ 장비 탓을 하겠다!</p>
 
 
 <footer class="footline">
@@ -986,54 +1015,6 @@ GoRaNee&#39;s dev-log
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                     
                 
                 
@@ -1079,6 +1060,9 @@ GoRaNee&#39;s dev-log
             
         
                     
+            
+        
+                    
                         
             
             
@@ -1086,6 +1070,51 @@ GoRaNee&#39;s dev-log
                     
                         
                         
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -1110,10 +1139,10 @@ GoRaNee&#39;s dev-log
 	 
 	 
 		
-			<a class="nav nav-prev" href="/node.js/1/" title="package-lock.json 이란?"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/python/1/" title="getter setter 설정"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/node.js/3/" title="aws EC2로 node.js 배포하기" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/node.js/" title="Node.js" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
