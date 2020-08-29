@@ -1,0 +1,1658 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.74.3" />
+    <meta name="description" content="goranee&#39;s dev-log">
+<meta name="author" content="mand2">
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>Maven pom.xml 빌드 플러그인 세팅하기 :: GoRaNee&#39;s dev-log</title>
+
+    
+    <link href="/css/nucleus.css?1598722442" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1598722442" rel="stylesheet">
+    <link href="/css/hybrid.css?1598722442" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1598722442" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1598722442" rel="stylesheet">
+    <link href="/css/auto-complete.css?1598722442" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1598722442" rel="stylesheet">
+    <link href="/css/theme.css?1598722442" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1598722442" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1598722442"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/til/build-plugs-of-maven/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/">
+GoRaNee&#39;s dev-log
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1598722442"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1598722442"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1598722442"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/about/" title="About" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/about/">
+          <b>0. </b>About
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/about/portfolio/" title="Portfolio" class="dd-item ">
+        <a href="/about/portfolio/">
+        Portfolio
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/spring/" title="Spring" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/spring/">
+          <b>1. </b>Spring
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/spring/rest-api/" title="Rest Api" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/spring/rest-api/">
+          Rest Api
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+             
+            
+          
+             
+            
+          
+             
+            
+          
+             
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/spring/spring-boot/" title="Spring Boot" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/spring/spring-boot/">
+          Spring Boot
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+             
+            
+          
+             
+            
+          
+             
+            
+          
+             
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/spring/user_register/" title="회원가입" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/spring/user_register/">
+          회원가입
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+             
+            
+          
+             
+            
+          
+             
+            
+          
+             
+            
+          
+             
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/til/" title="TIL" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/til/">
+          <b>2. </b>TIL
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/til/build-plugs-of-maven/" title="Maven pom.xml 빌드 플러그인 세팅하기" class="dd-item active">
+        <a href="/til/build-plugs-of-maven/">
+        Maven pom.xml 빌드 플러그인 세팅하기
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/til/definition-db-index/" title="DB index의 정의" class="dd-item ">
+        <a href="/til/definition-db-index/">
+        DB index의 정의
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/til/collection-framework/" title="컬렉션 프레임워크의 정의와 stream 사용법 간단 정리" class="dd-item ">
+        <a href="/til/collection-framework/">
+        컬렉션 프레임워크의 정의와 stream 사용법 간단 정리
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/python/" title="Python" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/python/">
+          <b>3. </b>Python
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/python/1/" title="getter setter 설정" class="dd-item ">
+        <a href="/python/1/">
+        getter setter 설정
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/python/2/" title="윈도우에서 Ubuntu로 pycharm 설치할 수 있을까" class="dd-item ">
+        <a href="/python/2/">
+        윈도우에서 Ubuntu로 pycharm 설치할 수 있을까
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/node.js/" title="Node.js" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/node.js/">
+          <b>4. </b>Node.js
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/node.js/1/" title="package-lock.json 이란?" class="dd-item ">
+        <a href="/node.js/1/">
+        package-lock.json 이란?
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/node.js/2/" title="formidable 설치 오류 해결하기" class="dd-item ">
+        <a href="/node.js/2/">
+        formidable 설치 오류 해결하기
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/node.js/3/" title="aws EC2로 node.js 배포하기" class="dd-item ">
+        <a href="/node.js/3/">
+        aws EC2로 node.js 배포하기
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/react/" title="React" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/react/">
+          <b>5. </b>React
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/react/1/" title="데이터 테이블로 정렬하기" class="dd-item ">
+        <a href="/react/1/">
+        데이터 테이블로 정렬하기
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/react/2/" title="테이블을 엑셀로 다운로드" class="dd-item ">
+        <a href="/react/2/">
+        테이블을 엑셀로 다운로드
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/react/3/" title="javascript의 innerHTML과 같은 기능은?" class="dd-item ">
+        <a href="/react/3/">
+        javascript의 innerHTML과 같은 기능은?
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/others/" title="Others" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/others/">
+          <b>99. </b>Others
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/others/books/" title="Books" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/others/books/">
+          Books
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/others/books/objects_1/" title="[책] 오브젝트 (1)" class="dd-item ">
+        <a href="/others/books/objects_1/">
+        [책] 오브젝트 (1)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/others/interviews/" title="면접질문 정리" class="dd-item ">
+        <a href="/others/interviews/">
+        면접질문 정리
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/mand2"><i class='fab fa-github'></i> Github repo</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="/categories"><i class='fas fa-bookmark'></i> Categories</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="/tags"><i class='fas fa-tags'></i> Tags</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>GoRaNee's dev-log</a> > <a href='/til/'>TIL</a> > Maven pom.xml 빌드 플러그인 세팅하기
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ol>
+    <li>
+      <ol>
+        <li><a href="#q-pomxml에-사용한-dependency를-어떻게-내보내야-하는가">Q. pom.xml에 사용한 dependency를 어떻게 내보내야 하는가?</a></li>
+        <li><a href="#q-java-version-setting은">Q. java version setting은?</a></li>
+        <li><a href="#q-jar-파일-이름-설정가능한지">Q. jar 파일 이름 설정가능한지?</a></li>
+        <li><a href="#마지막">마지막</a></li>
+        <li><a href="#번외--apache-maven-archiver">번외 : Apache Maven Archiver</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+<div class="tags">
+
+  <a class="tag-link" href="/tags/til">TIL</a>
+
+  <a class="tag-link" href="/tags/spring">Spring</a>
+
+</div>
+
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Maven pom.xml 빌드 플러그인 세팅하기
+            </h1>
+          
+
+        
+
+
+<p>작성한 코드를  라이브러리 형식으로 만들기 위해  <code>.jar</code> 파일로 만들었다. 내가 세팅한 버전 등에 맞게 내보내기 위해 + 설정한 dependency 까지 보내주기 위하여 설정하였다.</p>
+<p><strong>스펙</strong></p>
+<ul>
+<li>intellij</li>
+<li>JDK 1.8</li>
+<li>maven 4.0.0</li>
+</ul>
+<p>그전에 앞서, <strong>apache maven project</strong> 사이트에서 말하는 최소 사양은 다음과 같다.</p>
+<ul>
+<li>Maven 3.0 이상</li>
+<li>JDK 1.7 이상</li>
+</ul>
+<br>
+<h3 id="q-pomxml에-사용한-dependency를-어떻게-내보내야-하는가">Q. pom.xml에 사용한 dependency를 어떻게 내보내야 하는가?</h3>
+<p>두 가지 버전이 있다.</p>
+<ol>
+<li>
+<p>maven-assembly-plugin 사용:<br>
+내부에 전 dependency를 저장하여 보내주기 때문에 용량이 크다.</p>
+</li>
+<li>
+<p>maven-jar-plugin + maven-dependency-plugin 함께 사용:<br>
+manifest.mf 파일에 라이브러리의 상대경로를 저장해서 불러오도록 한다.</p>
+</li>
+</ol>
+<br>
+<blockquote>
+<p>manifest 파일이란 ? <a href="https://www.baeldung.com/java-jar-manifest">바로가기</a><br>
+pom 파일에 대해 더 설명을 원할 때 ? <a href="https://maven.apache.org/pom.html">바로가기</a></p>
+</blockquote>
+<br>
+<p>용량문제 + 1의 경우 <strong>conflict 문제가 있다</strong>는 말이 있어 2를 선택함. <a href="https://stackoverflow.com/questions/38548271/difference-between-maven-plugins-assembly-plugins-jar-plugins-shaded-plugi/38558129">출처</a><br>
+실제로 2로 할 때의 용량이 26KB 인데 반해 1의 경우 4600KB 정도로 용량차이가 큼.</p>
+<p><br><br></p>
+<h4 id="버전-1">버전 1</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;build&gt;</span>
+    <span style="color:#f92672">&lt;plugins&gt;</span>
+        <span style="color:#f92672">&lt;plugin&gt;</span>
+            <span style="color:#f92672">&lt;groupId&gt;</span>org.apache.maven.plugins<span style="color:#f92672">&lt;/groupId&gt;</span>
+            <span style="color:#f92672">&lt;artifactId&gt;</span>maven-assembly-plugin<span style="color:#f92672">&lt;/artifactId&gt;</span>
+            <span style="color:#f92672">&lt;version&gt;</span>3.2.0<span style="color:#f92672">&lt;/version&gt;</span>
+            <span style="color:#f92672">&lt;configuration&gt;</span>
+                <span style="color:#f92672">&lt;descriptorRefs&gt;</span>
+                    <span style="color:#f92672">&lt;descriptorRef&gt;</span>jar-with-dependencies<span style="color:#f92672">&lt;/descriptorRef&gt;</span>
+                <span style="color:#f92672">&lt;/descriptorRefs&gt;</span>
+            <span style="color:#f92672">&lt;/configuration&gt;</span>
+            <span style="color:#f92672">&lt;executions&gt;</span>
+                <span style="color:#f92672">&lt;execution&gt;</span>
+                    <span style="color:#f92672">&lt;id&gt;</span>make-assembly<span style="color:#f92672">&lt;/id&gt;</span> <span style="color:#75715e">&lt;!-- this is used for inheritance merges --&gt;</span>
+                    <span style="color:#f92672">&lt;phase&gt;</span>package<span style="color:#f92672">&lt;/phase&gt;</span> <span style="color:#75715e">&lt;!-- bind to the packaging phase --&gt;</span>
+                    <span style="color:#f92672">&lt;goals&gt;</span>
+                        <span style="color:#f92672">&lt;goal&gt;</span>single<span style="color:#f92672">&lt;/goal&gt;</span>
+                    <span style="color:#f92672">&lt;/goals&gt;</span>
+                <span style="color:#f92672">&lt;/execution&gt;</span>
+            <span style="color:#f92672">&lt;/executions&gt;</span>
+        <span style="color:#f92672">&lt;/plugin&gt;</span>
+    <span style="color:#f92672">&lt;/plugins&gt;</span>
+<span style="color:#f92672">&lt;/build&gt;</span>    
+</code></pre></div><br>
+<h4 id="버전-2">버전 2</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;build&gt;</span>
+    <span style="color:#f92672">&lt;plugins&gt;</span>
+        <span style="color:#f92672">&lt;plugin&gt;</span>
+            <span style="color:#f92672">&lt;groupId&gt;</span>org.apache.maven.plugins<span style="color:#f92672">&lt;/groupId&gt;</span>
+            <span style="color:#f92672">&lt;artifactId&gt;</span>maven-jar-plugin<span style="color:#f92672">&lt;/artifactId&gt;</span>
+            <span style="color:#f92672">&lt;version&gt;</span>3.2.0<span style="color:#f92672">&lt;/version&gt;</span>
+            <span style="color:#f92672">&lt;configuration&gt;</span>
+                <span style="color:#f92672">&lt;archive&gt;</span>
+                    <span style="color:#f92672">&lt;manifest&gt;</span>
+                        <span style="color:#f92672">&lt;addClasspath&gt;</span>true<span style="color:#f92672">&lt;/addClasspath&gt;</span>
+                        <span style="color:#f92672">&lt;packageName&gt;</span>com.demo.sample<span style="color:#f92672">&lt;/packageName&gt;</span>
+                        <span style="color:#f92672">&lt;classpathPrefix&gt;</span>lib/<span style="color:#f92672">&lt;/classpathPrefix&gt;</span>
+                    <span style="color:#f92672">&lt;/manifest&gt;</span>
+                <span style="color:#f92672">&lt;/archive&gt;</span>
+            <span style="color:#f92672">&lt;/configuration&gt;</span>
+        <span style="color:#f92672">&lt;/plugin&gt;</span>
+        <span style="color:#f92672">&lt;plugin&gt;</span>
+            <span style="color:#f92672">&lt;groupId&gt;</span>org.apache.maven.plugins<span style="color:#f92672">&lt;/groupId&gt;</span>
+            <span style="color:#f92672">&lt;artifactId&gt;</span>maven-dependency-plugin<span style="color:#f92672">&lt;/artifactId&gt;</span>
+            <span style="color:#f92672">&lt;executions&gt;</span>
+                <span style="color:#f92672">&lt;execution&gt;</span>
+                    <span style="color:#f92672">&lt;id&gt;</span>copy-dependencies<span style="color:#f92672">&lt;/id&gt;</span>
+                    <span style="color:#f92672">&lt;phase&gt;</span>package<span style="color:#f92672">&lt;/phase&gt;</span>
+                    <span style="color:#f92672">&lt;goals&gt;</span>
+                        <span style="color:#f92672">&lt;goal&gt;</span>copy-dependencies<span style="color:#f92672">&lt;/goal&gt;</span>
+                    <span style="color:#f92672">&lt;/goals&gt;</span>
+                    <span style="color:#f92672">&lt;configuration&gt;</span>
+                        <span style="color:#f92672">&lt;outputDirectory&gt;</span>${project.build.directory}/lib<span style="color:#f92672">&lt;/outputDirectory&gt;</span>
+                        <span style="color:#f92672">&lt;overWriteReleases&gt;</span>false<span style="color:#f92672">&lt;/overWriteReleases&gt;</span>
+                        <span style="color:#f92672">&lt;overWriteSnapshots&gt;</span>false<span style="color:#f92672">&lt;/overWriteSnapshots&gt;</span>
+                        <span style="color:#f92672">&lt;overWriteIfNewer&gt;</span>true<span style="color:#f92672">&lt;/overWriteIfNewer&gt;</span>
+                    <span style="color:#f92672">&lt;/configuration&gt;</span>
+                <span style="color:#f92672">&lt;/execution&gt;</span>
+            <span style="color:#f92672">&lt;/executions&gt;</span>
+        <span style="color:#f92672">&lt;/plugin&gt;</span>
+    <span style="color:#f92672">&lt;/plugins&gt;</span>
+<span style="color:#f92672">&lt;/build&gt;</span>
+</code></pre></div><p>필요한 부분들</p>
+<ul>
+<li>packageName</li>
+<li>mainClass : <code>main()</code> 가 있으면 포함해야 함.</li>
+<li>classpathPrefix</li>
+</ul>
+<p><br><br><br></p>
+<h3 id="q-java-version-setting은">Q. java version setting은?</h3>
+<p>버전 세팅에도 두가지 방법이 있다.</p>
+<br>
+<h4 id="1-build-할-때-세팅하는-방법">1. build 할 때 세팅하는 방법</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;plugin&gt;</span>
+    <span style="color:#f92672">&lt;groupId&gt;</span>org.apache.maven.plugins<span style="color:#f92672">&lt;/groupId&gt;</span>
+    <span style="color:#f92672">&lt;artifactId&gt;</span>maven-compiler-plugin<span style="color:#f92672">&lt;/artifactId&gt;</span>
+    <span style="color:#f92672">&lt;version&gt;</span>3.1<span style="color:#f92672">&lt;/version&gt;</span>
+    <span style="color:#f92672">&lt;configuration&gt;</span>
+        <span style="color:#f92672">&lt;source&gt;</span>${java.version}<span style="color:#f92672">&lt;/source&gt;</span>
+        <span style="color:#f92672">&lt;target&gt;</span>${java.version}<span style="color:#f92672">&lt;/target&gt;</span>
+        <span style="color:#f92672">&lt;encoding&gt;</span>utf-8<span style="color:#f92672">&lt;/encoding&gt;</span>
+    <span style="color:#f92672">&lt;/configuration&gt;</span>
+<span style="color:#f92672">&lt;/plugin&gt;</span>
+</code></pre></div><br>
+<h4 id="2-처음부터-세팅">2. 처음부터 세팅</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;properties&gt;</span>
+    <span style="color:#f92672">&lt;java.version&gt;</span>1.8<span style="color:#f92672">&lt;/java.version&gt;</span>
+    <span style="color:#f92672">&lt;maven.compiler.source&gt;</span>1.8<span style="color:#f92672">&lt;/maven.compiler.source&gt;</span>
+    <span style="color:#f92672">&lt;maven.compiler.target&gt;</span>1.8<span style="color:#f92672">&lt;/maven.compiler.target&gt;</span>
+    <span style="color:#f92672">&lt;project.build.sourceEncoding&gt;</span>UTF-8<span style="color:#f92672">&lt;/project.build.sourceEncoding&gt;</span>
+    <span style="color:#f92672">&lt;project.reporting.outputEncoding&gt;</span>UTF-8<span style="color:#f92672">&lt;/project.reporting.outputEncoding&gt;</span>
+<span style="color:#f92672">&lt;/properties&gt;</span>
+</code></pre></div><p><br><br><br></p>
+<h3 id="q-jar-파일-이름-설정가능한지">Q. jar 파일 이름 설정가능한지?</h3>
+<p>가능하다. 아래와 같이 pom.xml 에서 설정가능.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;groupId&gt;</span>com.demo<span style="color:#f92672">&lt;/groupId&gt;</span>
+<span style="color:#f92672">&lt;artifactId&gt;</span>demo-sample<span style="color:#f92672">&lt;/artifactId&gt;</span>
+<span style="color:#f92672">&lt;version&gt;</span>1.0.0<span style="color:#f92672">&lt;/version&gt;</span>
+<span style="color:#f92672">&lt;name&gt;</span>sample<span style="color:#f92672">&lt;/name&gt;</span>
+<span style="color:#f92672">&lt;description&gt;</span>DEMO Java Sample project for Spring Boot<span style="color:#f92672">&lt;/description&gt;</span>
+[...]
+<span style="color:#f92672">&lt;build&gt;</span>
+	<span style="color:#f92672">&lt;finalName&gt;</span>${project.artifactId}-${project.version}<span style="color:#f92672">&lt;/finalName&gt;</span>
+<span style="color:#f92672">&lt;/build&gt;</span>
+</code></pre></div><ul>
+<li>라이브러리 명( == jar 파일명)<br>
+<code>&lt;finalName&gt;</code> 에 정해진 대로 : demo-sample-1.0.0.jar</li>
+<li>라이브러리 내부의 패키지명(class 파일을 갖고있는 패키지임)<br>
+<code>maven-jar-plugin</code> 의 <code>&lt;packageName&gt;</code> 을 따름 : com.demo.sample</li>
+<li>라이브러리 내부의 META-INF
+maven.{groupId}.{artifactId} 로 나옴</li>
+</ul>
+<p><br><br><br></p>
+<h3 id="마지막">마지막</h3>
+<p>intellij 기준으로 maven - lifecycle - clean 후 package 로 하면 <code>target</code> 폴더에 원하는 <code>.jar</code> 가 만들어진다. 이 파일은 라이브러리형식으로 되었기 때문에 다른 프로젝트에서 쓸 수 있다-!</p>
+<p><br><br><br></p>
+<h3 id="번외--apache-maven-archiver">번외 : Apache Maven Archiver</h3>
+<p>자세한 설명보러가기 👉 <a href="http://maven.apache.org/shared/maven-archiver/index.html">docs</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;archive&gt;</span>
+  <span style="color:#f92672">&lt;addMavenDescriptor/&gt;</span>
+  <span style="color:#f92672">&lt;compress/&gt;</span>
+  <span style="color:#f92672">&lt;forced/&gt;</span>
+  <span style="color:#f92672">&lt;index/&gt;</span>
+  <span style="color:#f92672">&lt;pomPropertiesFile/&gt;</span>
+ 
+  <span style="color:#f92672">&lt;manifestFile/&gt;</span>
+  <span style="color:#f92672">&lt;manifest&gt;</span>
+    <span style="color:#f92672">&lt;addClasspath/&gt;</span>
+    <span style="color:#f92672">&lt;addDefaultEntries/&gt;</span>
+    <span style="color:#f92672">&lt;addDefaultImplementationEntries/&gt;</span>
+    <span style="color:#f92672">&lt;addDefaultSpecificationEntries/&gt;</span>
+    <span style="color:#f92672">&lt;addBuildEnvironmentEntries/&gt;</span>
+    <span style="color:#f92672">&lt;addExtensions/&gt;</span>
+    <span style="color:#f92672">&lt;classpathLayoutType/&gt;</span>
+    <span style="color:#f92672">&lt;classpathPrefix/&gt;</span>
+    <span style="color:#f92672">&lt;customClasspathLayout/&gt;</span>
+    <span style="color:#f92672">&lt;mainClass/&gt;</span>
+    <span style="color:#f92672">&lt;packageName/&gt;</span>
+    <span style="color:#f92672">&lt;useUniqueVersions/&gt;</span>
+  <span style="color:#f92672">&lt;/manifest&gt;</span>
+  <span style="color:#f92672">&lt;manifestEntries&gt;</span>
+    <span style="color:#f92672">&lt;key&gt;</span>value<span style="color:#f92672">&lt;/key&gt;</span>
+  <span style="color:#f92672">&lt;/manifestEntries&gt;</span>
+  <span style="color:#f92672">&lt;manifestSections&gt;</span>
+    <span style="color:#f92672">&lt;manifestSection&gt;</span>
+      <span style="color:#f92672">&lt;name/&gt;</span>
+      <span style="color:#f92672">&lt;manifestEntries&gt;</span>
+        <span style="color:#f92672">&lt;key&gt;</span>value<span style="color:#f92672">&lt;/key&gt;</span>
+      <span style="color:#f92672">&lt;/manifestEntries&gt;</span>
+    <span style="color:#f92672">&lt;manifestSection/&gt;</span>
+  <span style="color:#f92672">&lt;/manifestSections&gt;</span>
+<span style="color:#f92672">&lt;/archive&gt;</span>
+</code></pre></div><p><br><br><br></p>
+<hr>
+<br>
+<h4 id="더-자세한-내용은">더 자세한 내용은</h4>
+<p><a href="https://maven.apache.org/plugins/maven-jar-plugin/">https://maven.apache.org/plugins/maven-jar-plugin/</a></p>
+
+
+<footer class="footline">
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/til/" title="TIL"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/til/definition-db-index/" title="DB index의 정의" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1598722442"></script>
+    <script src="/js/perfect-scrollbar.min.js?1598722442"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1598722442"></script>
+    <script src="/js/jquery.sticky.js?1598722442"></script>
+    <script src="/js/featherlight.min.js?1598722442"></script>
+    <script src="/js/highlight.pack.js?1598722442"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1598722442"></script>
+    <script src="/js/learn.js?1598722442"></script>
+    <script src="/js/hugo-learn.js?1598722442"></script>
+
+    <link href="/mermaid/mermaid.css?1598722442" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1598722442"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+

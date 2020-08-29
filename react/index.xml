@@ -18,7 +18,8 @@
       
       <guid>/react/1/</guid>
       <description>react table 사용하기 목적 원하는 list를 게시판 형식으로 가져온 후, 모든 컬럼을 sorting 하기 위함. 찾아보니 react-bootstrap-table-next 라는 걸 찾음.
-설치과정  react-create-app 사용(git push 후 babel 설정 modify + 그 외 기능들 추가) yarn add react-bootstrap-table-next 명령어로 react-bootstrap-table 설치   public/index.html 파일에 bootstrap CSS 추가해야 함! 이쁘게 보고싶다면 설치!   component에서 css 추가  import &amp;#39;react-bootstrap-table-next/dist/react-bootstrap-table2.min.css&amp;#39;; 결론은 회사에선 쓸 수 없음 ㅠ_ㅠ 기존 css 랑 충돌될 것 같음 ,,</description>
+설치과정  react-create-app 사용(git push 후 babel 설정 modify + 그 외 기능들 추가) yarn add react-bootstrap-table-next 명령어로 react-bootstrap-table 설치   public/index.html 파일에 bootstrap CSS 추가해야 함! 이쁘게 보고싶다면 설치!   component에서 css 추가  import &amp;#39;react-bootstrap-table-next/dist/react-bootstrap-table2.min.css&amp;#39;; 
+결론은 회사에선 쓸 수 없음 ㅠ_ㅠ 기존 css 랑 충돌될 것 같음 ,,</description>
     </item>
     
     <item>
@@ -40,6 +41,7 @@ Spec  react.js ^16.8.6 mobx ^5.13.0  사실 구글에 검색하면 잘 나온다
       <description>리액트의 innerHTML 은 ? 목적 String으로 tag를 다 만들어서 컴포넌트에 넣고 싶은데, 왜 태그 인식이 안될까요,,, 에서 시작되었다. 호출할 컴포넌트에 String으로 넣어주면 알아서 될 줄 알았건만.. 변환이 안되어서 innterHTML도 써보고 여러가지 해봤는데 리액트는 기본적으로 innterHTML 자체를 인식하지 못한다고 한다.
 그러면 뭘 인식하져? 라고하면 아래의 글을 읽으면 됩니다 :-)
 HOW TO dangerouslySetInnerHTML 이라는 걸 태그 내부에 설정해주면 된다.
+
 01 Store.js /** ------------------------------------------------ * String 으로 받은 메세지 내부 html 형식으로 변환 * * ------------------------------------------------*/ setDetails(){ return {__html: `${this.</description>
     </item>
     

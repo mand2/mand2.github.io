@@ -1,0 +1,1589 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.74.3" />
+    <meta name="description" content="goranee&#39;s dev-log">
+<meta name="author" content="mand2">
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>@PutMapping 사용 시 415 오류 해결방법 :: GoRaNee&#39;s dev-log</title>
+
+    
+    <link href="/css/nucleus.css?1598722442" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1598722442" rel="stylesheet">
+    <link href="/css/hybrid.css?1598722442" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1598722442" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1598722442" rel="stylesheet">
+    <link href="/css/auto-complete.css?1598722442" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1598722442" rel="stylesheet">
+    <link href="/css/theme.css?1598722442" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1598722442" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1598722442"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/spring/rest-api/415-error-of-put/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/">
+GoRaNee&#39;s dev-log
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1598722442"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1598722442"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1598722442"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/about/" title="About" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/about/">
+          <b>0. </b>About
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/about/portfolio/" title="Portfolio" class="dd-item ">
+        <a href="/about/portfolio/">
+        Portfolio
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/spring/" title="Spring" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/spring/">
+          <b>1. </b>Spring
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/spring/rest-api/" title="Rest Api" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/spring/rest-api/">
+          Rest Api
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+             
+            
+          
+             
+            
+          
+             
+            
+          
+             
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/spring/spring-boot/" title="Spring Boot" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/spring/spring-boot/">
+          Spring Boot
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+             
+            
+          
+             
+            
+          
+             
+            
+          
+             
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/spring/user_register/" title="회원가입" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/spring/user_register/">
+          회원가입
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+             
+            
+          
+             
+            
+          
+             
+            
+          
+             
+            
+          
+             
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/til/" title="TIL" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/til/">
+          <b>2. </b>TIL
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/til/build-plugs-of-maven/" title="Maven pom.xml 빌드 플러그인 세팅하기" class="dd-item ">
+        <a href="/til/build-plugs-of-maven/">
+        Maven pom.xml 빌드 플러그인 세팅하기
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/til/definition-db-index/" title="DB index의 정의" class="dd-item ">
+        <a href="/til/definition-db-index/">
+        DB index의 정의
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/til/collection-framework/" title="컬렉션 프레임워크의 정의와 stream 사용법 간단 정리" class="dd-item ">
+        <a href="/til/collection-framework/">
+        컬렉션 프레임워크의 정의와 stream 사용법 간단 정리
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/python/" title="Python" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/python/">
+          <b>3. </b>Python
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/python/1/" title="getter setter 설정" class="dd-item ">
+        <a href="/python/1/">
+        getter setter 설정
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/python/2/" title="윈도우에서 Ubuntu로 pycharm 설치할 수 있을까" class="dd-item ">
+        <a href="/python/2/">
+        윈도우에서 Ubuntu로 pycharm 설치할 수 있을까
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/node.js/" title="Node.js" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/node.js/">
+          <b>4. </b>Node.js
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/node.js/1/" title="package-lock.json 이란?" class="dd-item ">
+        <a href="/node.js/1/">
+        package-lock.json 이란?
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/node.js/2/" title="formidable 설치 오류 해결하기" class="dd-item ">
+        <a href="/node.js/2/">
+        formidable 설치 오류 해결하기
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/node.js/3/" title="aws EC2로 node.js 배포하기" class="dd-item ">
+        <a href="/node.js/3/">
+        aws EC2로 node.js 배포하기
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/react/" title="React" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/react/">
+          <b>5. </b>React
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/react/1/" title="데이터 테이블로 정렬하기" class="dd-item ">
+        <a href="/react/1/">
+        데이터 테이블로 정렬하기
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/react/2/" title="테이블을 엑셀로 다운로드" class="dd-item ">
+        <a href="/react/2/">
+        테이블을 엑셀로 다운로드
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/react/3/" title="javascript의 innerHTML과 같은 기능은?" class="dd-item ">
+        <a href="/react/3/">
+        javascript의 innerHTML과 같은 기능은?
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/others/" title="Others" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/others/">
+          <b>99. </b>Others
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/others/books/" title="Books" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/others/books/">
+          Books
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/others/books/objects_1/" title="[책] 오브젝트 (1)" class="dd-item ">
+        <a href="/others/books/objects_1/">
+        [책] 오브젝트 (1)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/others/interviews/" title="면접질문 정리" class="dd-item ">
+        <a href="/others/interviews/">
+        면접질문 정리
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/mand2"><i class='fab fa-github'></i> Github repo</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="/categories"><i class='fas fa-bookmark'></i> Categories</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="/tags"><i class='fas fa-tags'></i> Tags</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>GoRaNee's dev-log</a> > <a href='/spring/'>Spring</a> > <a href='/spring/rest-api/'>Rest Api</a> > @PutMapping 사용 시 415 오류 해결방법
+          
+        
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ol>
+    <li><a href="#원인">원인?</a>
+      <ol>
+        <li><a href="#put일-때-responseentity-string-으로-써야하지">PUT일 때 ResponseEntity&lt; String &gt;으로 써야하지?</a></li>
+        <li><a href="#415-코드-해결방법">415 코드 <strong>해결방법</strong></a></li>
+        <li><a href="#1-json--json-으로-변환해줘야-한다">1. JSON &lt;&gt; JSON 으로 변환해줘야 한다</a></li>
+        <li><a href="#2-tomcat의-문제">2. tomcat의 문제</a></li>
+        <li><a href="#3-컨테이너의-request-message-converter의-문제">3. 컨테이너의 Request Message Converter의 문제</a></li>
+      </ol>
+    </li>
+  </ol>
+
+  <ol>
+    <li>
+      <ol>
+        <li><a href="#view">VIEW</a></li>
+        <li><a href="#controller">Controller</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+<div class="tags">
+
+  <a class="tag-link" href="/tags/spring">Spring</a>
+
+  <a class="tag-link" href="/tags/rest-api">Rest-API</a>
+
+  <a class="tag-link" href="/tags/til">TIL</a>
+
+</div>
+
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              @PutMapping 사용 시 415 오류 해결방법
+            </h1>
+          
+
+        
+
+
+<h2 id="원인">원인?</h2>
+<h3 id="put일-때-responseentity-string-으로-써야하지">PUT일 때 ResponseEntity&lt; String &gt;으로 써야하지?</h3>
+<blockquote>
+<p><code>ResponseEntity&lt;Integer&gt;</code> 일 때엔 아예 인식을 못함<br>
+415 error 발생!</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="left">Exception</th>
+<th align="left">설명</th>
+<th align="left">응답코드</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">HttpMediaTypeNotSupportedException</td>
+<td align="left">요청의 Content Type을 핸들러가 지원하지 않는 경우 발생</td>
+<td align="left">415 - Unsupported Media Type</td>
+</tr>
+</tbody>
+</table>
+<p>출처 <a href="https://supawer0728.github.io/2019/04/04/spring-error-handling/">(Spring Boot)오류 처리</a></p>
+<br>
+<h3 id="415-코드-해결방법">415 코드 <strong>해결방법</strong></h3>
+<p><code>contentType</code>을 JSON이라 명시해준다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">contentType</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;application/json; charset=utf-8&#39;</span>
+</code></pre></div><br>
+<h3 id="1-json--json-으로-변환해줘야-한다">1. JSON &lt;&gt; JSON 으로 변환해줘야 한다</h3>
+<p>request를 JSON으로 보냈다면, response도 JSON으로 보내줘야 한다.<br>
+그래서 <code>@RequestBody</code>를 쓴다.<br>
+JSON형태로 받게해주는 Annotation임</p>
+<br>
+<h3 id="2-tomcat의-문제">2. tomcat의 문제</h3>
+<p>GET 혹은 POST 는 <code>tomcat</code>이 기본적으로 parsing 하게 하지만, <br>
+PUT, DELETE는 parsing이 안됨,, 따로 server.xml에서 설정해야 함.</p>
+<br>
+<h3 id="3-컨테이너의-request-message-converter의-문제">3. 컨테이너의 Request Message Converter의 문제</h3>
+<pre><code>앞의 `1번` 내용과 결을 같이 함.
+OKKY의 답변을 그대로 가져옴
+</code></pre><p>컨테이너가 Request 메시지의 컨버터를 선정하는 기준을 이해하시면 쉽습니다. HttpMessageConverter 인터페이스에는 canRead, canWrite 메서드가 있는데 아래처럼 생겼어요.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">        <span style="color:#a6e22e">@Override</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">canRead</span><span style="color:#f92672">(</span>Class<span style="color:#f92672">&lt;?&gt;</span> clazz<span style="color:#f92672">,</span> MediaType mediaType<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		<span style="color:#75715e">// TODO Auto-generated method stub
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
+	<span style="color:#f92672">}</span>
+
+	<span style="color:#a6e22e">@Override</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">canWrite</span><span style="color:#f92672">(</span>Class<span style="color:#f92672">&lt;?&gt;</span> clazz<span style="color:#f92672">,</span> MediaType mediaType<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		<span style="color:#75715e">// TODO Auto-generated method stub
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
+	<span style="color:#f92672">}</span>
+</code></pre></div><p>인자에 clazz, mediaType이 보이실거에요. canRead의 clazz는 @RequestBody 어노테이션이 붙은 변수의 데이터 타입입니다. 위의 예제에서는 @RequestBody String input이니까 String이 되겠네요.. 두 번째 인자mediaType은 Request Header의 ContentType입니다. &ldquo;application/json&quot;으로 요청을 보내셨다면 MediaType.APPLICATION_JSON이 될 겁니다.</p>
+<p>어떤 요청이 들어왔고, 요청 URL을 핸들러 매핑이 조사하여 컨트롤러 메서드를 찾습니다. 찾은 핸들러의 인자에 @RequestBody가 있고, String 타입을 원하고 있습니다. 그러면 &ldquo;현재 등록되어 있는&quot;메시지 컨버터를 집합시켜 canRead에 String, MediaType.APPLICATION_JSON을 넣어 true를 반환하는 메시지 컨버터를 찾아요. 있으면 위임하여 처리시킵니다. 없으면 415를 뱉습니다..</p>
+<p>Jackson 라이브러리를 추가하면 자동으로 MappingJackson2HttpMessageConverter 메시지 컨버터를 추가해 줍니다. 이 컨버터는 clazz가 String이고, mediaType이 APPLICATION_JSON이에요. 따라서 @RequestBody를 String으로 받으면 MappingJackson2HttpMessageConverter가 요청을 처리하구요 Object가 들어가면 메시지 컨버터는 canRead 메서드에서 false를 반환하므로 무시됩니다. 따라서 Object는 처리할 메시지 컨버터가 없어서 415를 뱉는 거에요.</p>
+<p>프론트에서 보내신 JSON객체는 보통 JSON.stringify()로 보내지요? 이는 JSON객체를 문자열화 하여 보내라는 의미라 컨트롤러에서는 &ldquo;{name : value}&rdquo; 이런 &ldquo;문자열&quot;로 도착하게 됩니다. 컨트롤러에서는 JSON객체가 아니라 그냥 문자열이에요</p>
+<p>이해가 잘 되셨는지 모르겠습니다. 아님 TMI라 알고 계신 것 까지 설명했나 모르겠네요;</p>
+<p><br><br><br></p>
+<h1 id="결과코드">결과코드</h1>
+<h3 id="view">VIEW</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getEdit</span>(<span style="color:#a6e22e">idx</span>) {
+
+    <span style="color:#a6e22e">$</span>.<span style="color:#a6e22e">ajax</span>({
+        <span style="color:#a6e22e">url</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;http://localhost:8080/mc/rest/members&#39;</span>,
+        <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;PUT&#39;</span>,
+        <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>({
+            <span style="color:#a6e22e">idx</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">idx</span>,
+            <span style="color:#a6e22e">pw</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;#pw2&#39;</span>).<span style="color:#a6e22e">val</span>(),
+            <span style="color:#a6e22e">name</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;#name2&#39;</span>).<span style="color:#a6e22e">val</span>()
+        }),
+        <span style="color:#a6e22e">contentType</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;application/json; charset=utf-8&#39;</span>,
+        <span style="color:#a6e22e">success</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">data</span>) {
+            <span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">data</span>);
+
+            <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">data</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;success&#39;</span> ){
+                <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;수정되었습니다&#39;</span>);
+            } <span style="color:#66d9ef">else</span> {
+                <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;실-패&#39;</span>);
+            }
+        },
+        <span style="color:#a6e22e">error</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">data</span>){
+            <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;error ㅠㅠㅠㅠ&#39;</span>);
+            <span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">data</span>);
+        },
+        <span style="color:#a6e22e">complete</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {
+            <span style="color:#a6e22e">list</span>();
+            <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;#edit&#39;</span>).<span style="color:#a6e22e">css</span>(<span style="color:#e6db74">&#39;display&#39;</span>,<span style="color:#e6db74">&#39;none&#39;</span>);
+            <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;#join&#39;</span>).<span style="color:#a6e22e">css</span>(<span style="color:#e6db74">&#39;display&#39;</span>,<span style="color:#e6db74">&#39;block&#39;</span>);
+        }
+    });
+}
+</code></pre></div><br>
+<h3 id="controller">Controller</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">//회원수정
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">@CrossOrigin</span>
+<span style="color:#a6e22e">@PutMapping</span>
+<span style="color:#66d9ef">public</span> ResponseEntity<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">editMember</span><span style="color:#f92672">(</span><span style="color:#a6e22e">@RequestBody</span> EditMember edit<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;edit :&#34;</span> <span style="color:#f92672">+</span> edit <span style="color:#f92672">);</span>
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> ResponseEntity<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;(</span>editService<span style="color:#f92672">.</span><span style="color:#a6e22e">editRest</span><span style="color:#f92672">(</span>edit<span style="color:#f92672">)&gt;</span>0 <span style="color:#f92672">?</span> <span style="color:#e6db74">&#34;success&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;fail&#34;</span><span style="color:#f92672">,</span> HttpStatus<span style="color:#f92672">.</span><span style="color:#a6e22e">OK</span><span style="color:#f92672">);</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><ul>
+<li>문자열로 받을 때에는<br>
+view에서 (ResponseEntity&lt; String &gt;) 과 같이 문자열로 받아온다면  <br>
+<strong><code>dataType = json</code> 으로 명시하지 않아야</strong> 함.</li>
+<li>json으로 명시하면 dataType 이 맞지 않아서 오류남.</li>
+</ul>
+<br>
+
+<footer class="footline">
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/spring/" title="Spring"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/spring/spring-boot/" title="Spring Boot" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1598722442"></script>
+    <script src="/js/perfect-scrollbar.min.js?1598722442"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1598722442"></script>
+    <script src="/js/jquery.sticky.js?1598722442"></script>
+    <script src="/js/featherlight.min.js?1598722442"></script>
+    <script src="/js/highlight.pack.js?1598722442"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1598722442"></script>
+    <script src="/js/learn.js?1598722442"></script>
+    <script src="/js/hugo-learn.js?1598722442"></script>
+
+    <link href="/mermaid/mermaid.css?1598722442" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1598722442"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+

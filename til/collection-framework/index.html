@@ -1,0 +1,1540 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.74.3" />
+    <meta name="description" content="goranee&#39;s dev-log">
+<meta name="author" content="mand2">
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>컬렉션 프레임워크의 정의와 stream 사용법 간단 정리 :: GoRaNee&#39;s dev-log</title>
+
+    
+    <link href="/css/nucleus.css?1598722442" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1598722442" rel="stylesheet">
+    <link href="/css/hybrid.css?1598722442" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1598722442" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1598722442" rel="stylesheet">
+    <link href="/css/auto-complete.css?1598722442" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1598722442" rel="stylesheet">
+    <link href="/css/theme.css?1598722442" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1598722442" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1598722442"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/til/collection-framework/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/">
+GoRaNee&#39;s dev-log
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1598722442"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1598722442"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1598722442"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/about/" title="About" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/about/">
+          <b>0. </b>About
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/about/portfolio/" title="Portfolio" class="dd-item ">
+        <a href="/about/portfolio/">
+        Portfolio
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/spring/" title="Spring" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/spring/">
+          <b>1. </b>Spring
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/spring/rest-api/" title="Rest Api" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/spring/rest-api/">
+          Rest Api
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+             
+            
+          
+             
+            
+          
+             
+            
+          
+             
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/spring/spring-boot/" title="Spring Boot" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/spring/spring-boot/">
+          Spring Boot
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+             
+            
+          
+             
+            
+          
+             
+            
+          
+             
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/spring/user_register/" title="회원가입" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/spring/user_register/">
+          회원가입
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+             
+            
+          
+             
+            
+          
+             
+            
+          
+             
+            
+          
+             
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/til/" title="TIL" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/til/">
+          <b>2. </b>TIL
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/til/build-plugs-of-maven/" title="Maven pom.xml 빌드 플러그인 세팅하기" class="dd-item ">
+        <a href="/til/build-plugs-of-maven/">
+        Maven pom.xml 빌드 플러그인 세팅하기
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/til/definition-db-index/" title="DB index의 정의" class="dd-item ">
+        <a href="/til/definition-db-index/">
+        DB index의 정의
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/til/collection-framework/" title="컬렉션 프레임워크의 정의와 stream 사용법 간단 정리" class="dd-item active">
+        <a href="/til/collection-framework/">
+        컬렉션 프레임워크의 정의와 stream 사용법 간단 정리
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/python/" title="Python" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/python/">
+          <b>3. </b>Python
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/python/1/" title="getter setter 설정" class="dd-item ">
+        <a href="/python/1/">
+        getter setter 설정
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/python/2/" title="윈도우에서 Ubuntu로 pycharm 설치할 수 있을까" class="dd-item ">
+        <a href="/python/2/">
+        윈도우에서 Ubuntu로 pycharm 설치할 수 있을까
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/node.js/" title="Node.js" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/node.js/">
+          <b>4. </b>Node.js
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/node.js/1/" title="package-lock.json 이란?" class="dd-item ">
+        <a href="/node.js/1/">
+        package-lock.json 이란?
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/node.js/2/" title="formidable 설치 오류 해결하기" class="dd-item ">
+        <a href="/node.js/2/">
+        formidable 설치 오류 해결하기
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/node.js/3/" title="aws EC2로 node.js 배포하기" class="dd-item ">
+        <a href="/node.js/3/">
+        aws EC2로 node.js 배포하기
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/react/" title="React" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/react/">
+          <b>5. </b>React
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/react/1/" title="데이터 테이블로 정렬하기" class="dd-item ">
+        <a href="/react/1/">
+        데이터 테이블로 정렬하기
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/react/2/" title="테이블을 엑셀로 다운로드" class="dd-item ">
+        <a href="/react/2/">
+        테이블을 엑셀로 다운로드
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/react/3/" title="javascript의 innerHTML과 같은 기능은?" class="dd-item ">
+        <a href="/react/3/">
+        javascript의 innerHTML과 같은 기능은?
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/others/" title="Others" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/others/">
+          <b>99. </b>Others
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/others/books/" title="Books" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/others/books/">
+          Books
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/others/books/objects_1/" title="[책] 오브젝트 (1)" class="dd-item ">
+        <a href="/others/books/objects_1/">
+        [책] 오브젝트 (1)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/others/interviews/" title="면접질문 정리" class="dd-item ">
+        <a href="/others/interviews/">
+        면접질문 정리
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/mand2"><i class='fab fa-github'></i> Github repo</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="/categories"><i class='fas fa-bookmark'></i> Categories</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="/tags"><i class='fas fa-tags'></i> Tags</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>GoRaNee's dev-log</a> > <a href='/til/'>TIL</a> > 컬렉션 프레임워크의 정의와 stream 사용법 간단 정리
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ol>
+    <li>
+      <ol>
+        <li><a href="#1-1-stream-이란">1-1 stream 이란?</a></li>
+        <li><a href="#1-2-collection-이란">1-2 Collection 이란?</a></li>
+        <li><a href="#1-3-그러면-collection-framework는">1-3 그러면 Collection Framework는?</a></li>
+        <li><a href="#2-stream-도입은-언제라고">2 stream 도입은 언제라고?</a></li>
+        <li><a href="#2-2-stream은-왜-사용하는-걸까">2-2 stream은 왜 사용하는 걸까</a></li>
+        <li><a href="#3-스트림-사용법과-주의할-사항">3 스트림 사용법과 주의할 사항?</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+<div class="tags">
+
+  <a class="tag-link" href="/tags/til">TIL</a>
+
+  <a class="tag-link" href="/tags/java">Java</a>
+
+</div>
+
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              컬렉션 프레임워크의 정의와 stream 사용법 간단 정리
+            </h1>
+          
+
+        
+
+
+<p>최근, 알고리즘 문제를 풀 때 (<a href="%5Bhttps://github.com/mand2/Daily-Algorithm/blob/master/Programmers/%EB%AA%A8%EC%9D%98%EA%B3%A0%EC%82%AC.md%5D(https://github.com/mand2/Daily-Algorithm/blob/master/Programmers/%EB%AA%A8%EC%9D%98%EA%B3%A0%EC%82%AC.md)">링크</a>) 다른 사람의 문제풀이에서 stream()을 사용한 풀이가 있었다. 그동안 stackOverFlow에서나, 다른 레퍼런스 문서 등에서 가끔 보던 형식이었다. 그 땐 이 형식이 람다식으로 만들어진 줄도 몰랐다. 내 기억상 음,, 이건 다른 언어에서 쓰는건가? 하고 넘겼던 듯. 이번 문제풀이를 통해 컬렉션과 람다식에 대해 꼼꼼히 배울 수 있는 계기가 되었다고 생각하고, 간단히 정리를 해 보려고 한다. 아래는 내가 보았던 식이다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">return</span> list<span style="color:#f92672">.</span><span style="color:#a6e22e">stream</span><span style="color:#f92672">().</span><span style="color:#a6e22e">mapToInt</span><span style="color:#f92672">(</span>i<span style="color:#f92672">-&gt;</span>i<span style="color:#f92672">.</span><span style="color:#a6e22e">intValue</span><span style="color:#f92672">()).</span><span style="color:#a6e22e">toArray</span><span style="color:#f92672">();</span>
+</code></pre></div><p>이 뜻은</p>
+<ul>
+<li>list를 스트림으로 만들고,</li>
+<li>int 형식으로 변환 후</li>
+<li>다시 배열로 바로 반환</li>
+</ul>
+<p>한다는 뜻이다.</p>
+<br>
+<p>여기서 궁금한 <strong>순서</strong>가</p>
+<ol>
+<li>stream()은 뭐지?</li>
+<li>stream은 언제부터 사용 가능했나? (== 도입시기)</li>
+<li>사용법 / 주의사항은?</li>
+</ol>
+<p><br><br></p>
+<hr>
+<h3 id="1-1-stream-이란">1-1 stream 이란?</h3>
+<p>자바 8부터 추가된 기능으로 &ldquo;<strong>컬렉션, 배열등의 저장 요소를 하나씩 참조하며 함수형 인터페이스(람다식)를 적용하며 반복적으로 처리할 수 있도록 해주는 기능</strong>&ldquo;이다.  java api문서를 보면 <code>java.util.Collection.stream()</code> 에서 찾을 수 있다. 이 정의에서 다시 &lsquo;컬렉션&rsquo;이란 무엇일까 궁금해진다.</p>
+<p><br><br></p>
+<h3 id="1-2-collection-이란">1-2 Collection 이란?</h3>
+<p>Interface로 분리되며, <code>Iterable</code>을 상속한다. 컬렉션 프레임워크에 속하는 인터페이스를 구현한 클래스를 컬렉션 클래스(collection class)라고 한다.</p>
+<p><strong>Since:</strong> 1.2</p>
+<p>**See Also: ** <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html"><code>Set</code></a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html"><code>List</code></a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html"><code>Map</code></a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/SortedSet.html"><code>SortedSet</code></a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/SortedMap.html"><code>SortedMap</code></a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/HashSet.html"><code>HashSet</code></a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/TreeSet.html"><code>TreeSet</code></a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html"><code>ArrayList</code></a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/LinkedList.html"><code>LinkedList</code></a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Vector.html"><code>Vector</code></a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collections.html"><code>Collections</code></a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Arrays.html"><code>Arrays</code></a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/AbstractCollection.html"><code>AbstractCollection</code></a></p>
+<br>
+구조 간단 정리 
+<p><img src="images/TIL/collection-framework_1.png" alt="컬렉션 구조"></p>
+<p><br><br></p>
+<p><a href="https://postitforhooney.tistory.com/entry/JavaCollection-Java-Collection-Framework%EC%97%90-%EB%8C%80%ED%95%9C-%EC%9D%B4%ED%95%B4%EB%A5%BC-%ED%86%B5%ED%95%B4-Data-Structure-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0">출처</a> 링크로 들어가면 메서드까지 잘 정리되어 있음. 필요할 때 보자-! <a href="http://tcpschool.com/java/java_collectionFramework_concept">다른 링크</a>는 학원에서 처음 자바를 배울 때 애용했던 TCP school 페이지임. 이 페이지도 잘 정리되어있다.</p>
+<p>자세히 보면 collection 자체가 시작된 건 java 2 부터라니,, 의외다. 1.8 기준으로 보면 <code>Support for Lambda Expressions, Streams, and Aggregate Operations</code> 을 지원하기 시작했다고 뜬다.</p>
+<p>여기서 <code>Aggregate Operation</code> 이란게 뭘까 찾아보았는데 지금 포스팅 주제와 달라서 따로 공부하고 포스팅해야 할 필요성을 느꼈다. 뭔가 방대해보임. aggregation(집약관계, 연관)과 composition(포함관계, 복합연관)의 개념을 다 알아야 한다. 지금은 검색하고 바로 포스팅한 거라서 <strong>확실치는 않다</strong>.이 단락은 100% 신뢰하지 말 것!</p>
+<p><a href="http://ojc.asia/bbs/board.php?bo_table=LecJava&amp;wr_id=541">링크1</a>    /   <a href="https://www.gpgstudy.com/forum/viewtopic.php?t=10598">링크2</a></p>
+<p><br><br></p>
+<h3 id="1-3-그러면-collection-framework는">1-3 그러면 Collection Framework는?</h3>
+<p>다수의 데이터를 쉽고 효과적으로 처리할 수 있는 <strong>표준화된 방법을 제공</strong>하는 <strong>클래스의 집합</strong>이며, 데이터를 저장하는 <strong>자료 구조</strong>와 데이터를 처리하는 <strong>알고리즘을 구조화</strong>하여 클래스로 구현해 놓은 것이다.</p>
+<p>정리하자면, Collection Framework에는 크게 3가지 인터페이스가 있다.</p>
+<ul>
+<li>List 인터페이스 &gt; Collection 상속</li>
+<li>Set 인터페이스 &gt; Collection 상속</li>
+<li>Map 인터페이스  <br>
+구조상 차이로 인해 Collection 상속X 바로 <code>java.util.Map</code>으로 시작.</li>
+</ul>
+<p><br><br><br><br></p>
+<h3 id="2-stream-도입은-언제라고">2 stream 도입은 언제라고?</h3>
+<p>1-2에서 설명했듯, stream은 람다식과 함께 <code>java 8</code> 부터 사용할 수 있다.</p>
+<p><br><br></p>
+<h3 id="2-2-stream은-왜-사용하는-걸까">2-2 stream은 왜 사용하는 걸까</h3>
+<p>불필요한 코딩(for, if 문법)을 걷어낼 수 있고 <strong>직관적</strong>이기 때문에 <strong>가독성</strong>이 좋아진다. 주로 <strong>Collection 과 Array</strong>에서 사용된다고 함.</p>
+<h5 id="stream-사용-전">stream 사용 전</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">for</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0 <span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> list<span style="color:#f92672">.</span><span style="color:#a6e22e">size</span><span style="color:#f92672">()</span> <span style="color:#f92672">;</span> i<span style="color:#f92672">++){</span>
+    answer<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> list<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>i<span style="color:#f92672">);</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><h5 id="stream-사용">stream 사용</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">return</span> list<span style="color:#f92672">.</span><span style="color:#a6e22e">stream</span><span style="color:#f92672">().</span><span style="color:#a6e22e">mapToInt</span><span style="color:#f92672">(</span>i <span style="color:#f92672">-&gt;</span> i<span style="color:#f92672">.</span><span style="color:#a6e22e">intValue</span><span style="color:#f92672">()).</span><span style="color:#a6e22e">toArray</span><span style="color:#f92672">();</span>
+</code></pre></div><p>사용 예시를 보면 알 수 있듯이 계속해서 <code>.</code>으로 쭉- 이어나갈 수 있다. 즉 <code>파이프라인 구조</code>를 쓴다.</p>
+<p><br>stream을 사용하는 다른 이유로는 <strong>성능/공짜점심</strong>이 있다고 하는데, <a href="https://hamait.tistory.com/547">HAMA 님</a>은 <u>성능만을 이유로 stream을 쓰기엔 애매하다</u> 라는 평을 하셨다. 더 찾아봐야 할 듯.</p>
+<br>
+<p><br><br></p>
+<h3 id="3-스트림-사용법과-주의할-사항">3 스트림 사용법과 주의할 사항?</h3>
+<p>스트림의 기본 구조는 <strong>스트림 생성 -&gt; 중개연산 -&gt; 최종연산</strong> 순으로 이루어진다.</p>
+<pre><code>Collection 같은 객체 집합.스트림생성().중개연산().최종연산();
+</code></pre><p>스트림의 특징은 <strong>한번 닫으면 다시 쓸 수 없다</strong>는 점이 있다. 여기서 파생되는 문제가, (1)<strong>재사용</strong>을 못할 수도 있지만 (2)스트림을 <strong>무한으로 생성</strong>할 수도 있다는 문제가 있다. 닫히지 않는 문제!! 또한 파이프라인 구조로 인해 <strong>중개연산 선언순서가 달라지면</strong> 다른 값이 나온다는 점도 주의해야 한다.</p>
+<p><br><br><br><br></p>
+<hr>
+<h5 id="출처">출처</h5>
+<p><a href="https://futurecreator.github.io/2018/08/26/java-8-streams/">stream 정의와 사용법 관련 1 : futurecreator 님 블로그</a><br>
+<a href="https://jeong-pro.tistory.com/165">stream 정의와 사용법 관련 2: 정프로 님 블로그</a> : API 내용을 간단하게 훑어준다.<br>
+<a href="https://hamait.tistory.com/547">stream 주의사항 관련: HAMA 님 블로그</a></p>
+<p><br><br></p>
+
+
+<footer class="footline">
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/til/definition-db-index/" title="DB index의 정의"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/python/" title="Python" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1598722442"></script>
+    <script src="/js/perfect-scrollbar.min.js?1598722442"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1598722442"></script>
+    <script src="/js/jquery.sticky.js?1598722442"></script>
+    <script src="/js/featherlight.min.js?1598722442"></script>
+    <script src="/js/highlight.pack.js?1598722442"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1598722442"></script>
+    <script src="/js/learn.js?1598722442"></script>
+    <script src="/js/hugo-learn.js?1598722442"></script>
+
+    <link href="/mermaid/mermaid.css?1598722442" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1598722442"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+

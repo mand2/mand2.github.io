@@ -28,11 +28,12 @@
       
       <guid>/python/2/</guid>
       <description>PyCharm 설치 ? 어쩌다보니(?)는 아니고, 자발적으로 파이썬 관련 업무를 맡게 되었다. 나아아-름 서버개발자라 윈도우 컴퓨터를 쓴다고 할지라도 리눅스 환경 + 가상환경으로 파이썬 개발을 하고자 했다. 오늘은 그 대서사시의 첫시작(&amp;hellip;)을 써보려고 한다.
+
 1. Ubuntu 18.04 1-1 설치방법(INSTALL)   windows - app 에서 설치
   프로그램 설정 : 리눅스 허용 체크
   Ubuntu 에서 user &amp;amp;&amp;amp; pw 설정
   Ubuntu distro 세팅
-sudo apt update &amp;amp;&amp;amp; sudo apt upgrade   1-2 결과 WSL로 pycharm 세팅하려 했지만, snap 을 지원하지 않는다고 하여 실패.</description>
+sudo apt update &amp;amp;&amp;amp; sudo apt upgrade</description>
     </item>
     
   </channel>

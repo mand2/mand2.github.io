@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TIL on GoRaNee&#39;s dev-log</title>
+    <link>/categories/til/</link>
+    <description>Recent content in TIL on GoRaNee&#39;s dev-log</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Tue, 21 Jan 2020 07:24:52 +0900</lastBuildDate>
+    
+	<atom:link href="/categories/til/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Maven pom.xml 빌드 플러그인 세팅하기</title>
+      <link>/til/build-plugs-of-maven/</link>
+      <pubDate>Tue, 21 Jan 2020 07:24:52 +0900</pubDate>
+      
+      <guid>/til/build-plugs-of-maven/</guid>
+      <description>작성한 코드를 라이브러리 형식으로 만들기 위해 .jar 파일로 만들었다. 내가 세팅한 버전 등에 맞게 내보내기 위해 + 설정한 dependency 까지 보내주기 위하여 설정하였다.
+스펙
+ intellij JDK 1.8 maven 4.0.0  그전에 앞서, apache maven project 사이트에서 말하는 최소 사양은 다음과 같다.
+ Maven 3.0 이상 JDK 1.7 이상  Q. pom.xml에 사용한 dependency를 어떻게 내보내야 하는가? 두 가지 버전이 있다.
+  maven-assembly-plugin 사용:
+내부에 전 dependency를 저장하여 보내주기 때문에 용량이 크다.</description>
+    </item>
+    
+    <item>
+      <title>DB index의 정의</title>
+      <link>/til/definition-db-index/</link>
+      <pubDate>Thu, 19 Dec 2019 18:20:06 +0900</pubDate>
+      
+      <guid>/til/definition-db-index/</guid>
+      <description>What is index? USAGE 1 : Support for fast Lookup
+An index is any data structure that improves the performance of lookup. There are many different data structures used for this purpose. There are complex design trade-offs involving lookup performance, index size, and index-update performance. Many index designs exhibit logarithmic (O(log(N)) lookup performance and in some applications it is possible to achieve flat (O(1)) performance.
+USAGE 2 : Policing the database constraints (I assumed it as a DB table guideline)</description>
+    </item>
+    
+    <item>
+      <title>컬렉션 프레임워크의 정의와 stream 사용법 간단 정리</title>
+      <link>/til/collection-framework/</link>
+      <pubDate>Wed, 30 Oct 2019 18:58:29 +0900</pubDate>
+      
+      <guid>/til/collection-framework/</guid>
+      <description>최근, 알고리즘 문제를 풀 때 (링크) 다른 사람의 문제풀이에서 stream()을 사용한 풀이가 있었다. 그동안 stackOverFlow에서나, 다른 레퍼런스 문서 등에서 가끔 보던 형식이었다. 그 땐 이 형식이 람다식으로 만들어진 줄도 몰랐다. 내 기억상 음,, 이건 다른 언어에서 쓰는건가? 하고 넘겼던 듯. 이번 문제풀이를 통해 컬렉션과 람다식에 대해 꼼꼼히 배울 수 있는 계기가 되었다고 생각하고, 간단히 정리를 해 보려고 한다. 아래는 내가 보았던 식이다.
+return list.stream().mapToInt(i-&amp;gt;i.intValue()).toArray(); 이 뜻은
+ list를 스트림으로 만들고, int 형식으로 변환 후 다시 배열로 바로 반환  한다는 뜻이다.</description>
+    </item>
+    
+  </channel>
+</rss>

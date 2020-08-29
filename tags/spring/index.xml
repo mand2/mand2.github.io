@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Spring on GoRaNee&#39;s dev-log</title>
+    <link>/tags/spring/</link>
+    <description>Recent content in Spring on GoRaNee&#39;s dev-log</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Wed, 04 Mar 2020 23:13:53 +0900</lastBuildDate>
+    
+	<atom:link href="/tags/spring/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Methods @Get, @Post, Delete, @Put</title>
+      <link>/spring/rest-api/methods/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/spring/rest-api/methods/</guid>
+      <description>목적 @RestController 어노테이션을 이용한 RESTFUL로 변경하기
+basics   Spring 4.0 버전 이후부터 @RestController 적용 가능
+  @GetMapping
+get으로 들어오는 URL 형식에 응답
+  @PostMapping
+post로 들어오는 URL 형식에 응답
+  @DeleteMapping
+delete로 들어오는 URL 형식에 응답
+  @PutMapping
+put으로 들어오는 URL 형식에 응답
+  예제 @CrossOrigin @GetMapping public ResponseEntity&amp;lt;List&amp;lt;Member&amp;gt;&amp;gt; getAllList(){ List&amp;lt;Member&amp;gt; list = listService.getAllList(); ResponseEntity&amp;lt;List&amp;lt;Member&amp;gt;&amp;gt; entity = new ResponseEntity&amp;lt;List&amp;lt;Member&amp;gt;&amp;gt;(list, HttpStatus.OK ); return entity; }</description>
+    </item>
+    
+    <item>
+      <title>@PutMapping 사용 시 415 오류 해결방법</title>
+      <link>/spring/rest-api/415-error-of-put/</link>
+      <pubDate>Mon, 19 Aug 2019 17:37:13 +0900</pubDate>
+      
+      <guid>/spring/rest-api/415-error-of-put/</guid>
+      <description>원인? PUT일 때 ResponseEntity&amp;lt; String &amp;gt;으로 써야하지?  ResponseEntity&amp;lt;Integer&amp;gt; 일 때엔 아예 인식을 못함
+415 error 발생!
+    Exception 설명 응답코드     HttpMediaTypeNotSupportedException 요청의 Content Type을 핸들러가 지원하지 않는 경우 발생 415 - Unsupported Media Type    출처 (Spring Boot)오류 처리
+415 코드 해결방법 contentType을 JSON이라 명시해준다.
+contentType: &amp;#39;application/json; charset=utf-8&amp;#39; 
+1. JSON &amp;lt;&amp;gt; JSON 으로 변환해줘야 한다 request를 JSON으로 보냈다면, response도 JSON으로 보내줘야 한다.</description>
+    </item>
+    
+    <item>
+      <title>statustext parsererror 해결방법</title>
+      <link>/spring/rest-api/statustext_parser_error/</link>
+      <pubDate>Wed, 11 Sep 2019 12:31:53 +0900</pubDate>
+      
+      <guid>/spring/rest-api/statustext_parser_error/</guid>
+      <description>200 도 뜨는데 왜 에러로 걸리지? Spring으로 회원가입 페이지를 만들었다. 회원가입하기 버튼을 눌렀을 때 콘솔에서 에러로 들어왔다고 나왔다. DB에 제대로 들어가는 건 함정&amp;hellip;
+서버쪽에서 제대로 넘어갔고, 200으로도 뜨는데 왜 ajax로 넘어올 때 success가 아닌 error로 넘어갈까 찾아보았다.
+$.ajax({ url: &amp;#39;&amp;#39;, type: &amp;#39;post&amp;#39;, data: JSON.stringify(all), contentType : &amp;#39;application/json;charset=utf-8&amp;#39;, dataTyep: &amp;#39;json&amp;#39;, success: function(data){ if(data == &amp;#39;success&amp;#39;){ console.log(&amp;#39;success성공&amp;#39;); } else if(data == &amp;#39;fail&amp;#39;){ console.log(&amp;#39;success:실패&amp;#39;) } else { console.log(&amp;#39;success:요상한값들어간듯,&amp;#39; + data) } }, error: function(data){ console.</description>
+    </item>
+    
+    <item>
+      <title>REST API Client에서 호출가능한 Library</title>
+      <link>/spring/rest-api/libraries-for-client/</link>
+      <pubDate>Wed, 04 Mar 2020 23:13:53 +0900</pubDate>
+      
+      <guid>/spring/rest-api/libraries-for-client/</guid>
+      <description>우리 팀은 MSA 방식으로 웹 어플리케이션을 만들기 때문에 api 통신이 중요하다. api 통신을 하기 위해서 client 단에서 호출 가능한 library가 무엇이 있는지 찾아보았다. 크게 두 라이브러리를 사용하는데, HttpURLConnection 과 RestTemplate 이다.
+
+1 HttpURLConnection void sendRequest(String request) { // i.e.: request = &amp;#34;http://example.com/index.php?param1=a&amp;amp;param2=b&amp;amp;param3=c&amp;#34;;  URL url = new URL(request); HttpURLConnection connection = (HttpURLConnection) url.openConnection(); connection.setDoOutput(true); connection.setInstanceFollowRedirects(false); connection.setRequestMethod(&amp;#34;GET&amp;#34;); connection.setRequestProperty(&amp;#34;Content-Type&amp;#34;, &amp;#34;text/plain&amp;#34;); connection.setRequestProperty(&amp;#34;charset&amp;#34;, &amp;#34;utf-8&amp;#34;); connection.connect(); } 
+2 RestTemplate DOCS
+요즘 들어 선호하는 형태는 postForObject .</description>
+    </item>
+    
+    <item>
+      <title>Maven pom.xml 빌드 플러그인 세팅하기</title>
+      <link>/til/build-plugs-of-maven/</link>
+      <pubDate>Tue, 21 Jan 2020 07:24:52 +0900</pubDate>
+      
+      <guid>/til/build-plugs-of-maven/</guid>
+      <description>작성한 코드를 라이브러리 형식으로 만들기 위해 .jar 파일로 만들었다. 내가 세팅한 버전 등에 맞게 내보내기 위해 + 설정한 dependency 까지 보내주기 위하여 설정하였다.
+스펙
+ intellij JDK 1.8 maven 4.0.0  그전에 앞서, apache maven project 사이트에서 말하는 최소 사양은 다음과 같다.
+ Maven 3.0 이상 JDK 1.7 이상  Q. pom.xml에 사용한 dependency를 어떻게 내보내야 하는가? 두 가지 버전이 있다.
+  maven-assembly-plugin 사용:
+내부에 전 dependency를 저장하여 보내주기 때문에 용량이 크다.</description>
+    </item>
+    
+  </channel>
+</rss>
