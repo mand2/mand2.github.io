@@ -38,6 +38,11 @@
   </url>
   
   <url>
+    <loc>/retro/</loc>
+    <lastmod>2020-08-31T00:33:33+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/python/1/</loc>
     <lastmod>2020-02-04T17:57:03+09:00</lastmod>
   </url>
@@ -148,8 +153,38 @@
   </url>
   
   <url>
+    <loc>/retro/20200830/</loc>
+    <lastmod>2020-08-31T00:38:13+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/blog/</loc>
+    <lastmod>2020-08-31T00:38:13+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
+    <lastmod>2020-08-31T00:38:13+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/diary/</loc>
+    <lastmod>2020-08-31T00:38:13+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/retro/</loc>
+    <lastmod>2020-08-31T00:38:13+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2020-08-31T00:38:13+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/</loc>
-    <lastmod>2020-08-30T02:03:22+09:00</lastmod>
+    <lastmod>2020-08-31T00:38:13+09:00</lastmod>
   </url>
   
   <url>
@@ -165,11 +200,6 @@
   <url>
     <loc>/spring/spring-boot/</loc>
     <lastmod>2020-08-29T17:55:31+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/</loc>
-    <lastmod>2020-08-25T23:00:53+09:00</lastmod>
   </url>
   
   <url>
@@ -194,11 +224,6 @@
   
   <url>
     <loc>/tags/spring/</loc>
-    <lastmod>2020-03-04T23:13:53+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
     <lastmod>2020-03-04T23:13:53+09:00</lastmod>
   </url>
   
