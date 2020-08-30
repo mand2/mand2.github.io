@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>회원가입 on 고라니의 개발일기🦌</title>
-        <link>/spring/user_register/</link>
-        <description>Recent content in 회원가입 on 고라니의 개발일기🦌</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>ko-kr</language>
-        <lastBuildDate>Tue, 25 Aug 2020 22:59:04 +0900</lastBuildDate><atom:link href="/spring/user_register/index.xml" rel="self" type="application/rss+xml" />
-        <item>
-            <title>single-page 회원관리 폼 만들기</title>
-            <link>/spring/user_register/1/</link>
-            <pubDate>Mon, 19 Aug 2019 10:35:28 +0900</pubDate>
-            
-            <guid>/spring/user_register/1/</guid>
-            <description>single page : CRUD(가입+수정+삭제+리스트 보여주기)를 Single page 처리 REST API 이용   개발순서 (MVC 2 패턴으로 함)
+  <channel>
+    <title>회원가입 on 고라니의 개발일기🦌</title>
+    <link>/spring/user_register/</link>
+    <description>Recent content in 회원가입 on 고라니의 개발일기🦌</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Tue, 25 Aug 2020 22:59:04 +0900</lastBuildDate>
+    
+	<atom:link href="/spring/user_register/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>single-page 회원관리 폼 만들기</title>
+      <link>/spring/user_register/1/</link>
+      <pubDate>Mon, 19 Aug 2019 10:35:28 +0900</pubDate>
+      
+      <guid>/spring/user_register/1/</guid>
+      <description>single page : CRUD(가입+수정+삭제+리스트 보여주기)를 Single page 처리 REST API 이용   개발순서 (MVC 2 패턴으로 함)
  DAO설정
 Controller
 Service
@@ -26,30 +30,30 @@ Map으로 설정해야 하나,
 결과화면
 회원가입화면
 회원수정화면</description>
-        </item>
-        
-        <item>
-            <title>Spring handler 인터셉터</title>
-            <link>/spring/user_register/2/</link>
-            <pubDate>Tue, 20 Aug 2019 23:00:47 +0900</pubDate>
-            
-            <guid>/spring/user_register/2/</guid>
-            <description>필터와 인터셉터의 실행시기 차이? 실행시점은 차이가 있음
+    </item>
+    
+    <item>
+      <title>Spring handler 인터셉터</title>
+      <link>/spring/user_register/2/</link>
+      <pubDate>Tue, 20 Aug 2019 23:00:47 +0900</pubDate>
+      
+      <guid>/spring/user_register/2/</guid>
+      <description>필터와 인터셉터의 실행시기 차이? 실행시점은 차이가 있음
 인터셉터 중 핸들러인터셉터는 필터의 일종이긴 하나, 요청컨트롤러가 있고 확인이 된 후에 실행(컨트롤러 요청 전후) 됨
 핸들러 인터셉터 핸들러 인터셉터는 DispatcherServlet 이 컨트롤러를 호출하기 전과 후에 요청과 응답을 참조하거나 가공할 수 있는 일종의 필터
 필터와 인터셉터의 자세한 차이를 알고싶다면 여기로
 
 HandlerInterceptor 어떻게 쓸까? HandlerInterceptorAdaptor 클래스를 상속받은 뒤, 자신이 원하는 메서드만 오버라이딩하면 된다.
 ~&#39;Adaptor&#39;가 붙어있는 클래스인터페이스 구현체이나, 안에 내용이 없음. 내가 구현하고자 하는 메서드만 재구성하면 됨.</description>
-        </item>
-        
-        <item>
-            <title>Spring 웹상에서 메일 보내보기</title>
-            <link>/spring/user_register/3/</link>
-            <pubDate>Wed, 21 Aug 2019 02:02:51 +0900</pubDate>
-            
-            <guid>/spring/user_register/3/</guid>
-            <description>웹상에서 메일 보내보기 목차  설정
+    </item>
+    
+    <item>
+      <title>Spring 웹상에서 메일 보내보기</title>
+      <link>/spring/user_register/3/</link>
+      <pubDate>Wed, 21 Aug 2019 02:02:51 +0900</pubDate>
+      
+      <guid>/spring/user_register/3/</guid>
+      <description>웹상에서 메일 보내보기 목차  설정
 -1 pom.xml
 -2 servlet-context
 -3 Controller
@@ -60,35 +64,35 @@ HandlerInterceptor 어떻게 쓸까? HandlerInterceptorAdaptor 클래스를 상�
 -3 파일 첨부하기  
 설정부터 해보자! 1. pom.xml에서 메일 설정 &amp;lt;!-- 메일 설정 시작 --&amp;gt; &amp;lt;!-- javax.mail/mail --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;javax.mail&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;mail&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.4.7&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-context-support&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;${org.springframework-version}&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; 
 2. servlet-context 설정 &amp;lt;beans:bean id=&amp;#34;mailSender&amp;#34; class=&amp;#34;org.springframework.mail.javamail.JavaMailSenderImpl&amp;#34;&amp;gt; &amp;lt;beans:property name=&amp;#34;host&amp;#34; value=&amp;#34;smtp.</description>
-        </item>
-        
-        <item>
-            <title>회원가입 시 이메일 인증처리</title>
-            <link>/spring/user_register/4/</link>
-            <pubDate>Tue, 25 Aug 2020 23:00:53 +0900</pubDate>
-            
-            <guid>/spring/user_register/4/</guid>
-            <description>회원 가입 시 email을 받고 인증 코드를 생성, 해당 email 계정으로 인증 처리 메일을 보내보자!
+    </item>
+    
+    <item>
+      <title>회원가입 시 이메일 인증처리</title>
+      <link>/spring/user_register/4/</link>
+      <pubDate>Tue, 25 Aug 2020 23:00:53 +0900</pubDate>
+      
+      <guid>/spring/user_register/4/</guid>
+      <description>회원 가입 시 email을 받고 인증 코드를 생성, 해당 email 계정으로 인증 처리 메일을 보내보자!
 관리자가 보낸 인증코드가 맞다면 인증 완료처리까지-
 먼저 mySQL에서 컬럼 추가해준다.
 -- 인증코드와 verify 확인 코드 ALTER TABLE `project_01`.`memberinfo` ADD COLUMN `code` VARCHAR(25) NULL AFTER `REGDATE`, ADD COLUMN `verify` CHAR(1) NULL DEFAULT &amp;#39;N&amp;#39; AFTER `code`, ADD COLUMN `email` VARCHAR(45) NULL AFTER `verify`; 
 DAO 변경 DAO 변경
 //verify public int updateVerify(String id, String code); public int updateEmail(Member member);</description>
-        </item>
-        
-        <item>
-            <title>메이븐 빌드 및 배포란?</title>
-            <link>/spring/user_register/5/</link>
-            <pubDate>Fri, 23 Aug 2019 04:32:00 +0900</pubDate>
-            
-            <guid>/spring/user_register/5/</guid>
-            <description>메이븐은 프로젝트 객체 모델(Project Object Model)이라는 개념을 바탕으로 프로젝트 의존성 관리, 라이브러리 관리, 프로젝트 생명 주기 관리 기능 등을 제공하는 프로젝트 관리 도구이다. 또한 플러그인을 기반으로 소스 코드로부터 배포 가능한 산출물을 만들어 내는 빌드 기능 뿐만 아니라 레포팅 및 documentation 작성 기능 등을 제공한다.
+    </item>
+    
+    <item>
+      <title>메이븐 빌드 및 배포란?</title>
+      <link>/spring/user_register/5/</link>
+      <pubDate>Fri, 23 Aug 2019 04:32:00 +0900</pubDate>
+      
+      <guid>/spring/user_register/5/</guid>
+      <description>메이븐은 프로젝트 객체 모델(Project Object Model)이라는 개념을 바탕으로 프로젝트 의존성 관리, 라이브러리 관리, 프로젝트 생명 주기 관리 기능 등을 제공하는 프로젝트 관리 도구이다. 또한 플러그인을 기반으로 소스 코드로부터 배포 가능한 산출물을 만들어 내는 빌드 기능 뿐만 아니라 레포팅 및 documentation 작성 기능 등을 제공한다.
 
 메이븐 자세히 알아보러 가기
 pom.xml 태그들 자세히 알아보기
 pom.xml 태그 조금 더 간결하게, 정리 더 잘 된 것
 maven (메이븐 구조, 차이점, 플러그인, 라이프사이클, 의존성, pom.</description>
-        </item>
-        
-    </channel>
+    </item>
+    
+  </channel>
 </rss>

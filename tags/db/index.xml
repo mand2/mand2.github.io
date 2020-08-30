@@ -1,22 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>DB on 고라니의 개발일기🦌</title>
-        <link>/tags/db/</link>
-        <description>Recent content in DB on 고라니의 개발일기🦌</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>ko-kr</language>
-        <lastBuildDate>Thu, 19 Dec 2019 18:20:06 +0900</lastBuildDate><atom:link href="/tags/db/index.xml" rel="self" type="application/rss+xml" />
-        <item>
-            <title>DB index의 정의</title>
-            <link>/til/definition-db-index/</link>
-            <pubDate>Thu, 19 Dec 2019 18:20:06 +0900</pubDate>
-            
-            <guid>/til/definition-db-index/</guid>
-            <description>What is index? USAGE 1 : Support for fast Lookup
+  <channel>
+    <title>DB on 고라니의 개발일기🦌</title>
+    <link>/tags/db/</link>
+    <description>Recent content in DB on 고라니의 개발일기🦌</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Thu, 19 Dec 2019 18:20:06 +0900</lastBuildDate>
+    
+	<atom:link href="/tags/db/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>DB index의 정의</title>
+      <link>/til/definition-db-index/</link>
+      <pubDate>Thu, 19 Dec 2019 18:20:06 +0900</pubDate>
+      
+      <guid>/til/definition-db-index/</guid>
+      <description>What is index? USAGE 1 : Support for fast Lookup
 An index is any data structure that improves the performance of lookup. There are many different data structures used for this purpose. There are complex design trade-offs involving lookup performance, index size, and index-update performance. Many index designs exhibit logarithmic (O(log(N)) lookup performance and in some applications it is possible to achieve flat (O(1)) performance.
 USAGE 2 : Policing the database constraints (I assumed it as a DB table guideline)</description>
-        </item>
-        
-    </channel>
+    </item>
+    
+  </channel>
 </rss>
