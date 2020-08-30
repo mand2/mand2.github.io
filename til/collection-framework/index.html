@@ -7,29 +7,34 @@
     <meta name="description" content="goranee&#39;s dev-log">
 <meta name="author" content="mand2">
 
-    <link rel="icon" href="/images/favicon.png" type="image/png">
-
-    <title>컬렉션 프레임워크의 정의와 stream 사용법 간단 정리 :: GoRaNee&#39;s dev-log</title>
+    <link rel="shortcut icon" href="https://image.flaticon.com/icons/svg/2950/2950487.svg" type="image/x-icon" />
+    <title>컬렉션 프레임워크의 정의와 stream 사용법 간단 정리 :: 고라니의 개발일기</title>
 
     
-    <link href="/css/nucleus.css?1598722442" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1598722442" rel="stylesheet">
-    <link href="/css/hybrid.css?1598722442" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1598722442" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1598722442" rel="stylesheet">
-    <link href="/css/auto-complete.css?1598722442" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1598722442" rel="stylesheet">
-    <link href="/css/theme.css?1598722442" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1598722442" rel="stylesheet">
+    <link href="/css/nucleus.css?1598793193" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1598793193" rel="stylesheet">
+    <link href="/css/hybrid.css?1598793193" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1598793193" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1598793193" rel="stylesheet">
+    <link href="/css/auto-complete.css?1598793193" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1598793193" rel="stylesheet">
+    <link href="/css/theme.css?1598793193" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1598793193" rel="stylesheet">
     
+    <link href="/css/theme-mine.css?1598793193" rel="stylesheet">
     
+    <link href="/css/custom.css?1598793193" rel="stylesheet">
 
-    <script src="/js/jquery-3.3.1.min.js?1598722442"></script>
+    <script src="/js/jquery-3.3.1.min.js?1598793193"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
           display:none !important;
       }
+      
+        :not(pre) > code + span.copy-to-clipboard {
+            display: none;
+        }
       
     </style>
     
@@ -42,7 +47,7 @@
   <div id="header-wrapper">
     <div id="header">
       <a id="logo" href="/">
-GoRaNee&#39;s dev-log
+고라니의 개발일기
 </a>
 
     </div>
@@ -53,14 +58,14 @@ GoRaNee&#39;s dev-log
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1598722442"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1598722442"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1598793193"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1598793193"></script>
 <script type="text/javascript">
     
         var baseurl = "\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1598722442"></script>
+<script type="text/javascript" src="/js/search.js?1598793193"></script>
 
     
   </div>
@@ -817,7 +822,7 @@ GoRaNee&#39;s dev-log
     
     <section id="footer">
       <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
-
+<p>favicon by <a href="http://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/kr/" title="Flaticon">www.flaticon.com</a></p>
     </section>
   </div>
 </nav>
@@ -856,7 +861,7 @@ GoRaNee&#39;s dev-log
             
           
           
-            <a href='/'>GoRaNee's dev-log</a> > <a href='/til/'>TIL</a> > 컬렉션 프레임워크의 정의와 stream 사용법 간단 정리
+            <a href='/'>고라니의 개발일기</a> > <a href='/til/'>TIL</a> > 컬렉션 프레임워크의 정의와 stream 사용법 간단 정리
           
         
           
@@ -940,10 +945,10 @@ GoRaNee&#39;s dev-log
 <p>**See Also: ** <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html"><code>Set</code></a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html"><code>List</code></a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html"><code>Map</code></a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/SortedSet.html"><code>SortedSet</code></a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/SortedMap.html"><code>SortedMap</code></a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/HashSet.html"><code>HashSet</code></a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/TreeSet.html"><code>TreeSet</code></a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html"><code>ArrayList</code></a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/LinkedList.html"><code>LinkedList</code></a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Vector.html"><code>Vector</code></a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collections.html"><code>Collections</code></a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Arrays.html"><code>Arrays</code></a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/AbstractCollection.html"><code>AbstractCollection</code></a></p>
 <br>
 구조 간단 정리 
-<p><img src="images/TIL/collection-framework_1.png" alt="컬렉션 구조"></p>
-<p><br><br></p>
+<p><img src="/images/TIL/collection-framework_1.png" alt="컬렉션 구조">
+<br><br></p>
 <p><a href="https://postitforhooney.tistory.com/entry/JavaCollection-Java-Collection-Framework%EC%97%90-%EB%8C%80%ED%95%9C-%EC%9D%B4%ED%95%B4%EB%A5%BC-%ED%86%B5%ED%95%B4-Data-Structure-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0">출처</a> 링크로 들어가면 메서드까지 잘 정리되어 있음. 필요할 때 보자-! <a href="http://tcpschool.com/java/java_collectionFramework_concept">다른 링크</a>는 학원에서 처음 자바를 배울 때 애용했던 TCP school 페이지임. 이 페이지도 잘 정리되어있다.</p>
-<p>자세히 보면 collection 자체가 시작된 건 java 2 부터라니,, 의외다. 1.8 기준으로 보면 <code>Support for Lambda Expressions, Streams, and Aggregate Operations</code> 을 지원하기 시작했다고 뜬다.</p>
+<p>자세히 보면 collection 자체가 시작된 건 java 2 부터라니,, 의외다. 1.8 기준으로 보면 <code>Support for Lambda Expressions, Streams, and Aggregate Operations</code> 을 지원하기 시작했다고 뜬다.</p>
 <p>여기서 <code>Aggregate Operation</code> 이란게 뭘까 찾아보았는데 지금 포스팅 주제와 달라서 따로 공부하고 포스팅해야 할 필요성을 느꼈다. 뭔가 방대해보임. aggregation(집약관계, 연관)과 composition(포함관계, 복합연관)의 개념을 다 알아야 한다. 지금은 검색하고 바로 포스팅한 거라서 <strong>확실치는 않다</strong>.이 단락은 100% 신뢰하지 말 것!</p>
 <p><a href="http://ojc.asia/bbs/board.php?bo_table=LecJava&amp;wr_id=541">링크1</a>    /   <a href="https://www.gpgstudy.com/forum/viewtopic.php?t=10598">링크2</a></p>
 <p><br><br></p>
@@ -1517,19 +1522,19 @@ GoRaNee&#39;s dev-log
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1598722442"></script>
-    <script src="/js/perfect-scrollbar.min.js?1598722442"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1598722442"></script>
-    <script src="/js/jquery.sticky.js?1598722442"></script>
-    <script src="/js/featherlight.min.js?1598722442"></script>
-    <script src="/js/highlight.pack.js?1598722442"></script>
+    <script src="/js/clipboard.min.js?1598793193"></script>
+    <script src="/js/perfect-scrollbar.min.js?1598793193"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1598793193"></script>
+    <script src="/js/jquery.sticky.js?1598793193"></script>
+    <script src="/js/featherlight.min.js?1598793193"></script>
+    <script src="/js/highlight.pack.js?1598793193"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1598722442"></script>
-    <script src="/js/learn.js?1598722442"></script>
-    <script src="/js/hugo-learn.js?1598722442"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1598793193"></script>
+    <script src="/js/learn.js?1598793193"></script>
+    <script src="/js/hugo-learn.js?1598793193"></script>
 
-    <link href="/mermaid/mermaid.css?1598722442" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1598722442"></script>
+    <link href="/mermaid/mermaid.css?1598793193" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1598793193"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
