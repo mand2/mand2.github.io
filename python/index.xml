@@ -1,40 +1,36 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Python on 고라니의 개발일기🦌</title>
-    <link>/python/</link>
-    <description>Recent content in Python on 고라니의 개발일기🦌</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>ko-kr</language>
-    <lastBuildDate>Sat, 29 Aug 2020 20:25:41 +0900</lastBuildDate>
-    
-	<atom:link href="/python/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>getter setter 설정</title>
-      <link>/python/1/</link>
-      <pubDate>Tue, 04 Feb 2020 17:57:03 +0900</pubDate>
-      
-      <guid>/python/1/</guid>
-      <description>Python : getter setter 설정 클래스 내부에서 getter setter 설정 쉽게하기 메서드 낭비하지 않고 쉽게 쓸 수 있다! 불러오는 방법이나 셋하는 방법도 java와 조금 다름. 주의할 것..
+    <channel>
+        <title>Python on 고라니의 개발일기🦌</title>
+        <link>/python/</link>
+        <description>Recent content in Python on 고라니의 개발일기🦌</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>ko-kr</language>
+        <lastBuildDate>Sat, 29 Aug 2020 20:25:41 +0900</lastBuildDate><atom:link href="/python/index.xml" rel="self" type="application/rss+xml" />
+        <item>
+            <title>getter setter 설정</title>
+            <link>/python/1/</link>
+            <pubDate>Tue, 04 Feb 2020 17:57:03 +0900</pubDate>
+            
+            <guid>/python/1/</guid>
+            <description>Python : getter setter 설정 클래스 내부에서 getter setter 설정 쉽게하기 메서드 낭비하지 않고 쉽게 쓸 수 있다! 불러오는 방법이나 셋하는 방법도 java와 조금 다름. 주의할 것..
 # test.py class Test: def __init__(self, limit=None, persistent=None): if limit is None: self.__limit = False else : self.__limit = limit if persistent is None: self.__persistent = False else : self.__persistent = persistent @property def limit(self): return self.__limit @property def persistent(self): return self.__persistent @limit.setter def limit(self, limit): self.</description>
-    </item>
-    
-    <item>
-      <title>윈도우에서 Ubuntu로 pycharm 설치할 수 있을까</title>
-      <link>/python/2/</link>
-      <pubDate>Thu, 06 Feb 2020 23:21:03 +0900</pubDate>
-      
-      <guid>/python/2/</guid>
-      <description>PyCharm 설치 ? 어쩌다보니(?)는 아니고, 자발적으로 파이썬 관련 업무를 맡게 되었다. 나아아-름 서버개발자라 윈도우 컴퓨터를 쓴다고 할지라도 리눅스 환경 + 가상환경으로 파이썬 개발을 하고자 했다. 오늘은 그 대서사시의 첫시작(&amp;hellip;)을 써보려고 한다.
+        </item>
+        
+        <item>
+            <title>윈도우에서 Ubuntu로 pycharm 설치할 수 있을까</title>
+            <link>/python/2/</link>
+            <pubDate>Thu, 06 Feb 2020 23:21:03 +0900</pubDate>
+            
+            <guid>/python/2/</guid>
+            <description>PyCharm 설치 ? 어쩌다보니(?)는 아니고, 자발적으로 파이썬 관련 업무를 맡게 되었다. 나아아-름 서버개발자라 윈도우 컴퓨터를 쓴다고 할지라도 리눅스 환경 + 가상환경으로 파이썬 개발을 하고자 했다. 오늘은 그 대서사시의 첫시작(&amp;hellip;)을 써보려고 한다.
 
 1. Ubuntu 18.04 1-1 설치방법(INSTALL)   windows - app 에서 설치
   프로그램 설정 : 리눅스 허용 체크
   Ubuntu 에서 user &amp;amp;&amp;amp; pw 설정
   Ubuntu distro 세팅
 sudo apt update &amp;amp;&amp;amp; sudo apt upgrade</description>
-    </item>
-    
-  </channel>
+        </item>
+        
+    </channel>
 </rss>
