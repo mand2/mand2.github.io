@@ -11,21 +11,21 @@
     <title>고라니의 개발일기🦌 :: 고라니의 개발일기🦌</title>
 
     
-    <link href="/css/nucleus.css?1598845555" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1598845555" rel="stylesheet">
-    <link href="/css/hybrid.css?1598845555" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1598845555" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1598845555" rel="stylesheet">
-    <link href="/css/auto-complete.css?1598845555" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1598845555" rel="stylesheet">
-    <link href="/css/theme.css?1598845555" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1598845555" rel="stylesheet">
+    <link href="/css/nucleus.css?1598869503" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1598869503" rel="stylesheet">
+    <link href="/css/hybrid.css?1598869503" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1598869503" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1598869503" rel="stylesheet">
+    <link href="/css/auto-complete.css?1598869503" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1598869503" rel="stylesheet">
+    <link href="/css/theme.css?1598869503" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1598869503" rel="stylesheet">
     
-    <link href="/css/theme-mine.css?1598845555" rel="stylesheet">
+    <link href="/css/theme-mine.css?1598869503" rel="stylesheet">
     
-    <link href="/css/custom.css?1598845555" rel="stylesheet">
+    <link href="/css/custom.css?1598869503" rel="stylesheet">
 
-    <script src="/js/jquery-3.3.1.min.js?1598845555"></script>
+    <script src="/js/jquery-3.3.1.min.js?1598869503"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -72,14 +72,14 @@ if (!doNotTrack) {
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1598845555"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1598845555"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1598869503"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1598869503"></script>
 <script type="text/javascript">
     
         var baseurl = "\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1598845555"></script>
+<script type="text/javascript" src="/js/search.js?1598869503"></script>
 
     
   </div>
@@ -900,62 +900,110 @@ if (!doNotTrack) {
 
 
     <h1>고라니의 개발일기🦌</h1>
+    <hr>
 
     <ul>
         
-        <li><b><a href="/about/">About</a></b> | 2020-08-24
+        <li><b><a href="/retro/20200830/">20200830: 블로그 이사</a></b> | 2020-08-31
             <br>
-            Chapter 0 About Backend 서버 개발자 고라니입니다.
- 1년차 신입 개발자 JAVA 70% Javascript 20% Python 10% 여러가지 기술에 관심이 많습니다.  
+            드디어 미루고 미루던 블로그 대공사를 1차 완료하였다.
+저번 블로그는 지킬 jekyll로 했는데, 커스터마이징을 이상하게 해서 글씨 크기가 뒤죽박죽이고 뭔가 색상도 이상했다.(내 디자인 실력이 이상하단 뜻)
+그래서 그런지 더 블로그에 글 쓰기도 싫었다. 회사에서 일하며 알게된 건 두 가지 방식으로 저장하는데,
+ 노션 가끔 깃 저장소  정보가 한 곳에 모이지 않아서 후에 확인하기가 어려웠다. (이 문제는 노션으로 다 합쳐서 해결된 상태임.) 웬만하면 업무용은 노션에, (업무와 전혀 관련성이 없는) 사람이 봐도 괜찮을 만한 내용은 깃으로 업로드하는 편이다. <a href="/retro/20200830/">read more..</a>
+            <br>
         </li>
+        <br>
         
-        <li><b><a href="/spring/">Spring</a></b> | 2020-08-25
+        <li><b><a href="/spring/user_register/4/">회원가입 시 이메일 인증처리</a></b> | 2020-08-25
             <br>
-            Chapter 1 Spring Rest ApiMethods @Get, @Post, Delete, @Put@PutMapping 사용 시 415 오류 해결방법statustext parsererror 해결방법REST API Client에서 호출가능한 LibrarySpring Bootspring.jpa.open-in-view 로그 오류 해결하기querydsl 설정하기maven 빌드 오류@SpringBootApplication회원가입single-page 회원관리 폼 만들기Spring handler 인터셉터Spring 웹상에서 메일 보내보기회원가입 시 이메일 인증처리메이븐 빌드 및 배포란?
+            회원 가입 시 email을 받고 인증 코드를 생성, 해당 email 계정으로 인증 처리 메일을 보내보자!
+관리자가 보낸 인증코드가 맞다면 인증 완료처리까지-
+먼저 mySQL에서 컬럼 추가해준다.
+-- 인증코드와 verify 확인 코드 ALTER TABLE `project_01`.`memberinfo` ADD COLUMN `code` VARCHAR(25) NULL AFTER `REGDATE`, ADD COLUMN `verify` CHAR(1) NULL DEFAULT &#39;N&#39; AFTER `code`, ADD COLUMN `email` VARCHAR(45) NULL AFTER `verify`; 
+DAO 변경 DAO 변경
+//verify public int updateVerify(String id, String code); public int updateEmail(Member member); <a href="/spring/user_register/4/">read more..</a>
+            <br>
         </li>
+        <br>
         
-        <li><b><a href="/til/">TIL</a></b> | 2020-08-30
+        <li><b><a href="/about/portfolio/">Portfolio</a></b> | 2020-08-24
             <br>
-            Chapter 2 TIL Maven pom.xml 빌드 플러그인 세팅하기DB index의 정의컬렉션 프레임워크의 정의와 stream 사용법 간단 정리
+            portfolio created in Oct, 2019. <a href="/about/portfolio/">read more..</a>
+            <br>
         </li>
+        <br>
         
-        <li><b><a href="/python/">Python</a></b> | 2020-08-29
+        <li><b><a href="/spring/rest-api/libraries-for-client/">REST API Client에서 호출가능한 Library</a></b> | 2020-03-04
             <br>
-            Chapter 3 Python getter setter 설정윈도우에서 Ubuntu로 pycharm 설치할 수 있을까
+            우리 팀은 MSA 방식으로 웹 어플리케이션을 만들기 때문에 api 통신이 중요하다. api 통신을 하기 위해서 client 단에서 호출 가능한 library가 무엇이 있는지 찾아보았다. 크게 두 라이브러리를 사용하는데, HttpURLConnection 과 RestTemplate 이다.
+
+1 HttpURLConnection void sendRequest(String request) { // i.e.: request = &#34;http://example.com/index.php?param1=a&amp;param2=b&amp;param3=c&#34;;  URL url = new URL(request); HttpURLConnection connection = (HttpURLConnection) url.openConnection(); connection.setDoOutput(true); connection.setInstanceFollowRedirects(false); connection.setRequestMethod(&#34;GET&#34;); connection.setRequestProperty(&#34;Content-Type&#34;, &#34;text/plain&#34;); connection.setRequestProperty(&#34;charset&#34;, &#34;utf-8&#34;); connection.connect(); } 
+2 RestTemplate DOCS
+요즘 들어 선호하는 형태는 postForObject . <a href="/spring/rest-api/libraries-for-client/">read more..</a>
+            <br>
         </li>
+        <br>
         
-        <li><b><a href="/node.js/">Node.js</a></b> | 2020-08-29
+        <li><b><a href="/python/2/">윈도우에서 Ubuntu로 pycharm 설치할 수 있을까</a></b> | 2020-02-06
             <br>
-            Chapter 4 Node.js package-lock.json 이란?formidable 설치 오류 해결하기aws EC2로 node.js 배포하기
-        </li>
-        
-        <li><b><a href="/react/">React</a></b> | 2020-08-29
+            PyCharm 설치 ? 어쩌다보니(?)는 아니고, 자발적으로 파이썬 관련 업무를 맡게 되었다. 나아아-름 서버개발자라 윈도우 컴퓨터를 쓴다고 할지라도 리눅스 환경 + 가상환경으로 파이썬 개발을 하고자 했다. 오늘은 그 대서사시의 첫시작(&hellip;)을 써보려고 한다.
+
+1. Ubuntu 18.04 1-1 설치방법(INSTALL)   windows - app 에서 설치
+  프로그램 설정 : 리눅스 허용 체크
+  Ubuntu 에서 user &amp;&amp; pw 설정
+  Ubuntu distro 세팅
+sudo apt update &amp;&amp; sudo apt upgrade <a href="/python/2/">read more..</a>
             <br>
-            Chapter 5 React 데이터 테이블로 정렬하기테이블을 엑셀로 다운로드javascript의 innerHTML과 같은 기능은?
         </li>
-        
-        <li><b><a href="/others/">Others</a></b> | 2020-08-29
-            <br>
-            Chapter 99 Others&hellip; Books[책] 오브젝트 (1)면접질문 정리
-        </li>
-        
-        <li><b><a href="/retro/">회고</a></b> | 2020-08-31
-            <br>
-            Chapter X 회고 20200830: 블로그 이사
-        </li>
+        <br>
         
         <li><b><a href="/python/1/">getter setter 설정</a></b> | 2020-02-04
             <br>
             Python : getter setter 설정 클래스 내부에서 getter setter 설정 쉽게하기 메서드 낭비하지 않고 쉽게 쓸 수 있다! 불러오는 방법이나 셋하는 방법도 java와 조금 다름. 주의할 것..
-# test.py class Test: def __init__(self, limit=None, persistent=None): if limit is None: self.__limit = False else : self.__limit = limit if persistent is None: self.__persistent = False else : self.__persistent = persistent @property def limit(self): return self.__limit @property def persistent(self): return self.__persistent @limit.setter def limit(self, limit): self.
-        </li>
-        
-        <li><b><a href="/react/1/">데이터 테이블로 정렬하기</a></b> | 2019-11-29
+# test.py class Test: def __init__(self, limit=None, persistent=None): if limit is None: self.__limit = False else : self.__limit = limit if persistent is None: self.__persistent = False else : self.__persistent = persistent @property def limit(self): return self.__limit @property def persistent(self): return self.__persistent @limit.setter def limit(self, limit): self. <a href="/python/1/">read more..</a>
             <br>
-            react table 사용하기 목적 원하는 list를 게시판 형식으로 가져온 후, 모든 컬럼을 sorting 하기 위함. 찾아보니 react-bootstrap-table-next 라는 걸 찾음.
-설치과정  react-create-app 사용(git push 후 babel 설정 modify + 그 외 기능들 추가) yarn add react-bootstrap-table-next 명령어로 react-bootstrap-table 설치   public/index.html 파일에 bootstrap CSS 추가해야 함! 이쁘게 보고싶다면 설치!   component에서 css 추가  import &#39;react-bootstrap-table-next/dist/react-bootstrap-table2.min.css&#39;; 
-결론은 회사에선 쓸 수 없음 ㅠ_ㅠ 기존 css 랑 충돌될 것 같음 ,,
         </li>
+        <br>
+        
+        <li><b><a href="/til/build-plugs-of-maven/">Maven pom.xml 빌드 플러그인 세팅하기</a></b> | 2020-01-21
+            <br>
+            작성한 코드를 라이브러리 형식으로 만들기 위해 .jar 파일로 만들었다. 내가 세팅한 버전 등에 맞게 내보내기 위해 + 설정한 dependency 까지 보내주기 위하여 설정하였다.
+스펙
+ intellij JDK 1.8 maven 4.0.0  그전에 앞서, apache maven project 사이트에서 말하는 최소 사양은 다음과 같다.
+ Maven 3.0 이상 JDK 1.7 이상  Q. pom.xml에 사용한 dependency를 어떻게 내보내야 하는가? 두 가지 버전이 있다.
+  maven-assembly-plugin 사용:
+내부에 전 dependency를 저장하여 보내주기 때문에 용량이 크다. <a href="/til/build-plugs-of-maven/">read more..</a>
+            <br>
+        </li>
+        <br>
+        
+        <li><b><a href="/til/definition-db-index/">DB index의 정의</a></b> | 2019-12-19
+            <br>
+            What is index? USAGE 1 : Support for fast Lookup
+An index is any data structure that improves the performance of lookup. There are many different data structures used for this purpose. There are complex design trade-offs involving lookup performance, index size, and index-update performance. Many index designs exhibit logarithmic (O(log(N)) lookup performance and in some applications it is possible to achieve flat (O(1)) performance.
+USAGE 2 : Policing the database constraints (I assumed it as a DB table guideline) <a href="/til/definition-db-index/">read more..</a>
+            <br>
+        </li>
+        <br>
+        
+        <li><b><a href="/react/3/">javascript의 innerHTML과 같은 기능은?</a></b> | 2019-12-13
+            <br>
+            리액트의 innerHTML 은 ? 목적 String으로 tag를 다 만들어서 컴포넌트에 넣고 싶은데, 왜 태그 인식이 안될까요,,, 에서 시작되었다. 호출할 컴포넌트에 String으로 넣어주면 알아서 될 줄 알았건만.. 변환이 안되어서 innterHTML도 써보고 여러가지 해봤는데 리액트는 기본적으로 innterHTML 자체를 인식하지 못한다고 한다.
+그러면 뭘 인식하져? 라고하면 아래의 글을 읽으면 됩니다 :-)
+HOW TO dangerouslySetInnerHTML 이라는 걸 태그 내부에 설정해주면 된다.
+
+01 Store.js /** ------------------------------------------------ * String 으로 받은 메세지 내부 html 형식으로 변환 * * ------------------------------------------------*/ setDetails(){ return {__html: `${this. <a href="/react/3/">read more..</a>
+            <br>
+        </li>
+        <br>
+        
+        <li><b><a href="/react/2/">테이블을 엑셀로 다운로드</a></b> | 2019-12-13
+            <br>
+            excel download 만들기 목적 전체 리스트를 테이블로 출력한 후, 화면에 보여지는 부분을 엑셀 형식으로 다운로드 가능하게 만들어 보자. 다운로드 창이 나오고, 다운로드 시 해당 파일명을 자동으로 설정까지 해주기!
+Spec  react.js ^16.8.6 mobx ^5.13.0  사실 구글에 검색하면 잘 나온다..(검색어 : Export html table data to Excel using JavaScript) 나는 그 글을 긁어왔을 뿐ㅎㅎ,, 다른 방법으로도 가능한데, 지금 내가 구현한 부분은 서버에 과부하를 생성하지 않도록 현재 화면에서 보여지는 것만 엑셀로 출력하도록 만든것임. <a href="/react/2/">read more..</a>
+            <br>
+        </li>
+        <br>
         
     </ul>
 
@@ -1498,19 +1546,19 @@ if (!doNotTrack) {
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1598845555"></script>
-    <script src="/js/perfect-scrollbar.min.js?1598845555"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1598845555"></script>
-    <script src="/js/jquery.sticky.js?1598845555"></script>
-    <script src="/js/featherlight.min.js?1598845555"></script>
-    <script src="/js/highlight.pack.js?1598845555"></script>
+    <script src="/js/clipboard.min.js?1598869503"></script>
+    <script src="/js/perfect-scrollbar.min.js?1598869503"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1598869503"></script>
+    <script src="/js/jquery.sticky.js?1598869503"></script>
+    <script src="/js/featherlight.min.js?1598869503"></script>
+    <script src="/js/highlight.pack.js?1598869503"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1598845555"></script>
-    <script src="/js/learn.js?1598845555"></script>
-    <script src="/js/hugo-learn.js?1598845555"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1598869503"></script>
+    <script src="/js/learn.js?1598869503"></script>
+    <script src="/js/hugo-learn.js?1598869503"></script>
 
-    <link href="/mermaid/mermaid.css?1598845555" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1598845555"></script>
+    <link href="/mermaid/mermaid.css?1598869503" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1598869503"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
