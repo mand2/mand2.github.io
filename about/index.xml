@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>About on 고라니의 개발일기🦌</title>
-    <link>/about/</link>
+    <link>https://mand2.github.io/about/</link>
     <description>Recent content in About on 고라니의 개발일기🦌</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Mon, 24 Aug 2020 23:23:15 +0900</lastBuildDate>
     
-	<atom:link href="/about/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://mand2.github.io/about/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Portfolio</title>
-      <link>/about/portfolio/</link>
+      <link>https://mand2.github.io/about/portfolio/</link>
       <pubDate>Mon, 24 Aug 2020 23:34:04 +0900</pubDate>
       
-      <guid>/about/portfolio/</guid>
+      <guid>https://mand2.github.io/about/portfolio/</guid>
       <description>portfolio created in Oct, 2019.</description>
     </item>
     

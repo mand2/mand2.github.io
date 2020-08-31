@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>React on 고라니의 개발일기🦌</title>
-    <link>/tags/react/</link>
+    <link>https://mand2.github.io/tags/react/</link>
     <description>Recent content in React on 고라니의 개발일기🦌</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Fri, 13 Dec 2019 20:48:37 +0900</lastBuildDate>
     
-	<atom:link href="/tags/react/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://mand2.github.io/tags/react/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>데이터 테이블로 정렬하기</title>
-      <link>/react/1/</link>
+      <link>https://mand2.github.io/react/1/</link>
       <pubDate>Fri, 29 Nov 2019 15:48:28 +0900</pubDate>
       
-      <guid>/react/1/</guid>
+      <guid>https://mand2.github.io/react/1/</guid>
       <description>react table 사용하기 목적 원하는 list를 게시판 형식으로 가져온 후, 모든 컬럼을 sorting 하기 위함. 찾아보니 react-bootstrap-table-next 라는 걸 찾음.
 설치과정  react-create-app 사용(git push 후 babel 설정 modify + 그 외 기능들 추가) yarn add react-bootstrap-table-next 명령어로 react-bootstrap-table 설치   public/index.html 파일에 bootstrap CSS 추가해야 함! 이쁘게 보고싶다면 설치!   component에서 css 추가  import &amp;#39;react-bootstrap-table-next/dist/react-bootstrap-table2.min.css&amp;#39;; 
 결론은 회사에선 쓸 수 없음 ㅠ_ㅠ 기존 css 랑 충돌될 것 같음 ,,</description>
@@ -24,20 +24,20 @@
     
     <item>
       <title>테이블을 엑셀로 다운로드</title>
-      <link>/react/2/</link>
+      <link>https://mand2.github.io/react/2/</link>
       <pubDate>Fri, 13 Dec 2019 18:31:31 +0900</pubDate>
       
-      <guid>/react/2/</guid>
+      <guid>https://mand2.github.io/react/2/</guid>
       <description>excel download 만들기 목적 전체 리스트를 테이블로 출력한 후, 화면에 보여지는 부분을 엑셀 형식으로 다운로드 가능하게 만들어 보자. 다운로드 창이 나오고, 다운로드 시 해당 파일명을 자동으로 설정까지 해주기!
 Spec  react.js ^16.8.6 mobx ^5.13.0  사실 구글에 검색하면 잘 나온다..(검색어 : Export html table data to Excel using JavaScript) 나는 그 글을 긁어왔을 뿐ㅎㅎ,, 다른 방법으로도 가능한데, 지금 내가 구현한 부분은 서버에 과부하를 생성하지 않도록 현재 화면에서 보여지는 것만 엑셀로 출력하도록 만든것임.</description>
     </item>
     
     <item>
       <title>javascript의 innerHTML과 같은 기능은?</title>
-      <link>/react/3/</link>
+      <link>https://mand2.github.io/react/3/</link>
       <pubDate>Fri, 13 Dec 2019 20:48:37 +0900</pubDate>
       
-      <guid>/react/3/</guid>
+      <guid>https://mand2.github.io/react/3/</guid>
       <description>리액트의 innerHTML 은 ? 목적 String으로 tag를 다 만들어서 컴포넌트에 넣고 싶은데, 왜 태그 인식이 안될까요,,, 에서 시작되었다. 호출할 컴포넌트에 String으로 넣어주면 알아서 될 줄 알았건만.. 변환이 안되어서 innterHTML도 써보고 여러가지 해봤는데 리액트는 기본적으로 innterHTML 자체를 인식하지 못한다고 한다.
 그러면 뭘 인식하져? 라고하면 아래의 글을 읽으면 됩니다 :-)
 HOW TO dangerouslySetInnerHTML 이라는 걸 태그 내부에 설정해주면 된다.

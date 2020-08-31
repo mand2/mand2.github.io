@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Spring Boot on 고라니의 개발일기🦌</title>
-    <link>/categories/spring-boot/</link>
+    <link>https://mand2.github.io/categories/spring-boot/</link>
     <description>Recent content in Spring Boot on 고라니의 개발일기🦌</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Mon, 21 Oct 2019 18:28:29 +0900</lastBuildDate>
     
-	<atom:link href="/categories/spring-boot/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://mand2.github.io/categories/spring-boot/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>spring.jpa.open-in-view 로그 오류 해결하기</title>
-      <link>/spring/spring-boot/1/</link>
+      <link>https://mand2.github.io/spring/spring-boot/1/</link>
       <pubDate>Fri, 27 Sep 2019 09:02:15 +0900</pubDate>
       
-      <guid>/spring/spring-boot/1/</guid>
+      <guid>https://mand2.github.io/spring/spring-boot/1/</guid>
       <description>1. 문제상황 : 왜 로그에 warn이 뜨지? 스프링 부트 app을 시작하면 로그가 나오는데,
 잘 보면 아래와 같이 warning 메세지가 뜬다
 aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
@@ -25,10 +25,10 @@ aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by
     
     <item>
       <title>querydsl 설정하기</title>
-      <link>/spring/spring-boot/2/</link>
+      <link>https://mand2.github.io/spring/spring-boot/2/</link>
       <pubDate>Fri, 27 Sep 2019 13:32:21 +0900</pubDate>
       
-      <guid>/spring/spring-boot/2/</guid>
+      <guid>https://mand2.github.io/spring/spring-boot/2/</guid>
       <description>1. QueryDSL 을 선택한 이유? 스프링 부트 + JPA 를 선택하면서 고민했던 사항이 테이블 연결이었다.
 JPQL로 간단하게 쿼리문을 불러오는 것이 아닌, 내가 원하는 쿼리문을 사용하기 어렵다는 문제점 때문이었다.
 많은 블로그에서 탐색한 결과, QueryDsl을 선택하였다. 비교적 직관적이며, join 중에서도 left outer join / right outer join 등 다양한 조인과 동적쿼리문 작성이 가장 좋아보였다. 사실은 criteriaBuilder를 사용할까 했는데 QueryDsl이 더 직관적이라 선택하였다. 조금 더 보기 편하달까.. 생각보다 많은 레퍼런스와 doc(문서)가 있고, 심지어 한글로 문서번역이 되어있어 편했다.</description>
@@ -36,10 +36,10 @@ JPQL로 간단하게 쿼리문을 불러오는 것이 아닌, 내가 원하는 �
     
     <item>
       <title>maven 빌드 오류</title>
-      <link>/spring/spring-boot/3/</link>
+      <link>https://mand2.github.io/spring/spring-boot/3/</link>
       <pubDate>Mon, 21 Oct 2019 17:56:23 +0900</pubDate>
       
-      <guid>/spring/spring-boot/3/</guid>
+      <guid>https://mand2.github.io/spring/spring-boot/3/</guid>
       <description>😱 왜 Spring Boot 배포가 되지 않는걸까? 프로젝트 팀 작업을 하면서 spring boot 배포를 하는 친구들이 build 오류가 난다고 했다. 처음엔 git에서 파일을 pull 할 때 제대로 못한게 아닐까 싶었는데, 그런 오류는 아니었다.
 해당 배포하는 깃에 들어가 파일을 보니, 다음과 같은 구조로 되어있었다.
 자세히보면 src/main/java/com/ycar 내부에 ~Application.java 라는 파일이 두개가 있다. 즉, @SpringBootApplication 어노테이션이 붙은 클래스가 두개이며, 어플리케이션 주입 처리가 잘못되어있다는 것을 알 수 있다.
@@ -49,10 +49,10 @@ JPQL로 간단하게 쿼리문을 불러오는 것이 아닌, 내가 원하는 �
     
     <item>
       <title>@SpringBootApplication</title>
-      <link>/spring/spring-boot/4/</link>
+      <link>https://mand2.github.io/spring/spring-boot/4/</link>
       <pubDate>Mon, 21 Oct 2019 18:28:29 +0900</pubDate>
       
-      <guid>/spring/spring-boot/4/</guid>
+      <guid>https://mand2.github.io/spring/spring-boot/4/</guid>
       <description>@SpringBootApplication 이란? 잠시 돌아가서, 이 @SpringBootApplication이 뭐기에 빌드 오류를 뱉어내는지 보자
 1. @SpringBootApplication의 의미는 @Configuration + @EnableAutoConfiguration + @ComponentScan 을 합친 것이다.
 -1 @Configuration 이란?  현재 클래스가 Spring의 설정 파일임을 알려주는 어노테이션 == Spring이 Java config로 간주한다! Configuration을 클래스에 적용하고 @Bean을 해당 클래스의 메소드에 적용하면

@@ -2,27 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>고라니의 개발일기🦌</title>
-        <link>/</link>
+        <link>https://mand2.github.io/</link>
         <description>Recent content on 고라니의 개발일기🦌</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>ko-kr</language>
-        <lastBuildDate>Mon, 31 Aug 2020 19:36:11 +0900</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+        <lastBuildDate>Mon, 31 Aug 2020 19:36:11 +0900</lastBuildDate><atom:link href="https://mand2.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
             <title>getter setter 설정</title>
-            <link>/python/1/</link>
+            <link>https://mand2.github.io/python/1/</link>
             <pubDate>Tue, 04 Feb 2020 17:57:03 +0900</pubDate>
             
-            <guid>/python/1/</guid>
+            <guid>https://mand2.github.io/python/1/</guid>
             <description>Python : getter setter 설정 클래스 내부에서 getter setter 설정 쉽게하기 메서드 낭비하지 않고 쉽게 쓸 수 있다! 불러오는 방법이나 셋하는 방법도 java와 조금 다름. 주의할 것..
 # test.py class Test: def __init__(self, limit=None, persistent=None): if limit is None: self.__limit = False else : self.__limit = limit if persistent is None: self.__persistent = False else : self.__persistent = persistent @property def limit(self): return self.__limit @property def persistent(self): return self.__persistent @limit.setter def limit(self, limit): self.</description>
         </item>
         
         <item>
             <title>데이터 테이블로 정렬하기</title>
-            <link>/react/1/</link>
+            <link>https://mand2.github.io/react/1/</link>
             <pubDate>Fri, 29 Nov 2019 15:48:28 +0900</pubDate>
             
-            <guid>/react/1/</guid>
+            <guid>https://mand2.github.io/react/1/</guid>
             <description>react table 사용하기 목적 원하는 list를 게시판 형식으로 가져온 후, 모든 컬럼을 sorting 하기 위함. 찾아보니 react-bootstrap-table-next 라는 걸 찾음.
 설치과정  react-create-app 사용(git push 후 babel 설정 modify + 그 외 기능들 추가) yarn add react-bootstrap-table-next 명령어로 react-bootstrap-table 설치   public/index.html 파일에 bootstrap CSS 추가해야 함! 이쁘게 보고싶다면 설치!   component에서 css 추가  import &amp;#39;react-bootstrap-table-next/dist/react-bootstrap-table2.min.css&amp;#39;; 
 결론은 회사에선 쓸 수 없음 ㅠ_ㅠ 기존 css 랑 충돌될 것 같음 ,,</description>
@@ -30,10 +30,10 @@
         
         <item>
             <title>spring.jpa.open-in-view 로그 오류 해결하기</title>
-            <link>/spring/spring-boot/1/</link>
+            <link>https://mand2.github.io/spring/spring-boot/1/</link>
             <pubDate>Fri, 27 Sep 2019 09:02:15 +0900</pubDate>
             
-            <guid>/spring/spring-boot/1/</guid>
+            <guid>https://mand2.github.io/spring/spring-boot/1/</guid>
             <description>1. 문제상황 : 왜 로그에 warn이 뜨지? 스프링 부트 app을 시작하면 로그가 나오는데,
 잘 보면 아래와 같이 warning 메세지가 뜬다
 aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
@@ -42,10 +42,10 @@ aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by
         
         <item>
             <title>package-lock.json 이란?</title>
-            <link>/node.js/1/</link>
+            <link>https://mand2.github.io/node.js/1/</link>
             <pubDate>Wed, 11 Sep 2019 21:37:04 +0900</pubDate>
             
-            <guid>/node.js/1/</guid>
+            <guid>https://mand2.github.io/node.js/1/</guid>
             <description>package-lock.json 파일이란? 프로젝트에 설치된 노드 모듈들의 의존성 트리를 기록하고 있음.
 
 package-lock.json이 유용한 이유? git 저장소에 node.js 프로젝트를 커밋할 때 보통 node_modules 폴더는 부피가 커서 commit에 포함시키지 않습니다.이 때 package-lock.json 파일은 꼭 함께 커밋을 해주어야 합니다. 다른 팀원이 이 프로젝트를 처음 pull 받아서 npm install 을 했을 때 개발 당시의 동일한 버전의 모듈들이 설치됨을 보장하기 위함입니다. express 모듈을 프로젝트에 설치하게 되면 package.json 파일에 &amp;quot;express&amp;quot;: &amp;quot;~4.16.1&amp;quot; 처럼 Tilde Ranges 표기법으로 버전이 명시됩니다.</description>
@@ -53,10 +53,10 @@ package-lock.json이 유용한 이유? git 저장소에 node.js 프로젝트를 
         
         <item>
             <title>Methods @Get, @Post, Delete, @Put</title>
-            <link>/spring/rest-api/methods/</link>
+            <link>https://mand2.github.io/spring/rest-api/methods/</link>
             <pubDate>Mon, 19 Aug 2019 14:30:56 +0900</pubDate>
             
-            <guid>/spring/rest-api/methods/</guid>
+            <guid>https://mand2.github.io/spring/rest-api/methods/</guid>
             <description>목적 @RestController 어노테이션을 이용한 RESTFUL로 변경하기
 basics   Spring 4.0 버전 이후부터 @RestController 적용 가능
   @GetMapping
@@ -72,10 +72,10 @@ put으로 들어오는 URL 형식에 응답
         
         <item>
             <title>single-page 회원관리 폼 만들기</title>
-            <link>/spring/user_register/1/</link>
+            <link>https://mand2.github.io/spring/user_register/1/</link>
             <pubDate>Mon, 19 Aug 2019 10:35:28 +0900</pubDate>
             
-            <guid>/spring/user_register/1/</guid>
+            <guid>https://mand2.github.io/spring/user_register/1/</guid>
             <description>single page : CRUD(가입+수정+삭제+리스트 보여주기)를 Single page 처리 REST API 이용   개발순서 (MVC 2 패턴으로 함)
  DAO설정
 Controller
@@ -93,19 +93,19 @@ Map으로 설정해야 하나,
         
         <item>
             <title>Portfolio</title>
-            <link>/about/portfolio/</link>
+            <link>https://mand2.github.io/about/portfolio/</link>
             <pubDate>Mon, 24 Aug 2020 23:34:04 +0900</pubDate>
             
-            <guid>/about/portfolio/</guid>
+            <guid>https://mand2.github.io/about/portfolio/</guid>
             <description>portfolio created in Oct, 2019.</description>
         </item>
         
         <item>
             <title>윈도우에서 Ubuntu로 pycharm 설치할 수 있을까</title>
-            <link>/python/2/</link>
+            <link>https://mand2.github.io/python/2/</link>
             <pubDate>Thu, 06 Feb 2020 23:21:03 +0900</pubDate>
             
-            <guid>/python/2/</guid>
+            <guid>https://mand2.github.io/python/2/</guid>
             <description>PyCharm 설치 ? 어쩌다보니(?)는 아니고, 자발적으로 파이썬 관련 업무를 맡게 되었다. 나아아-름 서버개발자라 윈도우 컴퓨터를 쓴다고 할지라도 리눅스 환경 + 가상환경으로 파이썬 개발을 하고자 했다. 오늘은 그 대서사시의 첫시작(&amp;hellip;)을 써보려고 한다.
 
 1. Ubuntu 18.04 1-1 설치방법(INSTALL)   windows - app 에서 설치
@@ -117,20 +117,20 @@ sudo apt update &amp;amp;&amp;amp; sudo apt upgrade</description>
         
         <item>
             <title>테이블을 엑셀로 다운로드</title>
-            <link>/react/2/</link>
+            <link>https://mand2.github.io/react/2/</link>
             <pubDate>Fri, 13 Dec 2019 18:31:31 +0900</pubDate>
             
-            <guid>/react/2/</guid>
+            <guid>https://mand2.github.io/react/2/</guid>
             <description>excel download 만들기 목적 전체 리스트를 테이블로 출력한 후, 화면에 보여지는 부분을 엑셀 형식으로 다운로드 가능하게 만들어 보자. 다운로드 창이 나오고, 다운로드 시 해당 파일명을 자동으로 설정까지 해주기!
 Spec  react.js ^16.8.6 mobx ^5.13.0  사실 구글에 검색하면 잘 나온다..(검색어 : Export html table data to Excel using JavaScript) 나는 그 글을 긁어왔을 뿐ㅎㅎ,, 다른 방법으로도 가능한데, 지금 내가 구현한 부분은 서버에 과부하를 생성하지 않도록 현재 화면에서 보여지는 것만 엑셀로 출력하도록 만든것임.</description>
         </item>
         
         <item>
             <title>querydsl 설정하기</title>
-            <link>/spring/spring-boot/2/</link>
+            <link>https://mand2.github.io/spring/spring-boot/2/</link>
             <pubDate>Fri, 27 Sep 2019 13:32:21 +0900</pubDate>
             
-            <guid>/spring/spring-boot/2/</guid>
+            <guid>https://mand2.github.io/spring/spring-boot/2/</guid>
             <description>1. QueryDSL 을 선택한 이유? 스프링 부트 + JPA 를 선택하면서 고민했던 사항이 테이블 연결이었다.
 JPQL로 간단하게 쿼리문을 불러오는 것이 아닌, 내가 원하는 쿼리문을 사용하기 어렵다는 문제점 때문이었다.
 많은 블로그에서 탐색한 결과, QueryDsl을 선택하였다. 비교적 직관적이며, join 중에서도 left outer join / right outer join 등 다양한 조인과 동적쿼리문 작성이 가장 좋아보였다. 사실은 criteriaBuilder를 사용할까 했는데 QueryDsl이 더 직관적이라 선택하였다. 조금 더 보기 편하달까.. 생각보다 많은 레퍼런스와 doc(문서)가 있고, 심지어 한글로 문서번역이 되어있어 편했다.</description>
@@ -138,10 +138,10 @@ JPQL로 간단하게 쿼리문을 불러오는 것이 아닌, 내가 원하는 �
         
         <item>
             <title>formidable 설치 오류 해결하기</title>
-            <link>/node.js/2/</link>
+            <link>https://mand2.github.io/node.js/2/</link>
             <pubDate>Thu, 26 Sep 2019 21:55:23 +0900</pubDate>
             
-            <guid>/node.js/2/</guid>
+            <guid>https://mand2.github.io/node.js/2/</guid>
             <description>위와 같이 npm에 formidable을 설정하려고 하니 package.json이 없다고 뜸
 package.json은 해당 프로젝트 의존모듈 관리를 도와주기 때문에 설치해야 한다.
 정리:: npm 이란? node package manager : 모듈관리매니저
@@ -152,10 +152,10 @@ package.json은 해당 프로젝트 의존모듈 관리를 도와주기 때문�
         
         <item>
             <title>Spring handler 인터셉터</title>
-            <link>/spring/user_register/2/</link>
+            <link>https://mand2.github.io/spring/user_register/2/</link>
             <pubDate>Tue, 20 Aug 2019 23:00:47 +0900</pubDate>
             
-            <guid>/spring/user_register/2/</guid>
+            <guid>https://mand2.github.io/spring/user_register/2/</guid>
             <description>필터와 인터셉터의 실행시기 차이? 실행시점은 차이가 있음
 인터셉터 중 핸들러인터셉터는 필터의 일종이긴 하나, 요청컨트롤러가 있고 확인이 된 후에 실행(컨트롤러 요청 전후) 됨
 핸들러 인터셉터 핸들러 인터셉터는 DispatcherServlet 이 컨트롤러를 호출하기 전과 후에 요청과 응답을 참조하거나 가공할 수 있는 일종의 필터
@@ -167,10 +167,10 @@ HandlerInterceptor 어떻게 쓸까? HandlerInterceptorAdaptor 클래스를 상�
         
         <item>
             <title>@PutMapping 사용 시 415 오류 해결방법</title>
-            <link>/spring/rest-api/415-error-of-put/</link>
+            <link>https://mand2.github.io/spring/rest-api/415-error-of-put/</link>
             <pubDate>Mon, 19 Aug 2019 17:37:13 +0900</pubDate>
             
-            <guid>/spring/rest-api/415-error-of-put/</guid>
+            <guid>https://mand2.github.io/spring/rest-api/415-error-of-put/</guid>
             <description>원인? PUT일 때 ResponseEntity&amp;lt; String &amp;gt;으로 써야하지?  ResponseEntity&amp;lt;Integer&amp;gt; 일 때엔 아예 인식을 못함
 415 error 발생!
     Exception 설명 응답코드     HttpMediaTypeNotSupportedException 요청의 Content Type을 핸들러가 지원하지 않는 경우 발생 415 - Unsupported Media Type    출처 (Spring Boot)오류 처리
@@ -181,10 +181,10 @@ contentType: &amp;#39;application/json; charset=utf-8&amp;#39;
         
         <item>
             <title>javascript의 innerHTML과 같은 기능은?</title>
-            <link>/react/3/</link>
+            <link>https://mand2.github.io/react/3/</link>
             <pubDate>Fri, 13 Dec 2019 20:48:37 +0900</pubDate>
             
-            <guid>/react/3/</guid>
+            <guid>https://mand2.github.io/react/3/</guid>
             <description>리액트의 innerHTML 은 ? 목적 String으로 tag를 다 만들어서 컴포넌트에 넣고 싶은데, 왜 태그 인식이 안될까요,,, 에서 시작되었다. 호출할 컴포넌트에 String으로 넣어주면 알아서 될 줄 알았건만.. 변환이 안되어서 innterHTML도 써보고 여러가지 해봤는데 리액트는 기본적으로 innterHTML 자체를 인식하지 못한다고 한다.
 그러면 뭘 인식하져? 라고하면 아래의 글을 읽으면 됩니다 :-)
 HOW TO dangerouslySetInnerHTML 이라는 걸 태그 내부에 설정해주면 된다.
@@ -194,10 +194,10 @@ HOW TO dangerouslySetInnerHTML 이라는 걸 태그 내부에 설정해주면 �
         
         <item>
             <title>maven 빌드 오류</title>
-            <link>/spring/spring-boot/3/</link>
+            <link>https://mand2.github.io/spring/spring-boot/3/</link>
             <pubDate>Mon, 21 Oct 2019 17:56:23 +0900</pubDate>
             
-            <guid>/spring/spring-boot/3/</guid>
+            <guid>https://mand2.github.io/spring/spring-boot/3/</guid>
             <description>😱 왜 Spring Boot 배포가 되지 않는걸까? 프로젝트 팀 작업을 하면서 spring boot 배포를 하는 친구들이 build 오류가 난다고 했다. 처음엔 git에서 파일을 pull 할 때 제대로 못한게 아닐까 싶었는데, 그런 오류는 아니었다.
 해당 배포하는 깃에 들어가 파일을 보니, 다음과 같은 구조로 되어있었다.
 자세히보면 src/main/java/com/ycar 내부에 ~Application.java 라는 파일이 두개가 있다. 즉, @SpringBootApplication 어노테이션이 붙은 클래스가 두개이며, 어플리케이션 주입 처리가 잘못되어있다는 것을 알 수 있다.
@@ -207,10 +207,10 @@ HOW TO dangerouslySetInnerHTML 이라는 걸 태그 내부에 설정해주면 �
         
         <item>
             <title>aws EC2로 node.js 배포하기</title>
-            <link>/node.js/3/</link>
+            <link>https://mand2.github.io/node.js/3/</link>
             <pubDate>Tue, 15 Oct 2019 09:43:26 +0900</pubDate>
             
-            <guid>/node.js/3/</guid>
+            <guid>https://mand2.github.io/node.js/3/</guid>
             <description>1. node.js로 서버 배포하기 마지막 프로젝트를 하며 간단한 채팅을 node.js로 만들었다. 간단하게 구현하는 건 어찌어찌 했는데,, 문제는 배포하는 것. 주변에 구현하면서 고생한 친구가 있어서 편하게 했다.
 
 [STEP 1] 인스턴스 생성부터 - putty 설정까지  aws ec2 인스턴스 생성
@@ -222,10 +222,10 @@ Amazon Linux AMI 2018.03.0 (HVM), SSD Volume Type 를 선택했다
         
         <item>
             <title>statustext parsererror 해결방법</title>
-            <link>/spring/rest-api/statustext_parser_error/</link>
+            <link>https://mand2.github.io/spring/rest-api/statustext_parser_error/</link>
             <pubDate>Wed, 11 Sep 2019 12:31:53 +0900</pubDate>
             
-            <guid>/spring/rest-api/statustext_parser_error/</guid>
+            <guid>https://mand2.github.io/spring/rest-api/statustext_parser_error/</guid>
             <description>200 도 뜨는데 왜 에러로 걸리지? Spring으로 회원가입 페이지를 만들었다. 회원가입하기 버튼을 눌렀을 때 콘솔에서 에러로 들어왔다고 나왔다. DB에 제대로 들어가는 건 함정&amp;hellip;
 서버쪽에서 제대로 넘어갔고, 200으로도 뜨는데 왜 ajax로 넘어올 때 success가 아닌 error로 넘어갈까 찾아보았다.
 $.ajax({ url: &amp;#39;&amp;#39;, type: &amp;#39;post&amp;#39;, data: JSON.stringify(all), contentType : &amp;#39;application/json;charset=utf-8&amp;#39;, dataTyep: &amp;#39;json&amp;#39;, success: function(data){ if(data == &amp;#39;success&amp;#39;){ console.log(&amp;#39;success성공&amp;#39;); } else if(data == &amp;#39;fail&amp;#39;){ console.log(&amp;#39;success:실패&amp;#39;) } else { console.log(&amp;#39;success:요상한값들어간듯,&amp;#39; + data) } }, error: function(data){ console.</description>
@@ -233,10 +233,10 @@ $.ajax({ url: &amp;#39;&amp;#39;, type: &amp;#39;post&amp;#39;, data: JSON.strin
         
         <item>
             <title>Spring 웹상에서 메일 보내보기</title>
-            <link>/spring/user_register/3/</link>
+            <link>https://mand2.github.io/spring/user_register/3/</link>
             <pubDate>Wed, 21 Aug 2019 02:02:51 +0900</pubDate>
             
-            <guid>/spring/user_register/3/</guid>
+            <guid>https://mand2.github.io/spring/user_register/3/</guid>
             <description>웹상에서 메일 보내보기 목차  설정
 -1 pom.xml
 -2 servlet-context
@@ -252,10 +252,10 @@ $.ajax({ url: &amp;#39;&amp;#39;, type: &amp;#39;post&amp;#39;, data: JSON.strin
         
         <item>
             <title>회원가입 시 이메일 인증처리</title>
-            <link>/spring/user_register/4/</link>
+            <link>https://mand2.github.io/spring/user_register/4/</link>
             <pubDate>Tue, 25 Aug 2020 23:00:53 +0900</pubDate>
             
-            <guid>/spring/user_register/4/</guid>
+            <guid>https://mand2.github.io/spring/user_register/4/</guid>
             <description>회원 가입 시 email을 받고 인증 코드를 생성, 해당 email 계정으로 인증 처리 메일을 보내보자!
 관리자가 보낸 인증코드가 맞다면 인증 완료처리까지-
 먼저 mySQL에서 컬럼 추가해준다.
@@ -266,10 +266,10 @@ DAO 변경 DAO 변경
         
         <item>
             <title>REST API Client에서 호출가능한 Library</title>
-            <link>/spring/rest-api/libraries-for-client/</link>
+            <link>https://mand2.github.io/spring/rest-api/libraries-for-client/</link>
             <pubDate>Wed, 04 Mar 2020 23:13:53 +0900</pubDate>
             
-            <guid>/spring/rest-api/libraries-for-client/</guid>
+            <guid>https://mand2.github.io/spring/rest-api/libraries-for-client/</guid>
             <description>우리 팀은 MSA 방식으로 웹 어플리케이션을 만들기 때문에 api 통신이 중요하다. api 통신을 하기 위해서 client 단에서 호출 가능한 library가 무엇이 있는지 찾아보았다. 크게 두 라이브러리를 사용하는데, HttpURLConnection 과 RestTemplate 이다.
 
 1 HttpURLConnection void sendRequest(String request) { // i.e.: request = &amp;#34;http://example.com/index.php?param1=a&amp;amp;param2=b&amp;amp;param3=c&amp;#34;;  URL url = new URL(request); HttpURLConnection connection = (HttpURLConnection) url.openConnection(); connection.setDoOutput(true); connection.setInstanceFollowRedirects(false); connection.setRequestMethod(&amp;#34;GET&amp;#34;); connection.setRequestProperty(&amp;#34;Content-Type&amp;#34;, &amp;#34;text/plain&amp;#34;); connection.setRequestProperty(&amp;#34;charset&amp;#34;, &amp;#34;utf-8&amp;#34;); connection.connect(); } 
@@ -279,10 +279,10 @@ DAO 변경 DAO 변경
         
         <item>
             <title>@SpringBootApplication</title>
-            <link>/spring/spring-boot/4/</link>
+            <link>https://mand2.github.io/spring/spring-boot/4/</link>
             <pubDate>Mon, 21 Oct 2019 18:28:29 +0900</pubDate>
             
-            <guid>/spring/spring-boot/4/</guid>
+            <guid>https://mand2.github.io/spring/spring-boot/4/</guid>
             <description>@SpringBootApplication 이란? 잠시 돌아가서, 이 @SpringBootApplication이 뭐기에 빌드 오류를 뱉어내는지 보자
 1. @SpringBootApplication의 의미는 @Configuration + @EnableAutoConfiguration + @ComponentScan 을 합친 것이다.
 -1 @Configuration 이란?  현재 클래스가 Spring의 설정 파일임을 알려주는 어노테이션 == Spring이 Java config로 간주한다! Configuration을 클래스에 적용하고 @Bean을 해당 클래스의 메소드에 적용하면
@@ -292,10 +292,10 @@ DAO 변경 DAO 변경
         
         <item>
             <title>메이븐 빌드 및 배포란?</title>
-            <link>/spring/user_register/5/</link>
+            <link>https://mand2.github.io/spring/user_register/5/</link>
             <pubDate>Fri, 23 Aug 2019 04:32:00 +0900</pubDate>
             
-            <guid>/spring/user_register/5/</guid>
+            <guid>https://mand2.github.io/spring/user_register/5/</guid>
             <description>메이븐은 프로젝트 객체 모델(Project Object Model)이라는 개념을 바탕으로 프로젝트 의존성 관리, 라이브러리 관리, 프로젝트 생명 주기 관리 기능 등을 제공하는 프로젝트 관리 도구이다. 또한 플러그인을 기반으로 소스 코드로부터 배포 가능한 산출물을 만들어 내는 빌드 기능 뿐만 아니라 레포팅 및 documentation 작성 기능 등을 제공한다.
 
 메이븐 자세히 알아보러 가기
@@ -306,10 +306,10 @@ maven (메이븐 구조, 차이점, 플러그인, 라이프사이클, 의존성,
         
         <item>
             <title>블로그 커밋 메세지 만들고 자동 배포 하기</title>
-            <link>/til/blog-auto-commit/</link>
+            <link>https://mand2.github.io/til/blog-auto-commit/</link>
             <pubDate>Mon, 31 Aug 2020 19:36:11 +0900</pubDate>
             
-            <guid>/til/blog-auto-commit/</guid>
+            <guid>https://mand2.github.io/til/blog-auto-commit/</guid>
             <description>정말 짧은 기간이긴 하지만, Hugo 테마로 블로그를 구축하다 보니 git commit 하기가 귀찮아졌다.
 회사에서는 웬만하면 git 커맨드로 직접 push 하는 스타일이긴 한데, 이렇게 자주 수정하고 push를 여러 단계에 걸쳐서 하는 건 아니라서💦 더 귀찮아진 느낌이다.
 결국 배포 자동화 하는 쉘스크립트를 작성하였다.
@@ -318,10 +318,10 @@ maven (메이븐 구조, 차이점, 플러그인, 라이프사이클, 의존성,
         
         <item>
             <title>20200830: 블로그 이사</title>
-            <link>/retro/20200830/</link>
+            <link>https://mand2.github.io/retro/20200830/</link>
             <pubDate>Mon, 31 Aug 2020 00:38:13 +0900</pubDate>
             
-            <guid>/retro/20200830/</guid>
+            <guid>https://mand2.github.io/retro/20200830/</guid>
             <description>드디어 미루고 미루던 블로그 대공사를 1차 완료하였다.
 저번 블로그는 지킬 jekyll로 했는데, 커스터마이징을 이상하게 해서 글씨 크기가 뒤죽박죽이고 뭔가 색상도 이상했다.(내 디자인 실력이 이상하단 뜻)
 그래서 그런지 더 블로그에 글 쓰기도 싫었다. 회사에서 일하며 알게된 건 두 가지 방식으로 저장하는데,
@@ -330,10 +330,10 @@ maven (메이븐 구조, 차이점, 플러그인, 라이프사이클, 의존성,
         
         <item>
             <title>Maven pom.xml 빌드 플러그인 세팅하기</title>
-            <link>/til/build-plugs-of-maven/</link>
+            <link>https://mand2.github.io/til/build-plugs-of-maven/</link>
             <pubDate>Tue, 21 Jan 2020 07:24:52 +0900</pubDate>
             
-            <guid>/til/build-plugs-of-maven/</guid>
+            <guid>https://mand2.github.io/til/build-plugs-of-maven/</guid>
             <description>작성한 코드를 라이브러리 형식으로 만들기 위해 .jar 파일로 만들었다. 내가 세팅한 버전 등에 맞게 내보내기 위해 + 설정한 dependency 까지 보내주기 위하여 설정하였다.
 스펙
  intellij JDK 1.8 maven 4.0.0  그전에 앞서, apache maven project 사이트에서 말하는 최소 사양은 다음과 같다.
@@ -344,10 +344,10 @@ maven (메이븐 구조, 차이점, 플러그인, 라이프사이클, 의존성,
         
         <item>
             <title>DB index의 정의</title>
-            <link>/til/definition-db-index/</link>
+            <link>https://mand2.github.io/til/definition-db-index/</link>
             <pubDate>Thu, 19 Dec 2019 18:20:06 +0900</pubDate>
             
-            <guid>/til/definition-db-index/</guid>
+            <guid>https://mand2.github.io/til/definition-db-index/</guid>
             <description>What is index? USAGE 1 : Support for fast Lookup
 An index is any data structure that improves the performance of lookup. There are many different data structures used for this purpose. There are complex design trade-offs involving lookup performance, index size, and index-update performance. Many index designs exhibit logarithmic (O(log(N)) lookup performance and in some applications it is possible to achieve flat (O(1)) performance.
 USAGE 2 : Policing the database constraints (I assumed it as a DB table guideline)</description>
@@ -355,10 +355,10 @@ USAGE 2 : Policing the database constraints (I assumed it as a DB table guidelin
         
         <item>
             <title>면접질문 정리</title>
-            <link>/others/interviews/</link>
+            <link>https://mand2.github.io/others/interviews/</link>
             <pubDate>Tue, 05 Nov 2019 18:10:40 +0900</pubDate>
             
-            <guid>/others/interviews/</guid>
+            <guid>https://mand2.github.io/others/interviews/</guid>
             <description>신입 개발자로서 면접을 보며 받았던 면접질문들을 기억이 나는 대로 복기하여 써보려 한다. 일단 기억력이 좋지 않아서 정확한 질문은 기억이 나지 않지만, 이런 종류 or 느낌의 면접 질문을 받았구나~ 라고 보면 좋을 것 같다. 편안하게 커피 한 잔 하며 보시길 추천! ☕
 
 🐸 기본 인성 면접(비전공자 기준) 일단 본인이 비전공자이며, 직장경험이 없잖아 있는(없다고 하기도 그렇고 있다고 하기도 뭐한 수준) 것을 먼저 밝히는 바이다. 모든 곳에서 공통적으로 받은 질문은
@@ -367,10 +367,10 @@ USAGE 2 : Policing the database constraints (I assumed it as a DB table guidelin
         
         <item>
             <title>컬렉션 프레임워크의 정의와 stream 사용법 간단 정리</title>
-            <link>/til/collection-framework/</link>
+            <link>https://mand2.github.io/til/collection-framework/</link>
             <pubDate>Wed, 30 Oct 2019 18:58:29 +0900</pubDate>
             
-            <guid>/til/collection-framework/</guid>
+            <guid>https://mand2.github.io/til/collection-framework/</guid>
             <description>최근, 알고리즘 문제를 풀 때 (링크) 다른 사람의 문제풀이에서 stream()을 사용한 풀이가 있었다. 그동안 stackOverFlow에서나, 다른 레퍼런스 문서 등에서 가끔 보던 형식이었다. 그 땐 이 형식이 람다식으로 만들어진 줄도 몰랐다. 내 기억상 음,, 이건 다른 언어에서 쓰는건가? 하고 넘겼던 듯. 이번 문제풀이를 통해 컬렉션과 람다식에 대해 꼼꼼히 배울 수 있는 계기가 되었다고 생각하고, 간단히 정리를 해 보려고 한다. 아래는 내가 보았던 식이다.
 return list.stream().mapToInt(i-&amp;gt;i.intValue()).toArray(); 이 뜻은
  list를 스트림으로 만들고, int 형식으로 변환 후 다시 배열로 바로 반환  한다는 뜻이다.</description>
@@ -378,10 +378,10 @@ return list.stream().mapToInt(i-&amp;gt;i.intValue()).toArray(); 이 뜻은
         
         <item>
             <title>[책] 오브젝트 (1)</title>
-            <link>/others/books/objects_1/</link>
+            <link>https://mand2.github.io/others/books/objects_1/</link>
             <pubDate>Thu, 24 Oct 2019 22:10:41 +0900</pubDate>
             
-            <guid>/others/books/objects_1/</guid>
+            <guid>https://mand2.github.io/others/books/objects_1/</guid>
             <description>객체지향를 정확하게 구현하고자 오브젝트 라는 책을 구입하였다. 구입하게 된 계기는 우아한형제들 기술블로그에서 신입 개발자의 적응기를 보았다. 자신의 선배가 추천한 책이라고 하였고, 실제로도 많은 도움을 받았다는 후기를 봤다. 웹서핑을 하며 돌아다니다 오브젝트 책에 관한 후기도 몇 개 보기도 하였고 하여 바로 구입!!
 
 🐸 나를 괴롭히는 객체지향 객체지향, 학원에서 수강을 할 때 가장 재미있었던 개념이었다. 객체가 상태(field)와 행동(method)을 갖고 있다! 얼마나 간단한가. 숙제로 나온 구슬치기게임(가위바위보와 같은..)을 자바로 쉽게 구현해보기도 하였고 수업시간 동안 어렵다라는 느낌을 받은 적이 없었다.</description>
