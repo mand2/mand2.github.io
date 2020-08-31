@@ -8,7 +8,7 @@
 <meta name="author" content="mand2">
 
     <link rel="shortcut icon" href="https://image.flaticon.com/icons/svg/2950/2950487.svg" type="image/x-icon" />
-    <title>회고 :: 고라니의 개발일기🦌</title>
+    <title>블로그 커밋 메세지 만들고 자동 배포 하기 :: 고라니의 개발일기🦌</title>
 
     
     <link href="/css/nucleus.css?1598874092" rel="stylesheet">
@@ -53,7 +53,7 @@ if (!doNotTrack) {
 </script>
 
   </head>
-  <body class="" data-url="/retro/">
+  <body class="" data-url="/til/blog-auto-commit/">
     <nav id="sidebar" class="">
 
 
@@ -336,7 +336,7 @@ if (!doNotTrack) {
   
     
     <li data-nav-id="/til/" title="TIL" class="dd-item 
-        
+        parent
         
         
         ">
@@ -362,7 +362,7 @@ if (!doNotTrack) {
  
   
     
-      <li data-nav-id="/til/blog-auto-commit/" title="블로그 커밋 메세지 만들고 자동 배포 하기" class="dd-item ">
+      <li data-nav-id="/til/blog-auto-commit/" title="블로그 커밋 메세지 만들고 자동 배포 하기" class="dd-item active">
         <a href="/til/blog-auto-commit/">
         블로그 커밋 메세지 만들고 자동 배포 하기
         
@@ -838,8 +838,8 @@ if (!doNotTrack) {
   
     
     <li data-nav-id="/retro/" title="회고" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/retro/">
@@ -917,6 +917,8 @@ if (!doNotTrack) {
                         </a>
                     </span>
                   
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
                   <span class="links">
                  
                  
@@ -927,7 +929,13 @@ if (!doNotTrack) {
             
           
           
-            <a href='/'>고라니의 개발일기🦌</a> > 회고
+            
+            
+          
+          
+            <a href='/'>고라니의 개발일기🦌</a> > <a href='/til/'>TIL</a> > 블로그 커밋 메세지 만들고 자동 배포 하기
+          
+        
           
         
           
@@ -936,95 +944,115 @@ if (!doNotTrack) {
                   </span>
                 </div>
                 
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ol>
+    <li>
+      <ol>
+        <li></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+    </div>
+</div>
+
+                
               </div>
             </div>
             
         <div id="head-tags">
         
+<div class="tags">
+
+  <a class="tag-link" href="/tags/til">TIL</a>
+
+  <a class="tag-link" href="/tags/bash">Bash</a>
+
+</div>
+
         </div>
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1>
+              
+              블로그 커밋 메세지 만들고 자동 배포 하기
+            </h1>
           
 
         
 
+<span class="btn_tags">
+    2020-08-31
+</span>
 
-
-	<h3 id="chapter-x">Chapter X</h3>
-<h1 id="회고">회고</h1>
-
-
-
-
-
-
-
-<ul class="children children-li">
-	
-
-	
-		
-	
-
-	
-
-	
-		
-	
-		
-			
-				
-<li>
-<a href="/retro/20200830/" >20200830: 블로그 이사</a>
-</li>
-				
-
-				
-			
-			
-
-				
+<p>정말 짧은 기간이긴 하지만, <code>Hugo</code> 테마로 블로그를 구축하다 보니 git commit 하기가 귀찮아졌다.<br>
+회사에서는 웬만하면 git 커맨드로 직접 push 하는 스타일이긴 한데,
+이렇게 자주 수정하고 push를 여러 단계에 걸쳐서 하는 건 아니라서💦 더 귀찮아진 느낌이다.</p>
+<p>결국 배포 자동화 하는 쉘스크립트를 작성하였다.<br>
+기본적인 뼈대는 <a href="https://github.com/Integerous/Integerous.github.io">한정수님 블로그</a>의 README.md에서 참고하였다.
+그냥 커밋 메세지를 똑같이 <code>auto commit!</code>으로 하기엔 넘 멋없어 보여서 커밋 메세지를 따로 입력받아 처리하였다.
+쉘스크립트를 호출하면서 커밋메세지를 받아올 수도 있지만, 그렇게 하면 순간적으로 오타가 날 수도 있고 다른 내용을 작성하고 싶기도 해서
+관리하기 쉽게 <strong>커밋 메세지용 파일을 따로</strong> 만들어 두었다.</p>
+<br>
+<h4 id="전제">전제</h4>
 <ul>
-				
-
-				
-					
-				
-
-				
-
-				
-					
-	
-
-				
-
-				
+<li>
+<p>public, blog 모두 현재 세팅된 브랜치에 push 한다.<br>
+public이 master 브랜치, blog가 dev브랜치에 있다면 각각 원격 브랜치로 push.</p>
+</li>
+<li>
+<p>로컬, 원격 저장소 모두 연결된 상태다. (연결되지 않았다면 <code>--set-upstream</code> 커맨드 날릴 것.)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git branch --set-uptream-to<span style="color:#f92672">=</span>origin/<span style="color:#f92672">[</span>remote 브랜치명<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>로컬 브랜치명<span style="color:#f92672">]</span>
+</code></pre></div></li>
+<li>
+<p>사용하는 테마가 하나다. (여러가지 있다면 프로젝트 빌드 할 때 <code>hugo -t [테마명]</code>으로 세팅.)</p>
+</li>
+<li>
+<p>커밋 메세지는 파일에 각각 저장해둔다.<br>
+나의 경우, blog 관련 커밋메세지를 <code>/d/Hugo/mand2_blog/msg/blog.md</code> 파일 내부에 작성하였다.<br>
+이 파일의 경로를 쉘스크립트 초반 <code>msg_blog_files</code> 변수에 넣는다.</p>
+</li>
+<li>
+<p>쉘스크립트의 위치는 블로그(hugo blog) 루트에 위치한다.</p>
+</li>
 </ul>
-				
-			
-		
-	
-
-	
+<br>
+<br>
+<h4 id="쉘-스크립트-deploysh-작성">쉘 스크립트 deploy.sh 작성</h4>
+<script type="text/javascript" src="https://gist.github.com/mand2/277f0c526d51e6a3ca5b9270575360fa.js"></script>
+<br>
+<h4 id="실행-가능하게-만들기">실행 가능하게 만들기</h4>
+<p><code>chmod +x deploy.sh</code> 커맨드를 날려서 <code>deploy.sh</code> 파일을 실행 할 수 있도록 변경한다.</p>
+<br>
+<h4 id="작성-후-실행">작성 후 실행</h4>
+<p><code>.\deploy.sh</code> 로 실행한다. 아래는 결과 화면.\</p>
+<ul>
+<li>blog 커밋 내역
+<img src="/images/TIL/blog-auto-commit-1.png" alt="blog"></li>
+<li>public 커밋 내역
+<img src="/images/TIL/blog-auto-commit-2.png" alt="public"></li>
 </ul>
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<script src="https://utteranc.es/client.js"
+        repo="mand2/blog-comments"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
 
-
-
-
-
-
-
-
-<footer class=" footline" >
-	
+<footer class="footline">
+    
 </footer>
 
-        
-            </div> 
         
         </div> 
         
@@ -1222,6 +1250,7 @@ if (!doNotTrack) {
             
                 
                     
+                    
                 
                 
 
@@ -1234,6 +1263,7 @@ if (!doNotTrack) {
             
             
                 
+                    
                     
                 
                 
@@ -1251,37 +1281,8 @@ if (!doNotTrack) {
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
-            
-            
-                
                     
                 
                 
@@ -1293,22 +1294,6 @@ if (!doNotTrack) {
                     
             
         
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
                     
                         
             
@@ -1357,22 +1342,6 @@ if (!doNotTrack) {
                     
                     
 
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
                         
             
@@ -1483,6 +1452,70 @@ if (!doNotTrack) {
 
                     
                     
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
                         
                     
                     
@@ -1543,7 +1576,6 @@ if (!doNotTrack) {
             
             
                 
-                    
                     
                 
                 
@@ -1570,10 +1602,10 @@ if (!doNotTrack) {
 	 
 	 
 		
-			<a class="nav nav-prev" href="/others/interviews/" title="면접질문 정리"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/til/" title="TIL"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/about/" title="About" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/til/build-plugs-of-maven/" title="Maven pom.xml 빌드 플러그인 세팅하기" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1603,3 +1635,4 @@ if (!doNotTrack) {
 
   </body>
 </html>
+

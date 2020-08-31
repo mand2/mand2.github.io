@@ -18,7 +18,7 @@
 	"title": "TIL",
 	"tags": [],
 	"description": "",
-	"content": "Chapter 2 TIL \rMaven pom.xml 빌드 플러그인 세팅하기\r\r\r\r\rDB index의 정의\r\r\r\r\r컬렉션 프레임워크의 정의와 stream 사용법 간단 정리\r\r\r\r\r"
+	"content": "Chapter 2 TIL \r블로그 커밋 메세지 만들고 자동 배포 하기\r\r\r\r\rMaven pom.xml 빌드 플러그인 세팅하기\r\r\r\r\rDB index의 정의\r\r\r\r\r컬렉션 프레임워크의 정의와 stream 사용법 간단 정리\r\r\r\r\r"
 },
 {
 	"uri": "/python/",
@@ -210,6 +210,55 @@
 	"content": "메이븐은 프로젝트 객체 모델(Project Object Model)이라는 개념을 바탕으로 프로젝트 의존성 관리, 라이브러리 관리, 프로젝트 생명 주기 관리 기능 등을 제공하는 프로젝트 관리 도구이다. 또한 플러그인을 기반으로 소스 코드로부터 배포 가능한 산출물을 만들어 내는 빌드 기능 뿐만 아니라 레포팅 및 documentation 작성 기능 등을 제공한다.\n\n메이븐 자세히 알아보러 가기\npom.xml 태그들 자세히 알아보기\npom.xml 태그 조금 더 간결하게, 정리 더 잘 된 것\nmaven (메이븐 구조, 차이점, 플러그인, 라이프사이클, 의존성, pom.xml)\n자바 웹 어플리케이션 배포  SVN 으로 형상관리 하는 경우도 있다 (회사에서,,) git으로 형상관리 하기  배포 순서 :\n 각자 소스 코딩 후 형상관리 툴에 push 배포용 서버 컴퓨터에서 pull 받음 war 파일로 package tomcat에 배포  "
 },
 {
+	"uri": "/tags/bash/",
+	"title": "Bash",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/tags/til/",
+	"title": "TIL",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/categories/til/",
+	"title": "TIL",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/",
+	"title": "고라니의 개발일기🦌",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/til/blog-auto-commit/",
+	"title": "블로그 커밋 메세지 만들고 자동 배포 하기",
+	"tags": ["TIL", "Bash"],
+	"description": "",
+	"content": "정말 짧은 기간이긴 하지만, Hugo 테마로 블로그를 구축하다 보니 git commit 하기가 귀찮아졌다.\n회사에서는 웬만하면 git 커맨드로 직접 push 하는 스타일이긴 한데, 이렇게 자주 수정하고 push를 여러 단계에 걸쳐서 하는 건 아니라서💦 더 귀찮아진 느낌이다.\n결국 배포 자동화 하는 쉘스크립트를 작성하였다.\n기본적인 뼈대는 한정수님 블로그의 README.md에서 참고하였다. 그냥 커밋 메세지를 똑같이 auto commit!으로 하기엔 넘 멋없어 보여서 커밋 메세지를 따로 입력받아 처리하였다. 쉘스크립트를 호출하면서 커밋메세지를 받아올 수도 있지만, 그렇게 하면 순간적으로 오타가 날 수도 있고 다른 내용을 작성하고 싶기도 해서 관리하기 쉽게 커밋 메세지용 파일을 따로 만들어 두었다.\n전제   public, blog 모두 현재 세팅된 브랜치에 push 한다.\npublic이 master 브랜치, blog가 dev브랜치에 있다면 각각 원격 브랜치로 push.\n  로컬, 원격 저장소 모두 연결된 상태다. (연결되지 않았다면 --set-upstream 커맨드 날릴 것.)\n$ git branch --set-uptream-to=origin/[remote 브랜치명] [로컬 브랜치명]   사용하는 테마가 하나다. (여러가지 있다면 프로젝트 빌드 할 때 hugo -t [테마명]으로 세팅.)\n  커밋 메세지는 파일에 각각 저장해둔다.\n나의 경우, blog 관련 커밋메세지를 /d/Hugo/mand2_blog/msg/blog.md 파일 내부에 작성하였다.\n이 파일의 경로를 쉘스크립트 초반 msg_blog_files 변수에 넣는다.\n  쉘스크립트의 위치는 블로그(hugo blog) 루트에 위치한다.\n  쉘 스크립트 deploy.sh 작성  실행 가능하게 만들기 chmod +x deploy.sh 커맨드를 날려서 deploy.sh 파일을 실행 할 수 있도록 변경한다.\n작성 후 실행 .\\deploy.sh 로 실행한다. 아래는 결과 화면.\\\n blog 커밋 내역  public 커밋 내역   "
+},
+{
 	"uri": "/retro/20200830/",
 	"title": "20200830: 블로그 이사",
 	"tags": ["Diary", "blog"],
@@ -224,13 +273,6 @@
 	"content": ""
 },
 {
-	"uri": "/categories/",
-	"title": "Categories",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
 	"uri": "/tags/diary/",
 	"title": "Diary",
 	"tags": [],
@@ -240,20 +282,6 @@
 {
 	"uri": "/categories/retro/",
 	"title": "retro",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "/tags/",
-	"title": "Tags",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "/",
-	"title": "고라니의 개발일기🦌",
 	"tags": [],
 	"description": "",
 	"content": ""
@@ -315,13 +343,6 @@
 	"content": ""
 },
 {
-	"uri": "/tags/til/",
-	"title": "TIL",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
 	"uri": "/tags/python/",
 	"title": "Python",
 	"tags": [],
@@ -341,13 +362,6 @@
 	"tags": ["TIL", "Spring"],
 	"description": "",
 	"content": "작성한 코드를 라이브러리 형식으로 만들기 위해 .jar 파일로 만들었다. 내가 세팅한 버전 등에 맞게 내보내기 위해 + 설정한 dependency 까지 보내주기 위하여 설정하였다.\n스펙\n intellij JDK 1.8 maven 4.0.0  그전에 앞서, apache maven project 사이트에서 말하는 최소 사양은 다음과 같다.\n Maven 3.0 이상 JDK 1.7 이상  Q. pom.xml에 사용한 dependency를 어떻게 내보내야 하는가? 두 가지 버전이 있다.\n  maven-assembly-plugin 사용:\n내부에 전 dependency를 저장하여 보내주기 때문에 용량이 크다.\n  maven-jar-plugin + maven-dependency-plugin 함께 사용:\nmanifest.mf 파일에 라이브러리의 상대경로를 저장해서 불러오도록 한다.\n   manifest 파일이란 ? 바로가기\npom 파일에 대해 더 설명을 원할 때 ? 바로가기\n 용량문제 + 1의 경우 conflict 문제가 있다는 말이 있어 2를 선택함. 출처\n실제로 2로 할 때의 용량이 26KB 인데 반해 1의 경우 4600KB 정도로 용량차이가 큼.\n\n버전 1 \u0026lt;build\u0026gt; \u0026lt;plugins\u0026gt; \u0026lt;plugin\u0026gt; \u0026lt;groupId\u0026gt;org.apache.maven.plugins\u0026lt;/groupId\u0026gt; \u0026lt;artifactId\u0026gt;maven-assembly-plugin\u0026lt;/artifactId\u0026gt; \u0026lt;version\u0026gt;3.2.0\u0026lt;/version\u0026gt; \u0026lt;configuration\u0026gt; \u0026lt;descriptorRefs\u0026gt; \u0026lt;descriptorRef\u0026gt;jar-with-dependencies\u0026lt;/descriptorRef\u0026gt; \u0026lt;/descriptorRefs\u0026gt; \u0026lt;/configuration\u0026gt; \u0026lt;executions\u0026gt; \u0026lt;execution\u0026gt; \u0026lt;id\u0026gt;make-assembly\u0026lt;/id\u0026gt; \u0026lt;!-- this is used for inheritance merges --\u0026gt; \u0026lt;phase\u0026gt;package\u0026lt;/phase\u0026gt; \u0026lt;!-- bind to the packaging phase --\u0026gt; \u0026lt;goals\u0026gt; \u0026lt;goal\u0026gt;single\u0026lt;/goal\u0026gt; \u0026lt;/goals\u0026gt; \u0026lt;/execution\u0026gt; \u0026lt;/executions\u0026gt; \u0026lt;/plugin\u0026gt; \u0026lt;/plugins\u0026gt; \u0026lt;/build\u0026gt; \n버전 2 \u0026lt;build\u0026gt; \u0026lt;plugins\u0026gt; \u0026lt;plugin\u0026gt; \u0026lt;groupId\u0026gt;org.apache.maven.plugins\u0026lt;/groupId\u0026gt; \u0026lt;artifactId\u0026gt;maven-jar-plugin\u0026lt;/artifactId\u0026gt; \u0026lt;version\u0026gt;3.2.0\u0026lt;/version\u0026gt; \u0026lt;configuration\u0026gt; \u0026lt;archive\u0026gt; \u0026lt;manifest\u0026gt; \u0026lt;addClasspath\u0026gt;true\u0026lt;/addClasspath\u0026gt; \u0026lt;packageName\u0026gt;com.demo.sample\u0026lt;/packageName\u0026gt; \u0026lt;classpathPrefix\u0026gt;lib/\u0026lt;/classpathPrefix\u0026gt; \u0026lt;/manifest\u0026gt; \u0026lt;/archive\u0026gt; \u0026lt;/configuration\u0026gt; \u0026lt;/plugin\u0026gt; \u0026lt;plugin\u0026gt; \u0026lt;groupId\u0026gt;org.apache.maven.plugins\u0026lt;/groupId\u0026gt; \u0026lt;artifactId\u0026gt;maven-dependency-plugin\u0026lt;/artifactId\u0026gt; \u0026lt;executions\u0026gt; \u0026lt;execution\u0026gt; \u0026lt;id\u0026gt;copy-dependencies\u0026lt;/id\u0026gt; \u0026lt;phase\u0026gt;package\u0026lt;/phase\u0026gt; \u0026lt;goals\u0026gt; \u0026lt;goal\u0026gt;copy-dependencies\u0026lt;/goal\u0026gt; \u0026lt;/goals\u0026gt; \u0026lt;configuration\u0026gt; \u0026lt;outputDirectory\u0026gt;${project.build.directory}/lib\u0026lt;/outputDirectory\u0026gt; \u0026lt;overWriteReleases\u0026gt;false\u0026lt;/overWriteReleases\u0026gt; \u0026lt;overWriteSnapshots\u0026gt;false\u0026lt;/overWriteSnapshots\u0026gt; \u0026lt;overWriteIfNewer\u0026gt;true\u0026lt;/overWriteIfNewer\u0026gt; \u0026lt;/configuration\u0026gt; \u0026lt;/execution\u0026gt; \u0026lt;/executions\u0026gt; \u0026lt;/plugin\u0026gt; \u0026lt;/plugins\u0026gt; \u0026lt;/build\u0026gt; 필요한 부분들\n packageName mainClass : main() 가 있으면 포함해야 함. classpathPrefix  \nQ. java version setting은? 버전 세팅에도 두가지 방법이 있다.\n1. build 할 때 세팅하는 방법 \u0026lt;plugin\u0026gt; \u0026lt;groupId\u0026gt;org.apache.maven.plugins\u0026lt;/groupId\u0026gt; \u0026lt;artifactId\u0026gt;maven-compiler-plugin\u0026lt;/artifactId\u0026gt; \u0026lt;version\u0026gt;3.1\u0026lt;/version\u0026gt; \u0026lt;configuration\u0026gt; \u0026lt;source\u0026gt;${java.version}\u0026lt;/source\u0026gt; \u0026lt;target\u0026gt;${java.version}\u0026lt;/target\u0026gt; \u0026lt;encoding\u0026gt;utf-8\u0026lt;/encoding\u0026gt; \u0026lt;/configuration\u0026gt; \u0026lt;/plugin\u0026gt; \n2. 처음부터 세팅 \u0026lt;properties\u0026gt; \u0026lt;java.version\u0026gt;1.8\u0026lt;/java.version\u0026gt; \u0026lt;maven.compiler.source\u0026gt;1.8\u0026lt;/maven.compiler.source\u0026gt; \u0026lt;maven.compiler.target\u0026gt;1.8\u0026lt;/maven.compiler.target\u0026gt; \u0026lt;project.build.sourceEncoding\u0026gt;UTF-8\u0026lt;/project.build.sourceEncoding\u0026gt; \u0026lt;project.reporting.outputEncoding\u0026gt;UTF-8\u0026lt;/project.reporting.outputEncoding\u0026gt; \u0026lt;/properties\u0026gt; \nQ. jar 파일 이름 설정가능한지? 가능하다. 아래와 같이 pom.xml 에서 설정가능.\n\u0026lt;groupId\u0026gt;com.demo\u0026lt;/groupId\u0026gt; \u0026lt;artifactId\u0026gt;demo-sample\u0026lt;/artifactId\u0026gt; \u0026lt;version\u0026gt;1.0.0\u0026lt;/version\u0026gt; \u0026lt;name\u0026gt;sample\u0026lt;/name\u0026gt; \u0026lt;description\u0026gt;DEMO Java Sample project for Spring Boot\u0026lt;/description\u0026gt; [...] \u0026lt;build\u0026gt; \u0026lt;finalName\u0026gt;${project.artifactId}-${project.version}\u0026lt;/finalName\u0026gt; \u0026lt;/build\u0026gt;  라이브러리 명( == jar 파일명)\n\u0026lt;finalName\u0026gt; 에 정해진 대로 : demo-sample-1.0.0.jar 라이브러리 내부의 패키지명(class 파일을 갖고있는 패키지임)\nmaven-jar-plugin 의 \u0026lt;packageName\u0026gt; 을 따름 : com.demo.sample 라이브러리 내부의 META-INF maven.{groupId}.{artifactId} 로 나옴  \n마지막 intellij 기준으로 maven - lifecycle - clean 후 package 로 하면 target 폴더에 원하는 .jar 가 만들어진다. 이 파일은 라이브러리형식으로 되었기 때문에 다른 프로젝트에서 쓸 수 있다-!\n\n번외 : Apache Maven Archiver 자세한 설명보러가기 👉 docs\n\u0026lt;archive\u0026gt; \u0026lt;addMavenDescriptor/\u0026gt; \u0026lt;compress/\u0026gt; \u0026lt;forced/\u0026gt; \u0026lt;index/\u0026gt; \u0026lt;pomPropertiesFile/\u0026gt; \u0026lt;manifestFile/\u0026gt; \u0026lt;manifest\u0026gt; \u0026lt;addClasspath/\u0026gt; \u0026lt;addDefaultEntries/\u0026gt; \u0026lt;addDefaultImplementationEntries/\u0026gt; \u0026lt;addDefaultSpecificationEntries/\u0026gt; \u0026lt;addBuildEnvironmentEntries/\u0026gt; \u0026lt;addExtensions/\u0026gt; \u0026lt;classpathLayoutType/\u0026gt; \u0026lt;classpathPrefix/\u0026gt; \u0026lt;customClasspathLayout/\u0026gt; \u0026lt;mainClass/\u0026gt; \u0026lt;packageName/\u0026gt; \u0026lt;useUniqueVersions/\u0026gt; \u0026lt;/manifest\u0026gt; \u0026lt;manifestEntries\u0026gt; \u0026lt;key\u0026gt;value\u0026lt;/key\u0026gt; \u0026lt;/manifestEntries\u0026gt; \u0026lt;manifestSections\u0026gt; \u0026lt;manifestSection\u0026gt; \u0026lt;name/\u0026gt; \u0026lt;manifestEntries\u0026gt; \u0026lt;key\u0026gt;value\u0026lt;/key\u0026gt; \u0026lt;/manifestEntries\u0026gt; \u0026lt;manifestSection/\u0026gt; \u0026lt;/manifestSections\u0026gt; \u0026lt;/archive\u0026gt; \n 더 자세한 내용은 https://maven.apache.org/plugins/maven-jar-plugin/\n"
-},
-{
-	"uri": "/categories/til/",
-	"title": "TIL",
-	"tags": [],
-	"description": "",
-	"content": ""
 },
 {
 	"uri": "/tags/db/",

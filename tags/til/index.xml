@@ -6,7 +6,7 @@
     <description>Recent content in TIL on 고라니의 개발일기🦌</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Wed, 04 Mar 2020 23:13:53 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 31 Aug 2020 19:36:11 +0900</lastBuildDate>
     
 	<atom:link href="/tags/til/index.xml" rel="self" type="application/rss+xml" />
     
@@ -165,6 +165,18 @@ $.ajax({ url: &amp;#39;&amp;#39;, type: &amp;#39;post&amp;#39;, data: JSON.strin
 1 HttpURLConnection void sendRequest(String request) { // i.e.: request = &amp;#34;http://example.com/index.php?param1=a&amp;amp;param2=b&amp;amp;param3=c&amp;#34;;  URL url = new URL(request); HttpURLConnection connection = (HttpURLConnection) url.openConnection(); connection.setDoOutput(true); connection.setInstanceFollowRedirects(false); connection.setRequestMethod(&amp;#34;GET&amp;#34;); connection.setRequestProperty(&amp;#34;Content-Type&amp;#34;, &amp;#34;text/plain&amp;#34;); connection.setRequestProperty(&amp;#34;charset&amp;#34;, &amp;#34;utf-8&amp;#34;); connection.connect(); } 
 2 RestTemplate DOCS
 요즘 들어 선호하는 형태는 postForObject .</description>
+    </item>
+    
+    <item>
+      <title>블로그 커밋 메세지 만들고 자동 배포 하기</title>
+      <link>/til/blog-auto-commit/</link>
+      <pubDate>Mon, 31 Aug 2020 19:36:11 +0900</pubDate>
+      
+      <guid>/til/blog-auto-commit/</guid>
+      <description>정말 짧은 기간이긴 하지만, Hugo 테마로 블로그를 구축하다 보니 git commit 하기가 귀찮아졌다.
+회사에서는 웬만하면 git 커맨드로 직접 push 하는 스타일이긴 한데, 이렇게 자주 수정하고 push를 여러 단계에 걸쳐서 하는 건 아니라서💦 더 귀찮아진 느낌이다.
+결국 배포 자동화 하는 쉘스크립트를 작성하였다.
+기본적인 뼈대는 한정수님 블로그의 README.md에서 참고하였다. 그냥 커밋 메세지를 똑같이 auto commit!으로 하기엔 넘 멋없어 보여서 커밋 메세지를 따로 입력받아 처리하였다. 쉘스크립트를 호출하면서 커밋메세지를 받아올 수도 있지만, 그렇게 하면 순간적으로 오타가 날 수도 있고 다른 내용을 작성하고 싶기도 해서 관리하기 쉽게 커밋 메세지용 파일을 따로 만들어 두었다.</description>
     </item>
     
     <item>
