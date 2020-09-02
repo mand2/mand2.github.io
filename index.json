@@ -18,7 +18,7 @@
 	"title": "TIL",
 	"tags": [],
 	"description": "",
-	"content": "Chapter 2 TIL \r블로그 커밋 메세지 만들고 자동 배포 하기\r\r\r\r\rMaven pom.xml 빌드 플러그인 세팅하기\r\r\r\r\rDB index의 정의\r\r\r\r\r컬렉션 프레임워크의 정의와 stream 사용법 간단 정리\r\r\r\r\r"
+	"content": "Chapter 2 TIL \r자바스크립트로 AWS autoscaling group 정보 가져오기\r\r\r\r\r블로그 커밋 메세지 만들고 자동 배포 하기\r\r\r\r\rMaven pom.xml 빌드 플러그인 세팅하기\r\r\r\r\rDB index의 정의\r\r\r\r\r컬렉션 프레임워크의 정의와 stream 사용법 간단 정리\r\r\r\r\r"
 },
 {
 	"uri": "https://mand2.github.io/python/",
@@ -53,7 +53,7 @@
 	"title": "회고",
 	"tags": [],
 	"description": "",
-	"content": "Chapter X 회고 \r20200830: 블로그 이사\r\r\r\r\r"
+	"content": "Chapter X 회고 \r20200902\r\r\r\r\r20200830: 블로그 이사\r\r\r\r\r"
 },
 {
 	"uri": "https://mand2.github.io/python/1/",
@@ -210,8 +210,8 @@
 	"content": "메이븐은 프로젝트 객체 모델(Project Object Model)이라는 개념을 바탕으로 프로젝트 의존성 관리, 라이브러리 관리, 프로젝트 생명 주기 관리 기능 등을 제공하는 프로젝트 관리 도구이다. 또한 플러그인을 기반으로 소스 코드로부터 배포 가능한 산출물을 만들어 내는 빌드 기능 뿐만 아니라 레포팅 및 documentation 작성 기능 등을 제공한다.\n\n메이븐 자세히 알아보러 가기\npom.xml 태그들 자세히 알아보기\npom.xml 태그 조금 더 간결하게, 정리 더 잘 된 것\nmaven (메이븐 구조, 차이점, 플러그인, 라이프사이클, 의존성, pom.xml)\n자바 웹 어플리케이션 배포  SVN 으로 형상관리 하는 경우도 있다 (회사에서,,) git으로 형상관리 하기  배포 순서 :\n 각자 소스 코딩 후 형상관리 툴에 push 배포용 서버 컴퓨터에서 pull 받음 war 파일로 package tomcat에 배포  "
 },
 {
-	"uri": "https://mand2.github.io/tags/bash/",
-	"title": "Bash",
+	"uri": "https://mand2.github.io/tags/aws/",
+	"title": "AWS",
 	"tags": [],
 	"description": "",
 	"content": ""
@@ -219,6 +219,13 @@
 {
 	"uri": "https://mand2.github.io/categories/",
 	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://mand2.github.io/tags/javascript/",
+	"title": "Javascript",
 	"tags": [],
 	"description": "",
 	"content": ""
@@ -252,6 +259,41 @@
 	"content": ""
 },
 {
+	"uri": "https://mand2.github.io/til/get-autoscaling-by-js/",
+	"title": "자바스크립트로 AWS autoscaling group 정보 가져오기",
+	"tags": ["Javascript", "AWS", "TIL"],
+	"description": "",
+	"content": "각 리전의 인스턴스를 컨트롤하는 람다를 유지보수하는 일을 맡았다. 일단 리전 하나에서 관리하는 것도 충분히 힘들지만, 여러 리전에서 관리를 하다니\u0026hellip; 같이 일하시는 분들이 대단해 보인다. 다들 기억력이 정말 좋으신듯 ㅠ_ㅠ 리전 하나당 관리하는 인스턴스 종류도 여러가지인데 꼼꼼하셔서 큰 사고없이 잘 유지중인 것 같다.\n아무튼 각설하고, 오늘의 주제는 AWS autoScalingGroup 정보 가져오기 by. javascript.\nAWS에서는 SDK라고 해서 aws 관련한 모든 것에 접근할 수 있는 라이브러리를 제공한다. 평소에는 java-sdk로 aws에 접근하지만, 이번에는 람다용으로 개발할 거라서 javascript-sdk 용으로 설명한다. (특이한 점: 각 언어별로 제공되는 파라미터 값이나 입력값이 다름. 메서드도 다르다!)\n참고한 부분은 역시나 AWS docs의 AutoScaling 관련 부분임. AWS docs\n호출방식  aws-sdk를 가져온다. aws.autoScaling 객체 생성. params에 원하는 정보를 입력해준다. (filtering)\nAutoScalingGroupNames / MaxRecords / NextToken은 필수값은 아님. autoScaling.describeAutoScalingGroups 호출!   \n예제 리턴하는 방식은 아래와 같다.\n받아온 data로 autoScaling을 어떻게 조작할지 개발하면 된다(이제 시작이라는 뜻ㅎ). \n\n궁금했던 점 Q. AutoScalingGroups의 DesiredCapacity와 instances의 차이?\ndesiredCapacity : scale-in / out이 발생하지 않으면 지속될 인스턴스 개수.\ninstances : 해당 오토스케일링 그룹에서 띄운 instance의 세부정보.\n출처: 스택오버플로우\n"
+},
+{
+	"uri": "https://mand2.github.io/retro/20200902/",
+	"title": "20200902",
+	"tags": ["Diary"],
+	"description": "",
+	"content": "오늘은 날씨도 우중충하니까 우울한 이야기를 해야겠다.\n월급의 20%를 자기계발로 써야한다는 말을 들어서, 나는 자기계발을 열심히 하는 개발자인가, 생각해보았다.\n반은 맞고 반은 틀리다. 젠장\n\r\r자유 시간에 나는 무엇을 했는지 살펴보면.. \r\r일단 책과 강의는 열심히 사는 편이다: 돈을 쓴다 -\u0026gt; 열심히 한다?\n틀어놓고 자거나, 책을 10~20분, 혹은 아예 안 볼때도 많다: 배가 불렀다 -\u0026gt; 열심히 안한다\n업무에 필요하다며 기기들을 산다 -\u0026gt; 개발자 뽕이 차오른다🍷🍷🍷 -\u0026gt; 뽕만 차오르고, 통장은 텅장이 되어버린다.\n\r 결국 입으로만 \u0026lsquo;아~ 공부해야지\u0026rsquo; 해놓고 아무 것도 하지 않았다. 행동력으로 보여줘야 할 것을..쯧쯧 끝없이 채찍질해야 하건만 지르고 나면 만족감이 날 지배했달까\u0026hellip; 투자 대비 아웃풋이 정말 극악인 인간이다. 투자한 것 만큼은 성장해야 하는데. 이 강박 때문에 더 급해진 것 같다. 나는 20만큼 성장하길 바라고 투자를 하는데, 결과는 5면 감사할 정도ㅋ 이게 남는 장사인가. 내가 원하는 개발자란 빠르게 개발 할 거 개발하고, 남은 시간에 더 나은 서비스 제공을 위해서 요즘 뭐가 좋은지 서치도 해보고 공부도 해보는 삶인데, 현재 저 빠르게 개발한다에서 막힌다. 깊이가 없으니 문제 해결에 애를 먹는 것 같다. 아, 그리고 어떻게 코드를 짰는지 분석하는데 시간이 엄~청 걸린다. 내가 쓰는 것들만 쓰다보니, 타인이 작성한 코드는 복잡해 보여서 지레 겁먹는 것도 이유일 거다.\n차근차근히 공부하면 되는데 요행을 바라고 있으니 마음이 급해진 것 같달까. 다시 차분히 노트북 앞에 앉아서 공부해야지. 스터디 하나 만들면 참 좋을텐데 현실은 코로나로 인해 개인적으로 공부해야 될 것 같다. 재미가 없는 삶.. 다이나믹 코리아!! 다이나믹 고라니!!🍺를 외치던 나였는데. 요즘 재택이라 집에서만 갇혀있어서 코로나 블루가 온 건지😅 아무튼 이번달 치 푸념은 다 했다. 9월도 열심히 하자.\n"
+},
+{
+	"uri": "https://mand2.github.io/tags/diary/",
+	"title": "Diary",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://mand2.github.io/categories/retro/",
+	"title": "retro",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://mand2.github.io/tags/bash/",
+	"title": "Bash",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
 	"uri": "https://mand2.github.io/til/blog-auto-commit/",
 	"title": "블로그 커밋 메세지 만들고 자동 배포 하기",
 	"tags": ["TIL", "Bash"],
@@ -268,20 +310,6 @@
 {
 	"uri": "https://mand2.github.io/tags/blog/",
 	"title": "blog",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "https://mand2.github.io/tags/diary/",
-	"title": "Diary",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "https://mand2.github.io/categories/retro/",
-	"title": "retro",
 	"tags": [],
 	"description": "",
 	"content": ""

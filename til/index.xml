@@ -12,6 +12,17 @@
     
     
     <item>
+      <title>자바스크립트로 AWS autoscaling group 정보 가져오기</title>
+      <link>https://mand2.github.io/til/get-autoscaling-by-js/</link>
+      <pubDate>Wed, 02 Sep 2020 22:35:44 +0900</pubDate>
+      
+      <guid>https://mand2.github.io/til/get-autoscaling-by-js/</guid>
+      <description>각 리전의 인스턴스를 컨트롤하는 람다를 유지보수하는 일을 맡았다. 일단 리전 하나에서 관리하는 것도 충분히 힘들지만, 여러 리전에서 관리를 하다니&amp;hellip; 같이 일하시는 분들이 대단해 보인다. 다들 기억력이 정말 좋으신듯 ㅠ_ㅠ 리전 하나당 관리하는 인스턴스 종류도 여러가지인데 꼼꼼하셔서 큰 사고없이 잘 유지중인 것 같다.
+아무튼 각설하고, 오늘의 주제는 AWS autoScalingGroup 정보 가져오기 by. javascript.
+AWS에서는 SDK라고 해서 aws 관련한 모든 것에 접근할 수 있는 라이브러리를 제공한다. 평소에는 java-sdk로 aws에 접근하지만, 이번에는 람다용으로 개발할 거라서 javascript-sdk 용으로 설명한다.</description>
+    </item>
+    
+    <item>
       <title>블로그 커밋 메세지 만들고 자동 배포 하기</title>
       <link>https://mand2.github.io/til/blog-auto-commit/</link>
       <pubDate>Mon, 31 Aug 2020 19:36:11 +0900</pubDate>
