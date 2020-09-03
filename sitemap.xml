@@ -153,37 +153,52 @@
   </url>
   
   <url>
+    <loc>https://mand2.github.io/categories/</loc>
+    <lastmod>2020-09-03T22:39:54+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mand2.github.io/tags/java/</loc>
+    <lastmod>2020-09-03T22:39:54+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mand2.github.io/tags/parsing/</loc>
+    <lastmod>2020-09-03T22:39:54+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mand2.github.io/tags/</loc>
+    <lastmod>2020-09-03T22:39:54+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mand2.github.io/tags/til/</loc>
+    <lastmod>2020-09-03T22:39:54+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mand2.github.io/categories/til/</loc>
+    <lastmod>2020-09-03T22:39:54+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mand2.github.io/</loc>
+    <lastmod>2020-09-03T22:39:54+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mand2.github.io/til/java-str-to-double/</loc>
+    <lastmod>2020-09-03T22:39:54+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://mand2.github.io/tags/aws/</loc>
     <lastmod>2020-09-02T22:35:44+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mand2.github.io/categories/</loc>
-    <lastmod>2020-09-02T22:35:44+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://mand2.github.io/tags/javascript/</loc>
-    <lastmod>2020-09-02T22:35:44+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mand2.github.io/tags/</loc>
-    <lastmod>2020-09-02T22:35:44+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mand2.github.io/tags/til/</loc>
-    <lastmod>2020-09-02T22:35:44+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mand2.github.io/categories/til/</loc>
-    <lastmod>2020-09-02T22:35:44+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mand2.github.io/</loc>
     <lastmod>2020-09-02T22:35:44+09:00</lastmod>
   </url>
   
@@ -335,11 +350,6 @@
   <url>
     <loc>https://mand2.github.io/others/interviews/</loc>
     <lastmod>2019-11-05T18:10:40+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mand2.github.io/tags/java/</loc>
-    <lastmod>2019-10-30T18:58:29+09:00</lastmod>
   </url>
   
   <url>

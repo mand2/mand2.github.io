@@ -6,7 +6,7 @@
     <description>Recent content in TIL on 고라니의 개발일기🦌</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Wed, 02 Sep 2020 22:35:44 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 03 Sep 2020 22:39:54 +0900</lastBuildDate>
     
 	<atom:link href="https://mand2.github.io/tags/til/index.xml" rel="self" type="application/rss+xml" />
     
@@ -165,6 +165,18 @@ $.ajax({ url: &amp;#39;&amp;#39;, type: &amp;#39;post&amp;#39;, data: JSON.strin
 1 HttpURLConnection void sendRequest(String request) { // i.e.: request = &amp;#34;http://example.com/index.php?param1=a&amp;amp;param2=b&amp;amp;param3=c&amp;#34;;  URL url = new URL(request); HttpURLConnection connection = (HttpURLConnection) url.openConnection(); connection.setDoOutput(true); connection.setInstanceFollowRedirects(false); connection.setRequestMethod(&amp;#34;GET&amp;#34;); connection.setRequestProperty(&amp;#34;Content-Type&amp;#34;, &amp;#34;text/plain&amp;#34;); connection.setRequestProperty(&amp;#34;charset&amp;#34;, &amp;#34;utf-8&amp;#34;); connection.connect(); } 
 2 RestTemplate DOCS
 요즘 들어 선호하는 형태는 postForObject .</description>
+    </item>
+    
+    <item>
+      <title>자바 형변환 안전하게 하기</title>
+      <link>https://mand2.github.io/til/java-str-to-double/</link>
+      <pubDate>Thu, 03 Sep 2020 22:39:54 +0900</pubDate>
+      
+      <guid>https://mand2.github.io/til/java-str-to-double/</guid>
+      <description>형변환 할 때마다 참 고민이다.
+long -&amp;gt; int 형변환은 쉽게 java.lang.Math.toIntExtract(long value)을 이용하면 된다지만, 그 외의 형변환을 할 때 &amp;lt;지금 내가 사용하는 게 정말 안전한 방법&amp;gt;인지 궁금해졌다. 어떻게 하면 더 안전하게 형변환 할 수 있을지 궁금해서 찾아본 안전하게 형변환하는 방법.
+다른 예도 많지만 String에서 double로 형변환 하는 방법을 들어보겠다. new Double(&amp;ldquo;1.23&amp;rdquo;) 와 같이 Double을 새로 만들어서 사용하는 건 Java 9부터 deprecated 되었다. 지양할 것.
+형변환을 도와주는 메서드 자바에서 형변환을 도와주는 메서드는 크게 세 가지로 볼 수 있다.</description>
     </item>
     
     <item>
