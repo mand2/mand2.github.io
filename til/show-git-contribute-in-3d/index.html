@@ -8,7 +8,7 @@
 <meta name="author" content="mand2">
 
     <link rel="shortcut icon" href="https://image.flaticon.com/icons/svg/2950/2950487.svg" type="image/x-icon" />
-    <title>Series :: 고라니의 개발일기🦌</title>
+    <title>Git 커밋 그래프(contribution graph)를 3D로 보는 방법 :: 고라니의 개발일기🦌</title>
 
     
     <link href="/css/nucleus.css?1599649448" rel="stylesheet">
@@ -55,7 +55,7 @@ if (!doNotTrack) {
 
     
   </head>
-  <body class="" data-url="/series/">
+  <body class="" data-url="/til/show-git-contribute-in-3d/">
     <nav id="sidebar" class="">
 
 
@@ -338,7 +338,7 @@ if (!doNotTrack) {
   
     
     <li data-nav-id="/til/" title="TIL" class="dd-item 
-        
+        parent
         
         
         ">
@@ -364,7 +364,7 @@ if (!doNotTrack) {
  
   
     
-      <li data-nav-id="/til/show-git-contribute-in-3d/" title="Git 커밋 그래프(contribution graph)를 3D로 보는 방법" class="dd-item ">
+      <li data-nav-id="/til/show-git-contribute-in-3d/" title="Git 커밋 그래프(contribution graph)를 3D로 보는 방법" class="dd-item active">
         <a href="/til/show-git-contribute-in-3d/">
         Git 커밋 그래프(contribution graph)를 3D로 보는 방법
         
@@ -1000,7 +1000,13 @@ if (!doNotTrack) {
             
           
           
-            <a href='/'>고라니의 개발일기🦌</a> > Series
+            
+            
+          
+          
+            <a href='/'>고라니의 개발일기🦌</a> > <a href='/til/'>TIL</a> > Git 커밋 그래프(contribution graph)를 3D로 보는 방법
+          
+        
           
         
           
@@ -1011,7 +1017,7 @@ if (!doNotTrack) {
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents"></nav>
     </div>
 </div>
 
@@ -1021,31 +1027,72 @@ if (!doNotTrack) {
             
         <div id="head-tags">
         
+<div class="tags">
+
+  <a class="tag-link" href="/tags/git">Git</a>
+
+  <a class="tag-link" href="/tags/til">TIL</a>
+
+</div>
+
         </div>
         
         <div id="body-inner">
           
             <h1>
               
-                taxonomy ::
-              
-              Series
+              Git 커밋 그래프(contribution graph)를 3D로 보는 방법
             </h1>
           
 
         
 
+<span class="btn_tags">
+    2020-09-09
+</span>
 
-
-
-
+<p>깃 커밋 그래프를 볼 때마다 색상으로만 판단하기 어려울 때가 있다.
+사람마다 <strong>얼마나 자주, 얼만큼 많이</strong> 하느냐에 따라 색상의 농도가 달라지기 때문이다.</p>
+<p>실제로 얼마나 많이 했는지 그 크기를 같이 보고 싶었는데,<br>
+언젠가의 기억에, &lt;3D 그래프로 볼 수 있다~&gt; 라는 내용의 포스팅을 봤었던 기억이 나서 찾아봤다.</p>
+<p>간단하게 정리하자면
+구글 <a href="https://chrome.google.com/webstore/detail/isometric-contributions/mjoedlfflcchnleknnceiplgaeoegien?hl=en&amp;gl=US">플러그인</a>만
+깔면 해결된다.
+<code>github.com에서만 활성화</code> 로 세팅하면 아래와 같이 나온다😎<br>
+아래는 <del>예시 이미지일뿐</del> 내 깃헙 contributioin이 이랬으면 소원이 없겠다 ㅎ</p>
+<p><img src="https://github.com/jasonlong/isometric-contributions/raw/main/img/preview.png?width=480px" alt="on-plugin"></p>
+<br>
+<p>또 <strong>깃 커밋 관련 통계</strong>를 볼 수 있어서 플러그인을 잘 깔았다고 생각하게 한다👍</p>
+<blockquote>
 <ul>
-	
+<li>1년간 깃 커밋 총 합계</li>
+<li>하루동안 제일 많이 커밋한 횟수</li>
+<li>연속으로 커밋한 최대 일자</li>
+<li>현재 기준: 연속 커밋 일자</li>
 </ul>
+</blockquote>
+<br>
+<br>
+<hr>
+<p>자세한 정보 출처:<br>
+<a href="https://github.com/jasonlong/isometric-contributions">깃헙 isometric-contributions</a>.
+해당 깃헙으로 들어가면 사용 방법이 나온다.</p>
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<script src="https://utteranc.es/client.js"
+        repo="mand2/blog-comments"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
 
-<footer class=" footline" >
-	
+<footer class="footline">
+    
 </footer>
 
         
@@ -1245,6 +1292,7 @@ if (!doNotTrack) {
             
                 
                     
+                    
                 
                 
 
@@ -1257,6 +1305,7 @@ if (!doNotTrack) {
             
             
                 
+                    
                     
                 
                 
@@ -1273,6 +1322,9 @@ if (!doNotTrack) {
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1650,8 +1702,10 @@ if (!doNotTrack) {
 	 
 	 
 		
+			<a class="nav nav-prev" href="/til/" title="TIL"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/about/" title="About" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/til/java-str-to-double/" title="자바 형변환 안전하게 하기" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1681,3 +1735,4 @@ if (!doNotTrack) {
 
   </body>
 </html>
+

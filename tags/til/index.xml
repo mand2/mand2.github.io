@@ -6,7 +6,7 @@
     <description>Recent content in TIL on 고라니의 개발일기🦌</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Thu, 03 Sep 2020 22:39:54 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 09 Sep 2020 00:02:15 +0900</lastBuildDate>
     
 	<atom:link href="https://mand2.github.io/tags/til/index.xml" rel="self" type="application/rss+xml" />
     
@@ -165,6 +165,20 @@ $.ajax({ url: &amp;#39;&amp;#39;, type: &amp;#39;post&amp;#39;, data: JSON.strin
 1 HttpURLConnection void sendRequest(String request) { // i.e.: request = &amp;#34;http://example.com/index.php?param1=a&amp;amp;param2=b&amp;amp;param3=c&amp;#34;;  URL url = new URL(request); HttpURLConnection connection = (HttpURLConnection) url.openConnection(); connection.setDoOutput(true); connection.setInstanceFollowRedirects(false); connection.setRequestMethod(&amp;#34;GET&amp;#34;); connection.setRequestProperty(&amp;#34;Content-Type&amp;#34;, &amp;#34;text/plain&amp;#34;); connection.setRequestProperty(&amp;#34;charset&amp;#34;, &amp;#34;utf-8&amp;#34;); connection.connect(); } 
 2 RestTemplate DOCS
 요즘 들어 선호하는 형태는 postForObject .</description>
+    </item>
+    
+    <item>
+      <title>Git 커밋 그래프(contribution graph)를 3D로 보는 방법</title>
+      <link>https://mand2.github.io/til/show-git-contribute-in-3d/</link>
+      <pubDate>Wed, 09 Sep 2020 00:02:15 +0900</pubDate>
+      
+      <guid>https://mand2.github.io/til/show-git-contribute-in-3d/</guid>
+      <description>깃 커밋 그래프를 볼 때마다 색상으로만 판단하기 어려울 때가 있다. 사람마다 얼마나 자주, 얼만큼 많이 하느냐에 따라 색상의 농도가 달라지기 때문이다.
+실제로 얼마나 많이 했는지 그 크기를 같이 보고 싶었는데,
+언젠가의 기억에, &amp;lt;3D 그래프로 볼 수 있다~&amp;gt; 라는 내용의 포스팅을 봤었던 기억이 나서 찾아봤다.
+간단하게 정리하자면 구글 플러그인만 깔면 해결된다. github.com에서만 활성화 로 세팅하면 아래와 같이 나온다😎
+아래는 예시 이미지일뿐 내 깃헙 contributioin이 이랬으면 소원이 없겠다 ㅎ
+또 깃 커밋 관련 통계를 볼 수 있어서 플러그인을 잘 깔았다고 생각하게 한다👍</description>
     </item>
     
     <item>

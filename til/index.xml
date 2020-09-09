@@ -12,6 +12,20 @@
     
     
     <item>
+      <title>Git 커밋 그래프(contribution graph)를 3D로 보는 방법</title>
+      <link>https://mand2.github.io/til/show-git-contribute-in-3d/</link>
+      <pubDate>Wed, 09 Sep 2020 00:02:15 +0900</pubDate>
+      
+      <guid>https://mand2.github.io/til/show-git-contribute-in-3d/</guid>
+      <description>깃 커밋 그래프를 볼 때마다 색상으로만 판단하기 어려울 때가 있다. 사람마다 얼마나 자주, 얼만큼 많이 하느냐에 따라 색상의 농도가 달라지기 때문이다.
+실제로 얼마나 많이 했는지 그 크기를 같이 보고 싶었는데,
+언젠가의 기억에, &amp;lt;3D 그래프로 볼 수 있다~&amp;gt; 라는 내용의 포스팅을 봤었던 기억이 나서 찾아봤다.
+간단하게 정리하자면 구글 플러그인만 깔면 해결된다. github.com에서만 활성화 로 세팅하면 아래와 같이 나온다😎
+아래는 예시 이미지일뿐 내 깃헙 contributioin이 이랬으면 소원이 없겠다 ㅎ
+또 깃 커밋 관련 통계를 볼 수 있어서 플러그인을 잘 깔았다고 생각하게 한다👍</description>
+    </item>
+    
+    <item>
       <title>자바 형변환 안전하게 하기</title>
       <link>https://mand2.github.io/til/java-str-to-double/</link>
       <pubDate>Thu, 03 Sep 2020 22:39:54 +0900</pubDate>
