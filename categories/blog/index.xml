@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Others on 고라니의 개발일기🦌</title>
-    <link>https://mand2.github.io/others/</link>
-    <description>Recent content in Others on 고라니의 개발일기🦌</description>
+    <title>Blog on 고라니의 개발일기🦌</title>
+    <link>https://mand2.github.io/categories/blog/</link>
+    <description>Recent content in Blog on 고라니의 개발일기🦌</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Sat, 29 Aug 2020 21:20:01 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 13 Sep 2020 19:34:07 +0900</lastBuildDate>
     
-	<atom:link href="https://mand2.github.io/others/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://mand2.github.io/categories/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -27,18 +27,6 @@
  4 Hugo 다운로드 최신 release 파일을 주소에서 다운로드. (🔊 당시 v.0.74.3이 최신버전이었음.)
 아까 생성한 D:\Hugo\bin 폴더에 해당 zip 파일 풀어준다.
 5 환경변수 설정 환경변수 설정 win 키+Q -&amp;gt; 시스템 환경 변수 편집 -&amp;gt; 고급 탭의 환경변수 -&amp;gt; 시스템 변수 의 Path 에 내가 정한 Hugo\bin 디렉토리를 써준다</description>
-    </item>
-    
-    <item>
-      <title>면접질문 정리</title>
-      <link>https://mand2.github.io/others/interviews/</link>
-      <pubDate>Tue, 05 Nov 2019 18:10:40 +0900</pubDate>
-      
-      <guid>https://mand2.github.io/others/interviews/</guid>
-      <description>신입 개발자로서 면접을 보며 받았던 면접질문들을 기억이 나는 대로 복기하여 써보려 한다. 일단 기억력이 좋지 않아서 정확한 질문은 기억이 나지 않지만, 이런 종류 or 느낌의 면접 질문을 받았구나~ 라고 보면 좋을 것 같다. 편안하게 커피 한 잔 하며 보시길 추천! ☕
-
-🐸 기본 인성 면접(비전공자 기준) 일단 본인이 비전공자이며, 직장경험이 없잖아 있는(없다고 하기도 그렇고 있다고 하기도 뭐한 수준) 것을 먼저 밝히는 바이다. 모든 곳에서 공통적으로 받은 질문은
- 왜 이 길을 선택했나요?</description>
     </item>
     
   </channel>

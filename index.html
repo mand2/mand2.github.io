@@ -11,21 +11,21 @@
     <title>고라니의 개발일기🦌 :: 고라니의 개발일기🦌</title>
 
     
-    <link href="/css/nucleus.css?1599650365" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1599650365" rel="stylesheet">
-    <link href="/css/hybrid.css?1599650365" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1599650365" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1599650365" rel="stylesheet">
-    <link href="/css/auto-complete.css?1599650365" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1599650365" rel="stylesheet">
-    <link href="/css/theme.css?1599650365" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1599650365" rel="stylesheet">
+    <link href="/css/nucleus.css?1599994101" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1599994101" rel="stylesheet">
+    <link href="/css/hybrid.css?1599994101" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1599994101" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1599994101" rel="stylesheet">
+    <link href="/css/auto-complete.css?1599994101" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1599994101" rel="stylesheet">
+    <link href="/css/theme.css?1599994101" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1599994101" rel="stylesheet">
     
-    <link href="/css/theme-mine.css?1599650365" rel="stylesheet">
+    <link href="/css/theme-mine.css?1599994101" rel="stylesheet">
     
-    <link href="/css/custom.css?1599650365" rel="stylesheet">
+    <link href="/css/custom.css?1599994101" rel="stylesheet">
 
-    <script src="/js/jquery-3.3.1.min.js?1599650365"></script>
+    <script src="/js/jquery-3.3.1.min.js?1599994101"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -74,14 +74,14 @@ if (!doNotTrack) {
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1599650365"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1599650365"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1599994101"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1599994101"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/mand2.github.io\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1599650365"></script>
+<script type="text/javascript" src="/js/search.js?1599994101"></script>
 
     
   </div>
@@ -817,6 +817,27 @@ if (!doNotTrack) {
  
   
     
+      <li data-nav-id="/others/start-hugo-1/" title="Hugo로 블로그 만들기 1" class="dd-item ">
+        <a href="/others/start-hugo-1/">
+        Hugo로 블로그 만들기 1
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
     <li data-nav-id="/others/books/" title="Books" class="dd-item 
         
         
@@ -996,6 +1017,22 @@ if (!doNotTrack) {
 
     <ul>
         
+        <li><b><a href="/others/start-hugo-1/">Hugo로 블로그 만들기 1</a></b> | 2020-09-13
+            <br>
+            hugo 설치 1 백업 일단 기존 github blog 글들을 백업해둔다
+2 전제조건 기존에 git bash 와 node.js (npm, yarn 모두) 설치 되어 있었다.
+3 Hugo 디렉토리 생성 원하는 디렉토리에 생성. 나는 D: 에 설치하는게 편하므로 D:\Hugo 내부에 bin , Sites 디렉토리를 생성
+ D:
+|&ndash; Hugo
+|&ndash;bin
+|&ndash;Sites
+ 4 Hugo 다운로드 최신 release 파일을 주소에서 다운로드. (🔊 당시 v.0.74.3이 최신버전이었음.)
+아까 생성한 D:\Hugo\bin 폴더에 해당 zip 파일 풀어준다.
+5 환경변수 설정 환경변수 설정 win 키+Q -&gt; 시스템 환경 변수 편집 -&gt; 고급 탭의 환경변수 -&gt; 시스템 변수 의 Path 에 내가 정한 Hugo\bin 디렉토리를 써준다 <a href="/others/start-hugo-1/">read more..</a>
+            <br>
+        </li>
+        <br>
+        
         <li><b><a href="/til/show-git-contribute-in-3d/">Git 커밋 그래프(contribution graph)를 3D로 보는 방법</a></b> | 2020-09-09
             <br>
             깃 커밋 그래프를 볼 때마다 색상으로만 판단하기 어려울 때가 있다. 사람마다 얼마나 자주, 얼만큼 많이 하느냐에 따라 색상의 농도가 달라지기 때문이다.
@@ -1086,17 +1123,6 @@ DAO 변경 DAO 변경
         <li><b><a href="/about/portfolio/">Portfolio</a></b> | 2020-08-24
             <br>
             portfolio created in Oct, 2019. <a href="/about/portfolio/">read more..</a>
-            <br>
-        </li>
-        <br>
-        
-        <li><b><a href="/spring/rest-api/libraries-for-client/">REST API Client에서 호출가능한 Library</a></b> | 2020-03-04
-            <br>
-            우리 팀은 MSA 방식으로 웹 어플리케이션을 만들기 때문에 api 통신이 중요하다. api 통신을 하기 위해서 client 단에서 호출 가능한 library가 무엇이 있는지 찾아보았다. 크게 두 라이브러리를 사용하는데, HttpURLConnection 과 RestTemplate 이다.
-
-1 HttpURLConnection void sendRequest(String request) { // i.e.: request = &#34;http://example.com/index.php?param1=a&amp;param2=b&amp;param3=c&#34;;  URL url = new URL(request); HttpURLConnection connection = (HttpURLConnection) url.openConnection(); connection.setDoOutput(true); connection.setInstanceFollowRedirects(false); connection.setRequestMethod(&#34;GET&#34;); connection.setRequestProperty(&#34;Content-Type&#34;, &#34;text/plain&#34;); connection.setRequestProperty(&#34;charset&#34;, &#34;utf-8&#34;); connection.connect(); } 
-2 RestTemplate DOCS
-요즘 들어 선호하는 형태는 postForObject . <a href="/spring/rest-api/libraries-for-client/">read more..</a>
             <br>
         </li>
         <br>
@@ -1627,6 +1653,22 @@ DAO 변경 DAO 변경
                     
 
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
             
             
@@ -1716,19 +1758,19 @@ DAO 변경 DAO 변경
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1599650365"></script>
-    <script src="/js/perfect-scrollbar.min.js?1599650365"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1599650365"></script>
-    <script src="/js/jquery.sticky.js?1599650365"></script>
-    <script src="/js/featherlight.min.js?1599650365"></script>
-    <script src="/js/highlight.pack.js?1599650365"></script>
+    <script src="/js/clipboard.min.js?1599994101"></script>
+    <script src="/js/perfect-scrollbar.min.js?1599994101"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1599994101"></script>
+    <script src="/js/jquery.sticky.js?1599994101"></script>
+    <script src="/js/featherlight.min.js?1599994101"></script>
+    <script src="/js/highlight.pack.js?1599994101"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1599650365"></script>
-    <script src="/js/learn.js?1599650365"></script>
-    <script src="/js/hugo-learn.js?1599650365"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1599994101"></script>
+    <script src="/js/learn.js?1599994101"></script>
+    <script src="/js/hugo-learn.js?1599994101"></script>
 
-    <link href="/mermaid/mermaid.css?1599650365" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1599650365"></script>
+    <link href="/mermaid/mermaid.css?1599994101" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1599994101"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

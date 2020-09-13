@@ -8,7 +8,7 @@
 <meta name="author" content="mand2">
 
     <link rel="shortcut icon" href="https://image.flaticon.com/icons/svg/2950/2950487.svg" type="image/x-icon" />
-    <title>getter setter 설정 :: 고라니의 개발일기🦌</title>
+    <title>Hugo로 블로그 만들기 1 :: 고라니의 개발일기🦌</title>
 
     
     <link href="/css/nucleus.css?1599994101" rel="stylesheet">
@@ -55,7 +55,7 @@ if (!doNotTrack) {
 
     
   </head>
-  <body class="" data-url="/python/1/">
+  <body class="" data-url="/others/start-hugo-1/">
     <nav id="sidebar" class="">
 
 
@@ -519,7 +519,7 @@ if (!doNotTrack) {
   
     
     <li data-nav-id="/python/" title="Python" class="dd-item 
-        parent
+        
         
         
         ">
@@ -545,7 +545,7 @@ if (!doNotTrack) {
  
   
     
-      <li data-nav-id="/python/1/" title="getter setter 설정" class="dd-item active">
+      <li data-nav-id="/python/1/" title="getter setter 설정" class="dd-item ">
         <a href="/python/1/">
         getter setter 설정
         
@@ -789,7 +789,7 @@ if (!doNotTrack) {
   
     
     <li data-nav-id="/others/" title="Others" class="dd-item 
-        
+        parent
         
         
         ">
@@ -817,7 +817,7 @@ if (!doNotTrack) {
  
   
     
-      <li data-nav-id="/others/start-hugo-1/" title="Hugo로 블로그 만들기 1" class="dd-item ">
+      <li data-nav-id="/others/start-hugo-1/" title="Hugo로 블로그 만들기 1" class="dd-item active">
         <a href="/others/start-hugo-1/">
         Hugo로 블로그 만들기 1
         
@@ -1025,7 +1025,7 @@ if (!doNotTrack) {
             
           
           
-            <a href='/'>고라니의 개발일기🦌</a> > <a href='/python/'>Python</a> > getter setter 설정
+            <a href='/'>고라니의 개발일기🦌</a> > <a href='/others/'>Others</a> > Hugo로 블로그 만들기 1
           
         
           
@@ -1040,7 +1040,19 @@ if (!doNotTrack) {
     <div class="wrapper">
 <nav id="TableOfContents">
   <ol>
-    <li><a href="#python--getter-setter-설정">Python : getter setter 설정</a></li>
+    <li><a href="#hugo-설치">hugo 설치</a>
+      <ol>
+        <li></li>
+      </ol>
+    </li>
+    <li><a href="#github-저장소-2개-만들기">github 저장소 2개 만들기</a></li>
+    <li><a href="#hugo-site-만들기">hugo site 만들기</a>
+      <ol>
+        <li></li>
+        <li><a href="#contents-만들기">contents 만들기</a></li>
+        <li><a href="#컨텐츠-업로드-블로그에">컨텐츠 업로드 (블로그에)</a></li>
+      </ol>
+    </li>
   </ol>
 </nav>
     </div>
@@ -1054,9 +1066,9 @@ if (!doNotTrack) {
         
 <div class="tags">
 
-  <a class="tag-link" href="/tags/python">Python</a>
+  <a class="tag-link" href="/tags/hugo">Hugo</a>
 
-  <a class="tag-link" href="/tags/til">TIL</a>
+  <a class="tag-link" href="/tags/others">Others</a>
 
 </div>
 
@@ -1066,55 +1078,166 @@ if (!doNotTrack) {
           
             <h1>
               
-              getter setter 설정
+              Hugo로 블로그 만들기 1
             </h1>
           
 
         
 
 <span class="btn_tags">
-    2020-02-04
+    2020-09-13
 </span>
 
-<h2 id="python--getter-setter-설정">Python : getter setter 설정</h2>
-<p>클래스 내부에서 getter setter 설정 쉽게하기 메서드 낭비하지 않고 쉽게 쓸 수 있다!  불러오는 방법이나 셋하는 방법도 java와 조금 다름. 주의할 것..</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># test.py</span>
+<h2 id="hugo-설치">hugo 설치</h2>
+<h4 id="1-백업">1 백업</h4>
+<p>일단 기존 github blog 글들을 백업해둔다</p>
+<h4 id="2-전제조건">2 전제조건</h4>
+<p>기존에 git bash 와 node.js (npm, yarn 모두) 설치 되어 있었다.</p>
+<h4 id="3-hugo-디렉토리-생성">3 Hugo 디렉토리 생성</h4>
+<p>원하는 디렉토리에 생성. <br>
+나는 D: 에 설치하는게 편하므로 <code>D:\Hugo</code> 내부에 <code>bin</code> , <code>Sites</code> 디렉토리를 생성</p>
+<blockquote>
+<p>D:<br>
+|&ndash; Hugo<br>
+|&ndash;bin<br>
+|&ndash;Sites</p>
+</blockquote>
+<h4 id="4-hugo-다운로드">4 Hugo 다운로드</h4>
+<p>최신 release 파일을 <a href="https://github.com/gohugoio/hugo/releases">주소</a>에서 다운로드.  (🔊 당시 v.0.74.3이 최신버전이었음.)<br>
+아까 생성한 <code>D:\Hugo\bin</code> 폴더에 해당 zip 파일 풀어준다.</p>
+<h4 id="5-환경변수-설정">5 환경변수 설정</h4>
+<p>환경변수 설정 <code>win 키+Q</code> -&gt; <strong>시스템 환경 변수 편집</strong> -&gt; <code>고급</code> 탭의 환경변수 -&gt; 시스템 변수 의 <code>Path</code> 에 내가 정한 <code>Hugo\bin</code> 디렉토리를 써준다</p>
+<blockquote>
+<p>Path = D:\Hugo\bin</p>
+</blockquote>
+<h4 id="6-설치확인">6 설치확인</h4>
+<ul>
+<li>
+<p>git bash 프롬프트에서 <code>$ hugo version</code> 으로 확인 해본다. 설치한 v.0.74.3이 나오면 OK👌</p>
+</li>
+<li>
+<p><code>$ hugo help</code> 를 치면 아래와 같은 결과가 나오면 OK👌</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo is the main command, used to build your Hugo site.
+  
+Hugo is a Fast and Flexible Static Site Generator
+built with love by spf13 and friends in Go.
+  
+Complete documentation is available at http://gohugo.io/.
+</code></pre></div><p>만약 안나온다? hugo.exe 파일이 있는 디렉토리 경로를 환경변수에 정확히 넣어준다.</p>
+<blockquote>
+<p>💥그래도 안나와요!!  👉 <a href="https://discourse.gohugo.io/">forum</a>에 들어가세요.
+If you’re still not getting the output, search the <a href="https://discourse.gohugo.io/">Hugo discussion forum</a> to see if others have already figured out our problem. If not, add a note—in the “Support” category—and be sure to include your command and the output.</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="github-저장소-2개-만들기">github 저장소 2개 만들기</h2>
+<ul>
+<li>컨텐츠와 소스 파일을 포함할 repo <br>
+-&gt; 컨텐츠 관련이라 <code>mand2_blog</code> 로 생성
+(<a href="https://github.com/mand2/mand2_blog">https://github.com/mand2/mand2_blog</a>)</li>
+<li>실제 blog에 보여질 github.io repo <br>
+-&gt; 나의 경우 <code>mand2.github.io</code> 로 생성</li>
+</ul>
+<h2 id="hugo-site-만들기">hugo site 만들기</h2>
+<h4 id="1-테마-설치하기">1. 테마 설치하기</h4>
+<p>Hugo 가 설치되어있는 파일로 들어간다.</p>
+<blockquote>
+<p>$ cd d:<br>
+$ cd Hugo <br>
+$ hugo new site {{blog name}}</p>
+</blockquote>
+<p>나는 mand2_blog 로 했으므로 <code>$ hugo new site mand2_blog</code> 로 했고
+해당 디렉토리에서 <code>$ git init</code> 함.<br>
+여러가지 테마를 봤지만, 그나마 내가 원하는 형식에 부합하는 테마가 <code>hugo-theme-learn</code> 이라 선택(<del>aws 교육 받을 때 볼 수 있는 guide book 느낌</del>).</p>
+<p>좀 더 <strong>안전하게</strong> 하기 위해, 해당 테마를 fork 하고 <strong>submodule</strong>로 가져온다.</p>
+<blockquote>
+<p>$ git submodule add {{git_theme_repo}} theme/{{원하는 테마 이름}}</p>
+<p>나의 경우: d:\Hugo\mand2_blog 에서 함.
+<code>$ git submodule add https://github.com/mand2/hugo-theme-learn.git themes/learn</code></p>
+</blockquote>
+<h4 id="2-conf-설정값-변경">2 conf 설정값 변경</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml"><span style="color:#a6e22e">baseURL</span> = <span style="color:#e6db74">&#34;{{나의 깃허브 주소}}&#34;</span>
+<span style="color:#a6e22e">languageCode</span> = <span style="color:#e6db74">&#34;en-us,ko-kr&#34;</span> <span style="color:#75715e"># i18n 에 맞춰 작성.</span>
+<span style="color:#a6e22e">title</span> = <span style="color:#e6db74">&#34;GoRaNee&#39;s dev-log&#34;</span> <span style="color:#75715e"># 웹사이트제목</span>
 
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Test</span>:
-    <span style="color:#66d9ef">def</span> __init__(self, limit<span style="color:#f92672">=</span>None, persistent<span style="color:#f92672">=</span>None):
-        <span style="color:#66d9ef">if</span> limit <span style="color:#f92672">is</span> None:
-            self<span style="color:#f92672">.</span>__limit <span style="color:#f92672">=</span> False
-        <span style="color:#66d9ef">else</span> : 
-            self<span style="color:#f92672">.</span>__limit <span style="color:#f92672">=</span> limit
+<span style="color:#75715e"># Change the default theme to be use when building the site with Hugo</span>
+<span style="color:#a6e22e">theme</span> = <span style="color:#e6db74">&#34;learn&#34;</span> <span style="color:#75715e"># 테마이름: themes 디렉토리 아래 저장한 테마명을 입력한다.</span>
 
-        <span style="color:#66d9ef">if</span> persistent <span style="color:#f92672">is</span> None:
-            self<span style="color:#f92672">.</span>__persistent <span style="color:#f92672">=</span> False
-        <span style="color:#66d9ef">else</span> :
-            self<span style="color:#f92672">.</span>__persistent <span style="color:#f92672">=</span> persistent
-	
-    <span style="color:#a6e22e">@property</span>
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">limit</span>(self):
-        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>__limit
+<span style="color:#75715e"># For search functionality</span>
+[<span style="color:#a6e22e">outputs</span>]
+<span style="color:#a6e22e">home</span> = [ <span style="color:#e6db74">&#34;HTML&#34;</span>, <span style="color:#e6db74">&#34;RSS&#34;</span>, <span style="color:#e6db74">&#34;JSON&#34;</span>]
+</code></pre></div><h4 id="3-git-저장소로-등록">3 git 저장소로 등록</h4>
+<ul>
+<li>
+<p>블로그 컨텐츠 git 저장소로 등록 :
+$ git remote add origin <a href="mailto:git@github.com">git@github.com</a>:mand2/mand2_blog.git</p>
+</li>
+<li>
+<p>실제 보여질 블로그 git 저장소 추가등록:
+<code>$ git submodule add -b master git@github.com:{{깃 user name}}/{{깃 user name}}.github.io.git public</code></p>
+</li>
+</ul>
+<blockquote>
+<p>나는 RSA 등록을 해버렸&hellip;기 때문에 접근을 https 로만 가능하다.
+<code>$ git submodule add -b master https://github.com/mand2/mand2.github.io public</code></p>
+</blockquote>
+<ul>
+<li>이렇게 함으로써 <code>hugo</code> 명령으로 <code>public</code>에 웹사이트를 만들 때, 만들어진 <code>public</code> 디렉토리는 다른 remote origin을 가질 것이다.</li>
+</ul>
+<h3 id="contents-만들기">contents 만들기</h3>
+<p>1 내가 선택한 <strong>Hugo-theme-learn</strong> 은 기본 골격을 보여주므로, 커맨드라인을 잘 사용하자</p>
+<p>2 chapter 만들기</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ hugo new -k chapter about/_index.md
+$ hugo new --kind chapter about/_index.md
+<span style="color:#75715e"># 커맨드 위치는 d:\Hug\mand2_blog</span>
+</code></pre></div><ul>
+<li>
+<p><code>-k</code> 나 <code>--kind</code> 나 상관없다. 어떤 종류의 content 로 만들건지 미리 정해주는 커맨드임.<br>
+👉 <code>mand2_blog\content</code> 디렉토리 안에 <code>about</code> 이라는 폴더가 생성됨!!</p>
+</li>
+<li>
+<p>확인사항: <code>about\_index.md</code> 파일을 열고, chapter 가 <code>true</code>로 설정되었는지 확인해야 한다. 그 후, 해당 chapter의 기본적인 내용을 적어준다.</p>
+</li>
+</ul>
+<p>3 chapter 내부에 해당하는 page 만들기</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ hugo new about<span style="color:#ae81ff">\f</span>irst-content.md
+</code></pre></div><p>4 실제 로컬에서 확인</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ hugo server <span style="color:#75715e"># 실제 배포될 때의 모습</span>
+$ hugo server -D <span style="color:#75715e"># 실제 배포될 때의 모습 + draft도.</span>
+</code></pre></div><p><code>page</code>의 옵션이 draft = true 가 되면 server를 로컬로 돌렸을 때 draft 용 옵션 커맨드를 추가해야 보여진다.</p>
+<h3 id="컨텐츠-업로드-블로그에">컨텐츠 업로드 (블로그에)</h3>
+<p>아래 단계가 귀찮으므로 <a href="http://mand2.github.io/til/blog-auto-commit/">auto commit 하기</a>를 참고해도 좋다👍</p>
+<ul>
+<li>
+<p><code>C:\Hugo\blog</code>로 이동</p>
+</li>
+<li>
+<p><code>$ hugo -t 테마이름</code> 명령을 통해 테마가 적용된 블로그 내용을 public에 생성한다.</p>
+</li>
+<li>
+<p><code>$ cd public</code> public 디렉토리로 이동하여</p>
+</li>
+<li>
+<p><code>$ git add .</code> 수정된 파일들을 index에 올린다.</p>
+</li>
+<li>
+<p><code>$ git commit -m &quot;커밋메세지&quot;</code> 변경 내용을 commit하고</p>
+</li>
+<li>
+<p><code>$ git push origin master</code> commit을 Integerous.github.io에 푸시</p>
+</li>
+<li>
+<pre><code>blog 저장소
+</code></pre><p>에도 변경내용 push 하기</p>
+<ul>
+<li><code>$ cd blog</code></li>
+<li><code>$ git add .</code></li>
+<li><code>$ git commit -m &quot;커밋메세지&quot;</code></li>
+<li><code>$ git push origin master</code></li>
+</ul>
+</li>
+</ul>
 
-    <span style="color:#a6e22e">@property</span>
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">persistent</span>(self):
-        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>__persistent
-    
-    <span style="color:#a6e22e">@limit.setter</span>
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">limit</span>(self, limit):
-        self<span style="color:#f92672">.</span>__limit <span style="color:#f92672">=</span> limit
-
-    <span style="color:#a6e22e">@persistent.setter</span>
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">persistent</span>(self, persistent):
-        self<span style="color:#f92672">.</span>__persistent <span style="color:#f92672">=</span> persistent
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">user <span style="color:#f92672">=</span> Test() 
-	<span style="color:#75715e"># 값이 None, None 으로 나옴</span>
-
-<span style="color:#75715e"># set: limit</span>
-user<span style="color:#f92672">.</span>limit <span style="color:#f92672">=</span> True
-<span style="color:#75715e"># get: limit </span>
-<span style="color:#66d9ef">print</span>(user<span style="color:#f92672">.</span>limit)
-</code></pre></div>
 <br>
 <br>
 <br>
@@ -1457,7 +1580,6 @@ user<span style="color:#f92672">.</span>limit <span style="color:#f92672">=</spa
             
                 
                     
-                    
                 
                 
 
@@ -1470,7 +1592,6 @@ user<span style="color:#f92672">.</span>limit <span style="color:#f92672">=</spa
             
             
                 
-                    
                     
                 
                 
@@ -1487,9 +1608,6 @@ user<span style="color:#f92672">.</span>limit <span style="color:#f92672">=</spa
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1638,6 +1756,7 @@ user<span style="color:#f92672">.</span>limit <span style="color:#f92672">=</spa
             
                 
                     
+                    
                 
                 
 
@@ -1652,6 +1771,7 @@ user<span style="color:#f92672">.</span>limit <span style="color:#f92672">=</spa
             
             
                 
+                    
                     
                 
                 
@@ -1668,6 +1788,9 @@ user<span style="color:#f92672">.</span>limit <span style="color:#f92672">=</spa
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1755,10 +1878,10 @@ user<span style="color:#f92672">.</span>limit <span style="color:#f92672">=</spa
 	 
 	 
 		
-			<a class="nav nav-prev" href="/python/" title="Python"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/others/" title="Others"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/python/2/" title="윈도우에서 Ubuntu로 pycharm 설치할 수 있을까" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/others/books/" title="Books" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

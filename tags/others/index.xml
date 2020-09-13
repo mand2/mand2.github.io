@@ -6,10 +6,28 @@
     <description>Recent content in Others on 고라니의 개발일기🦌</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Tue, 05 Nov 2019 18:10:40 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 13 Sep 2020 19:34:07 +0900</lastBuildDate>
     
 	<atom:link href="https://mand2.github.io/tags/others/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hugo로 블로그 만들기 1</title>
+      <link>https://mand2.github.io/others/start-hugo-1/</link>
+      <pubDate>Sun, 13 Sep 2020 19:34:07 +0900</pubDate>
+      
+      <guid>https://mand2.github.io/others/start-hugo-1/</guid>
+      <description>hugo 설치 1 백업 일단 기존 github blog 글들을 백업해둔다
+2 전제조건 기존에 git bash 와 node.js (npm, yarn 모두) 설치 되어 있었다.
+3 Hugo 디렉토리 생성 원하는 디렉토리에 생성. 나는 D: 에 설치하는게 편하므로 D:\Hugo 내부에 bin , Sites 디렉토리를 생성
+ D:
+|&amp;ndash; Hugo
+|&amp;ndash;bin
+|&amp;ndash;Sites
+ 4 Hugo 다운로드 최신 release 파일을 주소에서 다운로드. (🔊 당시 v.0.74.3이 최신버전이었음.)
+아까 생성한 D:\Hugo\bin 폴더에 해당 zip 파일 풀어준다.
+5 환경변수 설정 환경변수 설정 win 키+Q -&amp;gt; 시스템 환경 변수 편집 -&amp;gt; 고급 탭의 환경변수 -&amp;gt; 시스템 변수 의 Path 에 내가 정한 Hugo\bin 디렉토리를 써준다</description>
+    </item>
     
     <item>
       <title>면접질문 정리</title>

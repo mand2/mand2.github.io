@@ -46,7 +46,7 @@
 	"title": "Others",
 	"tags": [],
 	"description": "",
-	"content": "Chapter 99 Others\u0026hellip; \rBooks\r\r\r\r[책] 오브젝트 (1)\r\r\r\r면접질문 정리\r\r\r\r\r"
+	"content": "Chapter 99 Others\u0026hellip; \rHugo로 블로그 만들기 1\r\r\r\r\rBooks\r\r\r\r[책] 오브젝트 (1)\r\r\r\r면접질문 정리\r\r\r\r\r"
 },
 {
 	"uri": "https://mand2.github.io/retro/",
@@ -210,8 +210,50 @@
 	"content": "메이븐은 프로젝트 객체 모델(Project Object Model)이라는 개념을 바탕으로 프로젝트 의존성 관리, 라이브러리 관리, 프로젝트 생명 주기 관리 기능 등을 제공하는 프로젝트 관리 도구이다. 또한 플러그인을 기반으로 소스 코드로부터 배포 가능한 산출물을 만들어 내는 빌드 기능 뿐만 아니라 레포팅 및 documentation 작성 기능 등을 제공한다.\n\n메이븐 자세히 알아보러 가기\npom.xml 태그들 자세히 알아보기\npom.xml 태그 조금 더 간결하게, 정리 더 잘 된 것\nmaven (메이븐 구조, 차이점, 플러그인, 라이프사이클, 의존성, pom.xml)\n자바 웹 어플리케이션 배포  SVN 으로 형상관리 하는 경우도 있다 (회사에서,,) git으로 형상관리 하기  배포 순서 :\n 각자 소스 코딩 후 형상관리 툴에 push 배포용 서버 컴퓨터에서 pull 받음 war 파일로 package tomcat에 배포  "
 },
 {
+	"uri": "https://mand2.github.io/categories/blog/",
+	"title": "Blog",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
 	"uri": "https://mand2.github.io/categories/",
 	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://mand2.github.io/tags/hugo/",
+	"title": "Hugo",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://mand2.github.io/others/start-hugo-1/",
+	"title": "Hugo로 블로그 만들기 1",
+	"tags": ["Hugo", "Others"],
+	"description": "",
+	"content": "hugo 설치 1 백업 일단 기존 github blog 글들을 백업해둔다\n2 전제조건 기존에 git bash 와 node.js (npm, yarn 모두) 설치 되어 있었다.\n3 Hugo 디렉토리 생성 원하는 디렉토리에 생성. 나는 D: 에 설치하는게 편하므로 D:\\Hugo 내부에 bin , Sites 디렉토리를 생성\n D:\n|\u0026ndash; Hugo\n|\u0026ndash;bin\n|\u0026ndash;Sites\n 4 Hugo 다운로드 최신 release 파일을 주소에서 다운로드. (🔊 당시 v.0.74.3이 최신버전이었음.)\n아까 생성한 D:\\Hugo\\bin 폴더에 해당 zip 파일 풀어준다.\n5 환경변수 설정 환경변수 설정 win 키+Q -\u0026gt; 시스템 환경 변수 편집 -\u0026gt; 고급 탭의 환경변수 -\u0026gt; 시스템 변수 의 Path 에 내가 정한 Hugo\\bin 디렉토리를 써준다\n Path = D:\\Hugo\\bin\n 6 설치확인   git bash 프롬프트에서 $ hugo version 으로 확인 해본다. 설치한 v.0.74.3이 나오면 OK👌\n  $ hugo help 를 치면 아래와 같은 결과가 나오면 OK👌\nhugo is the main command, used to build your Hugo site. Hugo is a Fast and Flexible Static Site Generator built with love by spf13 and friends in Go. Complete documentation is available at http://gohugo.io/. 만약 안나온다? hugo.exe 파일이 있는 디렉토리 경로를 환경변수에 정확히 넣어준다.\n 💥그래도 안나와요!! 👉 forum에 들어가세요. If you’re still not getting the output, search the Hugo discussion forum to see if others have already figured out our problem. If not, add a note—in the “Support” category—and be sure to include your command and the output.\n   github 저장소 2개 만들기  컨텐츠와 소스 파일을 포함할 repo -\u0026gt; 컨텐츠 관련이라 mand2_blog 로 생성 (https://github.com/mand2/mand2_blog) 실제 blog에 보여질 github.io repo -\u0026gt; 나의 경우 mand2.github.io 로 생성  hugo site 만들기 1. 테마 설치하기 Hugo 가 설치되어있는 파일로 들어간다.\n $ cd d:\n$ cd Hugo $ hugo new site {{blog name}}\n 나는 mand2_blog 로 했으므로 $ hugo new site mand2_blog 로 했고 해당 디렉토리에서 $ git init 함.\n여러가지 테마를 봤지만, 그나마 내가 원하는 형식에 부합하는 테마가 hugo-theme-learn 이라 선택(aws 교육 받을 때 볼 수 있는 guide book 느낌).\n좀 더 안전하게 하기 위해, 해당 테마를 fork 하고 submodule로 가져온다.\n $ git submodule add {{git_theme_repo}} theme/{{원하는 테마 이름}}\n나의 경우: d:\\Hugo\\mand2_blog 에서 함. $ git submodule add https://github.com/mand2/hugo-theme-learn.git themes/learn\n 2 conf 설정값 변경 baseURL = \u0026#34;{{나의 깃허브 주소}}\u0026#34; languageCode = \u0026#34;en-us,ko-kr\u0026#34; # i18n 에 맞춰 작성. title = \u0026#34;GoRaNee\u0026#39;s dev-log\u0026#34; # 웹사이트제목 # Change the default theme to be use when building the site with Hugo theme = \u0026#34;learn\u0026#34; # 테마이름: themes 디렉토리 아래 저장한 테마명을 입력한다. # For search functionality [outputs] home = [ \u0026#34;HTML\u0026#34;, \u0026#34;RSS\u0026#34;, \u0026#34;JSON\u0026#34;] 3 git 저장소로 등록   블로그 컨텐츠 git 저장소로 등록 : $ git remote add origin git@github.com:mand2/mand2_blog.git\n  실제 보여질 블로그 git 저장소 추가등록: $ git submodule add -b master git@github.com:{{깃 user name}}/{{깃 user name}}.github.io.git public\n   나는 RSA 등록을 해버렸\u0026hellip;기 때문에 접근을 https 로만 가능하다. $ git submodule add -b master https://github.com/mand2/mand2.github.io public\n  이렇게 함으로써 hugo 명령으로 public에 웹사이트를 만들 때, 만들어진 public 디렉토리는 다른 remote origin을 가질 것이다.  contents 만들기 1 내가 선택한 Hugo-theme-learn 은 기본 골격을 보여주므로, 커맨드라인을 잘 사용하자\n2 chapter 만들기\n$ hugo new -k chapter about/_index.md $ hugo new --kind chapter about/_index.md # 커맨드 위치는 d:\\Hug\\mand2_blog   -k 나 --kind 나 상관없다. 어떤 종류의 content 로 만들건지 미리 정해주는 커맨드임.\n👉 mand2_blog\\content 디렉토리 안에 about 이라는 폴더가 생성됨!!\n  확인사항: about\\_index.md 파일을 열고, chapter 가 true로 설정되었는지 확인해야 한다. 그 후, 해당 chapter의 기본적인 내용을 적어준다.\n  3 chapter 내부에 해당하는 page 만들기\n$ hugo new about\\first-content.md 4 실제 로컬에서 확인\n$ hugo server # 실제 배포될 때의 모습 $ hugo server -D # 실제 배포될 때의 모습 + draft도. page의 옵션이 draft = true 가 되면 server를 로컬로 돌렸을 때 draft 용 옵션 커맨드를 추가해야 보여진다.\n컨텐츠 업로드 (블로그에) 아래 단계가 귀찮으므로 auto commit 하기를 참고해도 좋다👍\n  C:\\Hugo\\blog로 이동\n  $ hugo -t 테마이름 명령을 통해 테마가 적용된 블로그 내용을 public에 생성한다.\n  $ cd public public 디렉토리로 이동하여\n  $ git add . 수정된 파일들을 index에 올린다.\n  $ git commit -m \u0026quot;커밋메세지\u0026quot; 변경 내용을 commit하고\n  $ git push origin master commit을 Integerous.github.io에 푸시\n  blog 저장소 에도 변경내용 push 하기\n $ cd blog $ git add . $ git commit -m \u0026quot;커밋메세지\u0026quot; $ git push origin master    "
+},
+{
+	"uri": "https://mand2.github.io/tags/others/",
+	"title": "Others",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://mand2.github.io/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://mand2.github.io/",
+	"title": "고라니의 개발일기🦌",
 	"tags": [],
 	"description": "",
 	"content": ""
@@ -231,13 +273,6 @@
 	"content": "깃 커밋 그래프를 볼 때마다 색상으로만 판단하기 어려울 때가 있다. 사람마다 얼마나 자주, 얼만큼 많이 하느냐에 따라 색상의 농도가 달라지기 때문이다.\n실제로 얼마나 많이 했는지 그 크기를 같이 보고 싶었는데,\n언젠가의 기억에, \u0026lt;3D 그래프로 볼 수 있다~\u0026gt; 라는 내용의 포스팅을 봤었던 기억이 나서 찾아봤다.\n간단하게 정리하자면 구글 플러그인만 깔면 해결된다. github.com에서만 활성화 로 세팅하면 아래와 같이 나온다😎\n아래는 예시 이미지일뿐 내 깃헙 contributioin이 이랬으면 소원이 없겠다 ㅎ\n또 깃 커밋 관련 통계를 볼 수 있어서 플러그인을 잘 깔았다고 생각하게 한다👍\n  1년간 깃 커밋 총 합계 하루동안 제일 많이 커밋한 횟수 연속으로 커밋한 최대 일자 현재 기준: 연속 커밋 일자    자세한 정보 출처:\n깃헙 isometric-contributions. 해당 깃헙으로 들어가면 사용 방법이 나온다.\n"
 },
 {
-	"uri": "https://mand2.github.io/tags/",
-	"title": "Tags",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
 	"uri": "https://mand2.github.io/tags/til/",
 	"title": "TIL",
 	"tags": [],
@@ -247,13 +282,6 @@
 {
 	"uri": "https://mand2.github.io/categories/til/",
 	"title": "TIL",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "https://mand2.github.io/",
-	"title": "고라니의 개발일기🦌",
 	"tags": [],
 	"description": "",
 	"content": ""
@@ -499,13 +527,6 @@
 {
 	"uri": "https://mand2.github.io/categories/interviews/",
 	"title": "Interviews",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "https://mand2.github.io/tags/others/",
-	"title": "Others",
 	"tags": [],
 	"description": "",
 	"content": ""

@@ -153,8 +153,38 @@
   </url>
   
   <url>
+    <loc>https://mand2.github.io/categories/blog/</loc>
+    <lastmod>2020-09-13T19:34:07+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://mand2.github.io/categories/</loc>
-    <lastmod>2020-09-09T00:02:15+09:00</lastmod>
+    <lastmod>2020-09-13T19:34:07+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mand2.github.io/tags/hugo/</loc>
+    <lastmod>2020-09-13T19:34:07+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mand2.github.io/others/start-hugo-1/</loc>
+    <lastmod>2020-09-13T19:34:07+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mand2.github.io/tags/others/</loc>
+    <lastmod>2020-09-13T19:34:07+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mand2.github.io/tags/</loc>
+    <lastmod>2020-09-13T19:34:07+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mand2.github.io/</loc>
+    <lastmod>2020-09-13T19:34:07+09:00</lastmod>
   </url>
   
   <url>
@@ -168,22 +198,12 @@
   </url>
   
   <url>
-    <loc>https://mand2.github.io/tags/</loc>
-    <lastmod>2020-09-09T00:02:15+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://mand2.github.io/tags/til/</loc>
     <lastmod>2020-09-09T00:02:15+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://mand2.github.io/categories/til/</loc>
-    <lastmod>2020-09-09T00:02:15+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mand2.github.io/</loc>
     <lastmod>2020-09-09T00:02:15+09:00</lastmod>
   </url>
   
@@ -359,11 +379,6 @@
   
   <url>
     <loc>https://mand2.github.io/categories/interviews/</loc>
-    <lastmod>2019-11-05T18:10:40+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mand2.github.io/tags/others/</loc>
     <lastmod>2019-11-05T18:10:40+09:00</lastmod>
   </url>
   

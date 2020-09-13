@@ -8,7 +8,7 @@
 <meta name="author" content="mand2">
 
     <link rel="shortcut icon" href="https://image.flaticon.com/icons/svg/2950/2950487.svg" type="image/x-icon" />
-    <title>getter setter 설정 :: 고라니의 개발일기🦌</title>
+    <title>Blog :: 고라니의 개발일기🦌</title>
 
     
     <link href="/css/nucleus.css?1599994101" rel="stylesheet">
@@ -55,7 +55,7 @@ if (!doNotTrack) {
 
     
   </head>
-  <body class="" data-url="/python/1/">
+  <body class="" data-url="/categories/blog/">
     <nav id="sidebar" class="">
 
 
@@ -519,7 +519,7 @@ if (!doNotTrack) {
   
     
     <li data-nav-id="/python/" title="Python" class="dd-item 
-        parent
+        
         
         
         ">
@@ -545,7 +545,7 @@ if (!doNotTrack) {
  
   
     
-      <li data-nav-id="/python/1/" title="getter setter 설정" class="dd-item active">
+      <li data-nav-id="/python/1/" title="getter setter 설정" class="dd-item ">
         <a href="/python/1/">
         getter setter 설정
         
@@ -1025,7 +1025,7 @@ if (!doNotTrack) {
             
           
           
-            <a href='/'>고라니의 개발일기🦌</a> > <a href='/python/'>Python</a> > getter setter 설정
+            <a href='/'>고라니의 개발일기🦌</a> > <a href='/categories/'>Categories</a> > Blog
           
         
           
@@ -1038,11 +1038,7 @@ if (!doNotTrack) {
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents">
-  <ol>
-    <li><a href="#python--getter-setter-설정">Python : getter setter 설정</a></li>
-  </ol>
-</nav>
+
     </div>
 </div>
 
@@ -1052,85 +1048,85 @@ if (!doNotTrack) {
             
         <div id="head-tags">
         
-<div class="tags">
-
-  <a class="tag-link" href="/tags/python">Python</a>
-
-  <a class="tag-link" href="/tags/til">TIL</a>
-
-</div>
-
         </div>
         
         <div id="body-inner">
           
             <h1>
               
-              getter setter 설정
+              Blog
             </h1>
           
 
         
 
-<span class="btn_tags">
-    2020-02-04
+<span id="sidebar-toggle-span">
+<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fas fa-bars"></i> navigation</a>
 </span>
+<section>
+    <div class="highlightable">
+        <div id="topics">
+            
+            
+                
+                    
+                    <button class="btn_tags_active" onclick="location.href='\/categories\/blog\/'">Blog</button>
 
-<h2 id="python--getter-setter-설정">Python : getter setter 설정</h2>
-<p>클래스 내부에서 getter setter 설정 쉽게하기 메서드 낭비하지 않고 쉽게 쓸 수 있다!  불러오는 방법이나 셋하는 방법도 java와 조금 다름. 주의할 것..</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># test.py</span>
+                    
+                
+                    
+                    <button class="btn_tags" onclick="location.href='\/categories\/til\/'">TIL</button>
+                    
+                
+                    
+                    <button class="btn_tags" onclick="location.href='\/categories\/retro\/'">retro</button>
+                    
+                
+                    
+                    <button class="btn_tags" onclick="location.href='\/categories\/spring\/'">Spring</button>
+                    
+                
+                    
+                    <button class="btn_tags" onclick="location.href='\/categories\/rest-api\/'">Rest-API</button>
+                    
+                
+                    
+                    <button class="btn_tags" onclick="location.href='\/categories\/python\/'">Python</button>
+                    
+                
+                    
+                    <button class="btn_tags" onclick="location.href='\/categories\/react\/'">React</button>
+                    
+                
+                    
+                    <button class="btn_tags" onclick="location.href='\/categories\/interviews\/'">Interviews</button>
+                    
+                
+                    
+                    <button class="btn_tags" onclick="location.href='\/categories\/books\/'">Books</button>
+                    
+                
+                    
+                    <button class="btn_tags" onclick="location.href='\/categories\/spring-boot\/'">Spring Boot</button>
+                    
+                
+                    
+                    <button class="btn_tags" onclick="location.href='\/categories\/node.js\/'">Node.js</button>
+                    
+                
+                <button class="btn_tags" onclick="location.href='\/categories\/'">ALL</button>
+            
+        </div>
+        <hr>
 
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Test</span>:
-    <span style="color:#66d9ef">def</span> __init__(self, limit<span style="color:#f92672">=</span>None, persistent<span style="color:#f92672">=</span>None):
-        <span style="color:#66d9ef">if</span> limit <span style="color:#f92672">is</span> None:
-            self<span style="color:#f92672">.</span>__limit <span style="color:#f92672">=</span> False
-        <span style="color:#66d9ef">else</span> : 
-            self<span style="color:#f92672">.</span>__limit <span style="color:#f92672">=</span> limit
-
-        <span style="color:#66d9ef">if</span> persistent <span style="color:#f92672">is</span> None:
-            self<span style="color:#f92672">.</span>__persistent <span style="color:#f92672">=</span> False
-        <span style="color:#66d9ef">else</span> :
-            self<span style="color:#f92672">.</span>__persistent <span style="color:#f92672">=</span> persistent
-	
-    <span style="color:#a6e22e">@property</span>
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">limit</span>(self):
-        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>__limit
-
-    <span style="color:#a6e22e">@property</span>
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">persistent</span>(self):
-        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>__persistent
-    
-    <span style="color:#a6e22e">@limit.setter</span>
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">limit</span>(self, limit):
-        self<span style="color:#f92672">.</span>__limit <span style="color:#f92672">=</span> limit
-
-    <span style="color:#a6e22e">@persistent.setter</span>
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">persistent</span>(self, persistent):
-        self<span style="color:#f92672">.</span>__persistent <span style="color:#f92672">=</span> persistent
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">user <span style="color:#f92672">=</span> Test() 
-	<span style="color:#75715e"># 값이 None, None 으로 나옴</span>
-
-<span style="color:#75715e"># set: limit</span>
-user<span style="color:#f92672">.</span>limit <span style="color:#f92672">=</span> True
-<span style="color:#75715e"># get: limit </span>
-<span style="color:#66d9ef">print</span>(user<span style="color:#f92672">.</span>limit)
-</code></pre></div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<script src="https://utteranc.es/client.js"
-        repo="mand2/blog-comments"
-        issue-term="pathname"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script>
-
-<footer class="footline">
-    
-</footer>
+        
+        <li>
+            <a href="https://mand2.github.io/others/start-hugo-1/">Hugo로 블로그 만들기 1</a> |
+            <time>2020-09-13</time>
+        </li>
+        
+    </div>
+</section>
 
         
         </div> 
@@ -1457,7 +1453,6 @@ user<span style="color:#f92672">.</span>limit <span style="color:#f92672">=</spa
             
                 
                     
-                    
                 
                 
 
@@ -1470,7 +1465,6 @@ user<span style="color:#f92672">.</span>limit <span style="color:#f92672">=</spa
             
             
                 
-                    
                     
                 
                 
@@ -1487,9 +1481,6 @@ user<span style="color:#f92672">.</span>limit <span style="color:#f92672">=</spa
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1755,10 +1746,8 @@ user<span style="color:#f92672">.</span>limit <span style="color:#f92672">=</spa
 	 
 	 
 		
-			<a class="nav nav-prev" href="/python/" title="Python"> <i class="fa fa-chevron-left"></i></a>
 		
-		
-			<a class="nav nav-next" href="/python/2/" title="윈도우에서 Ubuntu로 pycharm 설치할 수 있을까" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/about/" title="About" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
