@@ -53,7 +53,7 @@
 	"title": "회고",
 	"tags": [],
 	"description": "",
-	"content": "Chapter X 회고 \r20200904:하반기 읽을거리\r\r\r\r\r20200902\r\r\r\r\r20200830: 블로그 이사\r\r\r\r\r"
+	"content": "Chapter X 회고 \r20200921: 카카오프로젝트100\r\r\r\r\r20200904:하반기 읽을거리\r\r\r\r\r20200902\r\r\r\r\r20200830: 블로그 이사\r\r\r\r\r"
 },
 {
 	"uri": "https://mand2.github.io/python/1/",
@@ -210,15 +210,50 @@
 	"content": "메이븐은 프로젝트 객체 모델(Project Object Model)이라는 개념을 바탕으로 프로젝트 의존성 관리, 라이브러리 관리, 프로젝트 생명 주기 관리 기능 등을 제공하는 프로젝트 관리 도구이다. 또한 플러그인을 기반으로 소스 코드로부터 배포 가능한 산출물을 만들어 내는 빌드 기능 뿐만 아니라 레포팅 및 documentation 작성 기능 등을 제공한다.\n\n메이븐 자세히 알아보러 가기\npom.xml 태그들 자세히 알아보기\npom.xml 태그 조금 더 간결하게, 정리 더 잘 된 것\nmaven (메이븐 구조, 차이점, 플러그인, 라이프사이클, 의존성, pom.xml)\n자바 웹 어플리케이션 배포  SVN 으로 형상관리 하는 경우도 있다 (회사에서,,) git으로 형상관리 하기  배포 순서 :\n 각자 소스 코딩 후 형상관리 툴에 push 배포용 서버 컴퓨터에서 pull 받음 war 파일로 package tomcat에 배포  "
 },
 {
-	"uri": "https://mand2.github.io/categories/blog/",
-	"title": "Blog",
+	"uri": "https://mand2.github.io/retro/20200921/",
+	"title": "20200921: 카카오프로젝트100",
+	"tags": ["Diary"],
+	"description": "",
+	"content": "시즌 1부터 알고있던 카카오 프로젝트 100(이하 카카오 플백 혹은 플백).\n알고는 있었지만 과연 내가 할 수 있을까? 고민하다 인원이 다 차서 참여하질 못했었다. 이번 시즌에도 똑같이 진행되나 싶었는데.. 용기를 내서 \u0026lsquo;자리 좀 늘려줄 수 있으세요..?\u0026rsquo; 라고 물어봐서 그동안 들어가고 싶었던 기술 아티클 읽기와 1일 1커밋 프로젝트에 참여하게 되었다 😎\n회사생활 존버하기2는 일상 인증이라서 쉽고 재밌을 것 같아서 지원했는데, 역시나 쉽게 인증 가능해서 그런지 사람들이 간단하게 올린 글도 재밌다. 월요일에는 다들 끄응끄응 앓는 소리가 들리는 듯 하고, 금/토요일은 날아갈 것 같은 목소리(이누야샤 퇴사짤의 목소리)로 말하는 것 같다.\n왜 챌린저스는 안하고 카카오 플백을 신청했나?\n플백은 내가 실패를 하면 그 금액만큼(100원/1일) 후원을 하는 거라 좋은 마음으로 참여하게 되었다. 물론 다시 받을 수 있는 금액에서 다시 후원해도 된다 굿굿~! 그리고 습관을 들이기 위해선 짧은 기간보다는 100일이라는 기간이 더 적당하다 생각해서 플백 시즌3에 참여하게 되었다.\n100%를 계속 달성하다 보니까 쪼오금 욕심이 난다. 주말에는 하기 싫은 마음이 많이 들기도 하는데, 100일 즈음이되면 어거지로 하는 것보다는 \u0026lsquo;아 해야되네~\u0026rsquo; 라는 마음이 들지. 기대되는 플백이다 👀\n"
+},
+{
+	"uri": "https://mand2.github.io/categories/",
+	"title": "Categories",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "https://mand2.github.io/categories/",
-	"title": "Categories",
+	"uri": "https://mand2.github.io/tags/diary/",
+	"title": "Diary",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://mand2.github.io/categories/retro/",
+	"title": "retro",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://mand2.github.io/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://mand2.github.io/",
+	"title": "고라니의 개발일기🦌",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://mand2.github.io/categories/blog/",
+	"title": "Blog",
 	"tags": [],
 	"description": "",
 	"content": ""
@@ -240,20 +275,6 @@
 {
 	"uri": "https://mand2.github.io/tags/others/",
 	"title": "Others",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "https://mand2.github.io/tags/",
-	"title": "Tags",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "https://mand2.github.io/",
-	"title": "고라니의 개발일기🦌",
 	"tags": [],
 	"description": "",
 	"content": ""
@@ -296,20 +317,6 @@
 {
 	"uri": "https://mand2.github.io/tags/books/",
 	"title": "Books",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "https://mand2.github.io/tags/diary/",
-	"title": "Diary",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "https://mand2.github.io/categories/retro/",
-	"title": "retro",
 	"tags": [],
 	"description": "",
 	"content": ""

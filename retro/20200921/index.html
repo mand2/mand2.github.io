@@ -8,7 +8,7 @@
 <meta name="author" content="mand2">
 
     <link rel="shortcut icon" href="https://image.flaticon.com/icons/svg/2950/2950487.svg" type="image/x-icon" />
-    <title>aws EC2로 node.js 배포하기 :: 고라니의 개발일기🦌</title>
+    <title>20200921: 카카오프로젝트100 :: 고라니의 개발일기🦌</title>
 
     
     <link href="/css/nucleus.css?1600684194" rel="stylesheet">
@@ -55,7 +55,7 @@ if (!doNotTrack) {
 
     
   </head>
-  <body class="" data-url="/node.js/3/">
+  <body class="" data-url="/retro/20200921/">
     <nav id="sidebar" class="">
 
 
@@ -595,7 +595,7 @@ if (!doNotTrack) {
   
     
     <li data-nav-id="/node.js/" title="Node.js" class="dd-item 
-        parent
+        
         
         
         ">
@@ -663,7 +663,7 @@ if (!doNotTrack) {
  
   
     
-      <li data-nav-id="/node.js/3/" title="aws EC2로 node.js 배포하기" class="dd-item active">
+      <li data-nav-id="/node.js/3/" title="aws EC2로 node.js 배포하기" class="dd-item ">
         <a href="/node.js/3/">
         aws EC2로 node.js 배포하기
         
@@ -924,7 +924,7 @@ if (!doNotTrack) {
   
     
     <li data-nav-id="/retro/" title="회고" class="dd-item 
-        
+        parent
         
         
         ">
@@ -1028,7 +1028,7 @@ if (!doNotTrack) {
             
           
           
-            <a href='/'>고라니의 개발일기🦌</a> > <a href='/node.js/'>Node.js</a> > aws EC2로 node.js 배포하기
+            <a href='/'>고라니의 개발일기🦌</a> > <a href='/retro/'>회고</a> > 20200921: 카카오프로젝트100
           
         
           
@@ -1041,17 +1041,7 @@ if (!doNotTrack) {
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents">
-  <ol>
-    <li><a href="#1-nodejs로-서버-배포하기">1. node.js로 서버 배포하기</a>
-      <ol>
-        <li><a href="#step-1-인스턴스-생성부터---putty-설정까지">[STEP 1] 인스턴스 생성부터 - putty 설정까지</a></li>
-        <li><a href="#step-2-git-클론-후-node-js-배포하기">[STEP 2] git 클론 후 node js 배포하기</a></li>
-        <li><a href="#노드서버-백그라운드-실행하기">노드서버 백그라운드 실행하기</a></li>
-      </ol>
-    </li>
-  </ol>
-</nav>
+<nav id="TableOfContents"></nav>
     </div>
 </div>
 
@@ -1063,9 +1053,7 @@ if (!doNotTrack) {
         
 <div class="tags">
 
-  <a class="tag-link" href="/tags/node.js">Node.js</a>
-
-  <a class="tag-link" href="/tags/til">TIL</a>
+  <a class="tag-link" href="/tags/diary">Diary</a>
 
 </div>
 
@@ -1075,135 +1063,31 @@ if (!doNotTrack) {
           
             <h1>
               
-              aws EC2로 node.js 배포하기
+              20200921: 카카오프로젝트100
             </h1>
           
 
         
 
 <span class="btn_tags">
-    2019-10-15
+    2020-09-21
 </span>
 
-<h2 id="1-nodejs로-서버-배포하기">1. node.js로 서버 배포하기</h2>
-<p>마지막 프로젝트를 하며 간단한 채팅을 <code>node.js</code>로 만들었다. 간단하게 구현하는 건 어찌어찌 했는데,, 문제는 배포하는 것. 주변에 구현하면서 고생한 친구가 있어서 편하게 했다.</p>
-<p><br><br></p>
-<h3 id="step-1-인스턴스-생성부터---putty-설정까지">[STEP 1] 인스턴스 생성부터 - putty 설정까지</h3>
-<ol>
-<li>aws ec2 인스턴스 생성<br>
-프리티어만으로 체크한 후<br>
-<strong>Amazon Linux AMI 2018.03.0 (HVM), SSD Volume Type</strong> 를 선택했다<br>
-자동으로 선택되어 있는 <strong>t2.micro</strong> 로 했으며,<br>
-관리하기 쉽게 보안그룹 이름을 내가 원하는 이름으로 변경함.</li>
-<li>pem 키 발급 (인증키임.. 재발급 불가라 잃어버리면 새로 인스턴스 생성해야함 ㅠ)<br>
-알아보기 쉽게 <strong>키 페어 이름</strong>을 잘 적어준다<br>
-외장하드나 개인이 보관하기 쉬운 파일에 저장하기</li>
-<li><code>puttygen.exe</code> 로 ppk 키로 발급받기
-<code>LOAD</code> 를 눌러 방금 발급받은 pem 키를 불러온다<br>
-<code>save private key</code> 를 눌러 ppk키로 저장 (동일한 이름으로 하되, 확장자만 달라야 함. <strong>다르면 서버에러</strong>)</li>
-<li><code>putty.exe</code>를 실행 새로운 session을 만들고 저장한다<br>
-<strong>주의:</strong> hostname과 이름을 만들고 &lsquo;save&rsquo; 버튼을 눌러줘야 함.
-<ol>
-<li>session 탭:<br>
-HostName은 ec2-user@(ip주소)</li>
-<li>Connection - SSH - Auth 탭:<br>
-ppk키를 저장해준다.</li>
-</ol>
-</li>
-<li>putty에서 저장한 세션을 open</li>
-</ol>
-<br>
-<br>
-<h3 id="step-2-git-클론-후-node-js-배포하기">[STEP 2] git 클론 후 node js 배포하기</h3>
-<ol>
-<li>
-<p>현재 ec2 인스턴스에 깃 설치</p>
-<pre><code>sudo yum install git
-git init
-git config --global user.name &quot;your username&quot;
-git config --global user.email [your mail address]
-</code></pre><p><strong>주의</strong>할 점: <code>&quot; &quot;</code> 와  <code>[ ]</code> 를 무조건 써준다! 안써주면 인식을 못함!</p>
-</li>
-<li>
-<p>nvm 설치</p>
-<pre><code>curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
-</code></pre></li>
-<li>
-<p>nvm 활성화</p>
-<pre><code>. ~/.nvm/nvm.sh
-</code></pre></li>
-<li>
-<p>node 설치</p>
-<pre><code>nvm install node
-</code></pre></li>
-<li>
-<p>설치 확인</p>
-<pre><code>node -e &quot;console.log('Running Node.js ' + process.version)&quot;
-</code></pre></li>
-<li>
-<p>깃에 배포용 repository 생성</p>
-</li>
-<li>
-<p>해당 repository의 주소 복사 후 현재 ec2 인스턴스로 클론하기</p>
-<pre><code>git clone + [repository 주소]
-</code></pre></li>
-<li>
-<p>node js 에서 연습했던 대로 서버 실행</p>
-</li>
-<li>
-<p>하면 끝인 줄 알았지? 는 안됨!</p>
-</li>
-</ol>
-<p><br><br></p>
-<h3 id="노드서버-백그라운드-실행하기">노드서버 백그라운드 실행하기</h3>
-<ol>
-<li>
-<p>일단 현재 채팅용 포트를 설정하지 않았음. 
-AWS의 보안그룹으로 들어가서 ec2 인스턴스 생성시 만들었던 보안그룹으로 들어간다. 
-<code>인바운드</code> 탭에서 사용자지정TCP규칙 &gt; 원하는 채팅포트 &gt; 저장</p>
-</li>
-<li>
-<p>위의 1번을 해결한다고 해도 완벽하게 해결되는 건 아님
-이유? 내가 <strong>putty를 꺼도 실행이 되어야</strong> 확실한 배포인 거니까</p>
-</li>
-<li>
-<p>백그라운드 실행하기 1 forever 설치</p>
-<pre><code>npm install forever -g
-</code></pre></li>
-<li>
-<p>백그라운드 실행하기 2 원하는 js파일 실행하기</p>
-<pre><code>(실행파일 위치까지 들어간 후) 
-forever start [js script]
-</code></pre></li>
-<li>
-<p>현재 백그라운드로 실행중인 서버 확인하기</p>
-<pre><code>forever list
-</code></pre></li>
-<li>
-<p>백그라운드 서버 종료하기</p>
-<pre><code>forever stop [js script]
-</code></pre></li>
-</ol>
-<p><br><br></p>
-<p>참고) nohup으로 했으나 실행되지 않았음</p>
-<ul>
-<li>nohup으로 백그라운드 실행</li>
-</ul>
-<pre><code>$ sudo nohup node (js파일) &amp;
-</code></pre><ul>
-<li>
-<p>실행 후 백그라운드로 올라왔으면 ENTER 키로 빠져나오면 된다.</p>
-</li>
-<li>
-<p>프로세스 실행되고 있는지 확인</p>
-<pre><code>$ ps -ef
-</code></pre></li>
-<li>
-<p>종료</p>
-<pre><code>sudo kill -9 [종료하고 싶은 프로세스 pid]
-</code></pre></li>
-</ul>
-<p><br><br></p>
+<p><img src="/images/retro/20200921_d14.png?width=450px" alt="project100"></p>
+<p>시즌 1부터 알고있던 <code>카카오 프로젝트 100</code>(이하 카카오 플백 혹은 플백).<br>
+알고는 있었지만 과연 내가 할 수 있을까? 고민하다 인원이 다 차서 참여하질 못했었다.
+<del>이번 시즌에도 똑같이 진행되나 싶었는데..</del>
+용기를 내서 &lsquo;자리 좀 늘려줄 수 있으세요..?&rsquo; 라고 물어봐서
+그동안 들어가고 싶었던 <code>기술 아티클 읽기</code>와 <code>1일 1커밋</code> 프로젝트에 참여하게 되었다 😎</p>
+<p><code>회사생활 존버하기2</code>는 일상 인증이라서 쉽고 재밌을 것 같아서 지원했는데, 역시나 쉽게 인증 가능해서 그런지
+사람들이 간단하게 올린 글도 재밌다. 월요일에는 다들 끄응끄응 앓는 소리가 들리는 듯 하고,
+금/토요일은 날아갈 것 같은 목소리(이누야샤 퇴사짤의 목소리)로 말하는 것 같다.</p>
+<p>왜 챌린저스는 안하고 카카오 플백을 신청했나?<br>
+플백은 내가 실패를 하면 그 금액만큼(100원/1일) 후원을 하는 거라 좋은 마음으로 참여하게 되었다.
+물론 다시 받을 수 있는 금액에서 다시 후원해도 된다 굿굿~!
+그리고 습관을 들이기 위해선 짧은 기간보다는 100일이라는 기간이 더 적당하다 생각해서 플백 시즌3에 참여하게 되었다.</p>
+<p>100%를 계속 달성하다 보니까 쪼오금 욕심이 난다. 주말에는 하기 싫은 마음이 많이 들기도 하는데,
+100일 즈음이되면 어거지로 하는 것보다는 &lsquo;아 해야되네~&rsquo; 라는 마음이 들지. 기대되는 플백이다 👀</p>
 
 <br>
 <br>
@@ -1595,7 +1479,6 @@ forever start [js script]
             
                 
                     
-                    
                 
                 
 
@@ -1609,8 +1492,21 @@ forever start [js script]
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
                         
-                        
+            
+            
+                
                     
                 
                 
@@ -1639,23 +1535,6 @@ forever start [js script]
             
         
                     
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
             
         
                     
@@ -1663,9 +1542,6 @@ forever start [js script]
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1812,6 +1688,7 @@ forever start [js script]
             
             
                 
+                    
                     
                 
                 
@@ -1853,10 +1730,10 @@ forever start [js script]
 	 
 	 
 		
-			<a class="nav nav-prev" href="/node.js/2/" title="formidable 설치 오류 해결하기"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/others/interviews/" title="면접질문 정리"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/react/" title="React" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/about/" title="About" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
