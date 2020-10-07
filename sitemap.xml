@@ -153,12 +153,47 @@
   </url>
   
   <url>
-    <loc>https://mand2.github.io/retro/20200921/</loc>
-    <lastmod>2020-09-21T19:09:55+09:00</lastmod>
+    <loc>https://mand2.github.io/others/activity-gdg-devfest-2020/</loc>
+    <lastmod>2020-10-08T00:18:17+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mand2.github.io/tags/activity/</loc>
+    <lastmod>2020-10-08T00:18:17+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mand2.github.io/categories/activity/</loc>
+    <lastmod>2020-10-08T00:18:17+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://mand2.github.io/categories/</loc>
+    <lastmod>2020-10-08T00:18:17+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mand2.github.io/tags/others/</loc>
+    <lastmod>2020-10-08T00:18:17+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mand2.github.io/tags/session/</loc>
+    <lastmod>2020-10-08T00:18:17+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mand2.github.io/tags/</loc>
+    <lastmod>2020-10-08T00:18:17+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mand2.github.io/</loc>
+    <lastmod>2020-10-08T00:18:17+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mand2.github.io/retro/20200921/</loc>
     <lastmod>2020-09-21T19:09:55+09:00</lastmod>
   </url>
   
@@ -169,16 +204,6 @@
   
   <url>
     <loc>https://mand2.github.io/categories/retro/</loc>
-    <lastmod>2020-09-21T19:09:55+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mand2.github.io/tags/</loc>
-    <lastmod>2020-09-21T19:09:55+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mand2.github.io/</loc>
     <lastmod>2020-09-21T19:09:55+09:00</lastmod>
   </url>
   
@@ -194,11 +219,6 @@
   
   <url>
     <loc>https://mand2.github.io/others/start-hugo-1/</loc>
-    <lastmod>2020-09-13T19:34:07+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mand2.github.io/tags/others/</loc>
     <lastmod>2020-09-13T19:34:07+09:00</lastmod>
   </url>
   

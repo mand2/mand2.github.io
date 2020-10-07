@@ -6,10 +6,22 @@
     <description>Recent content in Others on 고라니의 개발일기🦌</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Sun, 13 Sep 2020 19:34:07 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 08 Oct 2020 00:18:17 +0900</lastBuildDate>
     
 	<atom:link href="https://mand2.github.io/tags/others/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[활동] Devfest Korea 2020 10.16~</title>
+      <link>https://mand2.github.io/others/activity-gdg-devfest-2020/</link>
+      <pubDate>Thu, 08 Oct 2020 00:18:17 +0900</pubDate>
+      
+      <guid>https://mand2.github.io/others/activity-gdg-devfest-2020/</guid>
+      <description>👆👆👆 위 배너를 클릭해서 Devfest 페이지로 이동하기 (배너출처: DevFest Korea 2020)
+GDG Korea(Google Developers Group Korea)에서 DevFest Korea 2020을 개최한다고 한다.
+크게 따로 등록이 필요하지 않은 세션과, 참가자들의 상호작용이 필요한 이벤트나 그룹토크, 액티비티 등을 액티비티로 나뉘어 진행한다.
+재밌어 보여서 액티비티 몇 개를 등록했다. 😊 추석연휴로 다시 코로나 확진자가 늘어날 것 같아서, 집에 콕 붙어있을 겸 다른 사람들은 어떻게 살고 있는지 알고 싶어서 겸사겸사 등록했다.</description>
+    </item>
     
     <item>
       <title>Hugo로 블로그 만들기 1</title>
