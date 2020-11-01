@@ -6,10 +6,19 @@
     <description>Recent content in Categories on 고라니의 개발일기🦌</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Thu, 08 Oct 2020 00:18:17 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 01 Nov 2020 17:45:36 +0900</lastBuildDate>
     
 	<atom:link href="https://mand2.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>retro</title>
+      <link>https://mand2.github.io/categories/retro/</link>
+      <pubDate>Sun, 01 Nov 2020 17:45:36 +0900</pubDate>
+      
+      <guid>https://mand2.github.io/categories/retro/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Activity</title>
@@ -17,15 +26,6 @@
       <pubDate>Thu, 08 Oct 2020 00:18:17 +0900</pubDate>
       
       <guid>https://mand2.github.io/categories/activity/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>retro</title>
-      <link>https://mand2.github.io/categories/retro/</link>
-      <pubDate>Mon, 21 Sep 2020 19:09:55 +0900</pubDate>
-      
-      <guid>https://mand2.github.io/categories/retro/</guid>
       <description></description>
     </item>
     
