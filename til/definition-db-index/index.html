@@ -11,21 +11,21 @@
     <title>DB index의 정의 :: 고라니의 개발일기🦌</title>
 
     
-    <link href="/css/nucleus.css?1611143233" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1611143233" rel="stylesheet">
-    <link href="/css/hybrid.css?1611143233" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1611143233" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1611143233" rel="stylesheet">
-    <link href="/css/auto-complete.css?1611143233" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1611143233" rel="stylesheet">
-    <link href="/css/theme.css?1611143233" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1611143233" rel="stylesheet">
+    <link href="/css/nucleus.css?1611143980" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1611143980" rel="stylesheet">
+    <link href="/css/hybrid.css?1611143980" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1611143980" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1611143980" rel="stylesheet">
+    <link href="/css/auto-complete.css?1611143980" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1611143980" rel="stylesheet">
+    <link href="/css/theme.css?1611143980" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1611143980" rel="stylesheet">
     
-    <link href="/css/theme-mine.css?1611143233" rel="stylesheet">
+    <link href="/css/theme-mine.css?1611143980" rel="stylesheet">
     
-    <link href="/css/custom.css?1611143233" rel="stylesheet">
+    <link href="/css/custom.css?1611143980" rel="stylesheet">
 
-    <script src="/js/jquery-3.3.1.min.js?1611143233"></script>
+    <script src="/js/jquery-3.3.1.min.js?1611143980"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -74,14 +74,14 @@ if (!doNotTrack) {
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1611143233"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1611143233"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1611143980"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1611143980"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/mand2.github.io\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1611143233"></script>
+<script type="text/javascript" src="/js/search.js?1611143980"></script>
 
     
   </div>
@@ -1111,12 +1111,36 @@ if (!doNotTrack) {
 
 <h2 id="what-is-index">What is index?</h2>
 <p><strong>USAGE 1 : Support for fast Lookup</strong><br>
-An index is any data structure that improves the performance of lookup. There are many different <a href="https://en.wikipedia.org/wiki/Category:Data_structures" target="_blank" rel="noopener">data structures</a>
+An index is any data structure that improves the performance of lookup. There are many different <a href="https://en.wikipedia.org/wiki/Category:Data_structures"
+    
+        target="_blank"
+    
+>
+    data structures
+</a>
  used for this purpose. There are complex design trade-offs involving lookup performance, index size, and index-update performance. Many index designs exhibit logarithmic (O(log(N)) lookup performance and in some applications it is possible to achieve flat (O(1)) performance.</p>
 <p><strong>USAGE 2 : Policing the database constraints</strong> (I assumed it as a DB table guideline)<br>
-Indexes are used to police <a href="https://en.wikipedia.org/wiki/Database_constraints" target="_blank" rel="noopener">database constraints</a>
-, such as UNIQUE, EXCLUSION, <a href="https://en.wikipedia.org/wiki/Unique_key" target="_blank" rel="noopener">PRIMARY KEY</a>
- and <a href="https://en.wikipedia.org/wiki/Foreign_key" target="_blank" rel="noopener">FOREIGN KEY</a>
+Indexes are used to police <a href="https://en.wikipedia.org/wiki/Database_constraints"
+    
+        target="_blank"
+    
+>
+    database constraints
+</a>
+, such as UNIQUE, EXCLUSION, <a href="https://en.wikipedia.org/wiki/Unique_key"
+    
+        target="_blank"
+    
+>
+    PRIMARY KEY
+</a>
+ and <a href="https://en.wikipedia.org/wiki/Foreign_key"
+    
+        target="_blank"
+    
+>
+    FOREIGN KEY
+</a>
 .</p>
 <ul>
 <li>An index may be declared as UNIQUE, which creates an implicit constraint on the underlying table. Database systems usually implicitly create an index on a set of columns declared PRIMARY KEY, and some are capable of using an already-existing index to police this constraint.</li>
@@ -1130,36 +1154,114 @@ Indexes are used to police <a href="https://en.wikipedia.org/wiki/Database_const
 -like 를 쓸 때에는 index가 있더라도 full scan 될 수 있음</p>
 </div>
 
-<p>Indexes are useful for many applications but come with some limitations. Consider the following <a href="https://en.wikipedia.org/wiki/SQL" target="_blank" rel="noopener">SQL</a>
- statement: <code>SELECT first_name FROM people WHERE last_name = 'Smith';</code>. To process this statement without an index the database software must look at the last_name column on every row in the table (this is known as a <a href="https://en.wikipedia.org/wiki/Full_table_scan" target="_blank" rel="noopener">full table scan</a>
-). With an index the database simply follows the <a href="https://en.wikipedia.org/wiki/B-tree" target="_blank" rel="noopener">B-tree</a>
+<p>Indexes are useful for many applications but come with some limitations. Consider the following <a href="https://en.wikipedia.org/wiki/SQL"
+    
+        target="_blank"
+    
+>
+    SQL
+</a>
+ statement: <code>SELECT first_name FROM people WHERE last_name = 'Smith';</code>. To process this statement without an index the database software must look at the last_name column on every row in the table (this is known as a <a href="https://en.wikipedia.org/wiki/Full_table_scan"
+    
+        target="_blank"
+    
+>
+    full table scan
+</a>
+). With an index the database simply follows the <a href="https://en.wikipedia.org/wiki/B-tree"
+    
+        target="_blank"
+    
+>
+    B-tree
+</a>
  data structure until the Smith entry has been found; this is much less computationally expensive than a full table scan.</p>
-<p>Consider this SQL statement: <code>SELECT email_address FROM customers WHERE email_address LIKE '%@wikipedia.org';</code>. This query would yield an email address for every customer whose email address ends with &ldquo;@wikipedia.org&rdquo;, but even if the email_address column has been indexed the database must perform a full index scan. This is because the index is built with the assumption that words go from left to right. With a <a href="https://en.wikipedia.org/wiki/Wildcard_character" target="_blank" rel="noopener">wildcard</a>
- at the beginning of the search-term, the database software is unable to use the underlying B-tree data structure (in other words, the WHERE-clause is <em>not <a href="https://en.wikipedia.org/w/index.php?title=Sargable&amp;action=edit&amp;redlink=1" target="_blank" rel="noopener">sargable</a>
+<p>Consider this SQL statement: <code>SELECT email_address FROM customers WHERE email_address LIKE '%@wikipedia.org';</code>. This query would yield an email address for every customer whose email address ends with &ldquo;@wikipedia.org&rdquo;, but even if the email_address column has been indexed the database must perform a full index scan. This is because the index is built with the assumption that words go from left to right. With a <a href="https://en.wikipedia.org/wiki/Wildcard_character"
+    
+        target="_blank"
+    
+>
+    wildcard
+</a>
+ at the beginning of the search-term, the database software is unable to use the underlying B-tree data structure (in other words, the WHERE-clause is <em>not <a href="https://en.wikipedia.org/w/index.php?title=Sargable&amp;action=edit&amp;redlink=1"
+    
+        target="_blank"
+    
+>
+    sargable
+</a>
 </em>). This problem can be solved through the addition of another index created on <code>reverse(email_address)</code> and a SQL query like this: <code>SELECT email_address FROM customers WHERE reverse(email_address) LIKE reverse('%@wikipedia.org');</code>. This puts the wild-card at the right-most part of the query (now gro.aidepikiw@%), which the index on reverse(email_address) can satisfy.</p>
 <p>When the wildcard characters are used on both sides of the search word as <em>%wikipedia.org%</em>, the index available on this field is not used. Rather only a sequential search is performed, which takes O(N) time.</p>
 <p><br><br></p>
 <h3 id="2-types-of-indexes">2 Types of indexes</h3>
 <h4 id="2-1-bitmap-index">2-1 Bitmap index</h4>
-<p>Main article: <a href="https://en.wikipedia.org/wiki/Bitmap_index" target="_blank" rel="noopener">Bitmap index</a>
+<p>Main article: <a href="https://en.wikipedia.org/wiki/Bitmap_index"
+    
+        target="_blank"
+    
+>
+    Bitmap index
+</a>
 </p>
-<p>A bitmap index is a special kind of indexing that stores the bulk of its data as <a href="https://en.wikipedia.org/wiki/Bit_array" target="_blank" rel="noopener">bit arrays</a>
- (bitmaps) and answers most queries by performing <a href="https://en.wikipedia.org/wiki/Bitwise_operation" target="_blank" rel="noopener">bitwise logical operations</a>
- on these bitmaps. The most commonly used indexes, such as <a href="https://en.wikipedia.org/wiki/B%2B_tree" target="_blank" rel="noopener">B+ trees</a>
+<p>A bitmap index is a special kind of indexing that stores the bulk of its data as <a href="https://en.wikipedia.org/wiki/Bit_array"
+    
+        target="_blank"
+    
+>
+    bit arrays
+</a>
+ (bitmaps) and answers most queries by performing <a href="https://en.wikipedia.org/wiki/Bitwise_operation"
+    
+        target="_blank"
+    
+>
+    bitwise logical operations
+</a>
+ on these bitmaps. The most commonly used indexes, such as <a href="https://en.wikipedia.org/wiki/B%2B_tree"
+    
+        target="_blank"
+    
+>
+    B+ trees
+</a>
 , are most efficient if the values they index do not repeat or repeat a small number of times. In contrast, the bitmap index is designed for cases where the values of a variable repeat very frequently. For example, the sex field in a customer database usually contains at most three distinct values: male, female or unknown (not recorded). For such variables, the bitmap index can have a significant performance advantage over the commonly used trees.</p>
 <p><br><br></p>
 <h3 id="3-others-to-see">3 Others to see</h3>
 <ul>
-<li>search engine indexing <a href="https://en.wikipedia.org/wiki/Search_engine_indexing" target="_blank" rel="noopener">URL</a>
+<li>search engine indexing <a href="https://en.wikipedia.org/wiki/Search_engine_indexing"
+    
+        target="_blank"
+    
+>
+    URL
+</a>
 </li>
-<li>InnoDB <a href="https://en.wikipedia.org/wiki/InnoDB" target="_blank" rel="noopener">URL</a>
+<li>InnoDB <a href="https://en.wikipedia.org/wiki/InnoDB"
+    
+        target="_blank"
+    
+>
+    URL
+</a>
 </li>
-<li>more information about index <a href="https://en.wikipedia.org/wiki/Database_index" target="_blank" rel="noopener">URL</a>
+<li>more information about index <a href="https://en.wikipedia.org/wiki/Database_index"
+    
+        target="_blank"
+    
+>
+    URL
+</a>
 </li>
 </ul>
 <p><br><br><br></p>
 <hr>
-<p>quotes from <a href="https://en.wikipedia.org/wiki/Database_index" target="_blank" rel="noopener">wiki</a>
+<p>quotes from <a href="https://en.wikipedia.org/wiki/Database_index"
+    
+        target="_blank"
+    
+>
+    wiki
+</a>
 </p>
 
 <br>
@@ -1844,19 +1946,19 @@ Indexes are used to police <a href="https://en.wikipedia.org/wiki/Database_const
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1611143233"></script>
-    <script src="/js/perfect-scrollbar.min.js?1611143233"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1611143233"></script>
-    <script src="/js/jquery.sticky.js?1611143233"></script>
-    <script src="/js/featherlight.min.js?1611143233"></script>
-    <script src="/js/highlight.pack.js?1611143233"></script>
+    <script src="/js/clipboard.min.js?1611143980"></script>
+    <script src="/js/perfect-scrollbar.min.js?1611143980"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1611143980"></script>
+    <script src="/js/jquery.sticky.js?1611143980"></script>
+    <script src="/js/featherlight.min.js?1611143980"></script>
+    <script src="/js/highlight.pack.js?1611143980"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1611143233"></script>
-    <script src="/js/learn.js?1611143233"></script>
-    <script src="/js/hugo-learn.js?1611143233"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1611143980"></script>
+    <script src="/js/learn.js?1611143980"></script>
+    <script src="/js/hugo-learn.js?1611143980"></script>
 
-    <link href="/mermaid/mermaid.css?1611143233" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1611143233"></script>
+    <link href="/mermaid/mermaid.css?1611143980" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1611143980"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

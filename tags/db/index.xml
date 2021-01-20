@@ -18,7 +18,7 @@
       
       <guid>https://mand2.github.io/til/definition-db-index/</guid>
       <description>What is index? USAGE 1 : Support for fast Lookup
-An index is any data structure that improves the performance of lookup. There are many different data structures used for this purpose. There are complex design trade-offs involving lookup performance, index size, and index-update performance. Many index designs exhibit logarithmic (O(log(N)) lookup performance and in some applications it is possible to achieve flat (O(1)) performance.
+An index is any data structure that improves the performance of lookup. There are many different data structures  used for this purpose. There are complex design trade-offs involving lookup performance, index size, and index-update performance. Many index designs exhibit logarithmic (O(log(N)) lookup performance and in some applications it is possible to achieve flat (O(1)) performance.
 USAGE 2 : Policing the database constraints (I assumed it as a DB table guideline)</description>
     </item>
     

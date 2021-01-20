@@ -40,7 +40,7 @@
       <guid>https://mand2.github.io/node.js/1/</guid>
       <description>package-lock.json 파일이란? 프로젝트에 설치된 노드 모듈들의 의존성 트리를 기록하고 있음.
 
-package-lock.json이 유용한 이유? git 저장소에 node.js 프로젝트를 커밋할 때 보통 node_modules 폴더는 부피가 커서 commit에 포함시키지 않습니다.이 때 package-lock.json 파일은 꼭 함께 커밋을 해주어야 합니다. 다른 팀원이 이 프로젝트를 처음 pull 받아서 npm install 을 했을 때 개발 당시의 동일한 버전의 모듈들이 설치됨을 보장하기 위함입니다. express 모듈을 프로젝트에 설치하게 되면 package.json 파일에 &amp;quot;express&amp;quot;: &amp;quot;~4.16.1&amp;quot; 처럼 Tilde Ranges 표기법으로 버전이 명시됩니다.</description>
+package-lock.json이 유용한 이유? git 저장소에 node.js 프로젝트를 커밋할 때 보통 node_modules 폴더는 부피가 커서 commit에 포함시키지 않습니다.이 때 package-lock.json 파일은 꼭 함께 커밋을 해주어야 합니다. 다른 팀원이 이 프로젝트를 처음 pull 받아서 npm install 을 했을 때 개발 당시의 동일한 버전의 모듈들이 설치됨을 보장하기 위함입니다. express 모듈을 프로젝트에 설치하게 되면 package.json 파일에 &amp;quot;express&amp;quot;: &amp;quot;~4.16.1&amp;quot; 처럼 Tilde Ranges  표기법으로 버전이 명시됩니다.</description>
     </item>
     
     <item>
@@ -109,7 +109,7 @@ package.json은 해당 프로젝트 의존모듈 관리를 도와주기 때문�
       <guid>https://mand2.github.io/spring/rest-api/415-error-of-put/</guid>
       <description>원인? PUT일 때 ResponseEntity&amp;lt; String &amp;gt;으로 써야하지?  ResponseEntity&amp;lt;Integer&amp;gt; 일 때엔 아예 인식을 못함
 415 error 발생!
-    Exception 설명 응답코드     HttpMediaTypeNotSupportedException 요청의 Content Type을 핸들러가 지원하지 않는 경우 발생 415 - Unsupported Media Type    출처 (Spring Boot)오류 처리 415 코드 해결방법 contentType을 JSON이라 명시해준다.
+    Exception 설명 응답코드     HttpMediaTypeNotSupportedException 요청의 Content Type을 핸들러가 지원하지 않는 경우 발생 415 - Unsupported Media Type    출처 (Spring Boot)오류 처리  415 코드 해결방법 contentType을 JSON이라 명시해준다.
 contentType: &amp;#39;application/json; charset=utf-8&amp;#39; 
 1. JSON &amp;lt;&amp;gt; JSON 으로 변환해줘야 한다 request를 JSON으로 보냈다면, response도 JSON으로 보내줘야 한다.</description>
     </item>
@@ -162,7 +162,7 @@ $.ajax({ url: &amp;#39;&amp;#39;, type: &amp;#39;post&amp;#39;, data: JSON.strin
       <description>우리 팀은 MSA 방식으로 웹 어플리케이션을 만들기 때문에 api 통신이 중요하다. api 통신을 하기 위해서 client 단에서 호출 가능한 library가 무엇이 있는지 찾아보았다. 크게 두 라이브러리를 사용하는데, HttpURLConnection 과 RestTemplate 이다.
 
 1 HttpURLConnection void sendRequest(String request) { // i.e.: request = &amp;#34;http://example.com/index.php?param1=a&amp;amp;param2=b&amp;amp;param3=c&amp;#34;;  URL url = new URL(request); HttpURLConnection connection = (HttpURLConnection) url.openConnection(); connection.setDoOutput(true); connection.setInstanceFollowRedirects(false); connection.setRequestMethod(&amp;#34;GET&amp;#34;); connection.setRequestProperty(&amp;#34;Content-Type&amp;#34;, &amp;#34;text/plain&amp;#34;); connection.setRequestProperty(&amp;#34;charset&amp;#34;, &amp;#34;utf-8&amp;#34;); connection.connect(); } 
-2 RestTemplate DOCS 요즘 들어 선호하는 형태는 postForObject .</description>
+2 RestTemplate DOCS  요즘 들어 선호하는 형태는 postForObject .</description>
     </item>
     
     <item>
@@ -174,7 +174,7 @@ $.ajax({ url: &amp;#39;&amp;#39;, type: &amp;#39;post&amp;#39;, data: JSON.strin
       <description>깃 커밋 그래프를 볼 때마다 색상으로만 판단하기 어려울 때가 있다. 사람마다 얼마나 자주, 얼만큼 많이 하느냐에 따라 색상의 농도가 달라지기 때문이다.
 실제로 얼마나 많이 했는지 그 크기를 같이 보고 싶었는데,
 언젠가의 기억에, &amp;lt;3D 그래프로 볼 수 있다~&amp;gt; 라는 내용의 포스팅을 봤었던 기억이 나서 찾아봤다.
-간단하게 정리하자면 구글 플러그인 만 깔면 해결된다. github.com에서만 활성화 로 세팅하면 아래와 같이 나온다😎
+간단하게 정리하자면 구글 플러그인  만 깔면 해결된다. github.com에서만 활성화 로 세팅하면 아래와 같이 나온다😎
 아래는 예시 이미지일뿐 내 깃헙 contributioin이 이랬으면 소원이 없겠다 ㅎ
 또 깃 커밋 관련 통계를 볼 수 있어서 플러그인을 잘 깔았다고 생각하게 한다👍</description>
     </item>
@@ -211,7 +211,7 @@ AWS에서는 SDK라고 해서 aws 관련한 모든 것에 접근할 수 있는 �
       <description>정말 짧은 기간이긴 하지만, Hugo 테마로 블로그를 구축하다 보니 git commit 하기가 귀찮아졌다.
 회사에서는 웬만하면 git 커맨드로 직접 push 하는 스타일이긴 한데, 이렇게 자주 수정하고 push를 여러 단계에 걸쳐서 하는 건 아니라서💦 더 귀찮아진 느낌이다.
 결국 배포 자동화 하는 쉘스크립트를 작성하였다.
-기본적인 뼈대는 한정수님 블로그 의 README.md에서 참고하였다. 그냥 커밋 메세지를 똑같이 auto commit!으로 하기엔 넘 멋없어 보여서 커밋 메세지를 따로 입력받아 처리하였다. 쉘스크립트를 호출하면서 커밋메세지를 받아올 수도 있지만, 그렇게 하면 순간적으로 오타가 날 수도 있고 다른 내용을 작성하고 싶기도 해서 관리하기 쉽게 커밋 메세지용 파일을 따로 만들어 두었다.</description>
+기본적인 뼈대는 한정수님 블로그  의 README.md에서 참고하였다. 그냥 커밋 메세지를 똑같이 auto commit!으로 하기엔 넘 멋없어 보여서 커밋 메세지를 따로 입력받아 처리하였다. 쉘스크립트를 호출하면서 커밋메세지를 받아올 수도 있지만, 그렇게 하면 순간적으로 오타가 날 수도 있고 다른 내용을 작성하고 싶기도 해서 관리하기 쉽게 커밋 메세지용 파일을 따로 만들어 두었다.</description>
     </item>
     
     <item>
@@ -235,7 +235,7 @@ AWS에서는 SDK라고 해서 aws 관련한 모든 것에 접근할 수 있는 �
       
       <guid>https://mand2.github.io/til/definition-db-index/</guid>
       <description>What is index? USAGE 1 : Support for fast Lookup
-An index is any data structure that improves the performance of lookup. There are many different data structures used for this purpose. There are complex design trade-offs involving lookup performance, index size, and index-update performance. Many index designs exhibit logarithmic (O(log(N)) lookup performance and in some applications it is possible to achieve flat (O(1)) performance.
+An index is any data structure that improves the performance of lookup. There are many different data structures  used for this purpose. There are complex design trade-offs involving lookup performance, index size, and index-update performance. Many index designs exhibit logarithmic (O(log(N)) lookup performance and in some applications it is possible to achieve flat (O(1)) performance.
 USAGE 2 : Policing the database constraints (I assumed it as a DB table guideline)</description>
     </item>
     
@@ -245,7 +245,7 @@ USAGE 2 : Policing the database constraints (I assumed it as a DB table guidelin
       <pubDate>Wed, 30 Oct 2019 18:58:29 +0900</pubDate>
       
       <guid>https://mand2.github.io/til/collection-framework/</guid>
-      <description>최근, 알고리즘 문제를 풀 때 (링크 ) 다른 사람의 문제풀이에서 stream()을 사용한 풀이가 있었다. 그동안 stackOverFlow에서나, 다른 레퍼런스 문서 등에서 가끔 보던 형식이었다. 그 땐 이 형식이 람다식으로 만들어진 줄도 몰랐다. 내 기억상 음,, 이건 다른 언어에서 쓰는건가? 하고 넘겼던 듯. 이번 문제풀이를 통해 컬렉션과 람다식에 대해 꼼꼼히 배울 수 있는 계기가 되었다고 생각하고, 간단히 정리를 해 보려고 한다. 아래는 내가 보았던 식이다.
+      <description>최근, 알고리즘 문제를 풀 때 (링크  ) 다른 사람의 문제풀이에서 stream()을 사용한 풀이가 있었다. 그동안 stackOverFlow에서나, 다른 레퍼런스 문서 등에서 가끔 보던 형식이었다. 그 땐 이 형식이 람다식으로 만들어진 줄도 몰랐다. 내 기억상 음,, 이건 다른 언어에서 쓰는건가? 하고 넘겼던 듯. 이번 문제풀이를 통해 컬렉션과 람다식에 대해 꼼꼼히 배울 수 있는 계기가 되었다고 생각하고, 간단히 정리를 해 보려고 한다. 아래는 내가 보았던 식이다.
 return list.stream().mapToInt(i-&amp;gt;i.intValue()).toArray(); 이 뜻은
  list를 스트림으로 만들고, int 형식으로 변환 후 다시 배열로 바로 반환  한다는 뜻이다.</description>
     </item>

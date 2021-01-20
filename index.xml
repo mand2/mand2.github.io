@@ -48,7 +48,7 @@ aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by
             <guid>https://mand2.github.io/node.js/1/</guid>
             <description>package-lock.json 파일이란? 프로젝트에 설치된 노드 모듈들의 의존성 트리를 기록하고 있음.
 
-package-lock.json이 유용한 이유? git 저장소에 node.js 프로젝트를 커밋할 때 보통 node_modules 폴더는 부피가 커서 commit에 포함시키지 않습니다.이 때 package-lock.json 파일은 꼭 함께 커밋을 해주어야 합니다. 다른 팀원이 이 프로젝트를 처음 pull 받아서 npm install 을 했을 때 개발 당시의 동일한 버전의 모듈들이 설치됨을 보장하기 위함입니다. express 모듈을 프로젝트에 설치하게 되면 package.json 파일에 &amp;quot;express&amp;quot;: &amp;quot;~4.16.1&amp;quot; 처럼 Tilde Ranges 표기법으로 버전이 명시됩니다.</description>
+package-lock.json이 유용한 이유? git 저장소에 node.js 프로젝트를 커밋할 때 보통 node_modules 폴더는 부피가 커서 commit에 포함시키지 않습니다.이 때 package-lock.json 파일은 꼭 함께 커밋을 해주어야 합니다. 다른 팀원이 이 프로젝트를 처음 pull 받아서 npm install 을 했을 때 개발 당시의 동일한 버전의 모듈들이 설치됨을 보장하기 위함입니다. express 모듈을 프로젝트에 설치하게 되면 package.json 파일에 &amp;quot;express&amp;quot;: &amp;quot;~4.16.1&amp;quot; 처럼 Tilde Ranges  표기법으로 버전이 명시됩니다.</description>
         </item>
         
         <item>
@@ -76,7 +76,7 @@ put으로 들어오는 URL 형식에 응답
             <pubDate>Mon, 19 Aug 2019 10:35:28 +0900</pubDate>
             
             <guid>https://mand2.github.io/spring/user_register/1/</guid>
-            <description>single page : CRUD(가입+수정+삭제+리스트 보여주기)를 Single page 처리 REST API 이용   개발순서 (MVC 2 패턴으로 함)
+            <description>single page : CRUD(가입+수정+삭제+리스트 보여주기)를 Single page 처리 REST API  이용   개발순서 (MVC 2 패턴으로 함)
  DAO설정
 Controller
 Service
@@ -159,7 +159,7 @@ package.json은 해당 프로젝트 의존모듈 관리를 도와주기 때문�
             <description>필터와 인터셉터의 실행시기 차이? 실행시점은 차이가 있음
 인터셉터 중 핸들러인터셉터는 필터의 일종이긴 하나, 요청컨트롤러가 있고 확인이 된 후에 실행(컨트롤러 요청 전후) 됨
 핸들러 인터셉터 핸들러 인터셉터는 DispatcherServlet 이 컨트롤러를 호출하기 전과 후에 요청과 응답을 참조하거나 가공할 수 있는 일종의 필터
-필터와 인터셉터의 자세한 차이를 알고싶다면 여기로 
+필터와 인터셉터의 자세한 차이를 알고싶다면 여기로  
 HandlerInterceptor 어떻게 쓸까? HandlerInterceptorAdaptor 클래스를 상속받은 뒤, 자신이 원하는 메서드만 오버라이딩하면 된다.
 ~&#39;Adaptor&#39;가 붙어있는 클래스인터페이스 구현체이나, 안에 내용이 없음. 내가 구현하고자 하는 메서드만 재구성하면 됨.</description>
         </item>
@@ -172,7 +172,7 @@ HandlerInterceptor 어떻게 쓸까? HandlerInterceptorAdaptor 클래스를 상�
             <guid>https://mand2.github.io/spring/rest-api/415-error-of-put/</guid>
             <description>원인? PUT일 때 ResponseEntity&amp;lt; String &amp;gt;으로 써야하지?  ResponseEntity&amp;lt;Integer&amp;gt; 일 때엔 아예 인식을 못함
 415 error 발생!
-    Exception 설명 응답코드     HttpMediaTypeNotSupportedException 요청의 Content Type을 핸들러가 지원하지 않는 경우 발생 415 - Unsupported Media Type    출처 (Spring Boot)오류 처리 415 코드 해결방법 contentType을 JSON이라 명시해준다.
+    Exception 설명 응답코드     HttpMediaTypeNotSupportedException 요청의 Content Type을 핸들러가 지원하지 않는 경우 발생 415 - Unsupported Media Type    출처 (Spring Boot)오류 처리  415 코드 해결방법 contentType을 JSON이라 명시해준다.
 contentType: &amp;#39;application/json; charset=utf-8&amp;#39; 
 1. JSON &amp;lt;&amp;gt; JSON 으로 변환해줘야 한다 request를 JSON으로 보냈다면, response도 JSON으로 보내줘야 한다.</description>
         </item>
@@ -271,7 +271,7 @@ DAO 변경 DAO 변경
             <description>우리 팀은 MSA 방식으로 웹 어플리케이션을 만들기 때문에 api 통신이 중요하다. api 통신을 하기 위해서 client 단에서 호출 가능한 library가 무엇이 있는지 찾아보았다. 크게 두 라이브러리를 사용하는데, HttpURLConnection 과 RestTemplate 이다.
 
 1 HttpURLConnection void sendRequest(String request) { // i.e.: request = &amp;#34;http://example.com/index.php?param1=a&amp;amp;param2=b&amp;amp;param3=c&amp;#34;;  URL url = new URL(request); HttpURLConnection connection = (HttpURLConnection) url.openConnection(); connection.setDoOutput(true); connection.setInstanceFollowRedirects(false); connection.setRequestMethod(&amp;#34;GET&amp;#34;); connection.setRequestProperty(&amp;#34;Content-Type&amp;#34;, &amp;#34;text/plain&amp;#34;); connection.setRequestProperty(&amp;#34;charset&amp;#34;, &amp;#34;utf-8&amp;#34;); connection.connect(); } 
-2 RestTemplate DOCS 요즘 들어 선호하는 형태는 postForObject .</description>
+2 RestTemplate DOCS  요즘 들어 선호하는 형태는 postForObject .</description>
         </item>
         
         <item>
@@ -295,7 +295,7 @@ DAO 변경 DAO 변경
             <guid>https://mand2.github.io/spring/user_register/5/</guid>
             <description>메이븐은 프로젝트 객체 모델(Project Object Model)이라는 개념을 바탕으로 프로젝트 의존성 관리, 라이브러리 관리, 프로젝트 생명 주기 관리 기능 등을 제공하는 프로젝트 관리 도구이다. 또한 플러그인을 기반으로 소스 코드로부터 배포 가능한 산출물을 만들어 내는 빌드 기능 뿐만 아니라 레포팅 및 documentation 작성 기능 등을 제공한다.
 
-메이븐 자세히 알아보러 가기 pom.xml 태그들 자세히 알아보기 pom.xml 태그 조금 더 간결하게, 정리 더 잘 된 것 maven (메이븐 구조, 차이점, 플러그인, 라이프사이클, 의존성, pom.</description>
+메이븐 자세히 알아보러 가기  pom.xml 태그들 자세히 알아보기  pom.xml 태그 조금 더 간결하게, 정리 더 잘 된 것  maven (메이븐 구조, 차이점, 플러그인, 라이프사이클, 의존성, pom.</description>
         </item>
         
         <item>
@@ -315,7 +315,7 @@ DAO 변경 DAO 변경
             
             <guid>https://mand2.github.io/others/activity-gdg-devfest-2020/</guid>
             <description>👆👆👆 위 배너를 클릭해서 Devfest 페이지로 이동하기 (배너출처: DevFest Korea 2020)
-GDG Korea(Google Developers Group Korea)에서 DevFest Korea 2020 을 개최한다고 한다.
+GDG Korea(Google Developers Group Korea)에서 DevFest Korea 2020  을 개최한다고 한다.
 크게 따로 등록이 필요하지 않은 세션과, 참가자들의 상호작용이 필요한 이벤트나 그룹토크, 액티비티 등을 액티비티로 나뉘어 진행한다.
 재밌어 보여서 액티비티 몇 개를 등록했다. 😊 추석연휴로 다시 코로나 확진자가 늘어날 것 같아서, 집에 콕 붙어있을 겸 다른 사람들은 어떻게 살고 있는지 알고 싶어서 겸사겸사 등록했다.</description>
         </item>
@@ -344,7 +344,7 @@ GDG Korea(Google Developers Group Korea)에서 DevFest Korea 2020 을 개최한�
 |&amp;ndash; Hugo
 |&amp;ndash;bin
 |&amp;ndash;Sites
- 4 Hugo 다운로드 최신 release 파일을 주소 에서 다운로드. (🔊 당시 v.0.74.3이 최신버전이었음.)
+ 4 Hugo 다운로드 최신 release 파일을 주소  에서 다운로드. (🔊 당시 v.0.74.3이 최신버전이었음.)
 아까 생성한 D:\Hugo\bin 폴더에 해당 zip 파일 풀어준다.</description>
         </item>
         
@@ -357,7 +357,7 @@ GDG Korea(Google Developers Group Korea)에서 DevFest Korea 2020 을 개최한�
             <description>깃 커밋 그래프를 볼 때마다 색상으로만 판단하기 어려울 때가 있다. 사람마다 얼마나 자주, 얼만큼 많이 하느냐에 따라 색상의 농도가 달라지기 때문이다.
 실제로 얼마나 많이 했는지 그 크기를 같이 보고 싶었는데,
 언젠가의 기억에, &amp;lt;3D 그래프로 볼 수 있다~&amp;gt; 라는 내용의 포스팅을 봤었던 기억이 나서 찾아봤다.
-간단하게 정리하자면 구글 플러그인 만 깔면 해결된다. github.com에서만 활성화 로 세팅하면 아래와 같이 나온다😎
+간단하게 정리하자면 구글 플러그인  만 깔면 해결된다. github.com에서만 활성화 로 세팅하면 아래와 같이 나온다😎
 아래는 예시 이미지일뿐 내 깃헙 contributioin이 이랬으면 소원이 없겠다 ㅎ
 또 깃 커밋 관련 통계를 볼 수 있어서 플러그인을 잘 깔았다고 생각하게 한다👍</description>
         </item>
@@ -422,7 +422,7 @@ AWS에서는 SDK라고 해서 aws 관련한 모든 것에 접근할 수 있는 �
             <description>정말 짧은 기간이긴 하지만, Hugo 테마로 블로그를 구축하다 보니 git commit 하기가 귀찮아졌다.
 회사에서는 웬만하면 git 커맨드로 직접 push 하는 스타일이긴 한데, 이렇게 자주 수정하고 push를 여러 단계에 걸쳐서 하는 건 아니라서💦 더 귀찮아진 느낌이다.
 결국 배포 자동화 하는 쉘스크립트를 작성하였다.
-기본적인 뼈대는 한정수님 블로그 의 README.md에서 참고하였다. 그냥 커밋 메세지를 똑같이 auto commit!으로 하기엔 넘 멋없어 보여서 커밋 메세지를 따로 입력받아 처리하였다. 쉘스크립트를 호출하면서 커밋메세지를 받아올 수도 있지만, 그렇게 하면 순간적으로 오타가 날 수도 있고 다른 내용을 작성하고 싶기도 해서 관리하기 쉽게 커밋 메세지용 파일을 따로 만들어 두었다.</description>
+기본적인 뼈대는 한정수님 블로그  의 README.md에서 참고하였다. 그냥 커밋 메세지를 똑같이 auto commit!으로 하기엔 넘 멋없어 보여서 커밋 메세지를 따로 입력받아 처리하였다. 쉘스크립트를 호출하면서 커밋메세지를 받아올 수도 있지만, 그렇게 하면 순간적으로 오타가 날 수도 있고 다른 내용을 작성하고 싶기도 해서 관리하기 쉽게 커밋 메세지용 파일을 따로 만들어 두었다.</description>
         </item>
         
         <item>
@@ -434,7 +434,7 @@ AWS에서는 SDK라고 해서 aws 관련한 모든 것에 접근할 수 있는 �
             <description>드디어 미루고 미루던 블로그 대공사를 1차 완료하였다.
 저번 블로그는 지킬 jekyll로 했는데, 커스터마이징을 이상하게 해서 글씨 크기가 뒤죽박죽이고 뭔가 색상도 이상했다.(내 디자인 실력이 이상하단 뜻)
 그래서 그런지 더 블로그에 글 쓰기도 싫었다. 회사에서 일하며 알게된 건 두 가지 방식으로 저장하는데,
- 노션 가끔 깃 저장소   정보가 한 곳에 모이지 않아서 후에 확인하기가 어려웠다. (이 문제는 노션으로 다 합쳐서 해결된 상태임.) 웬만하면 업무용은 노션에, (업무와 전혀 관련성이 없는) 사람이 봐도 괜찮을 만한 내용은 깃으로 업로드하는 편이다.</description>
+ 노션 가끔 깃 저장소    정보가 한 곳에 모이지 않아서 후에 확인하기가 어려웠다. (이 문제는 노션으로 다 합쳐서 해결된 상태임.) 웬만하면 업무용은 노션에, (업무와 전혀 관련성이 없는) 사람이 봐도 괜찮을 만한 내용은 깃으로 업로드하는 편이다.</description>
         </item>
         
         <item>
@@ -458,7 +458,7 @@ AWS에서는 SDK라고 해서 aws 관련한 모든 것에 접근할 수 있는 �
             
             <guid>https://mand2.github.io/til/definition-db-index/</guid>
             <description>What is index? USAGE 1 : Support for fast Lookup
-An index is any data structure that improves the performance of lookup. There are many different data structures used for this purpose. There are complex design trade-offs involving lookup performance, index size, and index-update performance. Many index designs exhibit logarithmic (O(log(N)) lookup performance and in some applications it is possible to achieve flat (O(1)) performance.
+An index is any data structure that improves the performance of lookup. There are many different data structures  used for this purpose. There are complex design trade-offs involving lookup performance, index size, and index-update performance. Many index designs exhibit logarithmic (O(log(N)) lookup performance and in some applications it is possible to achieve flat (O(1)) performance.
 USAGE 2 : Policing the database constraints (I assumed it as a DB table guideline)</description>
         </item>
         
@@ -480,7 +480,7 @@ USAGE 2 : Policing the database constraints (I assumed it as a DB table guidelin
             <pubDate>Wed, 30 Oct 2019 18:58:29 +0900</pubDate>
             
             <guid>https://mand2.github.io/til/collection-framework/</guid>
-            <description>최근, 알고리즘 문제를 풀 때 (링크 ) 다른 사람의 문제풀이에서 stream()을 사용한 풀이가 있었다. 그동안 stackOverFlow에서나, 다른 레퍼런스 문서 등에서 가끔 보던 형식이었다. 그 땐 이 형식이 람다식으로 만들어진 줄도 몰랐다. 내 기억상 음,, 이건 다른 언어에서 쓰는건가? 하고 넘겼던 듯. 이번 문제풀이를 통해 컬렉션과 람다식에 대해 꼼꼼히 배울 수 있는 계기가 되었다고 생각하고, 간단히 정리를 해 보려고 한다. 아래는 내가 보았던 식이다.
+            <description>최근, 알고리즘 문제를 풀 때 (링크  ) 다른 사람의 문제풀이에서 stream()을 사용한 풀이가 있었다. 그동안 stackOverFlow에서나, 다른 레퍼런스 문서 등에서 가끔 보던 형식이었다. 그 땐 이 형식이 람다식으로 만들어진 줄도 몰랐다. 내 기억상 음,, 이건 다른 언어에서 쓰는건가? 하고 넘겼던 듯. 이번 문제풀이를 통해 컬렉션과 람다식에 대해 꼼꼼히 배울 수 있는 계기가 되었다고 생각하고, 간단히 정리를 해 보려고 한다. 아래는 내가 보았던 식이다.
 return list.stream().mapToInt(i-&amp;gt;i.intValue()).toArray(); 이 뜻은
  list를 스트림으로 만들고, int 형식으로 변환 후 다시 배열로 바로 반환  한다는 뜻이다.</description>
         </item>

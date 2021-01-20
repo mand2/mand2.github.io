@@ -11,21 +11,21 @@
     <title>자바스크립트로 AWS autoscaling group 정보 가져오기 :: 고라니의 개발일기🦌</title>
 
     
-    <link href="/css/nucleus.css?1611143233" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1611143233" rel="stylesheet">
-    <link href="/css/hybrid.css?1611143233" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1611143233" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1611143233" rel="stylesheet">
-    <link href="/css/auto-complete.css?1611143233" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1611143233" rel="stylesheet">
-    <link href="/css/theme.css?1611143233" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1611143233" rel="stylesheet">
+    <link href="/css/nucleus.css?1611143980" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1611143980" rel="stylesheet">
+    <link href="/css/hybrid.css?1611143980" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1611143980" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1611143980" rel="stylesheet">
+    <link href="/css/auto-complete.css?1611143980" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1611143980" rel="stylesheet">
+    <link href="/css/theme.css?1611143980" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1611143980" rel="stylesheet">
     
-    <link href="/css/theme-mine.css?1611143233" rel="stylesheet">
+    <link href="/css/theme-mine.css?1611143980" rel="stylesheet">
     
-    <link href="/css/custom.css?1611143233" rel="stylesheet">
+    <link href="/css/custom.css?1611143980" rel="stylesheet">
 
-    <script src="/js/jquery-3.3.1.min.js?1611143233"></script>
+    <script src="/js/jquery-3.3.1.min.js?1611143980"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -74,14 +74,14 @@ if (!doNotTrack) {
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1611143233"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1611143233"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1611143980"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1611143980"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/mand2.github.io\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1611143233"></script>
+<script type="text/javascript" src="/js/search.js?1611143980"></script>
 
     
   </div>
@@ -1117,7 +1117,13 @@ AWS에서는 SDK라고 해서 aws 관련한 모든 것에 접근할 수 있는 �
 평소에는 java-sdk로 aws에 접근하지만,
 이번에는 람다용으로 개발할 거라서 javascript-sdk 용으로 설명한다.
 (특이한 점: 각 언어별로 제공되는 파라미터 값이나 입력값이 다름. 메서드도 다르다!)</p>
-<p>참고한 부분은 역시나 AWS docs의 AutoScaling 관련 부분임. <a href="https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/AutoScaling.html#describeAutoScalingGroups-property" target="_blank" rel="noopener">AWS docs</a>
+<p>참고한 부분은 역시나 AWS docs의 AutoScaling 관련 부분임. <a href="https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/AutoScaling.html#describeAutoScalingGroups-property"
+    
+        target="_blank"
+    
+>
+    AWS docs
+</a>
 </p>
 <h2 id="호출방식">호출방식</h2>
 <ol>
@@ -1138,7 +1144,13 @@ AWS에서는 SDK라고 해서 aws 관련한 모든 것에 접근할 수 있는 �
 <p>Q. AutoScalingGroups의 <code>DesiredCapacity</code>와 <code>instances</code>의 차이?<br>
 <strong>desiredCapacity</strong> : scale-in / out이 발생하지 않으면 지속될 인스턴스 개수.<br>
 <strong>instances</strong> : 해당 오토스케일링 그룹에서 띄운 instance의 세부정보.<br>
-출처: <a href="https://stackoverflow.com/questions/36270873/aws-ec2-auto-scaling-groups-i-get-min-and-max-but-whats-desired-instances-lim#:~:text=Scale-in%20or%20Scale-out,or%20increasing%20the%20DesiredCapacity%20value.&amp;text=Desired%20capacity%20simply%20means%20the,when%20you%20launch%20the%20autoscaling." target="_blank" rel="noopener">스택오버플로우</a>
+출처: <a href="https://stackoverflow.com/questions/36270873/aws-ec2-auto-scaling-groups-i-get-min-and-max-but-whats-desired-instances-lim#:~:text=Scale-in%20or%20Scale-out,or%20increasing%20the%20DesiredCapacity%20value.&amp;text=Desired%20capacity%20simply%20means%20the,when%20you%20launch%20the%20autoscaling."
+    
+        target="_blank"
+    
+>
+    스택오버플로우
+</a>
 </p>
 
 <br>
@@ -1823,19 +1835,19 @@ AWS에서는 SDK라고 해서 aws 관련한 모든 것에 접근할 수 있는 �
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1611143233"></script>
-    <script src="/js/perfect-scrollbar.min.js?1611143233"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1611143233"></script>
-    <script src="/js/jquery.sticky.js?1611143233"></script>
-    <script src="/js/featherlight.min.js?1611143233"></script>
-    <script src="/js/highlight.pack.js?1611143233"></script>
+    <script src="/js/clipboard.min.js?1611143980"></script>
+    <script src="/js/perfect-scrollbar.min.js?1611143980"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1611143980"></script>
+    <script src="/js/jquery.sticky.js?1611143980"></script>
+    <script src="/js/featherlight.min.js?1611143980"></script>
+    <script src="/js/highlight.pack.js?1611143980"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1611143233"></script>
-    <script src="/js/learn.js?1611143233"></script>
-    <script src="/js/hugo-learn.js?1611143233"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1611143980"></script>
+    <script src="/js/learn.js?1611143980"></script>
+    <script src="/js/hugo-learn.js?1611143980"></script>
 
-    <link href="/mermaid/mermaid.css?1611143233" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1611143233"></script>
+    <link href="/mermaid/mermaid.css?1611143980" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1611143980"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

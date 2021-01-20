@@ -19,7 +19,7 @@
       <guid>https://mand2.github.io/node.js/1/</guid>
       <description>package-lock.json 파일이란? 프로젝트에 설치된 노드 모듈들의 의존성 트리를 기록하고 있음.
 
-package-lock.json이 유용한 이유? git 저장소에 node.js 프로젝트를 커밋할 때 보통 node_modules 폴더는 부피가 커서 commit에 포함시키지 않습니다.이 때 package-lock.json 파일은 꼭 함께 커밋을 해주어야 합니다. 다른 팀원이 이 프로젝트를 처음 pull 받아서 npm install 을 했을 때 개발 당시의 동일한 버전의 모듈들이 설치됨을 보장하기 위함입니다. express 모듈을 프로젝트에 설치하게 되면 package.json 파일에 &amp;quot;express&amp;quot;: &amp;quot;~4.16.1&amp;quot; 처럼 Tilde Ranges 표기법으로 버전이 명시됩니다.</description>
+package-lock.json이 유용한 이유? git 저장소에 node.js 프로젝트를 커밋할 때 보통 node_modules 폴더는 부피가 커서 commit에 포함시키지 않습니다.이 때 package-lock.json 파일은 꼭 함께 커밋을 해주어야 합니다. 다른 팀원이 이 프로젝트를 처음 pull 받아서 npm install 을 했을 때 개발 당시의 동일한 버전의 모듈들이 설치됨을 보장하기 위함입니다. express 모듈을 프로젝트에 설치하게 되면 package.json 파일에 &amp;quot;express&amp;quot;: &amp;quot;~4.16.1&amp;quot; 처럼 Tilde Ranges  표기법으로 버전이 명시됩니다.</description>
     </item>
     
     <item>

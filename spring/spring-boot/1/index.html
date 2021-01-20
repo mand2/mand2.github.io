@@ -11,21 +11,21 @@
     <title>spring.jpa.open-in-view 로그 오류 해결하기 :: 고라니의 개발일기🦌</title>
 
     
-    <link href="/css/nucleus.css?1611143233" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1611143233" rel="stylesheet">
-    <link href="/css/hybrid.css?1611143233" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1611143233" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1611143233" rel="stylesheet">
-    <link href="/css/auto-complete.css?1611143233" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1611143233" rel="stylesheet">
-    <link href="/css/theme.css?1611143233" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1611143233" rel="stylesheet">
+    <link href="/css/nucleus.css?1611143980" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1611143980" rel="stylesheet">
+    <link href="/css/hybrid.css?1611143980" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1611143980" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1611143980" rel="stylesheet">
+    <link href="/css/auto-complete.css?1611143980" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1611143980" rel="stylesheet">
+    <link href="/css/theme.css?1611143980" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1611143980" rel="stylesheet">
     
-    <link href="/css/theme-mine.css?1611143233" rel="stylesheet">
+    <link href="/css/theme-mine.css?1611143980" rel="stylesheet">
     
-    <link href="/css/custom.css?1611143233" rel="stylesheet">
+    <link href="/css/custom.css?1611143980" rel="stylesheet">
 
-    <script src="/js/jquery-3.3.1.min.js?1611143233"></script>
+    <script src="/js/jquery-3.3.1.min.js?1611143980"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -74,14 +74,14 @@ if (!doNotTrack) {
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1611143233"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1611143233"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1611143980"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1611143980"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/mand2.github.io\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1611143233"></script>
+<script type="text/javascript" src="/js/search.js?1611143980"></script>
 
     
   </div>
@@ -1116,7 +1116,13 @@ if (!doNotTrack) {
 <h3 id="2-문제-이유">2. 문제 이유</h3>
 <p>Spring Boot에서는 <code>spring.jpa.open-in-view</code>를 true로 설정하고 있는데, 이는 <strong>OSIV 측면에서 매우 부적절</strong>하다고 함.  즉 <strong>성능이나</strong> scalability,, 즉 <strong>확장성 측면</strong>에서 볼 때 false로 해야 하는데 true로 하고 있어 warning 경고 사인이 뜨는 거라고.</p>
 <p><br><br></p>
-<p><a href="https://stackoverflow.com/questions/30549489/what-is-this-spring-jpa-open-in-view-true-property-in-spring-boot" target="_blank" rel="noopener">참고 사이트-스택오버플로우-로 바로가기</a>
+<p><a href="https://stackoverflow.com/questions/30549489/what-is-this-spring-jpa-open-in-view-true-property-in-spring-boot"
+    
+        target="_blank"
+    
+>
+    참고 사이트-스택오버플로우-로 바로가기
+</a>
 </p>
 <br>
 <h3 id="3-해결방안">3. 해결방안</h3>
@@ -1130,9 +1136,21 @@ if (!doNotTrack) {
 <li>
 <p><strong>application.yml</strong>으로 설정 설정</p>
 <blockquote>
-<p>yaml으로 설정하는 방법은 <a href="https://kihoonkim.github.io/2017/01/27/JPA%28Java%20ORM%29/1.%20JPA-%ED%99%98%EA%B2%BD%20%EC%84%A4%EC%A0%95/" target="_blank" rel="noopener">여기</a>
+<p>yaml으로 설정하는 방법은 <a href="https://kihoonkim.github.io/2017/01/27/JPA%28Java%20ORM%29/1.%20JPA-%ED%99%98%EA%B2%BD%20%EC%84%A4%EC%A0%95/"
+    
+        target="_blank"
+    
+>
+    여기
+</a>
 에서 잘 설명하고 있다.<br>
-관련 <a href="https://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#boot-features-external-config-yaml" target="_blank" rel="noopener">스프링 부트 doc 사이트</a>
+관련 <a href="https://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#boot-features-external-config-yaml"
+    
+        target="_blank"
+    
+>
+    스프링 부트 doc 사이트
+</a>
 로 가기</p>
 </blockquote>
 </li>
@@ -1821,19 +1839,19 @@ if (!doNotTrack) {
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1611143233"></script>
-    <script src="/js/perfect-scrollbar.min.js?1611143233"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1611143233"></script>
-    <script src="/js/jquery.sticky.js?1611143233"></script>
-    <script src="/js/featherlight.min.js?1611143233"></script>
-    <script src="/js/highlight.pack.js?1611143233"></script>
+    <script src="/js/clipboard.min.js?1611143980"></script>
+    <script src="/js/perfect-scrollbar.min.js?1611143980"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1611143980"></script>
+    <script src="/js/jquery.sticky.js?1611143980"></script>
+    <script src="/js/featherlight.min.js?1611143980"></script>
+    <script src="/js/highlight.pack.js?1611143980"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1611143233"></script>
-    <script src="/js/learn.js?1611143233"></script>
-    <script src="/js/hugo-learn.js?1611143233"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1611143980"></script>
+    <script src="/js/learn.js?1611143980"></script>
+    <script src="/js/hugo-learn.js?1611143980"></script>
 
-    <link href="/mermaid/mermaid.css?1611143233" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1611143233"></script>
+    <link href="/mermaid/mermaid.css?1611143980" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1611143980"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

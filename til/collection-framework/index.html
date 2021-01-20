@@ -11,21 +11,21 @@
     <title>컬렉션 프레임워크의 정의와 stream 사용법 간단 정리 :: 고라니의 개발일기🦌</title>
 
     
-    <link href="/css/nucleus.css?1611143233" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1611143233" rel="stylesheet">
-    <link href="/css/hybrid.css?1611143233" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1611143233" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1611143233" rel="stylesheet">
-    <link href="/css/auto-complete.css?1611143233" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1611143233" rel="stylesheet">
-    <link href="/css/theme.css?1611143233" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1611143233" rel="stylesheet">
+    <link href="/css/nucleus.css?1611143980" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1611143980" rel="stylesheet">
+    <link href="/css/hybrid.css?1611143980" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1611143980" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1611143980" rel="stylesheet">
+    <link href="/css/auto-complete.css?1611143980" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1611143980" rel="stylesheet">
+    <link href="/css/theme.css?1611143980" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1611143980" rel="stylesheet">
     
-    <link href="/css/theme-mine.css?1611143233" rel="stylesheet">
+    <link href="/css/theme-mine.css?1611143980" rel="stylesheet">
     
-    <link href="/css/custom.css?1611143233" rel="stylesheet">
+    <link href="/css/custom.css?1611143980" rel="stylesheet">
 
-    <script src="/js/jquery-3.3.1.min.js?1611143233"></script>
+    <script src="/js/jquery-3.3.1.min.js?1611143980"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -74,14 +74,14 @@ if (!doNotTrack) {
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1611143233"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1611143233"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1611143980"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1611143980"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/mand2.github.io\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1611143233"></script>
+<script type="text/javascript" src="/js/search.js?1611143980"></script>
 
     
   </div>
@@ -1112,7 +1112,11 @@ if (!doNotTrack) {
     2019-10-30
 </span>
 
-<p>최근, 알고리즘 문제를 풀 때 (<a href="[https://github.com/mand2/Daily-Algorithm/blob/master/Programmers/%EB%AA%A8%EC%9D%98%EA%B3%A0%EC%82%AC.md]%28https://github.com/mand2/Daily-Algorithm/blob/master/Programmers/%eb%aa%a8%ec%9d%98%ea%b3%a0%ec%82%ac.md%29">링크</a>
+<p>최근, 알고리즘 문제를 풀 때 (<a href="[https://github.com/mand2/Daily-Algorithm/blob/master/Programmers/%EB%AA%A8%EC%9D%98%EA%B3%A0%EC%82%AC.md]%28https://github.com/mand2/Daily-Algorithm/blob/master/Programmers/%eb%aa%a8%ec%9d%98%ea%b3%a0%ec%82%ac.md%29"
+    
+>
+    링크
+</a>
 ) 다른 사람의 문제풀이에서 stream()을 사용한 풀이가 있었다. 그동안 stackOverFlow에서나, 다른 레퍼런스 문서 등에서 가끔 보던 형식이었다. 그 땐 이 형식이 람다식으로 만들어진 줄도 몰랐다. 내 기억상 음,, 이건 다른 언어에서 쓰는건가? 하고 넘겼던 듯. 이번 문제풀이를 통해 컬렉션과 람다식에 대해 꼼꼼히 배울 수 있는 계기가 되었다고 생각하고, 간단히 정리를 해 보려고 한다. 아래는 내가 보았던 식이다.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">return</span> list<span style="color:#f92672">.</span><span style="color:#a6e22e">stream</span><span style="color:#f92672">().</span><span style="color:#a6e22e">mapToInt</span><span style="color:#f92672">(</span>i<span style="color:#f92672">-&gt;</span>i<span style="color:#f92672">.</span><span style="color:#a6e22e">intValue</span><span style="color:#f92672">()).</span><span style="color:#a6e22e">toArray</span><span style="color:#f92672">();</span>
 </code></pre></div><p>이 뜻은</p>
@@ -1137,31 +1141,133 @@ if (!doNotTrack) {
 <h3 id="1-2-collection-이란">1-2 Collection 이란?</h3>
 <p>Interface로 분리되며, <code>Iterable</code>을 상속한다. 컬렉션 프레임워크에 속하는 인터페이스를 구현한 클래스를 컬렉션 클래스(collection class)라고 한다.</p>
 <p><strong>Since:</strong> 1.2</p>
-<p>**See Also: ** <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html" target="_blank" rel="noopener"><code>Set</code></a>
-, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html" target="_blank" rel="noopener"><code>List</code></a>
-, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html" target="_blank" rel="noopener"><code>Map</code></a>
-, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/SortedSet.html" target="_blank" rel="noopener"><code>SortedSet</code></a>
-, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/SortedMap.html" target="_blank" rel="noopener"><code>SortedMap</code></a>
-, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/HashSet.html" target="_blank" rel="noopener"><code>HashSet</code></a>
-, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/TreeSet.html" target="_blank" rel="noopener"><code>TreeSet</code></a>
-, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html" target="_blank" rel="noopener"><code>ArrayList</code></a>
-, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/LinkedList.html" target="_blank" rel="noopener"><code>LinkedList</code></a>
-, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Vector.html" target="_blank" rel="noopener"><code>Vector</code></a>
-, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collections.html" target="_blank" rel="noopener"><code>Collections</code></a>
-, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Arrays.html" target="_blank" rel="noopener"><code>Arrays</code></a>
-, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/AbstractCollection.html" target="_blank" rel="noopener"><code>AbstractCollection</code></a>
+<p>**See Also: ** <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html"
+    
+        target="_blank"
+    
+>
+    <code>Set</code>
+</a>
+, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html"
+    
+        target="_blank"
+    
+>
+    <code>List</code>
+</a>
+, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html"
+    
+        target="_blank"
+    
+>
+    <code>Map</code>
+</a>
+, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/SortedSet.html"
+    
+        target="_blank"
+    
+>
+    <code>SortedSet</code>
+</a>
+, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/SortedMap.html"
+    
+        target="_blank"
+    
+>
+    <code>SortedMap</code>
+</a>
+, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/HashSet.html"
+    
+        target="_blank"
+    
+>
+    <code>HashSet</code>
+</a>
+, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/TreeSet.html"
+    
+        target="_blank"
+    
+>
+    <code>TreeSet</code>
+</a>
+, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html"
+    
+        target="_blank"
+    
+>
+    <code>ArrayList</code>
+</a>
+, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/LinkedList.html"
+    
+        target="_blank"
+    
+>
+    <code>LinkedList</code>
+</a>
+, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Vector.html"
+    
+        target="_blank"
+    
+>
+    <code>Vector</code>
+</a>
+, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collections.html"
+    
+        target="_blank"
+    
+>
+    <code>Collections</code>
+</a>
+, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Arrays.html"
+    
+        target="_blank"
+    
+>
+    <code>Arrays</code>
+</a>
+, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/AbstractCollection.html"
+    
+        target="_blank"
+    
+>
+    <code>AbstractCollection</code>
+</a>
 </p>
 <br>
 구조 간단 정리 
 <p><img src="/images/TIL/collection-framework_1.png" alt="컬렉션 구조">
 <br><br></p>
-<p><a href="https://postitforhooney.tistory.com/entry/JavaCollection-Java-Collection-Framework%EC%97%90-%EB%8C%80%ED%95%9C-%EC%9D%B4%ED%95%B4%EB%A5%BC-%ED%86%B5%ED%95%B4-Data-Structure-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0" target="_blank" rel="noopener">출처</a>
- 링크로 들어가면 메서드까지 잘 정리되어 있음. 필요할 때 보자-! <a href="http://tcpschool.com/java/java_collectionFramework_concept" target="_blank" rel="noopener">다른 링크</a>
+<p><a href="https://postitforhooney.tistory.com/entry/JavaCollection-Java-Collection-Framework%EC%97%90-%EB%8C%80%ED%95%9C-%EC%9D%B4%ED%95%B4%EB%A5%BC-%ED%86%B5%ED%95%B4-Data-Structure-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0"
+    
+        target="_blank"
+    
+>
+    출처
+</a>
+ 링크로 들어가면 메서드까지 잘 정리되어 있음. 필요할 때 보자-! <a href="http://tcpschool.com/java/java_collectionFramework_concept"
+    
+        target="_blank"
+    
+>
+    다른 링크
+</a>
 는 학원에서 처음 자바를 배울 때 애용했던 TCP school 페이지임. 이 페이지도 잘 정리되어있다.</p>
 <p>자세히 보면 collection 자체가 시작된 건 java 2 부터라니,, 의외다. 1.8 기준으로 보면 <code>Support for Lambda Expressions, Streams, and Aggregate Operations</code> 을 지원하기 시작했다고 뜬다.</p>
 <p>여기서 <code>Aggregate Operation</code> 이란게 뭘까 찾아보았는데 지금 포스팅 주제와 달라서 따로 공부하고 포스팅해야 할 필요성을 느꼈다. 뭔가 방대해보임. aggregation(집약관계, 연관)과 composition(포함관계, 복합연관)의 개념을 다 알아야 한다. 지금은 검색하고 바로 포스팅한 거라서 <strong>확실치는 않다</strong>.이 단락은 100% 신뢰하지 말 것!</p>
-<p><a href="http://ojc.asia/bbs/board.php?bo_table=LecJava&amp;wr_id=541" target="_blank" rel="noopener">링크1</a>
-    /   <a href="https://www.gpgstudy.com/forum/viewtopic.php?t=10598" target="_blank" rel="noopener">링크2</a>
+<p><a href="http://ojc.asia/bbs/board.php?bo_table=LecJava&amp;wr_id=541"
+    
+        target="_blank"
+    
+>
+    링크1
+</a>
+    /   <a href="https://www.gpgstudy.com/forum/viewtopic.php?t=10598"
+    
+        target="_blank"
+    
+>
+    링크2
+</a>
 </p>
 <p><br><br></p>
 <h3 id="1-3-그러면-collection-framework는">1-3 그러면 Collection Framework는?</h3>
@@ -1186,7 +1292,13 @@ if (!doNotTrack) {
 </code></pre></div><h5 id="stream-사용">stream 사용</h5>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">return</span> list<span style="color:#f92672">.</span><span style="color:#a6e22e">stream</span><span style="color:#f92672">().</span><span style="color:#a6e22e">mapToInt</span><span style="color:#f92672">(</span>i <span style="color:#f92672">-&gt;</span> i<span style="color:#f92672">.</span><span style="color:#a6e22e">intValue</span><span style="color:#f92672">()).</span><span style="color:#a6e22e">toArray</span><span style="color:#f92672">();</span>
 </code></pre></div><p>사용 예시를 보면 알 수 있듯이 계속해서 <code>.</code>으로 쭉- 이어나갈 수 있다. 즉 <code>파이프라인 구조</code>를 쓴다.</p>
-<p><br>stream을 사용하는 다른 이유로는 <strong>성능/공짜점심</strong>이 있다고 하는데, <a href="https://hamait.tistory.com/547" target="_blank" rel="noopener">HAMA 님</a>
+<p><br>stream을 사용하는 다른 이유로는 <strong>성능/공짜점심</strong>이 있다고 하는데, <a href="https://hamait.tistory.com/547"
+    
+        target="_blank"
+    
+>
+    HAMA 님
+</a>
 은 <u>성능만을 이유로 stream을 쓰기엔 애매하다</u> 라는 평을 하셨다. 더 찾아봐야 할 듯.</p>
 <br>
 <p><br><br></p>
@@ -1197,11 +1309,29 @@ if (!doNotTrack) {
 <p><br><br><br><br></p>
 <hr>
 <h5 id="출처">출처</h5>
-<p><a href="https://futurecreator.github.io/2018/08/26/java-8-streams/" target="_blank" rel="noopener">stream 정의와 사용법 관련 1 : futurecreator 님 블로그</a>
+<p><a href="https://futurecreator.github.io/2018/08/26/java-8-streams/"
+    
+        target="_blank"
+    
+>
+    stream 정의와 사용법 관련 1 : futurecreator 님 블로그
+</a>
 <br>
-<a href="https://jeong-pro.tistory.com/165" target="_blank" rel="noopener">stream 정의와 사용법 관련 2: 정프로 님 블로그</a>
+<a href="https://jeong-pro.tistory.com/165"
+    
+        target="_blank"
+    
+>
+    stream 정의와 사용법 관련 2: 정프로 님 블로그
+</a>
  : API 내용을 간단하게 훑어준다.<br>
-<a href="https://hamait.tistory.com/547" target="_blank" rel="noopener">stream 주의사항 관련: HAMA 님 블로그</a>
+<a href="https://hamait.tistory.com/547"
+    
+        target="_blank"
+    
+>
+    stream 주의사항 관련: HAMA 님 블로그
+</a>
 </p>
 <p><br><br></p>
 
@@ -1887,19 +2017,19 @@ if (!doNotTrack) {
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1611143233"></script>
-    <script src="/js/perfect-scrollbar.min.js?1611143233"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1611143233"></script>
-    <script src="/js/jquery.sticky.js?1611143233"></script>
-    <script src="/js/featherlight.min.js?1611143233"></script>
-    <script src="/js/highlight.pack.js?1611143233"></script>
+    <script src="/js/clipboard.min.js?1611143980"></script>
+    <script src="/js/perfect-scrollbar.min.js?1611143980"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1611143980"></script>
+    <script src="/js/jquery.sticky.js?1611143980"></script>
+    <script src="/js/featherlight.min.js?1611143980"></script>
+    <script src="/js/highlight.pack.js?1611143980"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1611143233"></script>
-    <script src="/js/learn.js?1611143233"></script>
-    <script src="/js/hugo-learn.js?1611143233"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1611143980"></script>
+    <script src="/js/learn.js?1611143980"></script>
+    <script src="/js/hugo-learn.js?1611143980"></script>
 
-    <link href="/mermaid/mermaid.css?1611143233" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1611143233"></script>
+    <link href="/mermaid/mermaid.css?1611143980" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1611143980"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

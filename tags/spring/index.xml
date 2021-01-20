@@ -38,7 +38,7 @@ put으로 들어오는 URL 형식에 응답
       <guid>https://mand2.github.io/spring/rest-api/415-error-of-put/</guid>
       <description>원인? PUT일 때 ResponseEntity&amp;lt; String &amp;gt;으로 써야하지?  ResponseEntity&amp;lt;Integer&amp;gt; 일 때엔 아예 인식을 못함
 415 error 발생!
-    Exception 설명 응답코드     HttpMediaTypeNotSupportedException 요청의 Content Type을 핸들러가 지원하지 않는 경우 발생 415 - Unsupported Media Type    출처 (Spring Boot)오류 처리 415 코드 해결방법 contentType을 JSON이라 명시해준다.
+    Exception 설명 응답코드     HttpMediaTypeNotSupportedException 요청의 Content Type을 핸들러가 지원하지 않는 경우 발생 415 - Unsupported Media Type    출처 (Spring Boot)오류 처리  415 코드 해결방법 contentType을 JSON이라 명시해준다.
 contentType: &amp;#39;application/json; charset=utf-8&amp;#39; 
 1. JSON &amp;lt;&amp;gt; JSON 으로 변환해줘야 한다 request를 JSON으로 보냈다면, response도 JSON으로 보내줘야 한다.</description>
     </item>
@@ -63,7 +63,7 @@ $.ajax({ url: &amp;#39;&amp;#39;, type: &amp;#39;post&amp;#39;, data: JSON.strin
       <description>우리 팀은 MSA 방식으로 웹 어플리케이션을 만들기 때문에 api 통신이 중요하다. api 통신을 하기 위해서 client 단에서 호출 가능한 library가 무엇이 있는지 찾아보았다. 크게 두 라이브러리를 사용하는데, HttpURLConnection 과 RestTemplate 이다.
 
 1 HttpURLConnection void sendRequest(String request) { // i.e.: request = &amp;#34;http://example.com/index.php?param1=a&amp;amp;param2=b&amp;amp;param3=c&amp;#34;;  URL url = new URL(request); HttpURLConnection connection = (HttpURLConnection) url.openConnection(); connection.setDoOutput(true); connection.setInstanceFollowRedirects(false); connection.setRequestMethod(&amp;#34;GET&amp;#34;); connection.setRequestProperty(&amp;#34;Content-Type&amp;#34;, &amp;#34;text/plain&amp;#34;); connection.setRequestProperty(&amp;#34;charset&amp;#34;, &amp;#34;utf-8&amp;#34;); connection.connect(); } 
-2 RestTemplate DOCS 요즘 들어 선호하는 형태는 postForObject .</description>
+2 RestTemplate DOCS  요즘 들어 선호하는 형태는 postForObject .</description>
     </item>
     
     <item>
