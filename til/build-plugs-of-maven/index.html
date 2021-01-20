@@ -11,21 +11,21 @@
     <title>Maven pom.xml 빌드 플러그인 세팅하기 :: 고라니의 개발일기🦌</title>
 
     
-    <link href="/css/nucleus.css?1611139313" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1611139313" rel="stylesheet">
-    <link href="/css/hybrid.css?1611139313" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1611139313" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1611139313" rel="stylesheet">
-    <link href="/css/auto-complete.css?1611139313" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1611139313" rel="stylesheet">
-    <link href="/css/theme.css?1611139313" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1611139313" rel="stylesheet">
+    <link href="/css/nucleus.css?1611143233" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1611143233" rel="stylesheet">
+    <link href="/css/hybrid.css?1611143233" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1611143233" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1611143233" rel="stylesheet">
+    <link href="/css/auto-complete.css?1611143233" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1611143233" rel="stylesheet">
+    <link href="/css/theme.css?1611143233" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1611143233" rel="stylesheet">
     
-    <link href="/css/theme-mine.css?1611139313" rel="stylesheet">
+    <link href="/css/theme-mine.css?1611143233" rel="stylesheet">
     
-    <link href="/css/custom.css?1611139313" rel="stylesheet">
+    <link href="/css/custom.css?1611143233" rel="stylesheet">
 
-    <script src="/js/jquery-3.3.1.min.js?1611139313"></script>
+    <script src="/js/jquery-3.3.1.min.js?1611143233"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -74,14 +74,14 @@ if (!doNotTrack) {
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1611139313"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1611139313"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1611143233"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1611143233"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/mand2.github.io\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1611139313"></script>
+<script type="text/javascript" src="/js/search.js?1611143233"></script>
 
     
   </div>
@@ -1138,11 +1138,14 @@ manifest.mf 파일에 라이브러리의 상대경로를 저장해서 불러오�
 </ol>
 <br>
 <blockquote>
-<p>manifest 파일이란 ? <a href="https://www.baeldung.com/java-jar-manifest">바로가기</a><br>
-pom 파일에 대해 더 설명을 원할 때 ? <a href="https://maven.apache.org/pom.html">바로가기</a></p>
+<p>manifest 파일이란 ? <a href="https://www.baeldung.com/java-jar-manifest" target="_blank" rel="noopener">바로가기</a>
+<br>
+pom 파일에 대해 더 설명을 원할 때 ? <a href="https://maven.apache.org/pom.html" target="_blank" rel="noopener">바로가기</a>
+</p>
 </blockquote>
 <br>
-<p>용량문제 + 1의 경우 <strong>conflict 문제가 있다</strong>는 말이 있어 2를 선택함. <a href="https://stackoverflow.com/questions/38548271/difference-between-maven-plugins-assembly-plugins-jar-plugins-shaded-plugi/38558129">출처</a><br>
+<p>용량문제 + 1의 경우 <strong>conflict 문제가 있다</strong>는 말이 있어 2를 선택함. <a href="https://stackoverflow.com/questions/38548271/difference-between-maven-plugins-assembly-plugins-jar-plugins-shaded-plugi/38558129" target="_blank" rel="noopener">출처</a>
+<br>
 실제로 2로 할 때의 용량이 26KB 인데 반해 1의 경우 4600KB 정도로 용량차이가 큼.</p>
 <p><br><br></p>
 <h4 id="버전-1">버전 1</h4>
@@ -1263,7 +1266,8 @@ maven.{groupId}.{artifactId} 로 나옴</li>
 <p>intellij 기준으로 maven - lifecycle - clean 후 package 로 하면 <code>target</code> 폴더에 원하는 <code>.jar</code> 가 만들어진다. 이 파일은 라이브러리형식으로 되었기 때문에 다른 프로젝트에서 쓸 수 있다-!</p>
 <p><br><br><br></p>
 <h3 id="번외--apache-maven-archiver">번외 : Apache Maven Archiver</h3>
-<p>자세한 설명보러가기 👉 <a href="http://maven.apache.org/shared/maven-archiver/index.html">docs</a></p>
+<p>자세한 설명보러가기 👉 <a href="http://maven.apache.org/shared/maven-archiver/index.html" target="_blank" rel="noopener">docs</a>
+</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;archive&gt;</span>
   <span style="color:#f92672">&lt;addMavenDescriptor/&gt;</span>
   <span style="color:#f92672">&lt;compress/&gt;</span>
@@ -1986,19 +1990,19 @@ maven.{groupId}.{artifactId} 로 나옴</li>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1611139313"></script>
-    <script src="/js/perfect-scrollbar.min.js?1611139313"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1611139313"></script>
-    <script src="/js/jquery.sticky.js?1611139313"></script>
-    <script src="/js/featherlight.min.js?1611139313"></script>
-    <script src="/js/highlight.pack.js?1611139313"></script>
+    <script src="/js/clipboard.min.js?1611143233"></script>
+    <script src="/js/perfect-scrollbar.min.js?1611143233"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1611143233"></script>
+    <script src="/js/jquery.sticky.js?1611143233"></script>
+    <script src="/js/featherlight.min.js?1611143233"></script>
+    <script src="/js/highlight.pack.js?1611143233"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1611139313"></script>
-    <script src="/js/learn.js?1611139313"></script>
-    <script src="/js/hugo-learn.js?1611139313"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1611143233"></script>
+    <script src="/js/learn.js?1611143233"></script>
+    <script src="/js/hugo-learn.js?1611143233"></script>
 
-    <link href="/mermaid/mermaid.css?1611139313" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1611139313"></script>
+    <link href="/mermaid/mermaid.css?1611143233" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1611143233"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

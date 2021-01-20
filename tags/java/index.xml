@@ -29,7 +29,7 @@ long -&amp;gt; int 형변환은 쉽게 java.lang.Math.toIntExtract(long value)�
       <pubDate>Wed, 30 Oct 2019 18:58:29 +0900</pubDate>
       
       <guid>https://mand2.github.io/til/collection-framework/</guid>
-      <description>최근, 알고리즘 문제를 풀 때 (링크) 다른 사람의 문제풀이에서 stream()을 사용한 풀이가 있었다. 그동안 stackOverFlow에서나, 다른 레퍼런스 문서 등에서 가끔 보던 형식이었다. 그 땐 이 형식이 람다식으로 만들어진 줄도 몰랐다. 내 기억상 음,, 이건 다른 언어에서 쓰는건가? 하고 넘겼던 듯. 이번 문제풀이를 통해 컬렉션과 람다식에 대해 꼼꼼히 배울 수 있는 계기가 되었다고 생각하고, 간단히 정리를 해 보려고 한다. 아래는 내가 보았던 식이다.
+      <description>최근, 알고리즘 문제를 풀 때 (링크 ) 다른 사람의 문제풀이에서 stream()을 사용한 풀이가 있었다. 그동안 stackOverFlow에서나, 다른 레퍼런스 문서 등에서 가끔 보던 형식이었다. 그 땐 이 형식이 람다식으로 만들어진 줄도 몰랐다. 내 기억상 음,, 이건 다른 언어에서 쓰는건가? 하고 넘겼던 듯. 이번 문제풀이를 통해 컬렉션과 람다식에 대해 꼼꼼히 배울 수 있는 계기가 되었다고 생각하고, 간단히 정리를 해 보려고 한다. 아래는 내가 보았던 식이다.
 return list.stream().mapToInt(i-&amp;gt;i.intValue()).toArray(); 이 뜻은
  list를 스트림으로 만들고, int 형식으로 변환 후 다시 배열로 바로 반환  한다는 뜻이다.</description>
     </item>

@@ -24,9 +24,8 @@
 |&amp;ndash; Hugo
 |&amp;ndash;bin
 |&amp;ndash;Sites
- 4 Hugo 다운로드 최신 release 파일을 주소에서 다운로드. (🔊 당시 v.0.74.3이 최신버전이었음.)
-아까 생성한 D:\Hugo\bin 폴더에 해당 zip 파일 풀어준다.
-5 환경변수 설정 환경변수 설정 win 키+Q -&amp;gt; 시스템 환경 변수 편집 -&amp;gt; 고급 탭의 환경변수 -&amp;gt; 시스템 변수 의 Path 에 내가 정한 Hugo\bin 디렉토리를 써준다</description>
+ 4 Hugo 다운로드 최신 release 파일을 주소 에서 다운로드. (🔊 당시 v.0.74.3이 최신버전이었음.)
+아까 생성한 D:\Hugo\bin 폴더에 해당 zip 파일 풀어준다.</description>
     </item>
     
   </channel>
