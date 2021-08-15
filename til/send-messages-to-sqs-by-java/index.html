@@ -8,7 +8,7 @@
 <meta name="author" content="mand2">
 
     <link rel="shortcut icon" href="https://image.flaticon.com/icons/svg/2950/2950487.svg" type="image/x-icon" />
-    <title>querydsl 설정하기 :: 고라니의 개발일기🦌</title>
+    <title>Java 형식으로 AWS SQS에 메세지 보내기 :: 고라니의 개발일기🦌</title>
 
     
     <link href="/css/nucleus.css?1629049392" rel="stylesheet">
@@ -55,7 +55,7 @@ if (!doNotTrack) {
 
     
   </head>
-  <body class="" data-url="/spring/spring-boot/2/">
+  <body class="" data-url="/til/send-messages-to-sqs-by-java/">
     <nav id="sidebar" class="">
 
 
@@ -155,7 +155,7 @@ if (!doNotTrack) {
   
     
     <li data-nav-id="/spring/" title="Spring" class="dd-item 
-        parent
+        
         
         
         ">
@@ -232,7 +232,7 @@ if (!doNotTrack) {
   
     
     <li data-nav-id="/spring/spring-boot/" title="Spring Boot" class="dd-item 
-        parent
+        
         
         
         ">
@@ -338,7 +338,7 @@ if (!doNotTrack) {
   
     
     <li data-nav-id="/til/" title="TIL" class="dd-item 
-        
+        parent
         
         
         ">
@@ -364,7 +364,7 @@ if (!doNotTrack) {
  
   
     
-      <li data-nav-id="/til/send-messages-to-sqs-by-java/" title="Java 형식으로 AWS SQS에 메세지 보내기" class="dd-item ">
+      <li data-nav-id="/til/send-messages-to-sqs-by-java/" title="Java 형식으로 AWS SQS에 메세지 보내기" class="dd-item active">
         <a href="/til/send-messages-to-sqs-by-java/">
         Java 형식으로 AWS SQS에 메세지 보내기
         
@@ -1076,13 +1076,7 @@ if (!doNotTrack) {
             
           
           
-            
-            
-          
-          
-            <a href='/'>고라니의 개발일기🦌</a> > <a href='/spring/'>Spring</a> > <a href='/spring/spring-boot/'>Spring Boot</a> > querydsl 설정하기
-          
-        
+            <a href='/'>고라니의 개발일기🦌</a> > <a href='/til/'>TIL</a> > Java 형식으로 AWS SQS에 메세지 보내기
           
         
           
@@ -1099,10 +1093,9 @@ if (!doNotTrack) {
   <ol>
     <li>
       <ol>
-        <li><a href="#1-querydsl-을-선택한-이유">1. QueryDSL 을 선택한 이유?</a></li>
-        <li><a href="#2-maven-설정">2. maven 설정</a></li>
-        <li><a href="#3-플러그인-추가시-문제점-발생">3. 플러그인 추가시 문제점 발생</a></li>
-        <li><a href="#4-문제점-해결">4. 문제점 해결</a></li>
+        <li><a href="#sqs-설계">SQS 설계</a></li>
+        <li><a href="#sqs-호출하기">SQS 호출하기</a></li>
+        <li><a href="#정리">정리</a></li>
       </ol>
     </li>
   </ol>
@@ -1116,89 +1109,184 @@ if (!doNotTrack) {
             
         <div id="head-tags">
         
+<div class="tags">
+
+  <a class="tag-link" href="/tags/til">TIL</a>
+
+  <a class="tag-link" href="/tags/aws">AWS</a>
+
+  <a class="tag-link" href="/tags/sqs">SQS</a>
+
+  <a class="tag-link" href="/tags/java">JAVA</a>
+
+</div>
+
         </div>
         
         <div id="body-inner">
           
             <h1>
               
-              querydsl 설정하기
+              Java 형식으로 AWS SQS에 메세지 보내기
             </h1>
           
 
         
 
 <span class="btn_tags">
-    2019-09-27
+    2021-08-16
 </span>
 
-<p><br><br></p>
-<h3 id="1-querydsl-을-선택한-이유">1. QueryDSL 을 선택한 이유?</h3>
-<p>스프링 부트 + JPA 를 선택하면서 고민했던 사항이 테이블 연결이었다.</p>
-<p>JPQL로 간단하게 쿼리문을 불러오는 것이 아닌, 내가 <strong>원하는 쿼리문을 사용하기 어렵다</strong>는 문제점 때문이었다.</p>
-<p>많은 블로그에서 탐색한 결과, QueryDsl을 선택하였다. 비교적 직관적이며, join 중에서도 left outer join / right outer join 등 다양한 조인과 동적쿼리문 작성이 가장 좋아보였다. 사실은 criteriaBuilder를 사용할까 했는데 QueryDsl이 더 직관적이라 선택하였다. 조금 더 보기 편하달까.. 생각보다 많은 레퍼런스와 doc(문서)가 있고, 심지어 한글로 문서번역이 되어있어 편했다. maven 설정할 때 조금 애먹긴 했지만..</p>
-<p><br><br></p>
-<h3 id="2-maven-설정">2. maven 설정</h3>
-<p>레퍼런스에서는 gradle로 설정하는 방법이 많이 있는데 아직 초보개발자인 나로서는 (=배운 지식 활용하기에도 벅찬,,) 감수할 수 없는 위험이라 판단, 조금 더 친숙한 maven으로 dependency를 설정하였다.</p>
-<h4 id="2-1-dependency-설정">2-1 dependency 설정</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">&lt;!--</span> querydsl <span style="color:#f92672">--&gt;</span>
-<span style="color:#f92672">&lt;</span>dependency<span style="color:#f92672">&gt;</span>
-	<span style="color:#f92672">&lt;</span>groupId<span style="color:#f92672">&gt;</span>com<span style="color:#f92672">.</span><span style="color:#a6e22e">querydsl</span><span style="color:#f92672">&lt;/</span>groupId<span style="color:#f92672">&gt;</span>
-	<span style="color:#f92672">&lt;</span>artifactId<span style="color:#f92672">&gt;</span>querydsl<span style="color:#f92672">-</span>apt<span style="color:#f92672">&lt;/</span>artifactId<span style="color:#f92672">&gt;</span>
-	<span style="color:#f92672">&lt;</span>version<span style="color:#f92672">&gt;</span>$<span style="color:#f92672">{</span>querydsl<span style="color:#f92672">.</span><span style="color:#a6e22e">version</span><span style="color:#f92672">}&lt;/</span>version<span style="color:#f92672">&gt;</span>
-	<span style="color:#f92672">&lt;</span>scope<span style="color:#f92672">&gt;</span>provided<span style="color:#f92672">&lt;/</span>scope<span style="color:#f92672">&gt;</span>
-<span style="color:#f92672">&lt;/</span>dependency<span style="color:#f92672">&gt;</span>
-
-<span style="color:#f92672">&lt;</span>dependency<span style="color:#f92672">&gt;</span>
-	<span style="color:#f92672">&lt;</span>groupId<span style="color:#f92672">&gt;</span>com<span style="color:#f92672">.</span><span style="color:#a6e22e">querydsl</span><span style="color:#f92672">&lt;/</span>groupId<span style="color:#f92672">&gt;</span>
-	<span style="color:#f92672">&lt;</span>artifactId<span style="color:#f92672">&gt;</span>querydsl<span style="color:#f92672">-</span>jpa<span style="color:#f92672">&lt;/</span>artifactId<span style="color:#f92672">&gt;</span>
-	<span style="color:#f92672">&lt;</span>version<span style="color:#f92672">&gt;</span>$<span style="color:#f92672">{</span>querydsl<span style="color:#f92672">.</span><span style="color:#a6e22e">version</span><span style="color:#f92672">}&lt;/</span>version<span style="color:#f92672">&gt;</span>
-<span style="color:#f92672">&lt;/</span>dependency<span style="color:#f92672">&gt;</span>
-</code></pre></div><h4 id="2-2-plug-in-설정">2-2 plug-in 설정</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">&lt;!--</span> querydsl plugin <span style="color:#f92672">--&gt;</span>
-  <span style="color:#f92672">&lt;</span>plugin<span style="color:#f92672">&gt;</span>
-    <span style="color:#f92672">&lt;</span>groupId<span style="color:#f92672">&gt;</span>com<span style="color:#f92672">.</span><span style="color:#a6e22e">mysema</span><span style="color:#f92672">.</span><span style="color:#a6e22e">maven</span><span style="color:#f92672">&lt;/</span>groupId<span style="color:#f92672">&gt;</span>
-    <span style="color:#f92672">&lt;</span>artifactId<span style="color:#f92672">&gt;</span>apt<span style="color:#f92672">-</span>maven<span style="color:#f92672">-</span>plugin<span style="color:#f92672">&lt;/</span>artifactId<span style="color:#f92672">&gt;</span>
-    <span style="color:#f92672">&lt;</span>version<span style="color:#f92672">&gt;</span>1<span style="color:#f92672">.</span><span style="color:#a6e22e">1</span><span style="color:#f92672">.</span><span style="color:#a6e22e">3</span><span style="color:#f92672">&lt;/</span>version<span style="color:#f92672">&gt;</span>
-    <span style="color:#f92672">&lt;</span>executions<span style="color:#f92672">&gt;</span>
-      <span style="color:#f92672">&lt;</span>execution<span style="color:#f92672">&gt;</span>
-        <span style="color:#f92672">&lt;</span>goals<span style="color:#f92672">&gt;</span>
-          <span style="color:#f92672">&lt;</span>goal<span style="color:#f92672">&gt;</span>process<span style="color:#f92672">&lt;/</span>goal<span style="color:#f92672">&gt;</span>
-        <span style="color:#f92672">&lt;/</span>goals<span style="color:#f92672">&gt;</span>
-        <span style="color:#f92672">&lt;</span>configuration<span style="color:#f92672">&gt;</span>
-          <span style="color:#f92672">&lt;</span>outputDirectory<span style="color:#f92672">&gt;</span>target<span style="color:#f92672">/</span>generated<span style="color:#f92672">-</span>sources<span style="color:#f92672">/</span>java<span style="color:#f92672">&lt;/</span>outputDirectory<span style="color:#f92672">&gt;</span>
-          <span style="color:#f92672">&lt;</span>processor<span style="color:#f92672">&gt;</span>com<span style="color:#f92672">.</span><span style="color:#a6e22e">querydsl</span><span style="color:#f92672">.</span><span style="color:#a6e22e">apt</span><span style="color:#f92672">.</span><span style="color:#a6e22e">jpa</span><span style="color:#f92672">.</span><span style="color:#a6e22e">JPAAnnotationProcessor</span><span style="color:#f92672">&lt;/</span>processor<span style="color:#f92672">&gt;</span>
-        <span style="color:#f92672">&lt;/</span>configuration<span style="color:#f92672">&gt;</span>
-      <span style="color:#f92672">&lt;/</span>execution<span style="color:#f92672">&gt;</span>
-    <span style="color:#f92672">&lt;/</span>executions<span style="color:#f92672">&gt;</span>
-  <span style="color:#f92672">&lt;/</span>plugin<span style="color:#f92672">&gt;</span>
-</code></pre></div><p><br><br></p>
-<h3 id="3-플러그인-추가시-문제점-발생">3. 플러그인 추가시 문제점 발생</h3>
-<p>플러그인을 추가할때 <executions> 부분에서 에러가 발생했다.</p>
-<p>오류메세지는 <code>You need to run build with JDK or have tools.jar on the classpath.</code></p>
-<p>!!<strong>주의</strong>!! 이 오류메세지가 뜨면 QClass 자체가 생성이 안되어 QueryFactory 사용 자체를 할 수가 없게된다.</p>
-<p><code>QClass</code>란? QueryDsl에서 제공하는 클래스. 도메인(repository) 클래스가 자동으로 QClass로 변환되며(target/generated-sources/java 패키지에 자동 생성) 이 클래스를 QueryFactory에 주입하여 사용하게 된다.</p>
-<p><br><br></p>
-<h3 id="4-문제점-해결">4. 문제점 해결</h3>
-<p>해결방법은 생각보다 간단하다.</p>
-<ol>
-<li>
-<p>이클립스 설치경로 혹은 STS 설치경로에 eclipse.ini  혹은 STS.ini 파일을 연다</p>
-</li>
-<li>
-<p>아래의 두 줄을 추가하면 됨. 주의할 점은 -vmargs 설정 전에 써줘야 한다.</p>
-<pre><code>-vm
-C:\Program Files\Java\jdk1.8.0_211\bin\javaw.exe
-</code></pre><p>생각없이 사람들이 쓴 걸 복붙했는데 \ 대신에 /로 루트설정이 되어있어서 sts실행 자체가 안되었었다. 사소한 부분이지만 <strong>루트는 역슬래쉬</strong>..!!</p>
-</li>
-<li>
-<p>STS실행</p>
-</li>
-<li>
-<p>해당 프로젝트 우클릭 &gt; maven &gt; Update Project.. 클릭하고 메이븐업데이트 및 클린 시키면 된다 !</p>
-</li>
-</ol>
+<p>오랜만에 쓰는 블로그 글이다. 이것 저것 이슈로 블로그를 방치해 두었었는데, 이제서야 한번 다시 돌아보는 나의 블로그&hellip; 😂
+오늘의 주제는 &lsquo;<strong>Java 형식으로 AWS SQS에 메세지 보내기</strong>&lsquo;다</p>
+<p>사용자(User)가 주문을 하면 backend-api 쪽에서 주문 등록을 하고,
+사장님에게 &lsquo;주문이 되었습니다&rsquo;라는 알람과 함께 주문내역 메세지를 보내는 시스템을 구현했다고 가정해보자
+(<strong>가정</strong>일 뿐이다. 주문 관련 업무를 설계해 본 적은 없다.
+설명하기 쉽게 가정을 했을 뿐😅 주문 내역을 만들 때 batch를 쓸 수도 있고 큐를 안 쓰고 API를 바로 호출 할 수도 있고..
+설계 방안은 여러가지일 것이다.)</p>
+<blockquote>
+<p><strong>AWS SQS ?</strong> TL;DR<br>
+간단한 메세지를 큐 형태로 쌓아서(send) 받도록(recieve) 하는 서비스이다.<br>
+이름(<code>Amazon Simple Queue Service</code>)에서 알 수 있듯이 &lsquo;간단하게&rsquo;가 포인트.<br>
+pub/sub 형태로 메세징 처리를 하고 싶다면 rabbitMQ나 JMS, Amazon MQ를 사용해야 한다.</p>
+</blockquote>
 <br>
+<p><strong>장점과 단점</strong></p>
+<table>
+<thead>
+<tr>
+<th>장점</th>
+<th>단점</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>- AWS 인프라내에서 장애에 대한 대응성이 뛰어나다. <br>- 쉽다. <br>- 별도로 관리할 필요가 없다.</td>
+<td>- JMS,Rabbit MQ와 같이 다양한 기능을 기대할 수 없다. <br>- 다른 Message Queue 대비 느리다. <br>- Polling 방식이기 때문에, Consumer 설계시 <br>매번 polling하는 식의 로직을 구현해야 한다.</td>
+</tr>
+</tbody>
+</table>
+<br>
+<h3 id="sqs-설계">SQS 설계</h3>
+<p><img src="/images/TIL/sqs_basic_design.png" alt="design sqs"><br>
+사장님 쪽으로 주문 관련 메세지를 보내는 <code>receiver</code>를 람다로 구현했고, SQS를 람다와 연결시켰다.
+AWS끼리 연결하면 편리한게, SQS에 메세지 큐가 쌓이면 자동으로 람다가 호출되는 시스템이다.</p>
+<p><strong>👀 주의사항</strong><br>
+여기서 주의할 점은,
+메세지 1개씩 n번 쏘았다고 해서 SQS에서 처리하는 메세지 큐가 n개가 아닐 수 있다는 점이다.
+AWS에 따르면 최대 10개의 메세지가 한꺼번에 큐 하나로(a single message batch request) 될 수 있다는 점을 참고해야 한다.
+따라서 람다에서 처리할 때 하나의 요청에 10개 메세지를 각각 처리하도록 설계해야 한다.
+그 외에 SQS 제약사항에 대해 알고 싶다면 <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html"
+    
+        target="_blank"
+    
+>
+    AWS DOCS
+</a>
+를 참고해 보자</p>
+<p><img src="/images/TIL/sqs_message_queue.png" alt="design sqs"><br>
+앞에 설명한 주의사항이 이해가 안 갈 수 있다.
+좀 더 예를 들어보자면, 서버 쪽에서 SQS를 호출하는 메세지 10개를 만들었을 때 SQS가 처리하는 메세지 큐는 최대 1개~10개가 된다.</p>
+<p>그림과 같이 최종 메세지 큐(람다에 요청하는 메세지큐)가 4개가 되었다고 한다면 람다는 <strong>4번 호출</strong>된다.<br>
+A → B → C → D 순으로 호출되었다고 가정한다면 A를 람다가 처리할 때 실제 메세지 큐의 body에는 메세지가 2개 들어가있다.
+<strong>즉, 람다 내부에서 <code>2 / 3 / 1 / 4 개</code> 의 메세지를 각각 처리해야 총 10개의 메세지가 처리된다는 것이다.</strong>
+나눠지는 규칙이 있나요? 한다면 나도 잘 모른다 😅 AWS docs에서 10개까지 한번에 된다는 것만 설명했을 뿐.<br>
+이런 제약사항에 대해 더 자세히 알고싶다면 <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-queues.html"
+    
+        target="_blank"
+    
+>
+    quota 부분
+</a>
+을 보시라.</p>
+<br>
+<h3 id="sqs-호출하기">SQS 호출하기</h3>
+<p>아무튼, 위의 방식이 이해가 되었든 아니었든 간에 java 형식으로 sqs 서버 호출하는 방법을 작성해보자면</p>
+<h4 id="1-설정">1. 설정</h4>
+<p>aws-sdk-sqs 를 가져와야 한다. <strong>aws-sdk 버전(예를 들어 dynamodb 같은)이 더 추가되어 있다면 그 버전과 버전이 똑같아야 할 수도</strong> 있다. (sqs를 호출하는 api를 두 개 만들었었는데 하나는 버전이 달라도 잘 작동했고, 하나는 버전을 맞춰줘야 했었다)</p>
+<ul>
+<li>
+<p>maven pom.xml</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;dependency&gt;</span>
+    <span style="color:#f92672">&lt;groupId&gt;</span>com.amazonaws<span style="color:#f92672">&lt;/groupId&gt;</span>
+    <span style="color:#f92672">&lt;artifactId&gt;</span>aws-java-sdk-sqs<span style="color:#f92672">&lt;/artifactId&gt;</span>
+    <span style="color:#f92672">&lt;version&gt;</span>1.12.44<span style="color:#f92672">&lt;/version&gt;</span>
+<span style="color:#f92672">&lt;/dependency&gt;</span>
+</code></pre></div></li>
+<li>
+<p>gradle</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">implementation <span style="color:#960050;background-color:#1e0010">&#39;</span>com<span style="color:#f92672">.</span><span style="color:#a6e22e">amazonaws</span><span style="color:#f92672">:</span>aws<span style="color:#f92672">-</span>java<span style="color:#f92672">-</span>sdk<span style="color:#f92672">-</span>sqs<span style="color:#f92672">:</span>1<span style="color:#f92672">.</span><span style="color:#a6e22e">12</span><span style="color:#f92672">.</span><span style="color:#a6e22e">44</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
+</code></pre></div></li>
+</ul>
+<br>
+<h4 id="2-주문-객체-만들기">2. 주문 객체 만들기</h4>
+<script type="text/javascript" src="https://gist.github.com/mand2/3e9b7b9c88a300176067c99e6f93ebc4.js"></script>
+<br>
+<h4 id="3-sqs-객체-만들기">3. SQS 객체 만들기</h4>
+<p>메세지 하나를 보낼 땐 <code>SendMessageRequest</code> 를, 여러개 보낼 땐 <code>SendMessageBatchRequest</code> 를 사용한다.</p>
+<p><strong>한 개</strong>만 보낼 때: <a href="https://docs.amazonaws.cn/AWSJavaSDK/latest/javadoc/com/amazonaws/services/sqs/model/SendMessageRequest.html"
+    
+        target="_blank"
+    
+>
+    docs
+</a>
+<br>
+<code>SendMessageRequest(String queueUrl, String messageBody)</code><br>
+SQS에 보낼 message Body 는 무조건 String 형식이어야 한다.</p>
+<p><strong>동시에 여러개</strong> 보낼 때: <a href="https://docs.amazonaws.cn/AWSJavaSDK/latest/javadoc/com/amazonaws/services/sqs/model/SendMessageBatchRequestEntry.html"
+    
+        target="_blank"
+    
+>
+    docs
+</a>
+<br>
+<code>SendMessageBatchRequest(String queueUrl, List&lt;SendMessageBatchRequestEntry&gt; entries)</code><br>
+SendMessageBatchRequest의 entries 값을 세팅해주기 위해 OrderSqs 객체 내부에 setOrders() 메서드를 만들었다.<br>
+생성자로 <strong>SendMessageBatchRequestEntry(String id, String messageBody)</strong> 를 사용하며, 각 entry id는 entries 객체 내에선 unique한 값이어야 한다.
+그러므로 Order의 orderSeq 값을 해당 id 값으로 지정해주었다(int 값을 String으로 바꿔야 하는데 조금 편법을 썼다 ㅎ).</p>
+<script type="text/javascript" src="https://gist.github.com/mand2/9e4cb49564249f150cd3d10de8b4a827.js"></script>
+<br>
+<h4 id="4-sqs-호출-예시">4. SQS 호출 예시</h4>
+<p>junit5 기준으로 작성했다. 예시 테스트 코드라 간단하게 만들었다.</p>
+<script type="text/javascript" src="https://gist.github.com/mand2/3a27c23ed1d42a18059c85a1845dab75.js"></script>
+<br>
+<br>
+<h3 id="정리">정리</h3>
+<p>AWS docs는 항상 느끼지만 친절한 듯 하면서 친절하지 않다.<br>
+정보가 너무 많아서 그런 것 같다. docs 설명도 많고 주의사항 페이지도 따로 있고, github 나 API 도 따로 있으니&hellip; 😅<br>
+나만의 팁은 docs에 올라온 샘플 코드를 먼저 본 다음에 API를 샅샅히 보면 원하는 대로 커스텀하기 좀 수월한 것 같다.</p>
+<br>
+<hr>
+<p>출처:</p>
+<ul>
+<li><a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html"
+    
+        target="_blank"
+    
+>
+    AWS DOCS
+</a>
+</li>
+<li><a href="https://github.com/awsdocs/aws-doc-sdk-examples/blob/master/java/example_code/sqs/src/main/java/aws/example/sqs/SendReceiveMessages.java"
+    
+        target="_blank"
+    
+>
+    AWS Example Github
+</a>
+</li>
+<li><a href="https://bcho.tistory.com/683"
+    
+        target="_blank"
+    
+>
+    조대협의 블로그 AWS SQS(Simple Queue Service) 소개
+</a>
+</li>
+</ul>
+
 <br>
 <br>
 <br>
@@ -1282,7 +1370,6 @@ C:\Program Files\Java\jdk1.8.0_211\bin\javaw.exe
             
                 
                     
-                    
                 
                 
 
@@ -1297,9 +1384,6 @@ C:\Program Files\Java\jdk1.8.0_211\bin\javaw.exe
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1337,7 +1421,6 @@ C:\Program Files\Java\jdk1.8.0_211\bin\javaw.exe
             
                 
                     
-                    
                 
                 
 
@@ -1373,9 +1456,6 @@ C:\Program Files\Java\jdk1.8.0_211\bin\javaw.exe
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1421,6 +1501,7 @@ C:\Program Files\Java\jdk1.8.0_211\bin\javaw.exe
             
                 
                     
+                    
                 
                 
 
@@ -1433,6 +1514,7 @@ C:\Program Files\Java\jdk1.8.0_211\bin\javaw.exe
             
             
                 
+                    
                     
                 
                 
@@ -1449,6 +1531,9 @@ C:\Program Files\Java\jdk1.8.0_211\bin\javaw.exe
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1889,10 +1974,10 @@ C:\Program Files\Java\jdk1.8.0_211\bin\javaw.exe
 	 
 	 
 		
-			<a class="nav nav-prev" href="/spring/rest-api/" title="Rest Api"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/til/" title="TIL"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/spring/user_register/" title="회원가입" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/til/show-git-contribute-in-3d/" title="Git 커밋 그래프(contribution graph)를 3D로 보는 방법" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

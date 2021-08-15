@@ -6,10 +6,20 @@
     <description>Recent content in TIL on 고라니의 개발일기🦌</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Wed, 09 Sep 2020 00:02:15 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 16 Aug 2021 01:40:33 +0900</lastBuildDate>
     
 	<atom:link href="https://mand2.github.io/categories/til/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Java 형식으로 AWS SQS에 메세지 보내기</title>
+      <link>https://mand2.github.io/til/send-messages-to-sqs-by-java/</link>
+      <pubDate>Mon, 16 Aug 2021 01:40:33 +0900</pubDate>
+      
+      <guid>https://mand2.github.io/til/send-messages-to-sqs-by-java/</guid>
+      <description>오랜만에 쓰는 블로그 글이다. 이것 저것 이슈로 블로그를 방치해 두었었는데, 이제서야 한번 다시 돌아보는 나의 블로그&amp;hellip; 😂 오늘의 주제는 &amp;lsquo;Java 형식으로 AWS SQS에 메세지 보내기&amp;lsquo;다
+사용자(User)가 주문을 하면 backend-api 쪽에서 주문 등록을 하고, 사장님에게 &amp;lsquo;주문이 되었습니다&amp;rsquo;라는 알람과 함께 주문내역 메세지를 보내는 시스템을 구현했다고 가정해보자 (가정일 뿐이다. 주문 관련 업무를 설계해 본 적은 없다. 설명하기 쉽게 가정을 했을 뿐😅 주문 내역을 만들 때 batch를 쓸 수도 있고 큐를 안 쓰고 API를 바로 호출 할 수도 있고.</description>
+    </item>
     
     <item>
       <title>Git 커밋 그래프(contribution graph)를 3D로 보는 방법</title>

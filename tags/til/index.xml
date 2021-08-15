@@ -6,7 +6,7 @@
     <description>Recent content in TIL on 고라니의 개발일기🦌</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Wed, 09 Sep 2020 00:02:15 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 16 Aug 2021 01:40:33 +0900</lastBuildDate>
     
 	<atom:link href="https://mand2.github.io/tags/til/index.xml" rel="self" type="application/rss+xml" />
     
@@ -163,6 +163,16 @@ $.ajax({ url: &amp;#39;&amp;#39;, type: &amp;#39;post&amp;#39;, data: JSON.strin
 
 1 HttpURLConnection void sendRequest(String request) { // i.e.: request = &amp;#34;http://example.com/index.php?param1=a&amp;amp;param2=b&amp;amp;param3=c&amp;#34;;  URL url = new URL(request); HttpURLConnection connection = (HttpURLConnection) url.openConnection(); connection.setDoOutput(true); connection.setInstanceFollowRedirects(false); connection.setRequestMethod(&amp;#34;GET&amp;#34;); connection.setRequestProperty(&amp;#34;Content-Type&amp;#34;, &amp;#34;text/plain&amp;#34;); connection.setRequestProperty(&amp;#34;charset&amp;#34;, &amp;#34;utf-8&amp;#34;); connection.connect(); } 
 2 RestTemplate DOCS  요즘 들어 선호하는 형태는 postForObject .</description>
+    </item>
+    
+    <item>
+      <title>Java 형식으로 AWS SQS에 메세지 보내기</title>
+      <link>https://mand2.github.io/til/send-messages-to-sqs-by-java/</link>
+      <pubDate>Mon, 16 Aug 2021 01:40:33 +0900</pubDate>
+      
+      <guid>https://mand2.github.io/til/send-messages-to-sqs-by-java/</guid>
+      <description>오랜만에 쓰는 블로그 글이다. 이것 저것 이슈로 블로그를 방치해 두었었는데, 이제서야 한번 다시 돌아보는 나의 블로그&amp;hellip; 😂 오늘의 주제는 &amp;lsquo;Java 형식으로 AWS SQS에 메세지 보내기&amp;lsquo;다
+사용자(User)가 주문을 하면 backend-api 쪽에서 주문 등록을 하고, 사장님에게 &amp;lsquo;주문이 되었습니다&amp;rsquo;라는 알람과 함께 주문내역 메세지를 보내는 시스템을 구현했다고 가정해보자 (가정일 뿐이다. 주문 관련 업무를 설계해 본 적은 없다. 설명하기 쉽게 가정을 했을 뿐😅 주문 내역을 만들 때 batch를 쓸 수도 있고 큐를 안 쓰고 API를 바로 호출 할 수도 있고.</description>
     </item>
     
     <item>
