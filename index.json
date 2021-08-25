@@ -18,7 +18,7 @@
 	"title": "TIL",
 	"tags": [],
 	"description": "",
-	"content": "Chapter 2 TIL \rJava 형식으로 AWS SQS에 메세지 보내기\r\r\r\r\rGit 커밋 그래프(contribution graph)를 3D로 보는 방법\r\r\r\r\r자바 형변환 안전하게 하기\r\r\r\r\r자바스크립트로 AWS autoscaling group 정보 가져오기\r\r\r\r\r블로그 커밋 메세지 만들고 자동 배포 하기\r\r\r\r\rMaven pom.xml 빌드 플러그인 세팅하기\r\r\r\r\rDB index의 정의\r\r\r\r\r컬렉션 프레임워크의 정의와 stream 사용법 간단 정리\r\r\r\r\r"
+	"content": "Chapter 2 TIL \r아나콘다 주피터 노트북 시작폴더 위치 바꾸기\r\r\r\r\rJava 형식으로 AWS SQS에 메세지 보내기\r\r\r\r\rGit 커밋 그래프(contribution graph)를 3D로 보는 방법\r\r\r\r\r자바 형변환 안전하게 하기\r\r\r\r\r자바스크립트로 AWS autoscaling group 정보 가져오기\r\r\r\r\r블로그 커밋 메세지 만들고 자동 배포 하기\r\r\r\r\rMaven pom.xml 빌드 플러그인 세팅하기\r\r\r\r\rDB index의 정의\r\r\r\r\r컬렉션 프레임워크의 정의와 stream 사용법 간단 정리\r\r\r\r\r"
 },
 {
 	"uri": "https://mand2.github.io/python/",
@@ -210,8 +210,8 @@
 	"content": "메이븐은 프로젝트 객체 모델(Project Object Model)이라는 개념을 바탕으로 프로젝트 의존성 관리, 라이브러리 관리, 프로젝트 생명 주기 관리 기능 등을 제공하는 프로젝트 관리 도구이다. 또한 플러그인을 기반으로 소스 코드로부터 배포 가능한 산출물을 만들어 내는 빌드 기능 뿐만 아니라 레포팅 및 documentation 작성 기능 등을 제공한다.\n\n메이븐 자세히 알아보러 가기  pom.xml 태그들 자세히 알아보기  pom.xml 태그 조금 더 간결하게, 정리 더 잘 된 것  maven (메이븐 구조, 차이점, 플러그인, 라이프사이클, 의존성, pom.xml)  자바 웹 어플리케이션 배포  SVN 으로 형상관리 하는 경우도 있다 (회사에서,,) git으로 형상관리 하기  배포 순서 :\n 각자 소스 코딩 후 형상관리 툴에 push 배포용 서버 컴퓨터에서 pull 받음 war 파일로 package tomcat에 배포  "
 },
 {
-	"uri": "https://mand2.github.io/tags/aws/",
-	"title": "AWS",
+	"uri": "https://mand2.github.io/tags/anaconda/",
+	"title": "Anaconda",
 	"tags": [],
 	"description": "",
 	"content": ""
@@ -224,22 +224,8 @@
 	"content": ""
 },
 {
-	"uri": "https://mand2.github.io/tags/java/",
-	"title": "Java",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "https://mand2.github.io/til/send-messages-to-sqs-by-java/",
-	"title": "Java 형식으로 AWS SQS에 메세지 보내기",
-	"tags": ["TIL", "AWS", "SQS", "JAVA"],
-	"description": "",
-	"content": "오랜만에 쓰는 블로그 글이다. 이것 저것 이슈로 블로그를 방치해 두었었는데, 이제서야 한번 다시 돌아보는 나의 블로그\u0026hellip; 😂 오늘의 주제는 \u0026lsquo;Java 형식으로 AWS SQS에 메세지 보내기\u0026lsquo;다\n사용자(User)가 주문을 하면 backend-api 쪽에서 주문 등록을 하고, 사장님에게 \u0026lsquo;주문이 되었습니다\u0026rsquo;라는 알람과 함께 주문내역 메세지를 보내는 시스템을 구현했다고 가정해보자 (가정일 뿐이다. 주문 관련 업무를 설계해 본 적은 없다. 설명하기 쉽게 가정을 했을 뿐😅 주문 내역을 만들 때 batch를 쓸 수도 있고 큐를 안 쓰고 API를 바로 호출 할 수도 있고.. 설계 방안은 여러가지일 것이다.)\n AWS SQS ? TL;DR\n간단한 메세지를 큐 형태로 쌓아서(send) 받도록(recieve) 하는 서비스이다.\n이름(Amazon Simple Queue Service)에서 알 수 있듯이 \u0026lsquo;간단하게\u0026rsquo;가 포인트.\npub/sub 형태로 메세징 처리를 하고 싶다면 rabbitMQ나 JMS, Amazon MQ를 사용해야 한다.\n 장점과 단점\n   장점 단점     - AWS 인프라내에서 장애에 대한 대응성이 뛰어나다. - 쉽다. - 별도로 관리할 필요가 없다. - JMS,Rabbit MQ와 같이 다양한 기능을 기대할 수 없다. - 다른 Message Queue 대비 느리다. - Polling 방식이기 때문에, Consumer 설계시 매번 polling하는 식의 로직을 구현해야 한다.    SQS 설계 사장님 쪽으로 주문 관련 메세지를 보내는 receiver를 람다로 구현했고, SQS를 람다와 연결시켰다. AWS끼리 연결하면 편리한게, SQS에 메세지 큐가 쌓이면 자동으로 람다가 호출되는 시스템이다.\n👀 주의사항\n여기서 주의할 점은, 메세지 1개씩 n번 쏘았다고 해서 SQS에서 처리하는 메세지 큐가 n개가 아닐 수 있다는 점이다. AWS에 따르면 최대 10개의 메세지가 한꺼번에 큐 하나로(a single message batch request) 될 수 있다는 점을 참고해야 한다. 따라서 람다에서 처리할 때 하나의 요청에 10개 메세지를 각각 처리하도록 설계해야 한다. 그 외에 SQS 제약사항에 대해 알고 싶다면 AWS DOCS  를 참고해 보자\n앞에 설명한 주의사항이 이해가 안 갈 수 있다. 좀 더 예를 들어보자면, 서버 쪽에서 SQS를 호출하는 메세지 10개를 만들었을 때 SQS가 처리하는 메세지 큐는 최대 1개~10개가 된다.\n그림과 같이 최종 메세지 큐(람다에 요청하는 메세지큐)가 4개가 되었다고 한다면 람다는 4번 호출된다.\nA → B → C → D 순으로 호출되었다고 가정한다면 A를 람다가 처리할 때 실제 메세지 큐의 body에는 메세지가 2개 들어가있다. 즉, 람다 내부에서 2 / 3 / 1 / 4 개 의 메세지를 각각 처리해야 총 10개의 메세지가 처리된다는 것이다. 나눠지는 규칙이 있나요? 한다면 나도 잘 모른다 😅 AWS docs에서 10개까지 한번에 된다는 것만 설명했을 뿐.\n이런 제약사항에 대해 더 자세히 알고싶다면 quota 부분  을 보시라.\nSQS 호출하기 아무튼, 위의 방식이 이해가 되었든 아니었든 간에 java 형식으로 sqs 서버 호출하는 방법을 작성해보자면\n1. 설정 aws-sdk-sqs 를 가져와야 한다. aws-sdk 버전(예를 들어 dynamodb 같은)이 더 추가되어 있다면 그 버전과 버전이 똑같아야 할 수도 있다. (sqs를 호출하는 api를 두 개 만들었었는데 하나는 버전이 달라도 잘 작동했고, 하나는 버전을 맞춰줘야 했었다)\n  maven pom.xml\n\u0026lt;dependency\u0026gt; \u0026lt;groupId\u0026gt;com.amazonaws\u0026lt;/groupId\u0026gt; \u0026lt;artifactId\u0026gt;aws-java-sdk-sqs\u0026lt;/artifactId\u0026gt; \u0026lt;version\u0026gt;1.12.44\u0026lt;/version\u0026gt; \u0026lt;/dependency\u0026gt;   gradle\nimplementation \u0026#39;com.amazonaws:aws-java-sdk-sqs:1.12.44\u0026#39;   2. 주문 객체 만들기  3. SQS 객체 만들기 메세지 하나를 보낼 땐 SendMessageRequest 를, 여러개 보낼 땐 SendMessageBatchRequest 를 사용한다.\n한 개만 보낼 때: docs  SendMessageRequest(String queueUrl, String messageBody)\nSQS에 보낼 message Body 는 무조건 String 형식이어야 한다.\n동시에 여러개 보낼 때: docs  SendMessageBatchRequest(String queueUrl, List\u0026lt;SendMessageBatchRequestEntry\u0026gt; entries)\nSendMessageBatchRequest의 entries 값을 세팅해주기 위해 OrderSqs 객체 내부에 setOrders() 메서드를 만들었다.\n생성자로 SendMessageBatchRequestEntry(String id, String messageBody) 를 사용하며, 각 entry id는 entries 객체 내에선 unique한 값이어야 한다. 그러므로 Order의 orderSeq 값을 해당 id 값으로 지정해주었다(int 값을 String으로 바꿔야 하는데 조금 편법을 썼다 ㅎ).\n 4. SQS 호출 예시 junit5 기준으로 작성했다. 예시 테스트 코드라 간단하게 만들었다.\n 정리 AWS docs는 항상 느끼지만 친절한 듯 하면서 친절하지 않다.\n정보가 너무 많아서 그런 것 같다. docs 설명도 많고 주의사항 페이지도 따로 있고, github 나 API 도 따로 있으니\u0026hellip; 😅\n나만의 팁은 docs에 올라온 샘플 코드를 먼저 본 다음에 API를 샅샅히 보면 원하는 대로 커스텀하기 좀 수월한 것 같다.\n 출처:\n AWS DOCS   AWS Example Github   조대협의 블로그 AWS SQS(Simple Queue Service) 소개    "
-},
-{
-	"uri": "https://mand2.github.io/tags/sqs/",
-	"title": "SQS",
+	"uri": "https://mand2.github.io/tags/python/",
+	"title": "Python",
 	"tags": [],
 	"description": "",
 	"content": ""
@@ -268,6 +254,41 @@
 {
 	"uri": "https://mand2.github.io/",
 	"title": "고라니의 개발일기🦌",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://mand2.github.io/til/%EC%95%84%EB%82%98%EC%BD%98%EB%8B%A4_%EC%A3%BC%ED%94%BC%ED%84%B0_%EB%85%B8%ED%8A%B8%EB%B6%81_%EC%8B%9C%EC%9E%91%ED%8F%B4%EB%8D%94_%EC%9C%84%EC%B9%98_%EB%B0%94%EA%BE%B8%EA%B8%B0/",
+	"title": "아나콘다 주피터 노트북 시작폴더 위치 바꾸기",
+	"tags": ["TIL", "Python", "Anaconda"],
+	"description": "",
+	"content": " 주피터 노트북을 직접 설치하지 않은 사람이 시작 폴더 바꾸려면?\n 오늘의 주제는 주피터 노트북을 직접 설치하지 않은 사람이 시작 폴더 바꾸려면? 이다.\njupyter notebook의 기본 폴더는 C:\\Users\\{사용자명} 에 위치해 있는데, 외장하드(/d/) 폴더를 자주 쓰는 나로서는 너무 불편했다.\n일반 cmd 나 powershell 혹은 terminal 에서 아무리 열심히 jupyter notebook 쳐도 명령어 없음으로 떴다. 아니 다른 기술 블로그엔 잘만 나오는데 왜 없어\u0026hellip;🤦‍♀️ 하며 가상환경 관리한다고 아나콘다만 설치했던 걸 까먹었었다. 검색하면 jupyter notebook 도 같이 나오니까 당연히 개별로 설치된 건줄 알았지\u0026hellip; anaconda에 종속된 jupyter notebook 이었을 줄이야. 덕분에 한시간 넘게 뻘짓을 했다.\n날 살려준 스택오버플로우 주소  전제조건 :\n windows 10 anaconda 설치 jupyter notebook 은 따로 설치한게 아니라 anaconda 설치하면서 같이 설치했음.   1. anaconda prompt로 들어간다 검색해서 anaconda prompt 위치를 찾는다. 나는 바로가기 폴더가 있어서 수월했다. 해당 프롬프트를 실행한다.\ndirectory path :\nC:\\Users\\{사용자명}\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Anaconda3 (64-bit)\n프롬프트에서 jupyter notebook \u0026ndash;generate-config 명령어를 친다. 그러면 jupyter notebook 용 config 파일이 생성된다.\n# 실행 명령어 (my-env) C:\\Users\\{사용자명}\u0026gt; jupyter notebook --generate-config Writing default config to: C:\\Users\\{사용자명}\\.jupyter\\jupyter_notebook_config.py \n2. config.py로 시작폴더 위치 변경하기 anaconda prompt 로 생성한 config 파일의 위치로 들어가면 엄청난 양의 설정 스크립트가 있다.\n위의 이미지와 같이 c.NotebookApp.notebook_dir을 찾아 주석을 없애주고, 원하는 파일 위치를 작성하면 된다.\n👀 예시 및 주의사항\n역슬래시로 path 설정하면 안된다. escape 문자로 인식해서 에러가 남.\n## The directory to use for notebooks and kernels. c.NotebookApp.notebook_dir = \u0026#39;D:/0. 개인 공부\u0026#39; \n3. anaconda 가상환경을 가진 jupyter notebook 실행 anaconda prompt 에서 jupyter notebook 쳐서 실행하면 된다.\n 개인적 소감\n 왜인지는 모르겠지만 jupyter notebook (env) 실행파일로는 실행이 안된다 🤔\ncmd 에서 jupyter notebook 명령어도 안 들고, 실행파일로도 실행이 안되어서 찾을 때 좌절했었다. \u0026lsquo;내 인생은 노가다인 것인가\u0026hellip;!!\u0026rsquo; 하는 생각이 또 들었다 ㅎㅎ\n환경변수 세팅을 해야되나 엄청 고민도 하고\u0026hellip;\njupyterNotebook.exe 파일 내에서 실행 위치나 명령어 바꿔보기도 했는데 다 실패했어서 \u0026lsquo;아.. 난 그냥 포기해야 되나보다 그냥 파이참으로 테스트해봐야겠네 ㅎ\u0026rsquo; 했었는데 마지막으로 스택오버플로우 글이 날 살렸다🙇‍♀️🙇‍♀️\n"
+},
+{
+	"uri": "https://mand2.github.io/tags/aws/",
+	"title": "AWS",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://mand2.github.io/tags/java/",
+	"title": "Java",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://mand2.github.io/til/send-messages-to-sqs-by-java/",
+	"title": "Java 형식으로 AWS SQS에 메세지 보내기",
+	"tags": ["TIL", "AWS", "SQS", "JAVA"],
+	"description": "",
+	"content": "오랜만에 쓰는 블로그 글이다. 이것 저것 이슈로 블로그를 방치해 두었었는데, 이제서야 한번 다시 돌아보는 나의 블로그\u0026hellip; 😂 오늘의 주제는 \u0026lsquo;Java 형식으로 AWS SQS에 메세지 보내기\u0026lsquo;다\n사용자(User)가 주문을 하면 backend-api 쪽에서 주문 등록을 하고, 사장님에게 \u0026lsquo;주문이 되었습니다\u0026rsquo;라는 알람과 함께 주문내역 메세지를 보내는 시스템을 구현했다고 가정해보자 (가정일 뿐이다. 주문 관련 업무를 설계해 본 적은 없다. 설명하기 쉽게 가정을 했을 뿐😅 주문 내역을 만들 때 batch를 쓸 수도 있고 큐를 안 쓰고 API를 바로 호출 할 수도 있고.. 설계 방안은 여러가지일 것이다.)\n AWS SQS ? TL;DR\n간단한 메세지를 큐 형태로 쌓아서(send) 받도록(recieve) 하는 서비스이다.\n이름(Amazon Simple Queue Service)에서 알 수 있듯이 \u0026lsquo;간단하게\u0026rsquo;가 포인트.\npub/sub 형태로 메세징 처리를 하고 싶다면 rabbitMQ나 JMS, Amazon MQ를 사용해야 한다.\n 장점과 단점\n   장점 단점     - AWS 인프라내에서 장애에 대한 대응성이 뛰어나다. - 쉽다. - 별도로 관리할 필요가 없다. - JMS,Rabbit MQ와 같이 다양한 기능을 기대할 수 없다. - 다른 Message Queue 대비 느리다. - Polling 방식이기 때문에, Consumer 설계시 매번 polling하는 식의 로직을 구현해야 한다.    SQS 설계 사장님 쪽으로 주문 관련 메세지를 보내는 receiver를 람다로 구현했고, SQS를 람다와 연결시켰다. AWS끼리 연결하면 편리한게, SQS에 메세지 큐가 쌓이면 자동으로 람다가 호출되는 시스템이다.\n👀 주의사항\n여기서 주의할 점은, 메세지 1개씩 n번 쏘았다고 해서 SQS에서 처리하는 메세지 큐가 n개가 아닐 수 있다는 점이다. AWS에 따르면 최대 10개의 메세지가 한꺼번에 큐 하나로(a single message batch request) 될 수 있다는 점을 참고해야 한다. 따라서 람다에서 처리할 때 하나의 요청에 10개 메세지를 각각 처리하도록 설계해야 한다. 그 외에 SQS 제약사항에 대해 알고 싶다면 AWS DOCS  를 참고해 보자\n앞에 설명한 주의사항이 이해가 안 갈 수 있다. 좀 더 예를 들어보자면, 서버 쪽에서 SQS를 호출하는 메세지 10개를 만들었을 때 SQS가 처리하는 메세지 큐는 최대 1개~10개가 된다.\n그림과 같이 최종 메세지 큐(람다에 요청하는 메세지큐)가 4개가 되었다고 한다면 람다는 4번 호출된다.\nA → B → C → D 순으로 호출되었다고 가정한다면 A를 람다가 처리할 때 실제 메세지 큐의 body에는 메세지가 2개 들어가있다. 즉, 람다 내부에서 2 / 3 / 1 / 4 개 의 메세지를 각각 처리해야 총 10개의 메세지가 처리된다는 것이다. 나눠지는 규칙이 있나요? 한다면 나도 잘 모른다 😅 AWS docs에서 10개까지 한번에 된다는 것만 설명했을 뿐.\n이런 제약사항에 대해 더 자세히 알고싶다면 quota 부분  을 보시라.\nSQS 호출하기 아무튼, 위의 방식이 이해가 되었든 아니었든 간에 java 형식으로 sqs 서버 호출하는 방법을 작성해보자면\n1. 설정 aws-sdk-sqs 를 가져와야 한다. aws-sdk 버전(예를 들어 dynamodb 같은)이 더 추가되어 있다면 그 버전과 버전이 똑같아야 할 수도 있다. (sqs를 호출하는 api를 두 개 만들었었는데 하나는 버전이 달라도 잘 작동했고, 하나는 버전을 맞춰줘야 했었다)\n  maven pom.xml\n\u0026lt;dependency\u0026gt; \u0026lt;groupId\u0026gt;com.amazonaws\u0026lt;/groupId\u0026gt; \u0026lt;artifactId\u0026gt;aws-java-sdk-sqs\u0026lt;/artifactId\u0026gt; \u0026lt;version\u0026gt;1.12.44\u0026lt;/version\u0026gt; \u0026lt;/dependency\u0026gt;   gradle\nimplementation \u0026#39;com.amazonaws:aws-java-sdk-sqs:1.12.44\u0026#39;   2. 주문 객체 만들기  3. SQS 객체 만들기 메세지 하나를 보낼 땐 SendMessageRequest 를, 여러개 보낼 땐 SendMessageBatchRequest 를 사용한다.\n한 개만 보낼 때: docs  SendMessageRequest(String queueUrl, String messageBody)\nSQS에 보낼 message Body 는 무조건 String 형식이어야 한다.\n동시에 여러개 보낼 때: docs  SendMessageBatchRequest(String queueUrl, List\u0026lt;SendMessageBatchRequestEntry\u0026gt; entries)\nSendMessageBatchRequest의 entries 값을 세팅해주기 위해 OrderSqs 객체 내부에 setOrders() 메서드를 만들었다.\n생성자로 SendMessageBatchRequestEntry(String id, String messageBody) 를 사용하며, 각 entry id는 entries 객체 내에선 unique한 값이어야 한다. 그러므로 Order의 orderSeq 값을 해당 id 값으로 지정해주었다(int 값을 String으로 바꿔야 하는데 조금 편법을 썼다 ㅎ).\n 4. SQS 호출 예시 junit5 기준으로 작성했다. 예시 테스트 코드라 간단하게 만들었다.\n 정리 AWS docs는 항상 느끼지만 친절한 듯 하면서 친절하지 않다.\n정보가 너무 많아서 그런 것 같다. docs 설명도 많고 주의사항 페이지도 따로 있고, github 나 API 도 따로 있으니\u0026hellip; 😅\n나만의 팁은 docs에 올라온 샘플 코드를 먼저 본 다음에 API를 샅샅히 보면 원하는 대로 커스텀하기 좀 수월한 것 같다.\n 출처:\n AWS DOCS   AWS Example Github   조대협의 블로그 AWS SQS(Simple Queue Service) 소개    "
+},
+{
+	"uri": "https://mand2.github.io/tags/sqs/",
+	"title": "SQS",
 	"tags": [],
 	"description": "",
 	"content": ""
@@ -520,13 +541,6 @@
 {
 	"uri": "https://mand2.github.io/tags/spring/",
 	"title": "Spring",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "https://mand2.github.io/tags/python/",
-	"title": "Python",
 	"tags": [],
 	"description": "",
 	"content": ""

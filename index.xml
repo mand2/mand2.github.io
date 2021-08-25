@@ -6,7 +6,7 @@
         <description>Recent content on 고라니의 개발일기🦌</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>ko-kr</language>
-        <lastBuildDate>Mon, 16 Aug 2021 01:40:33 +0900</lastBuildDate><atom:link href="https://mand2.github.io/index.xml" rel="self" type="application/rss+xml" />
+        <lastBuildDate>Wed, 25 Aug 2021 23:38:21 +0900</lastBuildDate><atom:link href="https://mand2.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
             <title>getter setter 설정</title>
             <link>https://mand2.github.io/python/1/</link>
@@ -296,6 +296,18 @@ DAO 변경 DAO 변경
             <description>메이븐은 프로젝트 객체 모델(Project Object Model)이라는 개념을 바탕으로 프로젝트 의존성 관리, 라이브러리 관리, 프로젝트 생명 주기 관리 기능 등을 제공하는 프로젝트 관리 도구이다. 또한 플러그인을 기반으로 소스 코드로부터 배포 가능한 산출물을 만들어 내는 빌드 기능 뿐만 아니라 레포팅 및 documentation 작성 기능 등을 제공한다.
 
 메이븐 자세히 알아보러 가기  pom.xml 태그들 자세히 알아보기  pom.xml 태그 조금 더 간결하게, 정리 더 잘 된 것  maven (메이븐 구조, 차이점, 플러그인, 라이프사이클, 의존성, pom.</description>
+        </item>
+        
+        <item>
+            <title>아나콘다 주피터 노트북 시작폴더 위치 바꾸기</title>
+            <link>https://mand2.github.io/til/%EC%95%84%EB%82%98%EC%BD%98%EB%8B%A4_%EC%A3%BC%ED%94%BC%ED%84%B0_%EB%85%B8%ED%8A%B8%EB%B6%81_%EC%8B%9C%EC%9E%91%ED%8F%B4%EB%8D%94_%EC%9C%84%EC%B9%98_%EB%B0%94%EA%BE%B8%EA%B8%B0/</link>
+            <pubDate>Wed, 25 Aug 2021 23:38:21 +0900</pubDate>
+            
+            <guid>https://mand2.github.io/til/%EC%95%84%EB%82%98%EC%BD%98%EB%8B%A4_%EC%A3%BC%ED%94%BC%ED%84%B0_%EB%85%B8%ED%8A%B8%EB%B6%81_%EC%8B%9C%EC%9E%91%ED%8F%B4%EB%8D%94_%EC%9C%84%EC%B9%98_%EB%B0%94%EA%BE%B8%EA%B8%B0/</guid>
+            <description>주피터 노트북을 직접 설치하지 않은 사람이 시작 폴더 바꾸려면?
+ 오늘의 주제는 주피터 노트북을 직접 설치하지 않은 사람이 시작 폴더 바꾸려면? 이다.
+jupyter notebook의 기본 폴더는 C:\Users\{사용자명} 에 위치해 있는데, 외장하드(/d/) 폴더를 자주 쓰는 나로서는 너무 불편했다.
+일반 cmd 나 powershell 혹은 terminal 에서 아무리 열심히 jupyter notebook 쳐도 명령어 없음으로 떴다. 아니 다른 기술 블로그엔 잘만 나오는데 왜 없어&amp;hellip;🤦‍♀️ 하며 가상환경 관리한다고 아나콘다만 설치했던 걸 까먹었었다. 검색하면 jupyter notebook 도 같이 나오니까 당연히 개별로 설치된 건줄 알았지&amp;hellip; anaconda에 종속된 jupyter notebook 이었을 줄이야.</description>
         </item>
         
         <item>

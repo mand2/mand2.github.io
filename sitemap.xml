@@ -153,12 +153,47 @@
   </url>
   
   <url>
-    <loc>https://mand2.github.io/tags/aws/</loc>
-    <lastmod>2021-08-16T01:40:33+09:00</lastmod>
+    <loc>https://mand2.github.io/tags/anaconda/</loc>
+    <lastmod>2021-08-25T23:38:21+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://mand2.github.io/categories/</loc>
+    <lastmod>2021-08-25T23:38:21+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mand2.github.io/tags/python/</loc>
+    <lastmod>2021-08-25T23:38:21+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mand2.github.io/tags/</loc>
+    <lastmod>2021-08-25T23:38:21+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mand2.github.io/tags/til/</loc>
+    <lastmod>2021-08-25T23:38:21+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mand2.github.io/categories/til/</loc>
+    <lastmod>2021-08-25T23:38:21+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mand2.github.io/</loc>
+    <lastmod>2021-08-25T23:38:21+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mand2.github.io/til/%EC%95%84%EB%82%98%EC%BD%98%EB%8B%A4_%EC%A3%BC%ED%94%BC%ED%84%B0_%EB%85%B8%ED%8A%B8%EB%B6%81_%EC%8B%9C%EC%9E%91%ED%8F%B4%EB%8D%94_%EC%9C%84%EC%B9%98_%EB%B0%94%EA%BE%B8%EA%B8%B0/</loc>
+    <lastmod>2021-08-25T23:38:21+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mand2.github.io/tags/aws/</loc>
     <lastmod>2021-08-16T01:40:33+09:00</lastmod>
   </url>
   
@@ -174,26 +209,6 @@
   
   <url>
     <loc>https://mand2.github.io/tags/sqs/</loc>
-    <lastmod>2021-08-16T01:40:33+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mand2.github.io/tags/</loc>
-    <lastmod>2021-08-16T01:40:33+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mand2.github.io/tags/til/</loc>
-    <lastmod>2021-08-16T01:40:33+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mand2.github.io/categories/til/</loc>
-    <lastmod>2021-08-16T01:40:33+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mand2.github.io/</loc>
     <lastmod>2021-08-16T01:40:33+09:00</lastmod>
   </url>
   
@@ -375,11 +390,6 @@
   <url>
     <loc>https://mand2.github.io/tags/spring/</loc>
     <lastmod>2020-03-04T23:13:53+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mand2.github.io/tags/python/</loc>
-    <lastmod>2020-02-06T23:21:03+09:00</lastmod>
   </url>
   
   <url>
