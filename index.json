@@ -11,14 +11,14 @@
 	"title": "Spring",
 	"tags": [],
 	"description": "",
-	"content": "Chapter 1 Spring \rRest Api\r\r\r\rMethods @Get, @Post, Delete, @Put\r\r\r@PutMapping 사용 시 415 오류 해결방법\r\r\rstatustext parsererror 해결방법\r\r\rREST API Client에서 호출가능한 Library\r\r\r\rSpring Boot\r\r\r\rspring.jpa.open-in-view 로그 오류 해결하기\r\r\rquerydsl 설정하기\r\r\rmaven 빌드 오류\r\r\r@SpringBootApplication\r\r\r\r회원가입\r\r\r\rsingle-page 회원관리 폼 만들기\r\r\rSpring handler 인터셉터\r\r\rSpring 웹상에서 메일 보내보기\r\r\r회원가입 시 이메일 인증처리\r\r\r메이븐 빌드 및 배포란?\r\r\r\r"
+	"content": "Chapter 1 Spring \rRest Api\r\r\r\rRest Api\r\r\rSpring Boot\r\r\r회원가입\r\r\r\rSpring Boot\r\r\r\rAbout\r\r\rSpring\r\r\rTIL\r\r\rPython\r\r\rNode.js\r\r\rReact\r\r\rOthers\r\r\r회고\r\r\r\r회원가입\r\r\r\rsingle-page 회원관리 폼 만들기\r\r\rSpring handler 인터셉터\r\r\rSpring 웹상에서 메일 보내보기\r\r\r회원가입 시 이메일 인증처리\r\r\r메이븐 빌드 및 배포란?\r\r\r\r"
 },
 {
 	"uri": "https://mand2.github.io/til/",
 	"title": "TIL",
 	"tags": [],
 	"description": "",
-	"content": "Chapter 2 TIL \r아나콘다 주피터 노트북 시작폴더 위치 바꾸기\r\r\r\r\rJava 형식으로 AWS SQS에 메세지 보내기\r\r\r\r\rGit 커밋 그래프(contribution graph)를 3D로 보는 방법\r\r\r\r\r자바 형변환 안전하게 하기\r\r\r\r\r자바스크립트로 AWS autoscaling group 정보 가져오기\r\r\r\r\r블로그 커밋 메세지 만들고 자동 배포 하기\r\r\r\r\rMaven pom.xml 빌드 플러그인 세팅하기\r\r\r\r\rDB index의 정의\r\r\r\r\r컬렉션 프레임워크의 정의와 stream 사용법 간단 정리\r\r\r\r\r"
+	"content": "Chapter 2 TIL \r[AWS S3] 로컬 디렉토리에 있는 모든 파일 S3로 업로드하기\r\r\r\r\r아나콘다 주피터 노트북 시작폴더 위치 바꾸기\r\r\r\r\rJava 형식으로 AWS SQS에 메세지 보내기\r\r\r\r\rGit 커밋 그래프(contribution graph)를 3D로 보는 방법\r\r\r\r\r자바 형변환 안전하게 하기\r\r\r\r\r자바스크립트로 AWS autoscaling group 정보 가져오기\r\r\r\r\r블로그 커밋 메세지 만들고 자동 배포 하기\r\r\r\r\rMaven pom.xml 빌드 플러그인 세팅하기\r\r\r\r\rDB index의 정의\r\r\r\r\r컬렉션 프레임워크의 정의와 stream 사용법 간단 정리\r\r\r\r\r"
 },
 {
 	"uri": "https://mand2.github.io/python/",
@@ -210,8 +210,15 @@
 	"content": "메이븐은 프로젝트 객체 모델(Project Object Model)이라는 개념을 바탕으로 프로젝트 의존성 관리, 라이브러리 관리, 프로젝트 생명 주기 관리 기능 등을 제공하는 프로젝트 관리 도구이다. 또한 플러그인을 기반으로 소스 코드로부터 배포 가능한 산출물을 만들어 내는 빌드 기능 뿐만 아니라 레포팅 및 documentation 작성 기능 등을 제공한다.\n\n메이븐 자세히 알아보러 가기  pom.xml 태그들 자세히 알아보기  pom.xml 태그 조금 더 간결하게, 정리 더 잘 된 것  maven (메이븐 구조, 차이점, 플러그인, 라이프사이클, 의존성, pom.xml)  자바 웹 어플리케이션 배포  SVN 으로 형상관리 하는 경우도 있다 (회사에서,,) git으로 형상관리 하기  배포 순서 :\n 각자 소스 코딩 후 형상관리 툴에 push 배포용 서버 컴퓨터에서 pull 받음 war 파일로 package tomcat에 배포  "
 },
 {
-	"uri": "https://mand2.github.io/tags/anaconda/",
-	"title": "Anaconda",
+	"uri": "https://mand2.github.io/til/aws_s3_%EB%A1%9C%EC%BB%AC%EB%94%94%EB%A0%89%ED%86%A0%EB%A6%AC_%EC%97%85%EB%A1%9C%EB%93%9C%ED%95%98%EA%B8%B0/",
+	"title": "[AWS S3] 로컬 디렉토리에 있는 모든 파일 S3로 업로드하기",
+	"tags": ["TIL", "AWS", "Kotlin", "Java", "Spring Boot", "Gradle"],
+	"description": "",
+	"content": "로컬에 있는 특정 파일(디렉토리) 안에 있는 모든 파일들을 s3로 옮기는 작업을 진행하는 코드를 코틀린으로 만들어보자 🚀\n처음으로 코틀린으로 작성해본거라 코딩 컨벤션에 맞지 않을 수 있다 😅\naws 깃허브를 많이 참고하였고, 해당 참고했던 깃허브는 java 언어를 보고 참고하였다.\n참고했던 자료들은 이 글 제일 하단에 있다.\n전제조건은 다음과 같다.\n1. 전제조건  gradle kotlin jdk : aws-correto-11 (aws 오픈소스) 로컬 파일 구조\n|\u0026ndash; d\n|\u0026ndash; test\n|\u0026ndash; uploader AWS 버킷 생성 완료 + public 으로 전환  2. gradle 세팅  기본 세팅 implementation(\u0026#34;com.amazonaws:aws-java-sdk-s3:1.12.52\u0026#34;)   버전관리용 세팅\naws-sdk 라이브러리를 많이 사용한다면 aws-java-sdk-bom 라는 걸로 한번에 버전관리를 할 수 있다. (관련 docs  ).\nbom 버전 확인하러 가기  bom 버전은 1.xx 대 버전이어야 한다. high-level 메서드인 TransferManager를 사용하므로 bom 2.xx 버전은 사용 불가.\n아마존에서는 2.xx 대 버전으로 마이그레이션을 많이 해두었긴 했는데 아직 S3에서 사용하는 주요 메서드들은 마이그레이션이 덜 되었다 \u0026hellip;ㅎ aws sdk chagne log  참고    코틀린 4.6 버전 이상:\ndependencies { implementation(\u0026#34;com.amazonaws:aws-java-sdk-bom:1.12.52\u0026#34;) implementation(\u0026#34;software.amazon.awssdk:s3\u0026#34;) }   코틀린 4.6 버전 이전:\ndependencyManagement { imports { mavenBom(\u0026#34;software.amazon.awssdk:bom:1.12.52\u0026#34;) } } dependencies { implementation(\u0026#34;software.amazon.awssdk:s3\u0026#34;) }   3. 디렉토리 S3 업로더 코틀린으로 작성하기 3-1. 업로드할 S3 버킷과 연결하기 - TransferManagerBuilder 생성하기 S3 버킷에 접근 가능한 aws_access_key_id 와 aws_secret_access_key, region 을 사용하여\nAmazonS3ClientBuilder 를 만든다. 그 후 한꺼번에 업로드 할 수 있는 TransferManagerBuilder 를 만들어 반환하기\n 3-2. S3 버킷에 업로드하는 부분 만들기 - basic   먼저 local_path 가 /d/test/uploader/ 라고 하자.\nuploader 내부에는 수많은 파일이 있고, 각 파일마다 2mb 를 넘지 않는다고 가정.\n만약 파일 하나 하나의 사이즈가 크다면 다른 방식으로 해야 됨. 하단 참고부분에서 멀티파트 업로드를 사용한 객체 업로드 부분을 참고할 것.\n  s3에 업로드 될 path 는 {bucket_name} path1/path2/upload/210831/ 이라고 가정.\nbucket_name = mand2 로 한다.\ndefault_path = /path1/path2/ 로 가정.\n참고로 s3 업로드시 해당 객체(경로)가 없어도 자동으로 생성되므로 \u0026lsquo;먼저 객체를 만들어야하나?🤔\u0026rsquo; 하고 고민하지 않아도 된다. (내가 고민하다 삽질해봄..ㅎ)\n 👀 주의사항\n각 path 앞, 뒤에 / 가 있다면 없애주자.\n예를들어 /mand2/path1/path2/.... 이라고 설정이 된다면 실제로 업로드 되지 않음.\n테스트 해보면 알겠지만 업로드 완료 라고 뜨지만 실제 s3에는 객체가 생성이 되지 않는다.\n    3-3. S3 버킷에 업로드하는 부분 만들기 - advanced 위에 코드를 실행해보면 답답할 것이다. 얼마나 완료되었는지 확인을 못하므로..🤔\n그러니 진행률을 같이 볼 수 있도록 로그를 남겨서 확인할 수 있게 해주자.\n좀 더 보기 편하게 진행율 포맷을 0.00% 로 보이도록 만들었다.\n 결과 예시\n[Running] upload progressing... start [Running] 0.35% upload progressing... [Running] 0.70% upload progressing... [Running] 1.06% upload progressing... [Running] 1.44% upload progressing... [Running] 1.80% upload progressing... [Running] 2.15% upload progressing... [Running] 2.52% upload progressing... [Running] 6.81% upload progressing... [Running] 11.00% upload progressing... [Running] 15.00% upload progressing... [Running] 19.12% upload progressing... [Running] 23.31% upload progressing... \n어쩌다 보니 코틀린까지 하게 되었는데, 변수 선언 방식도 그렇고 좀 더 유동적이라 재밌는것 같다.\n같이 일하는 동료가 \u0026lsquo;쓸데없는 코드 작성시간을 줄인다\u0026rsquo; 는 평을 했었는데 왜 그런 평을 했는지 알 것 같다. ㅎㅎ\n어찌저찌 코틀린으로 작성한거라 문제 많을 수 있음.\n참고로 cli 로는 아주 간단하다.\naws s3 cp {{local_directory}} s3://{{s3_bucket}} --recursive \n 참고 AWS\n Basics  기본적인 docs 안내사항: TransferManager를 이용한 디렉토리 업로드   위의 github 예제코드     Advanced - 진행률 관련  관련 docs Poll the Current Progress of a Transfer   관련 깃허브 예제코드     docs: Performing Operations on Amazon S3 Objects   멀티파트 업로드를 사용한 객체 업로드_AWS SDK 사용(상위 수준 API)  plus) 하위 수준 API 사용 기준:  멀티파트 업로드를 일시 중지한 후 다시 시작해야 하거나 업로드 중에 부분 크기를 변경해야 하거나 업로드 데이터 크기를 미리 확인하지 않은 경우    Blogs\n Spring Boot :: Kotlin으로 AWS S3 업로드 기능 구현 https://wave1994.tistory.com/131    "
+},
+{
+	"uri": "https://mand2.github.io/tags/aws/",
+	"title": "AWS",
 	"tags": [],
 	"description": "",
 	"content": ""
@@ -224,8 +231,29 @@
 	"content": ""
 },
 {
-	"uri": "https://mand2.github.io/tags/python/",
-	"title": "Python",
+	"uri": "https://mand2.github.io/tags/gradle/",
+	"title": "Gradle",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://mand2.github.io/tags/java/",
+	"title": "Java",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://mand2.github.io/tags/kotlin/",
+	"title": "Kotlin",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://mand2.github.io/tags/spring-boot/",
+	"title": "Spring Boot",
 	"tags": [],
 	"description": "",
 	"content": ""
@@ -259,25 +287,25 @@
 	"content": ""
 },
 {
+	"uri": "https://mand2.github.io/tags/anaconda/",
+	"title": "Anaconda",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://mand2.github.io/tags/python/",
+	"title": "Python",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
 	"uri": "https://mand2.github.io/til/%EC%95%84%EB%82%98%EC%BD%98%EB%8B%A4_%EC%A3%BC%ED%94%BC%ED%84%B0_%EB%85%B8%ED%8A%B8%EB%B6%81_%EC%8B%9C%EC%9E%91%ED%8F%B4%EB%8D%94_%EC%9C%84%EC%B9%98_%EB%B0%94%EA%BE%B8%EA%B8%B0/",
 	"title": "아나콘다 주피터 노트북 시작폴더 위치 바꾸기",
 	"tags": ["TIL", "Python", "Anaconda"],
 	"description": "",
 	"content": " 주피터 노트북을 직접 설치하지 않은 사람이 시작 폴더 바꾸려면?\n 오늘의 주제는 주피터 노트북을 직접 설치하지 않은 사람이 시작 폴더 바꾸려면? 이다.\njupyter notebook의 기본 폴더는 C:\\Users\\{사용자명} 에 위치해 있는데, 외장하드(/d/) 폴더를 자주 쓰는 나로서는 너무 불편했다.\n일반 cmd 나 powershell 혹은 terminal 에서 아무리 열심히 jupyter notebook 쳐도 명령어 없음으로 떴다. 아니 다른 기술 블로그엔 잘만 나오는데 왜 없어\u0026hellip;🤦‍♀️ 하며 가상환경 관리한다고 아나콘다만 설치했던 걸 까먹었었다. 검색하면 jupyter notebook 도 같이 나오니까 당연히 개별로 설치된 건줄 알았지\u0026hellip; anaconda에 종속된 jupyter notebook 이었을 줄이야. 덕분에 한시간 넘게 뻘짓을 했다.\n날 살려준 스택오버플로우 주소  전제조건 :\n windows 10 anaconda 설치 jupyter notebook 은 따로 설치한게 아니라 anaconda 설치하면서 같이 설치했음.   1. anaconda prompt로 들어간다 검색해서 anaconda prompt 위치를 찾는다. 나는 바로가기 폴더가 있어서 수월했다. 해당 프롬프트를 실행한다.\ndirectory path :\nC:\\Users\\{사용자명}\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Anaconda3 (64-bit)\n프롬프트에서 jupyter notebook \u0026ndash;generate-config 명령어를 친다. 그러면 jupyter notebook 용 config 파일이 생성된다.\n# 실행 명령어 (my-env) C:\\Users\\{사용자명}\u0026gt; jupyter notebook --generate-config Writing default config to: C:\\Users\\{사용자명}\\.jupyter\\jupyter_notebook_config.py \n2. config.py로 시작폴더 위치 변경하기 anaconda prompt 로 생성한 config 파일의 위치로 들어가면 엄청난 양의 설정 스크립트가 있다.\n위의 이미지와 같이 c.NotebookApp.notebook_dir을 찾아 주석을 없애주고, 원하는 파일 위치를 작성하면 된다.\n👀 예시 및 주의사항\n역슬래시로 path 설정하면 안된다. escape 문자로 인식해서 에러가 남.\n## The directory to use for notebooks and kernels. c.NotebookApp.notebook_dir = \u0026#39;D:/0. 개인 공부\u0026#39; \n3. anaconda 가상환경을 가진 jupyter notebook 실행 anaconda prompt 에서 jupyter notebook 쳐서 실행하면 된다.\n 개인적 소감\n 왜인지는 모르겠지만 jupyter notebook (env) 실행파일로는 실행이 안된다 🤔\ncmd 에서 jupyter notebook 명령어도 안 들고, 실행파일로도 실행이 안되어서 찾을 때 좌절했었다. \u0026lsquo;내 인생은 노가다인 것인가\u0026hellip;!!\u0026rsquo; 하는 생각이 또 들었다 ㅎㅎ\n환경변수 세팅을 해야되나 엄청 고민도 하고\u0026hellip;\njupyterNotebook.exe 파일 내에서 실행 위치나 명령어 바꿔보기도 했는데 다 실패했어서 \u0026lsquo;아.. 난 그냥 포기해야 되나보다 그냥 파이참으로 테스트해봐야겠네 ㅎ\u0026rsquo; 했었는데 마지막으로 스택오버플로우 글이 날 살렸다🙇‍♀️🙇‍♀️\n"
-},
-{
-	"uri": "https://mand2.github.io/tags/aws/",
-	"title": "AWS",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "https://mand2.github.io/tags/java/",
-	"title": "Java",
-	"tags": [],
-	"description": "",
-	"content": ""
 },
 {
 	"uri": "https://mand2.github.io/til/send-messages-to-sqs-by-java/",
