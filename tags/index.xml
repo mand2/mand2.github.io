@@ -6,10 +6,37 @@
     <description>Recent content in Tags on 고라니의 개발일기🦌</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Thu, 02 Sep 2021 22:53:31 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 08 Sep 2021 23:20:09 +0900</lastBuildDate>
     
 	<atom:link href="https://mand2.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Books</title>
+      <link>https://mand2.github.io/tags/books/</link>
+      <pubDate>Wed, 08 Sep 2021 23:20:09 +0900</pubDate>
+      
+      <guid>https://mand2.github.io/tags/books/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Others</title>
+      <link>https://mand2.github.io/tags/others/</link>
+      <pubDate>Wed, 08 Sep 2021 23:20:09 +0900</pubDate>
+      
+      <guid>https://mand2.github.io/tags/others/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Reviews</title>
+      <link>https://mand2.github.io/tags/reviews/</link>
+      <pubDate>Wed, 08 Sep 2021 23:20:09 +0900</pubDate>
+      
+      <guid>https://mand2.github.io/tags/reviews/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>AWS</title>
@@ -129,15 +156,6 @@
     </item>
     
     <item>
-      <title>Others</title>
-      <link>https://mand2.github.io/tags/others/</link>
-      <pubDate>Thu, 08 Oct 2020 00:18:17 +0900</pubDate>
-      
-      <guid>https://mand2.github.io/tags/others/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Session</title>
       <link>https://mand2.github.io/tags/session/</link>
       <pubDate>Thu, 08 Oct 2020 00:18:17 +0900</pubDate>
@@ -161,15 +179,6 @@
       <pubDate>Wed, 09 Sep 2020 00:02:15 +0900</pubDate>
       
       <guid>https://mand2.github.io/tags/git/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Books</title>
-      <link>https://mand2.github.io/tags/books/</link>
-      <pubDate>Fri, 04 Sep 2020 21:49:04 +0900</pubDate>
-      
-      <guid>https://mand2.github.io/tags/books/</guid>
       <description></description>
     </item>
     
@@ -278,15 +287,6 @@
       <pubDate>Tue, 05 Nov 2019 18:10:40 +0900</pubDate>
       
       <guid>https://mand2.github.io/tags/interviews/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Reviews</title>
-      <link>https://mand2.github.io/tags/reviews/</link>
-      <pubDate>Thu, 24 Oct 2019 22:10:41 +0900</pubDate>
-      
-      <guid>https://mand2.github.io/tags/reviews/</guid>
       <description></description>
     </item>
     

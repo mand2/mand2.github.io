@@ -6,7 +6,7 @@
         <description>Recent content on 고라니의 개발일기🦌</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>ko-kr</language>
-        <lastBuildDate>Thu, 02 Sep 2021 22:53:31 +0900</lastBuildDate><atom:link href="https://mand2.github.io/index.xml" rel="self" type="application/rss+xml" />
+        <lastBuildDate>Wed, 08 Sep 2021 23:20:09 +0900</lastBuildDate><atom:link href="https://mand2.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
             <title>getter setter 설정</title>
             <link>https://mand2.github.io/python/1/</link>
@@ -296,6 +296,17 @@ DAO 변경 DAO 변경
             <description>메이븐은 프로젝트 객체 모델(Project Object Model)이라는 개념을 바탕으로 프로젝트 의존성 관리, 라이브러리 관리, 프로젝트 생명 주기 관리 기능 등을 제공하는 프로젝트 관리 도구이다. 또한 플러그인을 기반으로 소스 코드로부터 배포 가능한 산출물을 만들어 내는 빌드 기능 뿐만 아니라 레포팅 및 documentation 작성 기능 등을 제공한다.
 
 메이븐 자세히 알아보러 가기  pom.xml 태그들 자세히 알아보기  pom.xml 태그 조금 더 간결하게, 정리 더 잘 된 것  maven (메이븐 구조, 차이점, 플러그인, 라이프사이클, 의존성, pom.</description>
+        </item>
+        
+        <item>
+            <title>[책] 2021년 어떤 책을 읽었고 읽고 있나</title>
+            <link>https://mand2.github.io/others/books/2021%EB%85%84_%EC%96%B4%EB%96%A4_%EC%B1%85%EC%9D%84_%EC%9D%BD%EC%97%88%EA%B3%A0_%EC%9D%BD%EA%B3%A0%EC%9E%88%EB%82%98/</link>
+            <pubDate>Wed, 08 Sep 2021 23:20:09 +0900</pubDate>
+            
+            <guid>https://mand2.github.io/others/books/2021%EB%85%84_%EC%96%B4%EB%96%A4_%EC%B1%85%EC%9D%84_%EC%9D%BD%EC%97%88%EA%B3%A0_%EC%9D%BD%EA%B3%A0%EC%9E%88%EB%82%98/</guid>
+            <description>올 한 해 어떤 책을 읽었는지 / 읽고 있는지 / 읽을 예정인지 정리하기 완독한 책은 그렇게 많지는 않고 2/3 정도 읽고 흥미가 떨어져서 다른 책으로 넘어갔거나, 읽고 싶은 파트만 발췌해서 읽었다.
+개발 관련 책 많이 읽은 것 같은데, 이 책 내용 정리해서 알려줘! 하면 제대로 설명 못함&amp;hellip;😥 일단 읽었다~ 너와 나의 인연이 스쳤다~ 이정도인 수준. 제대로 이해하고 외우고 적용하는 건 더 시간을 할애해야 한다. 슥- 훑어본 개발 관련 서적
+최근에 읽은 책 순서로 나열.</description>
         </item>
         
         <item>
