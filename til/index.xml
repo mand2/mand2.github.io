@@ -6,11 +6,7 @@
     <description>Recent content in TIL on 고라니의 개발일기🦌</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Sun, 30 Aug 2020 02:03:22 +0900</lastBuildDate>
-    
-	<atom:link href="https://mand2.github.io/til/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 30 Aug 2020 02:03:22 +0900</lastBuildDate><atom:link href="https://mand2.github.io/til/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[AWS S3] 로컬 디렉토리에 있는 모든 파일 S3로 업로드하기</title>
       <link>https://mand2.github.io/til/aws_s3_%EB%A1%9C%EC%BB%AC%EB%94%94%EB%A0%89%ED%86%A0%EB%A6%AC_%EC%97%85%EB%A1%9C%EB%93%9C%ED%95%98%EA%B8%B0/</link>
@@ -109,8 +105,7 @@ AWS에서는 SDK라고 해서 aws 관련한 모든 것에 접근할 수 있는 �
 스펙
  intellij JDK 1.8 maven 4.0.0  그전에 앞서, apache maven project 사이트에서 말하는 최소 사양은 다음과 같다.
  Maven 3.0 이상 JDK 1.7 이상  Q. pom.xml에 사용한 dependency를 어떻게 내보내야 하는가? 두 가지 버전이 있다.
-  maven-assembly-plugin 사용:
-내부에 전 dependency를 저장하여 보내주기 때문에 용량이 크다.</description>
+  maven-assembly-plugin 사용: 내부에 전 dependency를 저장하여 보내주기 때문에 용량이 크다.</description>
     </item>
     
     <item>

@@ -6,7 +6,7 @@
         <description>Recent content on 고라니의 개발일기🦌</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>ko-kr</language>
-        <lastBuildDate>Wed, 08 Sep 2021 23:20:09 +0900</lastBuildDate><atom:link href="https://mand2.github.io/index.xml" rel="self" type="application/rss+xml" />
+        <lastBuildDate>Thu, 10 Feb 2022 23:23:50 +0900</lastBuildDate><atom:link href="https://mand2.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
             <title>getter setter 설정</title>
             <link>https://mand2.github.io/python/1/</link>
@@ -299,6 +299,18 @@ DAO 변경 DAO 변경
         </item>
         
         <item>
+            <title>20220210</title>
+            <link>https://mand2.github.io/retro/20220210/</link>
+            <pubDate>Thu, 10 Feb 2022 23:23:50 +0900</pubDate>
+            
+            <guid>https://mand2.github.io/retro/20220210/</guid>
+            <description>오랜만에 쓰는 회고아닌 회고시간 -
+아 오랜만에 왔는데 그동안 뭐했나요? 하면 취미생활 좀 즐기려고 노력해봤다.
+취미생활 리스트 독서 모임 가죽공예 2회 (지갑, 가방) 최근에 추가된 만년필 필사 ㅎ   🖋 만년필을 살까 말까 고민을 한 3-4년 정도 했는데 (가끔 땡길 때가 있다ㅋㅋ 지름신이 올 때)
+드디어 구매함. 예전에 고민할 때 살 걸. 코로나로 인해서인지 3만원 대 가격을 5만원에 구매. 물가 상승률 미쳤다. 😡</description>
+        </item>
+        
+        <item>
             <title>[책] 2021년 어떤 책을 읽었고 읽고 있나</title>
             <link>https://mand2.github.io/others/books/2021%EB%85%84_%EC%96%B4%EB%96%A4_%EC%B1%85%EC%9D%84_%EC%9D%BD%EC%97%88%EA%B3%A0_%EC%9D%BD%EA%B3%A0%EC%9E%88%EB%82%98/</link>
             <pubDate>Wed, 08 Sep 2021 23:20:09 +0900</pubDate>
@@ -469,11 +481,8 @@ AWS에서는 SDK라고 해서 aws 관련한 모든 것에 접근할 수 있는 �
             
             <guid>https://mand2.github.io/retro/20200902/</guid>
             <description>오늘은 날씨도 우중충하니까 우울한 이야기를 해야겠다.
-월급의 20%를 자기계발로 써야한다는 말을 들어서, 나는 자기계발을 열심히 하는 개발자인가, 생각해보았다.
-반은 맞고 반은 틀리다. 젠장
-자유 시간에 나는 무엇을 했는지 살펴보면.. 일단 책과 강의는 열심히 사는 편이다: 돈을 쓴다 -&amp;gt; 열심히 한다?
-틀어놓고 자거나, 책을 10~20분, 혹은 아예 안 볼때도 많다: 배가 불렀다 -&amp;gt; 열심히 안한다
-업무에 필요하다며 기기들을 산다 -&amp;gt; 개발자 뽕이 차오른다🍷🍷🍷 -&amp;gt; 뽕만 차오르고, 통장은 텅장이 되어버린다.</description>
+월급의 20%를 자기계발로 써야한다는 말을 들어서, 나는 자기계발을 열심히 하는 개발자인가, 생각해보았다. 반은 맞고 반은 틀리다. 젠장
+자유 시간에 나는 무엇을 했는지 살펴보면.. 일단 책과 강의는 열심히 사는 편이다: 돈을 쓴다 -&amp;gt; 열심히 한다? 틀어놓고 자거나, 책을 10~20분, 혹은 아예 안 볼때도 많다: 배가 불렀다 -&amp;gt; 열심히 안한다 업무에 필요하다며 기기들을 산다 -&amp;gt; 개발자 뽕이 차오른다🍷🍷🍷 -&amp;gt; 뽕만 차오르고, 통장은 텅장이 되어버린다.</description>
         </item>
         
         <item>
@@ -510,8 +519,7 @@ AWS에서는 SDK라고 해서 aws 관련한 모든 것에 접근할 수 있는 �
 스펙
  intellij JDK 1.8 maven 4.0.0  그전에 앞서, apache maven project 사이트에서 말하는 최소 사양은 다음과 같다.
  Maven 3.0 이상 JDK 1.7 이상  Q. pom.xml에 사용한 dependency를 어떻게 내보내야 하는가? 두 가지 버전이 있다.
-  maven-assembly-plugin 사용:
-내부에 전 dependency를 저장하여 보내주기 때문에 용량이 크다.</description>
+  maven-assembly-plugin 사용: 내부에 전 dependency를 저장하여 보내주기 때문에 용량이 크다.</description>
         </item>
         
         <item>

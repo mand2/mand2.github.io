@@ -6,11 +6,7 @@
     <description>Recent content in Table on 고라니의 개발일기🦌</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Fri, 13 Dec 2019 18:31:31 +0900</lastBuildDate>
-    
-	<atom:link href="https://mand2.github.io/tags/table/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 13 Dec 2019 18:31:31 +0900</lastBuildDate><atom:link href="https://mand2.github.io/tags/table/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>데이터 테이블로 정렬하기</title>
       <link>https://mand2.github.io/react/1/</link>

@@ -6,11 +6,7 @@
     <description>Recent content in AWS on 고라니의 개발일기🦌</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Thu, 02 Sep 2021 22:53:31 +0900</lastBuildDate>
-    
-	<atom:link href="https://mand2.github.io/tags/aws/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 02 Sep 2021 22:53:31 +0900</lastBuildDate><atom:link href="https://mand2.github.io/tags/aws/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[AWS S3] 로컬 디렉토리에 있는 모든 파일 S3로 업로드하기</title>
       <link>https://mand2.github.io/til/aws_s3_%EB%A1%9C%EC%BB%AC%EB%94%94%EB%A0%89%ED%86%A0%EB%A6%AC_%EC%97%85%EB%A1%9C%EB%93%9C%ED%95%98%EA%B8%B0/</link>

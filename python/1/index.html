@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.74.3" />
+    <meta name="generator" content="Hugo 0.92.1" />
     <meta name="description" content="goranee&#39;s dev-log">
 <meta name="author" content="mand2">
 
@@ -11,21 +11,21 @@
     <title>getter setter 설정 :: 고라니의 개발일기🦌</title>
 
     
-    <link href="/css/nucleus.css?1631536940" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1631536940" rel="stylesheet">
-    <link href="/css/hybrid.css?1631536940" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1631536940" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1631536940" rel="stylesheet">
-    <link href="/css/auto-complete.css?1631536940" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1631536940" rel="stylesheet">
-    <link href="/css/theme.css?1631536940" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1631536940" rel="stylesheet">
+    <link href="/css/nucleus.css?1644506636" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1644506636" rel="stylesheet">
+    <link href="/css/hybrid.css?1644506636" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1644506636" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1644506636" rel="stylesheet">
+    <link href="/css/auto-complete.css?1644506636" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1644506636" rel="stylesheet">
+    <link href="/css/theme.css?1644506636" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1644506636" rel="stylesheet">
     
-    <link href="/css/theme-mine.css?1631536940" rel="stylesheet">
+    <link href="/css/theme-mine.css?1644506636" rel="stylesheet">
     
-    <link href="/css/custom.css?1631536940" rel="stylesheet">
+    <link href="/css/custom.css?1644506636" rel="stylesheet">
 
-    <script src="/js/jquery-3.3.1.min.js?1631536940"></script>
+    <script src="/js/jquery-3.3.1.min.js?1644506636"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -52,7 +52,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
     
   </head>
   <body class="" data-url="/python/1/">
@@ -74,14 +73,14 @@ if (!doNotTrack) {
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1631536940"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1631536940"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1644506636"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1644506636"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/mand2.github.io\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1631536940"></script>
+<script type="text/javascript" src="/js/search.js?1644506636"></script>
 
     
   </div>
@@ -1064,6 +1063,9 @@ if (!doNotTrack) {
              
             
           
+             
+            
+          
         
         </ul>
               
@@ -1192,17 +1194,17 @@ if (!doNotTrack) {
 
 <h2 id="python--getter-setter-설정">Python : getter setter 설정</h2>
 <p>클래스 내부에서 getter setter 설정 쉽게하기 메서드 낭비하지 않고 쉽게 쓸 수 있다!  불러오는 방법이나 셋하는 방법도 java와 조금 다름. 주의할 것..</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># test.py</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># test.py</span>
 
 <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Test</span>:
-    <span style="color:#66d9ef">def</span> __init__(self, limit<span style="color:#f92672">=</span>None, persistent<span style="color:#f92672">=</span>None):
-        <span style="color:#66d9ef">if</span> limit <span style="color:#f92672">is</span> None:
-            self<span style="color:#f92672">.</span>__limit <span style="color:#f92672">=</span> False
+    <span style="color:#66d9ef">def</span> __init__(self, limit<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>, persistent<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>):
+        <span style="color:#66d9ef">if</span> limit <span style="color:#f92672">is</span> <span style="color:#66d9ef">None</span>:
+            self<span style="color:#f92672">.</span>__limit <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>
         <span style="color:#66d9ef">else</span> : 
             self<span style="color:#f92672">.</span>__limit <span style="color:#f92672">=</span> limit
 
-        <span style="color:#66d9ef">if</span> persistent <span style="color:#f92672">is</span> None:
-            self<span style="color:#f92672">.</span>__persistent <span style="color:#f92672">=</span> False
+        <span style="color:#66d9ef">if</span> persistent <span style="color:#f92672">is</span> <span style="color:#66d9ef">None</span>:
+            self<span style="color:#f92672">.</span>__persistent <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>
         <span style="color:#66d9ef">else</span> :
             self<span style="color:#f92672">.</span>__persistent <span style="color:#f92672">=</span> persistent
 	
@@ -1214,20 +1216,20 @@ if (!doNotTrack) {
     <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">persistent</span>(self):
         <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>__persistent
     
-    <span style="color:#a6e22e">@limit.setter</span>
+    <span style="color:#a6e22e">@limit</span><span style="color:#f92672">.</span>setter
     <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">limit</span>(self, limit):
         self<span style="color:#f92672">.</span>__limit <span style="color:#f92672">=</span> limit
 
-    <span style="color:#a6e22e">@persistent.setter</span>
+    <span style="color:#a6e22e">@persistent</span><span style="color:#f92672">.</span>setter
     <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">persistent</span>(self, persistent):
         self<span style="color:#f92672">.</span>__persistent <span style="color:#f92672">=</span> persistent
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">user <span style="color:#f92672">=</span> Test() 
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">user <span style="color:#f92672">=</span> Test() 
 	<span style="color:#75715e"># 값이 None, None 으로 나옴</span>
 
 <span style="color:#75715e"># set: limit</span>
-user<span style="color:#f92672">.</span>limit <span style="color:#f92672">=</span> True
+user<span style="color:#f92672">.</span>limit <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
 <span style="color:#75715e"># get: limit </span>
-<span style="color:#66d9ef">print</span>(user<span style="color:#f92672">.</span>limit)
+print(user<span style="color:#f92672">.</span>limit)
 </code></pre></div>
 <br>
 <br>
@@ -1952,6 +1954,11 @@ user<span style="color:#f92672">.</span>limit <span style="color:#f92672">=</spa
             
         
                     
+                        
+            
+            
+        
+                    
             
         
                     
@@ -1977,19 +1984,19 @@ user<span style="color:#f92672">.</span>limit <span style="color:#f92672">=</spa
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1631536940"></script>
-    <script src="/js/perfect-scrollbar.min.js?1631536940"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1631536940"></script>
-    <script src="/js/jquery.sticky.js?1631536940"></script>
-    <script src="/js/featherlight.min.js?1631536940"></script>
-    <script src="/js/highlight.pack.js?1631536940"></script>
+    <script src="/js/clipboard.min.js?1644506636"></script>
+    <script src="/js/perfect-scrollbar.min.js?1644506636"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1644506636"></script>
+    <script src="/js/jquery.sticky.js?1644506636"></script>
+    <script src="/js/featherlight.min.js?1644506636"></script>
+    <script src="/js/highlight.pack.js?1644506636"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1631536940"></script>
-    <script src="/js/learn.js?1631536940"></script>
-    <script src="/js/hugo-learn.js?1631536940"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1644506636"></script>
+    <script src="/js/learn.js?1644506636"></script>
+    <script src="/js/hugo-learn.js?1644506636"></script>
 
-    <link href="/mermaid/mermaid.css?1631536940" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1631536940"></script>
+    <link href="/mermaid/mermaid.css?1644506636" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1644506636"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

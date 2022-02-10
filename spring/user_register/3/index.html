@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.74.3" />
+    <meta name="generator" content="Hugo 0.92.1" />
     <meta name="description" content="goranee&#39;s dev-log">
 <meta name="author" content="mand2">
 
@@ -11,21 +11,21 @@
     <title>Spring 웹상에서 메일 보내보기 :: 고라니의 개발일기🦌</title>
 
     
-    <link href="/css/nucleus.css?1631536940" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1631536940" rel="stylesheet">
-    <link href="/css/hybrid.css?1631536940" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1631536940" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1631536940" rel="stylesheet">
-    <link href="/css/auto-complete.css?1631536940" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1631536940" rel="stylesheet">
-    <link href="/css/theme.css?1631536940" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1631536940" rel="stylesheet">
+    <link href="/css/nucleus.css?1644506636" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1644506636" rel="stylesheet">
+    <link href="/css/hybrid.css?1644506636" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1644506636" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1644506636" rel="stylesheet">
+    <link href="/css/auto-complete.css?1644506636" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1644506636" rel="stylesheet">
+    <link href="/css/theme.css?1644506636" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1644506636" rel="stylesheet">
     
-    <link href="/css/theme-mine.css?1631536940" rel="stylesheet">
+    <link href="/css/theme-mine.css?1644506636" rel="stylesheet">
     
-    <link href="/css/custom.css?1631536940" rel="stylesheet">
+    <link href="/css/custom.css?1644506636" rel="stylesheet">
 
-    <script src="/js/jquery-3.3.1.min.js?1631536940"></script>
+    <script src="/js/jquery-3.3.1.min.js?1644506636"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -52,7 +52,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
     
   </head>
   <body class="" data-url="/spring/user_register/3/">
@@ -74,14 +73,14 @@ if (!doNotTrack) {
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1631536940"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1631536940"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1644506636"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1644506636"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/mand2.github.io\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1631536940"></script>
+<script type="text/javascript" src="/js/search.js?1644506636"></script>
 
     
   </div>
@@ -1064,6 +1063,9 @@ if (!doNotTrack) {
              
             
           
+             
+            
+          
         
         </ul>
               
@@ -1225,7 +1227,7 @@ if (!doNotTrack) {
 <p><br><br><br><br></p>
 <h2 id="설정부터-해보자">설정부터 해보자!</h2>
 <h3 id="1-pomxml에서-메일-설정">1. pom.xml에서 메일 설정</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;!-- 메일 설정 시작 --&gt;</span> 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;!-- 메일 설정 시작 --&gt;</span> 
     <span style="color:#75715e">&lt;!-- javax.mail/mail --&gt;</span>
     <span style="color:#f92672">&lt;dependency&gt;</span>
         <span style="color:#f92672">&lt;groupId&gt;</span>javax.mail<span style="color:#f92672">&lt;/groupId&gt;</span>
@@ -1239,7 +1241,7 @@ if (!doNotTrack) {
     <span style="color:#f92672">&lt;/dependency&gt;</span> 
 </code></pre></div><p><br><br></p>
 <h3 id="2-servlet-context-설정">2. servlet-context 설정</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;beans:bean</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;mailSender&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;beans:bean</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;mailSender&#34;</span>
 		<span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;org.springframework.mail.javamail.JavaMailSenderImpl&#34;</span><span style="color:#f92672">&gt;</span>
     <span style="color:#f92672">&lt;beans:property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;host&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;smtp.gmail.com&#34;</span> <span style="color:#f92672">/&gt;</span>
     <span style="color:#f92672">&lt;beans:property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;port&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;587&#34;</span> <span style="color:#f92672">/&gt;</span><span style="color:#75715e">&lt;!-- 465 or 25 --&gt;</span>
@@ -1257,7 +1259,7 @@ if (!doNotTrack) {
 <span style="color:#f92672">&lt;/beans:bean&gt;</span>
 </code></pre></div><p><br><br></p>
 <h3 id="3-controller-작성">3. Controller 작성</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Controller</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Controller</span>
 <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MailSendController</span> <span style="color:#f92672">{</span>
 	<span style="color:#a6e22e">@Autowired</span>
 	MailSender sender<span style="color:#f92672">;</span>
@@ -1282,7 +1284,7 @@ if (!doNotTrack) {
 <h3 id="왜-mailsender를-사용할-수-있을까">왜 MailSender를 사용할 수 있을까?</h3>
 <p>bean으로 설정된 <code>mailSender</code>는 <code>JavaMailSenderImpl</code> 클래스임.<br>
 이 클래스는 <code>JavaMailSender</code> 인터페이스의 구현체.  <code>JavaMailSender</code>를 살펴본다면,</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">JavaMailSender</span> <span style="color:#66d9ef">extends</span> MailSender <span style="color:#f92672">{}</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">JavaMailSender</span> <span style="color:#66d9ef">extends</span> MailSender <span style="color:#f92672">{}</span>
 </code></pre></div><p>즉, <code>MailSender</code>를 상속받기 때문에 <strong>다형성이 가능하므로</strong> 컨트롤러에서 <code>MailSender</code> 클래스를 주입받을 수 있게 된다.</p>
 <p><br><br></p>
 <h3 id="보낸사람을-설정해줬는데도-bean에서-설정한-메일주소로-보내지는-이유">보낸사람을 설정해줬는데도 bean에서 설정한 메일주소로 보내지는 이유</h3>
@@ -1298,7 +1300,7 @@ if (!doNotTrack) {
 </ul>
 <p><br><br></p>
 <h3 id="1-html-형식으로-보내보기">1. HTML 형식으로 보내보기</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Autowired</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Autowired</span>
 JavaMailSender jmsender<span style="color:#f92672">;</span>
 
 
@@ -1339,7 +1341,7 @@ JavaMailSender jmsender<span style="color:#f92672">;</span>
 <br>
 <h3 id="2-파일-첨부해서-보내보기">2. 파일 첨부해서 보내보기</h3>
 <p>스프링이 제공하는 <code>MimeMessageHelper</code> 클래스를 사용</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@RequestMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/mail/send/file&#34;</span><span style="color:#f92672">)</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@RequestMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/mail/send/file&#34;</span><span style="color:#f92672">)</span>
 <span style="color:#a6e22e">@ResponseBody</span>
 <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">sendFileAttach</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
 
@@ -2114,6 +2116,11 @@ JavaMailSender jmsender<span style="color:#f92672">;</span>
             
         
                     
+                        
+            
+            
+        
+                    
             
         
                     
@@ -2139,19 +2146,19 @@ JavaMailSender jmsender<span style="color:#f92672">;</span>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1631536940"></script>
-    <script src="/js/perfect-scrollbar.min.js?1631536940"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1631536940"></script>
-    <script src="/js/jquery.sticky.js?1631536940"></script>
-    <script src="/js/featherlight.min.js?1631536940"></script>
-    <script src="/js/highlight.pack.js?1631536940"></script>
+    <script src="/js/clipboard.min.js?1644506636"></script>
+    <script src="/js/perfect-scrollbar.min.js?1644506636"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1644506636"></script>
+    <script src="/js/jquery.sticky.js?1644506636"></script>
+    <script src="/js/featherlight.min.js?1644506636"></script>
+    <script src="/js/highlight.pack.js?1644506636"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1631536940"></script>
-    <script src="/js/learn.js?1631536940"></script>
-    <script src="/js/hugo-learn.js?1631536940"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1644506636"></script>
+    <script src="/js/learn.js?1644506636"></script>
+    <script src="/js/hugo-learn.js?1644506636"></script>
 
-    <link href="/mermaid/mermaid.css?1631536940" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1631536940"></script>
+    <link href="/mermaid/mermaid.css?1644506636" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1644506636"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

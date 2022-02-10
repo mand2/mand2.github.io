@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.74.3" />
+    <meta name="generator" content="Hugo 0.92.1" />
     <meta name="description" content="goranee&#39;s dev-log">
 <meta name="author" content="mand2">
 
@@ -11,21 +11,21 @@
     <title>블로그 커밋 메세지 만들고 자동 배포 하기 :: 고라니의 개발일기🦌</title>
 
     
-    <link href="/css/nucleus.css?1631536940" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1631536940" rel="stylesheet">
-    <link href="/css/hybrid.css?1631536940" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1631536940" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1631536940" rel="stylesheet">
-    <link href="/css/auto-complete.css?1631536940" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1631536940" rel="stylesheet">
-    <link href="/css/theme.css?1631536940" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1631536940" rel="stylesheet">
+    <link href="/css/nucleus.css?1644506636" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1644506636" rel="stylesheet">
+    <link href="/css/hybrid.css?1644506636" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1644506636" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1644506636" rel="stylesheet">
+    <link href="/css/auto-complete.css?1644506636" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1644506636" rel="stylesheet">
+    <link href="/css/theme.css?1644506636" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1644506636" rel="stylesheet">
     
-    <link href="/css/theme-mine.css?1631536940" rel="stylesheet">
+    <link href="/css/theme-mine.css?1644506636" rel="stylesheet">
     
-    <link href="/css/custom.css?1631536940" rel="stylesheet">
+    <link href="/css/custom.css?1644506636" rel="stylesheet">
 
-    <script src="/js/jquery-3.3.1.min.js?1631536940"></script>
+    <script src="/js/jquery-3.3.1.min.js?1644506636"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -52,7 +52,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
     
   </head>
   <body class="" data-url="/til/blog-auto-commit/">
@@ -74,14 +73,14 @@ if (!doNotTrack) {
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1631536940"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1631536940"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1644506636"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1644506636"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/mand2.github.io\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1631536940"></script>
+<script type="text/javascript" src="/js/search.js?1644506636"></script>
 
     
   </div>
@@ -1064,6 +1063,9 @@ if (!doNotTrack) {
              
             
           
+             
+            
+          
         
         </ul>
               
@@ -1218,13 +1220,13 @@ public이 master 브랜치, blog가 dev브랜치에 있다면 각각 원격 브�
 </li>
 <li>
 <p>로컬, 원격 저장소 모두 연결된 상태다. (연결되지 않았다면 <code>--set-upstream</code> 커맨드 날릴 것.)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git branch --set-uptream-to<span style="color:#f92672">=</span>origin/<span style="color:#f92672">[</span>remote 브랜치명<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>로컬 브랜치명<span style="color:#f92672">]</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git branch --set-uptream-to<span style="color:#f92672">=</span>origin/<span style="color:#f92672">[</span>remote 브랜치명<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>로컬 브랜치명<span style="color:#f92672">]</span>
 </code></pre></div></li>
 <li>
 <p>사용하는 테마가 하나다. (여러가지 있다면 프로젝트 빌드 할 때 <code>hugo -t [테마명]</code>으로 세팅.)</p>
 </li>
 <li>
-<p>커밋 메세지는 파일에 각각 저장해둔다.<br>
+<p>커밋 메세지는 파일에 각각 저장해둔다. <br>
 나의 경우, blog 관련 커밋메세지를 <code>/d/Hugo/mand2_blog/msg/blog.md</code> 파일 내부에 작성하였다.<br>
 이 파일의 경로를 쉘스크립트 초반 <code>msg_blog_files</code> 변수에 넣는다.</p>
 </li>
@@ -1975,6 +1977,11 @@ public이 master 브랜치, blog가 dev브랜치에 있다면 각각 원격 브�
             
         
                     
+                        
+            
+            
+        
+                    
             
         
                     
@@ -2000,19 +2007,19 @@ public이 master 브랜치, blog가 dev브랜치에 있다면 각각 원격 브�
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1631536940"></script>
-    <script src="/js/perfect-scrollbar.min.js?1631536940"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1631536940"></script>
-    <script src="/js/jquery.sticky.js?1631536940"></script>
-    <script src="/js/featherlight.min.js?1631536940"></script>
-    <script src="/js/highlight.pack.js?1631536940"></script>
+    <script src="/js/clipboard.min.js?1644506636"></script>
+    <script src="/js/perfect-scrollbar.min.js?1644506636"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1644506636"></script>
+    <script src="/js/jquery.sticky.js?1644506636"></script>
+    <script src="/js/featherlight.min.js?1644506636"></script>
+    <script src="/js/highlight.pack.js?1644506636"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1631536940"></script>
-    <script src="/js/learn.js?1631536940"></script>
-    <script src="/js/hugo-learn.js?1631536940"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1644506636"></script>
+    <script src="/js/learn.js?1644506636"></script>
+    <script src="/js/hugo-learn.js?1644506636"></script>
 
-    <link href="/mermaid/mermaid.css?1631536940" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1631536940"></script>
+    <link href="/mermaid/mermaid.css?1644506636" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1644506636"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

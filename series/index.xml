@@ -5,10 +5,6 @@
     <link>https://mand2.github.io/series/</link>
     <description>Recent content in Series on 고라니의 개발일기🦌</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ko-kr</language>
-    
-	<atom:link href="https://mand2.github.io/series/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>ko-kr</language><atom:link href="https://mand2.github.io/series/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

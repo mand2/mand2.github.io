@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.74.3" />
+    <meta name="generator" content="Hugo 0.92.1" />
     <meta name="description" content="goranee&#39;s dev-log">
 <meta name="author" content="mand2">
 
@@ -11,21 +11,21 @@
     <title>Maven pom.xml 빌드 플러그인 세팅하기 :: 고라니의 개발일기🦌</title>
 
     
-    <link href="/css/nucleus.css?1631536940" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1631536940" rel="stylesheet">
-    <link href="/css/hybrid.css?1631536940" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1631536940" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1631536940" rel="stylesheet">
-    <link href="/css/auto-complete.css?1631536940" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1631536940" rel="stylesheet">
-    <link href="/css/theme.css?1631536940" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1631536940" rel="stylesheet">
+    <link href="/css/nucleus.css?1644506636" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1644506636" rel="stylesheet">
+    <link href="/css/hybrid.css?1644506636" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1644506636" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1644506636" rel="stylesheet">
+    <link href="/css/auto-complete.css?1644506636" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1644506636" rel="stylesheet">
+    <link href="/css/theme.css?1644506636" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1644506636" rel="stylesheet">
     
-    <link href="/css/theme-mine.css?1631536940" rel="stylesheet">
+    <link href="/css/theme-mine.css?1644506636" rel="stylesheet">
     
-    <link href="/css/custom.css?1631536940" rel="stylesheet">
+    <link href="/css/custom.css?1644506636" rel="stylesheet">
 
-    <script src="/js/jquery-3.3.1.min.js?1631536940"></script>
+    <script src="/js/jquery-3.3.1.min.js?1644506636"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -52,7 +52,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
     
   </head>
   <body class="" data-url="/til/build-plugs-of-maven/">
@@ -74,14 +73,14 @@ if (!doNotTrack) {
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1631536940"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1631536940"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1644506636"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1644506636"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/mand2.github.io\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1631536940"></script>
+<script type="text/javascript" src="/js/search.js?1644506636"></script>
 
     
   </div>
@@ -1064,6 +1063,9 @@ if (!doNotTrack) {
              
             
           
+             
+            
+          
         
         </ul>
               
@@ -1215,11 +1217,11 @@ if (!doNotTrack) {
 <p>두 가지 버전이 있다.</p>
 <ol>
 <li>
-<p>maven-assembly-plugin 사용:<br>
+<p>maven-assembly-plugin 사용: <br>
 내부에 전 dependency를 저장하여 보내주기 때문에 용량이 크다.</p>
 </li>
 <li>
-<p>maven-jar-plugin + maven-dependency-plugin 함께 사용:<br>
+<p>maven-jar-plugin + maven-dependency-plugin 함께 사용: <br>
 manifest.mf 파일에 라이브러리의 상대경로를 저장해서 불러오도록 한다.</p>
 </li>
 </ol>
@@ -1232,7 +1234,7 @@ manifest.mf 파일에 라이브러리의 상대경로를 저장해서 불러오�
 >
     바로가기
 </a>
-<br>
+ <br>
 pom 파일에 대해 더 설명을 원할 때 ? <a href="https://maven.apache.org/pom.html"
     
         target="_blank"
@@ -1250,11 +1252,11 @@ pom 파일에 대해 더 설명을 원할 때 ? <a href="https://maven.apache.or
 >
     출처
 </a>
-<br>
+ <br>
 실제로 2로 할 때의 용량이 26KB 인데 반해 1의 경우 4600KB 정도로 용량차이가 큼.</p>
 <p><br><br></p>
 <h4 id="버전-1">버전 1</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;build&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;build&gt;</span>
     <span style="color:#f92672">&lt;plugins&gt;</span>
         <span style="color:#f92672">&lt;plugin&gt;</span>
             <span style="color:#f92672">&lt;groupId&gt;</span>org.apache.maven.plugins<span style="color:#f92672">&lt;/groupId&gt;</span>
@@ -1279,7 +1281,7 @@ pom 파일에 대해 더 설명을 원할 때 ? <a href="https://maven.apache.or
 <span style="color:#f92672">&lt;/build&gt;</span>    
 </code></pre></div><br>
 <h4 id="버전-2">버전 2</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;build&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;build&gt;</span>
     <span style="color:#f92672">&lt;plugins&gt;</span>
         <span style="color:#f92672">&lt;plugin&gt;</span>
             <span style="color:#f92672">&lt;groupId&gt;</span>org.apache.maven.plugins<span style="color:#f92672">&lt;/groupId&gt;</span>
@@ -1327,7 +1329,7 @@ pom 파일에 대해 더 설명을 원할 때 ? <a href="https://maven.apache.or
 <p>버전 세팅에도 두가지 방법이 있다.</p>
 <br>
 <h4 id="1-build-할-때-세팅하는-방법">1. build 할 때 세팅하는 방법</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;plugin&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;plugin&gt;</span>
     <span style="color:#f92672">&lt;groupId&gt;</span>org.apache.maven.plugins<span style="color:#f92672">&lt;/groupId&gt;</span>
     <span style="color:#f92672">&lt;artifactId&gt;</span>maven-compiler-plugin<span style="color:#f92672">&lt;/artifactId&gt;</span>
     <span style="color:#f92672">&lt;version&gt;</span>3.1<span style="color:#f92672">&lt;/version&gt;</span>
@@ -1339,7 +1341,7 @@ pom 파일에 대해 더 설명을 원할 때 ? <a href="https://maven.apache.or
 <span style="color:#f92672">&lt;/plugin&gt;</span>
 </code></pre></div><br>
 <h4 id="2-처음부터-세팅">2. 처음부터 세팅</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;properties&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;properties&gt;</span>
     <span style="color:#f92672">&lt;java.version&gt;</span>1.8<span style="color:#f92672">&lt;/java.version&gt;</span>
     <span style="color:#f92672">&lt;maven.compiler.source&gt;</span>1.8<span style="color:#f92672">&lt;/maven.compiler.source&gt;</span>
     <span style="color:#f92672">&lt;maven.compiler.target&gt;</span>1.8<span style="color:#f92672">&lt;/maven.compiler.target&gt;</span>
@@ -1349,7 +1351,7 @@ pom 파일에 대해 더 설명을 원할 때 ? <a href="https://maven.apache.or
 </code></pre></div><p><br><br><br></p>
 <h3 id="q-jar-파일-이름-설정가능한지">Q. jar 파일 이름 설정가능한지?</h3>
 <p>가능하다. 아래와 같이 pom.xml 에서 설정가능.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;groupId&gt;</span>com.demo<span style="color:#f92672">&lt;/groupId&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;groupId&gt;</span>com.demo<span style="color:#f92672">&lt;/groupId&gt;</span>
 <span style="color:#f92672">&lt;artifactId&gt;</span>demo-sample<span style="color:#f92672">&lt;/artifactId&gt;</span>
 <span style="color:#f92672">&lt;version&gt;</span>1.0.0<span style="color:#f92672">&lt;/version&gt;</span>
 <span style="color:#f92672">&lt;name&gt;</span>sample<span style="color:#f92672">&lt;/name&gt;</span>
@@ -1379,7 +1381,7 @@ maven.{groupId}.{artifactId} 로 나옴</li>
     docs
 </a>
 </p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;archive&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;archive&gt;</span>
   <span style="color:#f92672">&lt;addMavenDescriptor/&gt;</span>
   <span style="color:#f92672">&lt;compress/&gt;</span>
   <span style="color:#f92672">&lt;forced/&gt;</span>
@@ -1417,7 +1419,14 @@ maven.{groupId}.{artifactId} 로 나옴</li>
 <hr>
 <br>
 <h4 id="더-자세한-내용은">더 자세한 내용은</h4>
-<p><a href="https://maven.apache.org/plugins/maven-jar-plugin/">https://maven.apache.org/plugins/maven-jar-plugin/</a></p>
+<p><a href="https://maven.apache.org/plugins/maven-jar-plugin/"
+    
+        target="_blank"
+    
+>
+    https://maven.apache.org/plugins/maven-jar-plugin/
+</a>
+</p>
 
 <br>
 <br>
@@ -2145,6 +2154,11 @@ maven.{groupId}.{artifactId} 로 나옴</li>
             
         
                     
+                        
+            
+            
+        
+                    
             
         
                     
@@ -2170,19 +2184,19 @@ maven.{groupId}.{artifactId} 로 나옴</li>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1631536940"></script>
-    <script src="/js/perfect-scrollbar.min.js?1631536940"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1631536940"></script>
-    <script src="/js/jquery.sticky.js?1631536940"></script>
-    <script src="/js/featherlight.min.js?1631536940"></script>
-    <script src="/js/highlight.pack.js?1631536940"></script>
+    <script src="/js/clipboard.min.js?1644506636"></script>
+    <script src="/js/perfect-scrollbar.min.js?1644506636"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1644506636"></script>
+    <script src="/js/jquery.sticky.js?1644506636"></script>
+    <script src="/js/featherlight.min.js?1644506636"></script>
+    <script src="/js/highlight.pack.js?1644506636"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1631536940"></script>
-    <script src="/js/learn.js?1631536940"></script>
-    <script src="/js/hugo-learn.js?1631536940"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1644506636"></script>
+    <script src="/js/learn.js?1644506636"></script>
+    <script src="/js/hugo-learn.js?1644506636"></script>
 
-    <link href="/mermaid/mermaid.css?1631536940" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1631536940"></script>
+    <link href="/mermaid/mermaid.css?1644506636" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1644506636"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

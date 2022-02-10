@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.74.3" />
+    <meta name="generator" content="Hugo 0.92.1" />
     <meta name="description" content="goranee&#39;s dev-log">
 <meta name="author" content="mand2">
 
@@ -11,21 +11,21 @@
     <title>aws EC2로 node.js 배포하기 :: 고라니의 개발일기🦌</title>
 
     
-    <link href="/css/nucleus.css?1631536940" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1631536940" rel="stylesheet">
-    <link href="/css/hybrid.css?1631536940" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1631536940" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1631536940" rel="stylesheet">
-    <link href="/css/auto-complete.css?1631536940" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1631536940" rel="stylesheet">
-    <link href="/css/theme.css?1631536940" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1631536940" rel="stylesheet">
+    <link href="/css/nucleus.css?1644506636" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1644506636" rel="stylesheet">
+    <link href="/css/hybrid.css?1644506636" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1644506636" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1644506636" rel="stylesheet">
+    <link href="/css/auto-complete.css?1644506636" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1644506636" rel="stylesheet">
+    <link href="/css/theme.css?1644506636" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1644506636" rel="stylesheet">
     
-    <link href="/css/theme-mine.css?1631536940" rel="stylesheet">
+    <link href="/css/theme-mine.css?1644506636" rel="stylesheet">
     
-    <link href="/css/custom.css?1631536940" rel="stylesheet">
+    <link href="/css/custom.css?1644506636" rel="stylesheet">
 
-    <script src="/js/jquery-3.3.1.min.js?1631536940"></script>
+    <script src="/js/jquery-3.3.1.min.js?1644506636"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -52,7 +52,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
     
   </head>
   <body class="" data-url="/node.js/3/">
@@ -74,14 +73,14 @@ if (!doNotTrack) {
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1631536940"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1631536940"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1644506636"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1644506636"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/mand2.github.io\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1631536940"></script>
+<script type="text/javascript" src="/js/search.js?1644506636"></script>
 
     
   </div>
@@ -1064,6 +1063,9 @@ if (!doNotTrack) {
              
             
           
+             
+            
+          
         
         </ul>
               
@@ -1229,7 +1231,7 @@ ppk키를 저장해준다.</li>
 <ol>
 <li>
 <p>현재 ec2 인스턴스에 깃 설치</p>
-<pre><code>sudo yum install git
+<pre tabindex="0"><code>sudo yum install git
 git init
 git config --global user.name &quot;your username&quot;
 git config --global user.email [your mail address]
@@ -1237,26 +1239,26 @@ git config --global user.email [your mail address]
 </li>
 <li>
 <p>nvm 설치</p>
-<pre><code>curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+<pre tabindex="0"><code>curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
 </code></pre></li>
 <li>
 <p>nvm 활성화</p>
-<pre><code>. ~/.nvm/nvm.sh
+<pre tabindex="0"><code>. ~/.nvm/nvm.sh
 </code></pre></li>
 <li>
 <p>node 설치</p>
-<pre><code>nvm install node
+<pre tabindex="0"><code>nvm install node
 </code></pre></li>
 <li>
 <p>설치 확인</p>
-<pre><code>node -e &quot;console.log('Running Node.js ' + process.version)&quot;
+<pre tabindex="0"><code>node -e &quot;console.log('Running Node.js ' + process.version)&quot;
 </code></pre></li>
 <li>
 <p>깃에 배포용 repository 생성</p>
 </li>
 <li>
 <p>해당 repository의 주소 복사 후 현재 ec2 인스턴스로 클론하기</p>
-<pre><code>git clone + [repository 주소]
+<pre tabindex="0"><code>git clone + [repository 주소]
 </code></pre></li>
 <li>
 <p>node js 에서 연습했던 대로 서버 실행</p>
@@ -1279,20 +1281,20 @@ AWS의 보안그룹으로 들어가서 ec2 인스턴스 생성시 만들었던 �
 </li>
 <li>
 <p>백그라운드 실행하기 1 forever 설치</p>
-<pre><code>npm install forever -g
+<pre tabindex="0"><code>npm install forever -g
 </code></pre></li>
 <li>
 <p>백그라운드 실행하기 2 원하는 js파일 실행하기</p>
-<pre><code>(실행파일 위치까지 들어간 후) 
+<pre tabindex="0"><code>(실행파일 위치까지 들어간 후) 
 forever start [js script]
 </code></pre></li>
 <li>
 <p>현재 백그라운드로 실행중인 서버 확인하기</p>
-<pre><code>forever list
+<pre tabindex="0"><code>forever list
 </code></pre></li>
 <li>
 <p>백그라운드 서버 종료하기</p>
-<pre><code>forever stop [js script]
+<pre tabindex="0"><code>forever stop [js script]
 </code></pre></li>
 </ol>
 <p><br><br></p>
@@ -1300,18 +1302,18 @@ forever start [js script]
 <ul>
 <li>nohup으로 백그라운드 실행</li>
 </ul>
-<pre><code>$ sudo nohup node (js파일) &amp;
+<pre tabindex="0"><code>$ sudo nohup node (js파일) &amp;
 </code></pre><ul>
 <li>
 <p>실행 후 백그라운드로 올라왔으면 ENTER 키로 빠져나오면 된다.</p>
 </li>
 <li>
 <p>프로세스 실행되고 있는지 확인</p>
-<pre><code>$ ps -ef
+<pre tabindex="0"><code>$ ps -ef
 </code></pre></li>
 <li>
 <p>종료</p>
-<pre><code>sudo kill -9 [종료하고 싶은 프로세스 pid]
+<pre tabindex="0"><code>sudo kill -9 [종료하고 싶은 프로세스 pid]
 </code></pre></li>
 </ul>
 <p><br><br></p>
@@ -2042,6 +2044,11 @@ forever start [js script]
             
         
                     
+                        
+            
+            
+        
+                    
             
         
                     
@@ -2067,19 +2074,19 @@ forever start [js script]
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1631536940"></script>
-    <script src="/js/perfect-scrollbar.min.js?1631536940"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1631536940"></script>
-    <script src="/js/jquery.sticky.js?1631536940"></script>
-    <script src="/js/featherlight.min.js?1631536940"></script>
-    <script src="/js/highlight.pack.js?1631536940"></script>
+    <script src="/js/clipboard.min.js?1644506636"></script>
+    <script src="/js/perfect-scrollbar.min.js?1644506636"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1644506636"></script>
+    <script src="/js/jquery.sticky.js?1644506636"></script>
+    <script src="/js/featherlight.min.js?1644506636"></script>
+    <script src="/js/highlight.pack.js?1644506636"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1631536940"></script>
-    <script src="/js/learn.js?1631536940"></script>
-    <script src="/js/hugo-learn.js?1631536940"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1644506636"></script>
+    <script src="/js/learn.js?1644506636"></script>
+    <script src="/js/hugo-learn.js?1644506636"></script>
 
-    <link href="/mermaid/mermaid.css?1631536940" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1631536940"></script>
+    <link href="/mermaid/mermaid.css?1644506636" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1644506636"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

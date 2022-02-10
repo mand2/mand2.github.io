@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.74.3" />
+    <meta name="generator" content="Hugo 0.92.1" />
     <meta name="description" content="goranee&#39;s dev-log">
 <meta name="author" content="mand2">
 
@@ -11,21 +11,21 @@
     <title>Hugo로 블로그 만들기 1 :: 고라니의 개발일기🦌</title>
 
     
-    <link href="/css/nucleus.css?1631536940" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1631536940" rel="stylesheet">
-    <link href="/css/hybrid.css?1631536940" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1631536940" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1631536940" rel="stylesheet">
-    <link href="/css/auto-complete.css?1631536940" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1631536940" rel="stylesheet">
-    <link href="/css/theme.css?1631536940" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1631536940" rel="stylesheet">
+    <link href="/css/nucleus.css?1644506636" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1644506636" rel="stylesheet">
+    <link href="/css/hybrid.css?1644506636" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1644506636" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1644506636" rel="stylesheet">
+    <link href="/css/auto-complete.css?1644506636" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1644506636" rel="stylesheet">
+    <link href="/css/theme.css?1644506636" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1644506636" rel="stylesheet">
     
-    <link href="/css/theme-mine.css?1631536940" rel="stylesheet">
+    <link href="/css/theme-mine.css?1644506636" rel="stylesheet">
     
-    <link href="/css/custom.css?1631536940" rel="stylesheet">
+    <link href="/css/custom.css?1644506636" rel="stylesheet">
 
-    <script src="/js/jquery-3.3.1.min.js?1631536940"></script>
+    <script src="/js/jquery-3.3.1.min.js?1644506636"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -52,7 +52,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
     
   </head>
   <body class="" data-url="/others/start-hugo-1/">
@@ -74,14 +73,14 @@ if (!doNotTrack) {
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1631536940"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1631536940"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1644506636"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1644506636"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/mand2.github.io\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1631536940"></script>
+<script type="text/javascript" src="/js/search.js?1644506636"></script>
 
     
   </div>
@@ -1064,6 +1063,9 @@ if (!doNotTrack) {
              
             
           
+             
+            
+          
         
         </ul>
               
@@ -1238,11 +1240,11 @@ if (!doNotTrack) {
 </li>
 <li>
 <p><code>$ hugo help</code> 를 치면 아래와 같은 결과가 나오면 OK👌</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo is the main command, used to build your Hugo site.
-  
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo is the main command, used to build your Hugo site.
+
 Hugo is a Fast and Flexible Static Site Generator
 built with love by spf13 and friends in Go.
-  
+
 Complete documentation is available at http://gohugo.io/.
 </code></pre></div><p>만약 안나온다? hugo.exe 파일이 있는 디렉토리 경로를 환경변수에 정확히 넣어준다.</p>
 <blockquote>
@@ -1269,7 +1271,14 @@ If you’re still not getting the output, search the <a href="https://discourse.
 <ul>
 <li>컨텐츠와 소스 파일을 포함할 repo <br>
 -&gt; 컨텐츠 관련이라 <code>mand2_blog</code> 로 생성
-(<a href="https://github.com/mand2/mand2_blog">https://github.com/mand2/mand2_blog</a>)</li>
+(<a href="https://github.com/mand2/mand2_blog"
+    
+        target="_blank"
+    
+>
+    https://github.com/mand2/mand2_blog
+</a>
+)</li>
 <li>실제 blog에 보여질 github.io repo <br>
 -&gt; 나의 경우 <code>mand2.github.io</code> 로 생성</li>
 </ul>
@@ -1291,7 +1300,7 @@ $ hugo new site {{blog name}}</p>
 <code>$ git submodule add https://github.com/mand2/hugo-theme-learn.git themes/learn</code></p>
 </blockquote>
 <h4 id="2-conf-설정값-변경">2 conf 설정값 변경</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml"><span style="color:#a6e22e">baseURL</span> = <span style="color:#e6db74">&#34;{{나의 깃허브 주소}}&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml"><span style="color:#a6e22e">baseURL</span> = <span style="color:#e6db74">&#34;{{나의 깃허브 주소}}&#34;</span>
 <span style="color:#a6e22e">languageCode</span> = <span style="color:#e6db74">&#34;en-us,ko-kr&#34;</span> <span style="color:#75715e"># i18n 에 맞춰 작성.</span>
 <span style="color:#a6e22e">title</span> = <span style="color:#e6db74">&#34;GoRaNee&#39;s dev-log&#34;</span> <span style="color:#75715e"># 웹사이트제목</span>
 
@@ -1305,7 +1314,12 @@ $ hugo new site {{blog name}}</p>
 <ul>
 <li>
 <p>블로그 컨텐츠 git 저장소로 등록 :
-$ git remote add origin <a href="mailto:git@github.com">git@github.com</a>:mand2/mand2_blog.git</p>
+$ git remote add origin <a href="mailto:git@github.com"
+    
+>
+    git@github.com
+</a>
+:mand2/mand2_blog.git</p>
 </li>
 <li>
 <p>실제 보여질 블로그 git 저장소 추가등록:
@@ -1322,7 +1336,7 @@ $ git remote add origin <a href="mailto:git@github.com">git@github.com</a>:mand2
 <h3 id="contents-만들기">contents 만들기</h3>
 <p>1 내가 선택한 <strong>Hugo-theme-learn</strong> 은 기본 골격을 보여주므로, 커맨드라인을 잘 사용하자</p>
 <p>2 chapter 만들기</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ hugo new -k chapter about/_index.md
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ hugo new -k chapter about/_index.md
 $ hugo new --kind chapter about/_index.md
 <span style="color:#75715e"># 커맨드 위치는 d:\Hug\mand2_blog</span>
 </code></pre></div><ul>
@@ -1335,9 +1349,9 @@ $ hugo new --kind chapter about/_index.md
 </li>
 </ul>
 <p>3 chapter 내부에 해당하는 page 만들기</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ hugo new about<span style="color:#ae81ff">\f</span>irst-content.md
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ hugo new about<span style="color:#ae81ff">\f</span>irst-content.md
 </code></pre></div><p>4 실제 로컬에서 확인</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ hugo server <span style="color:#75715e"># 실제 배포될 때의 모습</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ hugo server <span style="color:#75715e"># 실제 배포될 때의 모습</span>
 $ hugo server -D <span style="color:#75715e"># 실제 배포될 때의 모습 + draft도.</span>
 </code></pre></div><p><code>page</code>의 옵션이 draft = true 가 되면 server를 로컬로 돌렸을 때 draft 용 옵션 커맨드를 추가해야 보여진다.</p>
 <h3 id="컨텐츠-업로드-블로그에">컨텐츠 업로드 (블로그에)</h3>
@@ -1367,7 +1381,7 @@ $ hugo server -D <span style="color:#75715e"># 실제 배포될 때의 모습 + 
 <p><code>$ git push origin master</code> commit을 Integerous.github.io에 푸시</p>
 </li>
 <li>
-<pre><code>blog 저장소
+<pre tabindex="0"><code>blog 저장소
 </code></pre><p>에도 변경내용 push 하기</p>
 <ul>
 <li><code>$ cd blog</code></li>
@@ -2104,6 +2118,11 @@ $ hugo server -D <span style="color:#75715e"># 실제 배포될 때의 모습 + 
             
         
                     
+                        
+            
+            
+        
+                    
             
         
                     
@@ -2129,19 +2148,19 @@ $ hugo server -D <span style="color:#75715e"># 실제 배포될 때의 모습 + 
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1631536940"></script>
-    <script src="/js/perfect-scrollbar.min.js?1631536940"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1631536940"></script>
-    <script src="/js/jquery.sticky.js?1631536940"></script>
-    <script src="/js/featherlight.min.js?1631536940"></script>
-    <script src="/js/highlight.pack.js?1631536940"></script>
+    <script src="/js/clipboard.min.js?1644506636"></script>
+    <script src="/js/perfect-scrollbar.min.js?1644506636"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1644506636"></script>
+    <script src="/js/jquery.sticky.js?1644506636"></script>
+    <script src="/js/featherlight.min.js?1644506636"></script>
+    <script src="/js/highlight.pack.js?1644506636"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1631536940"></script>
-    <script src="/js/learn.js?1631536940"></script>
-    <script src="/js/hugo-learn.js?1631536940"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1644506636"></script>
+    <script src="/js/learn.js?1644506636"></script>
+    <script src="/js/hugo-learn.js?1644506636"></script>
 
-    <link href="/mermaid/mermaid.css?1631536940" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1631536940"></script>
+    <link href="/mermaid/mermaid.css?1644506636" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1644506636"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

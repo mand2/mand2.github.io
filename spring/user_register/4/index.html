@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.74.3" />
+    <meta name="generator" content="Hugo 0.92.1" />
     <meta name="description" content="goranee&#39;s dev-log">
 <meta name="author" content="mand2">
 
@@ -11,21 +11,21 @@
     <title>회원가입 시 이메일 인증처리 :: 고라니의 개발일기🦌</title>
 
     
-    <link href="/css/nucleus.css?1631536940" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1631536940" rel="stylesheet">
-    <link href="/css/hybrid.css?1631536940" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1631536940" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1631536940" rel="stylesheet">
-    <link href="/css/auto-complete.css?1631536940" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1631536940" rel="stylesheet">
-    <link href="/css/theme.css?1631536940" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1631536940" rel="stylesheet">
+    <link href="/css/nucleus.css?1644506636" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1644506636" rel="stylesheet">
+    <link href="/css/hybrid.css?1644506636" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1644506636" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1644506636" rel="stylesheet">
+    <link href="/css/auto-complete.css?1644506636" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1644506636" rel="stylesheet">
+    <link href="/css/theme.css?1644506636" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1644506636" rel="stylesheet">
     
-    <link href="/css/theme-mine.css?1631536940" rel="stylesheet">
+    <link href="/css/theme-mine.css?1644506636" rel="stylesheet">
     
-    <link href="/css/custom.css?1631536940" rel="stylesheet">
+    <link href="/css/custom.css?1644506636" rel="stylesheet">
 
-    <script src="/js/jquery-3.3.1.min.js?1631536940"></script>
+    <script src="/js/jquery-3.3.1.min.js?1644506636"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -52,7 +52,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
     
   </head>
   <body class="" data-url="/spring/user_register/4/">
@@ -74,14 +73,14 @@ if (!doNotTrack) {
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1631536940"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1631536940"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1644506636"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1644506636"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/mand2.github.io\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1631536940"></script>
+<script type="text/javascript" src="/js/search.js?1644506636"></script>
 
     
   </div>
@@ -1064,6 +1063,9 @@ if (!doNotTrack) {
              
             
           
+             
+            
+          
         
         </ul>
               
@@ -1210,7 +1212,7 @@ if (!doNotTrack) {
 </div>
 
 <p>먼저 mySQL에서 컬럼 추가해준다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-mysql" data-lang="mysql"><span style="color:#75715e">-- 인증코드와 verify 확인 코드 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-mysql" data-lang="mysql"><span style="color:#75715e">-- 인증코드와 verify 확인 코드 
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#f92672">`</span>project_01<span style="color:#f92672">`</span>.<span style="color:#f92672">`</span>memberinfo<span style="color:#f92672">`</span> 
 <span style="color:#66d9ef">ADD</span> <span style="color:#66d9ef">COLUMN</span> <span style="color:#f92672">`</span>code<span style="color:#f92672">`</span> <span style="color:#66d9ef">VARCHAR</span>(<span style="color:#ae81ff">25</span>) <span style="color:#66d9ef">NULL</span> AFTER <span style="color:#f92672">`</span>REGDATE<span style="color:#f92672">`</span>,
 <span style="color:#66d9ef">ADD</span> <span style="color:#66d9ef">COLUMN</span> <span style="color:#f92672">`</span>verify<span style="color:#f92672">`</span> <span style="color:#66d9ef">CHAR</span>(<span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">DEFAULT</span> <span style="color:#e6db74">&#39;N&#39;</span> AFTER <span style="color:#f92672">`</span>code<span style="color:#f92672">`</span>,
@@ -1218,12 +1220,12 @@ if (!doNotTrack) {
 </code></pre></div><p><br><br></p>
 <h2 id="dao-변경">DAO 변경</h2>
 <p>DAO 변경</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">//verify
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">//verify
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">updateVerify</span><span style="color:#f92672">(</span>String id<span style="color:#f92672">,</span> String code<span style="color:#f92672">);</span>
 <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">updateEmail</span><span style="color:#f92672">(</span>Member member<span style="color:#f92672">);</span>
 </code></pre></div><br>
 <p><code>Mapper. xml</code> 변경</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;!-- result map 설정 추가 --&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;!-- result map 설정 추가 --&gt;</span>
 <span style="color:#f92672">&lt;resultMap</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;com.ny.mm.model.Member&#34;</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;MemberVO&#34;</span><span style="color:#f92672">&gt;</span>
     <span style="color:#f92672">&lt;result</span> <span style="color:#a6e22e">property=</span><span style="color:#e6db74">&#34;idx&#34;</span> <span style="color:#a6e22e">column=</span><span style="color:#e6db74">&#34;idx&#34;</span><span style="color:#f92672">/&gt;</span>
     <span style="color:#f92672">&lt;result</span> <span style="color:#a6e22e">property=</span><span style="color:#e6db74">&#34;id&#34;</span> <span style="color:#a6e22e">column=</span><span style="color:#e6db74">&#34;id&#34;</span><span style="color:#f92672">/&gt;</span>
@@ -1261,7 +1263,7 @@ if (!doNotTrack) {
 
 <br>
 <h4 id="memberjava">Member.java</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@JsonIgnore</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@JsonIgnore</span>
 <span style="color:#66d9ef">private</span> String code<span style="color:#f92672">;</span>
 <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">char</span> verify<span style="color:#f92672">;</span>
 <span style="color:#66d9ef">private</span> String email<span style="color:#f92672">;</span>
@@ -1309,7 +1311,7 @@ if (!doNotTrack) {
 <p>MailSenderService.java 파일 생성</p>
 <p>JoinService 파일 변경 <br></p>
 <h3 id="mailsenderservicejava-생성">MailSenderService.java 생성</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Service</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;mailSenderService&#34;</span><span style="color:#f92672">)</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Service</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;mailSenderService&#34;</span><span style="color:#f92672">)</span>
 <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MailSenderService</span> <span style="color:#f92672">{</span>
 
 	<span style="color:#a6e22e">@Autowired</span>
@@ -1359,7 +1361,7 @@ if (!doNotTrack) {
 로</p>
 <p><br><br></p>
 <h4 id="joinservice-변경">JoinService 변경</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Autowired</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Autowired</span>
 <span style="color:#66d9ef">private</span> MailSenderService mailService<span style="color:#f92672">;</span>
 
 <span style="color:#75715e">//가입 서비스 rest + email 사용
@@ -1386,7 +1388,7 @@ if (!doNotTrack) {
 </code></pre></div><p>join을 하면서 바로 같이 <code>mailService</code>의 <code>send</code>메서드를 통해 인증메일 보냄.</p>
 <p><br><br></p>
 <h2 id="controller-이메일-인증-처리해주기">Controller: 이메일 인증 처리해주기</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Controller</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Controller</span>
 <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">VerifyController</span> <span style="color:#f92672">{</span>
 	
 	<span style="color:#a6e22e">@Autowired</span>
@@ -2134,6 +2136,11 @@ if (!doNotTrack) {
             
         
                     
+                        
+            
+            
+        
+                    
             
         
                     
@@ -2159,19 +2166,19 @@ if (!doNotTrack) {
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1631536940"></script>
-    <script src="/js/perfect-scrollbar.min.js?1631536940"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1631536940"></script>
-    <script src="/js/jquery.sticky.js?1631536940"></script>
-    <script src="/js/featherlight.min.js?1631536940"></script>
-    <script src="/js/highlight.pack.js?1631536940"></script>
+    <script src="/js/clipboard.min.js?1644506636"></script>
+    <script src="/js/perfect-scrollbar.min.js?1644506636"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1644506636"></script>
+    <script src="/js/jquery.sticky.js?1644506636"></script>
+    <script src="/js/featherlight.min.js?1644506636"></script>
+    <script src="/js/highlight.pack.js?1644506636"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1631536940"></script>
-    <script src="/js/learn.js?1631536940"></script>
-    <script src="/js/hugo-learn.js?1631536940"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1644506636"></script>
+    <script src="/js/learn.js?1644506636"></script>
+    <script src="/js/hugo-learn.js?1644506636"></script>
 
-    <link href="/mermaid/mermaid.css?1631536940" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1631536940"></script>
+    <link href="/mermaid/mermaid.css?1644506636" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1644506636"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
