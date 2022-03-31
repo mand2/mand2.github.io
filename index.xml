@@ -6,7 +6,7 @@
         <description>Recent content on 고라니의 개발일기🦌</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>ko-kr</language>
-        <lastBuildDate>Thu, 10 Feb 2022 23:23:50 +0900</lastBuildDate><atom:link href="https://mand2.github.io/index.xml" rel="self" type="application/rss+xml" />
+        <lastBuildDate>Fri, 01 Apr 2022 00:01:28 +0900</lastBuildDate><atom:link href="https://mand2.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
             <title>getter setter 설정</title>
             <link>https://mand2.github.io/python/1/</link>
@@ -296,6 +296,18 @@ DAO 변경 DAO 변경
             <description>메이븐은 프로젝트 객체 모델(Project Object Model)이라는 개념을 바탕으로 프로젝트 의존성 관리, 라이브러리 관리, 프로젝트 생명 주기 관리 기능 등을 제공하는 프로젝트 관리 도구이다. 또한 플러그인을 기반으로 소스 코드로부터 배포 가능한 산출물을 만들어 내는 빌드 기능 뿐만 아니라 레포팅 및 documentation 작성 기능 등을 제공한다.
 
 메이븐 자세히 알아보러 가기  pom.xml 태그들 자세히 알아보기  pom.xml 태그 조금 더 간결하게, 정리 더 잘 된 것  maven (메이븐 구조, 차이점, 플러그인, 라이프사이클, 의존성, pom.</description>
+        </item>
+        
+        <item>
+            <title>[세미나] 202203 우아한테크세미나-분산 이벤트 스트리밍 정리(feat.카프카 스트림즈)</title>
+            <link>https://mand2.github.io/others/202203-woowahan-tech-seminar/</link>
+            <pubDate>Fri, 01 Apr 2022 00:01:28 +0900</pubDate>
+            
+            <guid>https://mand2.github.io/others/202203-woowahan-tech-seminar/</guid>
+            <description>이번달 우아한 테크 세미나 주제는 분산 이벤트 스트리밍! 유튜브에 올라온 걸 들으면서(일이 있어서 실시간으로 듣진 못함 🥲) 빠르게 간단 정리해 보았다.
+최근에 메세징 큐 방식으로 서비스 처리하는 업무를 했어서 그런지 조금 더 이해하기 수월했다(평소엔 이해하기 어려운 토픽이 많았&amp;hellip;) 덕분에 좀 더 깊게 분산 이벤트 스트리밍을 배울 수 있었다. 카프카를 써서 대용량 처리를 해보고 싶기도..ㅎㅎ
+ 도입 이유는 아래에 더 길게 쓸 테지만 짧게 요약하자면
+ 데이터처리: 실제 처리량이 많아지다 보니까 시스템화(자동화)해서 해서 만들 필요가 있었음.</description>
         </item>
         
         <item>

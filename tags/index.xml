@@ -6,7 +6,34 @@
     <description>Recent content in Tags on 고라니의 개발일기🦌</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Thu, 10 Feb 2022 23:23:50 +0900</lastBuildDate><atom:link href="https://mand2.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 01 Apr 2022 00:01:28 +0900</lastBuildDate><atom:link href="https://mand2.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Activity</title>
+      <link>https://mand2.github.io/tags/activity/</link>
+      <pubDate>Fri, 01 Apr 2022 00:01:28 +0900</pubDate>
+      
+      <guid>https://mand2.github.io/tags/activity/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Others</title>
+      <link>https://mand2.github.io/tags/others/</link>
+      <pubDate>Fri, 01 Apr 2022 00:01:28 +0900</pubDate>
+      
+      <guid>https://mand2.github.io/tags/others/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Session</title>
+      <link>https://mand2.github.io/tags/session/</link>
+      <pubDate>Fri, 01 Apr 2022 00:01:28 +0900</pubDate>
+      
+      <guid>https://mand2.github.io/tags/session/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Diary</title>
       <link>https://mand2.github.io/tags/diary/</link>
@@ -22,15 +49,6 @@
       <pubDate>Wed, 08 Sep 2021 23:20:09 +0900</pubDate>
       
       <guid>https://mand2.github.io/tags/books/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Others</title>
-      <link>https://mand2.github.io/tags/others/</link>
-      <pubDate>Wed, 08 Sep 2021 23:20:09 +0900</pubDate>
-      
-      <guid>https://mand2.github.io/tags/others/</guid>
       <description></description>
     </item>
     
@@ -139,24 +157,6 @@
       <pubDate>Sun, 01 Nov 2020 17:45:36 +0900</pubDate>
       
       <guid>https://mand2.github.io/tags/hackathon/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Activity</title>
-      <link>https://mand2.github.io/tags/activity/</link>
-      <pubDate>Thu, 08 Oct 2020 00:18:17 +0900</pubDate>
-      
-      <guid>https://mand2.github.io/tags/activity/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Session</title>
-      <link>https://mand2.github.io/tags/session/</link>
-      <pubDate>Thu, 08 Oct 2020 00:18:17 +0900</pubDate>
-      
-      <guid>https://mand2.github.io/tags/session/</guid>
       <description></description>
     </item>
     

@@ -8,7 +8,7 @@
 <meta name="author" content="mand2">
 
     <link rel="shortcut icon" href="https://image.flaticon.com/icons/svg/2950/2950487.svg" type="image/x-icon" />
-    <title>spring.jpa.open-in-view 로그 오류 해결하기 :: 고라니의 개발일기🦌</title>
+    <title>Seminar :: 고라니의 개발일기🦌</title>
 
     
     <link href="/css/nucleus.css?1648739765" rel="stylesheet">
@@ -54,7 +54,7 @@ if (!doNotTrack) {
 </script>
     
   </head>
-  <body class="" data-url="/spring/spring-boot/1/">
+  <body class="" data-url="/categories/seminar/">
     <nav id="sidebar" class="">
 
 
@@ -154,7 +154,7 @@ if (!doNotTrack) {
   
     
     <li data-nav-id="/spring/" title="Spring" class="dd-item 
-        parent
+        
         
         
         ">
@@ -231,7 +231,7 @@ if (!doNotTrack) {
   
     
     <li data-nav-id="/spring/spring-boot/" title="Spring Boot" class="dd-item 
-        parent
+        
         
         
         ">
@@ -1162,13 +1162,7 @@ if (!doNotTrack) {
             
           
           
-            
-            
-          
-          
-            <a href='/'>고라니의 개발일기🦌</a> > <a href='/spring/'>Spring</a> > <a href='/spring/spring-boot/'>Spring Boot</a> > spring.jpa.open-in-view 로그 오류 해결하기
-          
-        
+            <a href='/'>고라니의 개발일기🦌</a> > <a href='/categories/'>Categories</a> > Seminar
           
         
           
@@ -1181,17 +1175,7 @@ if (!doNotTrack) {
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents">
-  <ol>
-    <li>
-      <ol>
-        <li><a href="#1-문제상황--왜-로그에-warn이-뜨지">1. 문제상황 : 왜 로그에 warn이 뜨지?</a></li>
-        <li><a href="#2-문제-이유">2. 문제 이유</a></li>
-        <li><a href="#3-해결방안">3. 해결방안</a></li>
-      </ol>
-    </li>
-  </ol>
-</nav>
+
     </div>
 </div>
 
@@ -1207,82 +1191,87 @@ if (!doNotTrack) {
           
             <h1>
               
-              spring.jpa.open-in-view 로그 오류 해결하기
+              Seminar
             </h1>
           
 
         
 
-<span class="btn_tags">
-    2019-09-27
+<span id="sidebar-toggle-span">
+<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fas fa-bars"></i> navigation</a>
 </span>
+<section>
+    <div class="highlightable">
+        <div id="topics">
+            
+            
+                
+                    
+                    <button class="btn_tags_active" onclick="location.href='\/categories\/seminar\/'">Seminar</button>
 
-<p><br><br></p>
-<h3 id="1-문제상황--왜-로그에-warn이-뜨지">1. 문제상황 : 왜 로그에 warn이 뜨지?</h3>
-<p>스프링 부트 app을 시작하면 로그가 나오는데,</p>
-<p>잘 보면 아래와 같이 warning 메세지가 뜬다</p>
-<pre tabindex="0"><code>aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-</code></pre><p><br><br></p>
-<h3 id="2-문제-이유">2. 문제 이유</h3>
-<p>Spring Boot에서는 <code>spring.jpa.open-in-view</code>를 true로 설정하고 있는데, 이는 <strong>OSIV 측면에서 매우 부적절</strong>하다고 함.  즉 <strong>성능이나</strong> scalability,, 즉 <strong>확장성 측면</strong>에서 볼 때 false로 해야 하는데 true로 하고 있어 warning 경고 사인이 뜨는 거라고.</p>
-<p><br><br></p>
-<p><a href="https://stackoverflow.com/questions/30549489/what-is-this-spring-jpa-open-in-view-true-property-in-spring-boot"
-    
-        target="_blank"
-    
->
-    참고 사이트-스택오버플로우-로 바로가기
-</a>
-</p>
-<br>
-<h3 id="3-해결방안">3. 해결방안</h3>
-<p>검색결과 spring.jpa.open-in-view 설정을 true 에서 <strong>false로 바꿔주면 해결</strong>된다.</p>
-<p>바꿔주는 방법은 크게 두 가지 방법이 있다.</p>
-<ul>
-<li><strong>application.properties</strong>에서 설정하기</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">spring<span style="color:#f92672">.</span><span style="color:#a6e22e">jpa</span><span style="color:#f92672">.</span><span style="color:#a6e22e">open</span><span style="color:#f92672">-</span>in<span style="color:#f92672">-</span>view<span style="color:#f92672">=</span><span style="color:#66d9ef">false</span>
-</code></pre></div><ul>
-<li>
-<p><strong>application.yml</strong>으로 설정 설정</p>
-<blockquote>
-<p>yaml으로 설정하는 방법은 <a href="https://kihoonkim.github.io/2017/01/27/JPA%28Java%20ORM%29/1.%20JPA-%ED%99%98%EA%B2%BD%20%EC%84%A4%EC%A0%95/"
-    
-        target="_blank"
-    
->
-    여기
-</a>
-에서 잘 설명하고 있다.<br>
-관련 <a href="https://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#boot-features-external-config-yaml"
-    
-        target="_blank"
-    
->
-    스프링 부트 doc 사이트
-</a>
-로 가기</p>
-</blockquote>
-</li>
-</ul>
-<p><br><br><br></p>
+                    
+                
+                    
+                    <button class="btn_tags" onclick="location.href='\/categories\/retro\/'">retro</button>
+                    
+                
+                    
+                    <button class="btn_tags" onclick="location.href='\/categories\/books\/'">Books</button>
+                    
+                
+                    
+                    <button class="btn_tags" onclick="location.href='\/categories\/til\/'">TIL</button>
+                    
+                
+                    
+                    <button class="btn_tags" onclick="location.href='\/categories\/activity\/'">Activity</button>
+                    
+                
+                    
+                    <button class="btn_tags" onclick="location.href='\/categories\/blog\/'">Blog</button>
+                    
+                
+                    
+                    <button class="btn_tags" onclick="location.href='\/categories\/spring\/'">Spring</button>
+                    
+                
+                    
+                    <button class="btn_tags" onclick="location.href='\/categories\/rest-api\/'">Rest-API</button>
+                    
+                
+                    
+                    <button class="btn_tags" onclick="location.href='\/categories\/python\/'">Python</button>
+                    
+                
+                    
+                    <button class="btn_tags" onclick="location.href='\/categories\/react\/'">React</button>
+                    
+                
+                    
+                    <button class="btn_tags" onclick="location.href='\/categories\/interviews\/'">Interviews</button>
+                    
+                
+                    
+                    <button class="btn_tags" onclick="location.href='\/categories\/spring-boot\/'">Spring Boot</button>
+                    
+                
+                    
+                    <button class="btn_tags" onclick="location.href='\/categories\/node.js\/'">Node.js</button>
+                    
+                
+                <button class="btn_tags" onclick="location.href='\/categories\/'">ALL</button>
+            
+        </div>
+        <hr>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<script src="https://utteranc.es/client.js"
-        repo="mand2/blog-comments"
-        issue-term="pathname"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script>
-
-<footer class="footline">
-    
-</footer>
+        
+        <li>
+            <a href="https://mand2.github.io/others/202203-woowahan-tech-seminar/">[세미나] 202203 우아한테크세미나-분산 이벤트 스트리밍 정리(feat.카프카 스트림즈)</a> |
+            <time>2022-04-01</time>
+        </li>
+        
+    </div>
+</section>
 
         
         </div> 
@@ -1350,7 +1339,6 @@ if (!doNotTrack) {
             
                 
                     
-                    
                 
                 
 
@@ -1365,9 +1353,6 @@ if (!doNotTrack) {
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1405,7 +1390,6 @@ if (!doNotTrack) {
             
                 
                     
-                    
                 
                 
 
@@ -1441,9 +1425,6 @@ if (!doNotTrack) {
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -2026,10 +2007,8 @@ if (!doNotTrack) {
 	 
 	 
 		
-			<a class="nav nav-prev" href="/spring/rest-api/" title="Rest Api"> <i class="fa fa-chevron-left"></i></a>
 		
-		
-			<a class="nav nav-next" href="/spring/user_register/" title="회원가입" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/about/" title="About" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

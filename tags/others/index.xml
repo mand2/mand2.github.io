@@ -6,7 +6,19 @@
     <description>Recent content in Others on 고라니의 개발일기🦌</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Wed, 08 Sep 2021 23:20:09 +0900</lastBuildDate><atom:link href="https://mand2.github.io/tags/others/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 01 Apr 2022 00:01:28 +0900</lastBuildDate><atom:link href="https://mand2.github.io/tags/others/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[세미나] 202203 우아한테크세미나-분산 이벤트 스트리밍 정리(feat.카프카 스트림즈)</title>
+      <link>https://mand2.github.io/others/202203-woowahan-tech-seminar/</link>
+      <pubDate>Fri, 01 Apr 2022 00:01:28 +0900</pubDate>
+      
+      <guid>https://mand2.github.io/others/202203-woowahan-tech-seminar/</guid>
+      <description>이번달 우아한 테크 세미나 주제는 분산 이벤트 스트리밍! 유튜브에 올라온 걸 들으면서(일이 있어서 실시간으로 듣진 못함 🥲) 빠르게 간단 정리해 보았다.
+최근에 메세징 큐 방식으로 서비스 처리하는 업무를 했어서 그런지 조금 더 이해하기 수월했다(평소엔 이해하기 어려운 토픽이 많았&amp;hellip;) 덕분에 좀 더 깊게 분산 이벤트 스트리밍을 배울 수 있었다. 카프카를 써서 대용량 처리를 해보고 싶기도..ㅎㅎ
+ 도입 이유는 아래에 더 길게 쓸 테지만 짧게 요약하자면
+ 데이터처리: 실제 처리량이 많아지다 보니까 시스템화(자동화)해서 해서 만들 필요가 있었음.</description>
+    </item>
+    
     <item>
       <title>[책] 2021년 어떤 책을 읽었고 읽고 있나</title>
       <link>https://mand2.github.io/others/books/2021%EB%85%84_%EC%96%B4%EB%96%A4_%EC%B1%85%EC%9D%84_%EC%9D%BD%EC%97%88%EA%B3%A0_%EC%9D%BD%EA%B3%A0%EC%9E%88%EB%82%98/</link>
