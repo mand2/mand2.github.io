@@ -8,6 +8,19 @@
     <language>ko-kr</language>
     <lastBuildDate>Sat, 29 Aug 2020 21:20:01 +0900</lastBuildDate><atom:link href="https://mand2.github.io/others/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>[세미나] 202204 우아한테크세미나-지속가능한 SW 개발을 위한 코드리뷰</title>
+      <link>https://mand2.github.io/others/202204-woowahan-tech-seminar/</link>
+      <pubDate>Thu, 28 Apr 2022 21:37:58 +0900</pubDate>
+      
+      <guid>https://mand2.github.io/others/202204-woowahan-tech-seminar/</guid>
+      <description>요즘 운이 참 좋다😊 딱 원하던 주제가 세미나로 나오다니!!
+코드리뷰 라는 주제를 보자마자 바로 세미나 신청해버렸다.
+팀 내에서나 외부에서나 코드리뷰를 할 때의 태도가 참 중요하다고 생각한다. 동작은 기계가 하지만, 이 로직을 만드는 건 사람이 하니까.
+말씀하시는 내용 중에 많이 공감갔던 부분도 있었고, 상상되지 않을 그런 내용도 있었다.(이런 회사가 있..?!) 코드리뷰할 때의 기본적인(기술적인) 스킬 뿐만 아니라 태도/마음가짐에 대해 좀 더 정리할 수 있는 계기가 되었다👍
+세미나 내용 중 중요하다고 생각한 부분만 블로그에 포스팅했다.</description>
+    </item>
+    
+    <item>
       <title>[세미나] 202203 우아한테크세미나-분산 이벤트 스트리밍 정리(feat.카프카 스트림즈)</title>
       <link>https://mand2.github.io/others/202203-woowahan-tech-seminar/</link>
       <pubDate>Fri, 01 Apr 2022 00:01:28 +0900</pubDate>
